@@ -10,7 +10,7 @@ const About = () => {
     <div>
       {/* <h1>This is the About me Page</h1> */}
       <div>
-        <div className='flex justify-center items-center p-[2rem] h-[40rem]'>
+        <div className='flex xl:flex-row flex-col justify-center items-center p-[2rem] h-[40rem]'>
           <div className='w-[100%]'>
             <h1 className='text-6xl font-bold uppercase p-[2rem] text-center ml-[-5rem]'>about me</h1>
           </div>
@@ -34,13 +34,13 @@ const About = () => {
 
         {/* MY CAPABILITIES LINE */}
 
-        <div className='flex justify-center items-center gap-[4rem] mt-[3rem] p-4 mb-[3rem] h-[40rem]'>
+        <div className='flex xl:flex-row flex-col justify-center items-center gap-[4rem] mt-[3rem] p-4 mb-[3rem] h-[40rem]'>
           <div className='w-[100%]'>
             <h1 className='text-6xl font-extrabold uppercase ml-[-4rem] text-center mb-[11rem]'>my capabilities</h1>
           </div>
           <div className='w-[100%]'>
-            <p className='w-[600px]'>I am always looking to adding more skill-set to my learning stacks in different language model and frame works. This will enable my flexibility and productivity in the area of service delivery and problem solving </p>
-            <div className=' flex flex-wrap w-[34rem] gap-2 mt-[2rem]'>
+            <p className='w-[600px] mb-[4rem]'>I am always looking to adding more skill-set to my learning stacks in different language model and frame works. This will enable my flexibility and productivity in the area of service delivery and problem solving </p>
+            <div className=' flex flex-wrap w-[34rem] gap-2 mt-[2rem] '>
               <div className='border w-[8rem] text-center rounded-full mb-4 p-2 text-white'>Html</div>
               <div className='border w-[8rem] text-center rounded-full mb-4 p-2 text-white'>Css</div>
               <div className='border w-[8rem] text-center rounded-full mb-4 p-2 text-white'>Javascript</div>
@@ -56,7 +56,7 @@ const About = () => {
 
         {/* MY EXPERIENCE LINE */}
 
-        <div className='flex justify-center items-center p-4 mt-[4rem] h-[40rem]'>
+        <div className='flex xl:flex-row flex-col justify-center items-center p-4 mt-[4rem] h-[40rem]'>
           <div className='w-[100%]'>
             <h1 className='uppercase font-extrabold text-6xl text-center ml-[-8rem] mb-[17rem]'>my experience</h1>
           </div>
@@ -80,22 +80,22 @@ const About = () => {
       {/* LET'S CONNECT LINE */}
 
       <div className=''>
-        <div className="flex justify-center items-center gap-[4rem] mt-[4rem] h-[40rem]">
+        <div className="flex xl:flex-row flex-col justify-center items-center gap-[4rem] mt-[4rem] h-[35rem]">
           <div>
             <div className="ml-[-5rem] mt-[0]">
 
-              <h1 className='uppercase text-6xl font-bold'>let's connect</h1>
+              <h1 className='uppercase text-6xl font-bold mb-[2rem]'>let's connect</h1>
               <p>say hello at <span className="underline cursor-pointer text-yellow-300">zekipossible@gmail.com</span></p>
               <a href="" target="_blank"></a>
-              <p>for more info, here is my Resume</p>
+              <p>for more info, here is my <span className='underline'>Resume</span></p>
             </div>
-            <div className="flex ml-[-5rem] gap-[1rem] ">
+            <div className="flex ml-[-5rem] gap-[1rem] mt-[1rem] ">
               <img className="w-[1rem] h-[1rem]" src={Image004} alt="linkdin icon" />
               <img className="w-[1rem] h-[1rem]" src={Image005} alt="Github icon" />
               <img className="w-[1rem] h-[1rem]" src={Image001} alt="twitterImage" />
               <img className="w-[1rem] h-[1rem]" src={Image002} alt="Instangram" />
             </div>
-            <div className='ml-[-5rem] mt-[15rem] text-white text-sm'> <span>&copy; ROBERT GRACIA2023</span></div>
+            <div className='ml-[-5rem] mt-[15rem] text-slate-600 text-sm'> <span>&copy; ROBERT GARCIA2023</span></div>
           </div>
 
           <div className="ml-[6rem] mt-[4rem]">

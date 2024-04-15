@@ -5,7 +5,7 @@ const Navbar = () => {
 
     <div className='flex justify-between items-center py-[2rem] px-[2rem]'>
       <div>
-        <h1 className='uppercase font-bold text-white'>robert garcia</h1>
+        <h1 className='uppercase font-bold text-slate-600'>robert garcia</h1>
       </div>
       <div className='flex gap-[2rem]'>
         <a href='/'>Home</a>
