@@ -9,8 +9,8 @@ import Image001 from "/twitter-x.svg"
 import Image002 from "/instagram.svg"
 import Image003 from "/office image.jpg"
 import Image004 from "/psychedelic-paper-shapes-with-copy-space.jpg"
-import Image005 from "/public/netflix login clone.png"
-import Image006 from "/public/add movie.png"
+import Image005 from "/netflix login clone.png"
+import Image006 from "/add movie.png"
 
 const Home = () => {
   return (
@@ -46,8 +46,8 @@ const Home = () => {
       <hr className="bg-slate-800 xl:w-[80rem] w-full  xl:ml-[2rem]" />
 
       <div className='flex justify-center items-center gap-[3rem] p-[2rem] '>
-        <div className='mt-[2rem]'>
-          <h1 className='uppercase font-bold text-6xl'>feature projects</h1>
+        <div className='xl:mt-[2rem]'>
+          <h1 className='uppercase font-bold text-6xl w-[400px] ml-[14rem] xl:ml-0 xl:w-[600px]'>feature projects</h1>
           <p className='w-[350px] text-slate-600'>Here are some of the selected projects that showcase my passion fro front-end Engineering</p>
           <div className='bg-slate-700 w-[36rem] h-[28rem] mt-[2rem] '>
             <div className='flex justify-center items-center xl:h-full shadow-2xl '>
