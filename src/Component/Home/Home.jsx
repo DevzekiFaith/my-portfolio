@@ -14,7 +14,7 @@ import Image006 from "/add movie.png"
 
 const Home = () => {
   return (
-    <div>
+    <div className='bg-black'>
 
       <div className='flex xl:flex-row flex-col justify-center items-start  p-[4rem] gap-[4rem]'>
         <div className='w-[400px] xl:mt-[8rem]'>
@@ -45,19 +45,19 @@ const Home = () => {
       </div>
       <hr className="bg-slate-800 xl:w-[80rem] w-full  xl:ml-[2rem]" />
 
-      <div className='flex justify-center items-center gap-[3rem] p-[2rem] '>
-        <div className='xl:mt-[2rem]'>
-          <h1 className='uppercase font-bold text-6xl w-[400px] ml-[14rem] xl:ml-0 xl:w-[600px]'>feature projects</h1>
-          <p className='w-[350px] text-slate-600'>Here are some of the selected projects that showcase my passion fro front-end Engineering</p>
-          <div className='bg-slate-700 w-[36rem] h-[28rem] mt-[2rem] '>
+      <div className='flex xl:flex-row flex-col justify-center items-center xl:gap-[3rem] xl:p-[2rem] p-0 '>
+        <div className='xl:mt-[2rem] mt-0'>
+          {/* <h1 className='uppercase font-bold text-6xl w-[400px] ml-[14rem] xl:ml-0 xl:w-[600px]'>feature projects</h1> */}
+          {/* <p className='w-[350px] text-slate-600 ml-[14rem] xl:ml-0'>Here are some of the selected projects that showcase my passion fro front-end Engineering</p> */}
+          <div className='bg-slate-700 xl:w-[36rem] w-[22rem] h-[28rem] mt-[2rem] '>
             <div className='flex justify-center items-center xl:h-full shadow-2xl '>
-              <img className='w-[55%]' src={ImageProject001} placeholder="Blur" alt='project image' />
+              <img className='xl:w-[55%] w-[90%] xl:ml-0' src={ImageProject001} placeholder="Blur" alt='project image' />
             </div>
           </div>
         </div>
 
-        <div className='w-[40%]'>
-          <h3 className='text-lg font-medium uppercase text-white mt-[13rem] mb-[1rem]'>
+        <div className='xl:w-[40%] w-[80%]'>
+          <h3 className='text-lg font-medium uppercase text-white xl:mt-[5rem] mb-[1rem] w-[300px] xl:w-600px mt-[2rem]'>
             Movie-App Landing page for our favorite show
           </h3>
           <p>Breathe life into a movie-app webpage for our beloved show, Adventure Time. Delivered a fully responsive design with dynamic content capabilities, seamlessly integrating a space for movie addition feature to keep fans updated with the latest Adventure </p>
@@ -88,21 +88,21 @@ const Home = () => {
       {/* PROJECT TWO */}
 
 
-      <div className='flex  xl:flex-row flex-col justify-center items-center gap-[3rem] p-[2rem]'>
-        <div className='mt-[2rem]'>
-          <h1 className='uppercase font-bold text-6xl'>feature projects</h1>
-          <p className='w-[350px] text-slate-600'>Here are some of the selected projects that showcase my passion fro front-end Engineering</p>
-          <div className='bg-slate-700 w-[36rem] h-[28rem] mt-[2rem] relative'>
+      <div className='flex  xl:flex-row flex-col justify-center items-center xl:gap-[3rem] xl:p-[2rem] mt-[2rem]'>
+        <div className='xl:mt-[2rem]'>
+          {/* <h1 className='uppercase font-bold text-6xl w-[400px] xl:w-[600px] xl:ml-0 ml-[4rem]'>feature projects</h1> */}
+          {/* <p className='w-[350px] text-slate-600 xl:ml-0 ml-[4rem]'>Here are some of the selected projects that showcase my passion fro front-end Engineering</p> */}
+          <div className='bg-slate-700 xl:w-[36rem] w-[85%] xl:ml-0  ml-[2rem] h-[28rem] mt-[2rem] relative'>
             <img className='h-[22rem]' src={Image004} placeholder="blur" alt='background Image' />
             <div className='flex justify-center items-center h-full shadow-2xl'>
-              <img className='w-[100%] absolute top-[4rem] ' src={Image003} placeholder="Blur" alt='project image' />
+              <img className='xl:w-[85%] h-[16rem] absolute top-[4rem] ' src={Image003} placeholder="Blur" alt='project image' />
 
             </div>
           </div>
         </div>
 
-        <div className='w-[40%]'>
-          <h3 className='text-lg font-medium uppercase text-white mt-[13rem] mb-[1rem]'>
+        <div className='xl:w-[40%] w-[80%] mt-[2rem]'>
+          <h3 className='text-lg font-medium uppercase text-white xl:mt-[5rem] mb-[1rem]'>
             Real Estate Landing page for our favorite show
           </h3>
           <p>Breathe life into a movie-app webpage for our beloved show, Adventure Time. Delivered a fully responsive design with dynamic content capabilities, seamlessly integrating a space for movie addition feature to keep fans updated with the latest Adventure </p>
@@ -137,18 +137,18 @@ const Home = () => {
 
       <div className='flex xl:flex-row flex-col justify-center items-center gap-[3rem] p-[2rem] mb-[3rem]'>
         <div className='mt-[2rem]'>
-          <h1 className='uppercase font-bold text-6xl'>feature projects</h1>
-          <p className='w-[350px] text-slate-600'>Here are some of the selected projects that showcase my passion fro front-end Engineering</p>
-          <div className='bg-slate-700 w-[36rem] h-[28rem] mt-[2rem]'>
+          {/* <h1 className='uppercase font-bold text-6xl'>feature projects</h1> */}
+          {/* <p className='w-[350px] text-slate-600'>Here are some of the selected projects that showcase my passion fro front-end Engineering</p> */}
+          <div className='bg-slate-700 xl:w-[36rem] h-[28rem] mt-[2rem]'>
             <div className='flex justify-center items-center h-full shadow-2xl'>
-              <img className='w-[100%]' src={Image005} placeholder="Blur" alt='project image' />
+              <img className='w-[100%] h-[16rem]' src={Image005} placeholder="Blur" alt='project image' />
 
             </div>
           </div>
         </div>
 
-        <div className='w-[40%]'>
-          <h3 className='text-lg font-medium uppercase text-white mt-[13rem] mb-[1rem]'>
+        <div className='xl:w-[40%]'>
+          <h3 className='text-lg font-medium uppercase text-white xl:mt-[5rem] mb-[1rem]'>
             Netflix Landing page for our favorite show
           </h3>
           <p>Breathe life into a movie-app webpage for our beloved show, Adventure Time. Delivered a fully responsive design with dynamic content capabilities, seamlessly integrating a space for movie addition feature to keep fans updated with the latest Adventure </p>
@@ -175,17 +175,17 @@ const Home = () => {
         </div>
       </div>
 
-      <hr className='w-[80rem] ml-[2rem] ' />
+      <hr className='xl:w-[80rem] xl:ml-[2rem] ' />
 
 
       {/* ABOUT ME LINE */}
 
-      <div className='flex xl:flex-row flex-col justify-center items-center h-[25rem] '>
+      <div className='flex xl:flex-row flex-col justify-center items-center xl:h-[25rem] mt-[2rem] '>
         <div className='w-[100%]'>
-          <h1 className='text-6xl font-bold uppercase p-[2rem] text-center ml-[-5rem]'>about me</h1>
+          <h1 className='text-6xl font-bold uppercase p-[2rem] text-center xl:ml-[-5rem]'>about me</h1>
         </div>
         <div className='w-[100%] p-[3rem]'>
-          <h2 className='w-[500px] mb-[2rem] uppercase text-white font-bold'>Am a Front-end Engineer based in Nigeria. I have An Architectural background </h2>
+          <h2 className='xl:w-[500px] mb-[2rem] uppercase text-white font-bold'>Am a Front-end Engineer based in Nigeria. I have An Architectural background </h2>
           <p>I am a front-end Engineer based in Nigeria looking for exciting opportunities. I have an Architectural background. I like to focus on accessibility when developing. Am passionate and curious about solving Tech Challenges. Currently, i'm exploring some Front-end tools like React.js and Next.js. While i am programming I enjoy playing Basketball and more to improve my skills. </p>
 
           <Link to="/About">
@@ -194,21 +194,21 @@ const Home = () => {
         </div>
       </div>
 
-      <hr className='w-[80rem] ml-[2rem]' />
+      <hr className='xl:w-[80rem] xl:ml-[2rem]' />
 
       {/* LET'S CONNECT LINE */}
 
       <div>
-        <div className="flex xl:flex-row flex-col justify-center items-center gap-[4rem]">
+        <div className="flex xl:flex-row flex-col justify-center items-center xl:gap-[4rem]">
           <div>
-            <div className="ml-[-5rem] mt-[0]">
+            <div className="xl:ml-[-5rem] ml-[2rem] mt-[3rem]">
 
               <h1 className='uppercase text-6xl font-bold mb-[1.5rem]'>let's connect</h1>
               <p className=''>Say hello at <span className="underline cursor-pointer text-yellow-300 ml-1"> zekipossible@gmail.com</span></p>
               <a href="" target="_blank"></a>
               <p>for more info, here is my Resume</p>
             </div>
-            <div className="flex ml-[-5rem] gap-[1rem] mt-[1rem] ">
+            <div className="flex xl:ml-[-5rem] ml-[2rem] gap-[1rem] mt-[1rem] ">
               <img className="w-[1rem] h-[1rem]" src={LinkdlnImage} alt="linkdin icon" />
               <img className="w-[1rem] h-[1rem]" src={GitHubImage} alt="Github icon" />
               <img className="w-[1rem] h-[1rem]" src={Image001} alt="" />
@@ -216,22 +216,22 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="ml-[6rem] mt-[4rem]">
+          <div className="xl:ml-[6rem] mt-[4rem]">
             <span className="flex flex-col mb-[1rem]">
               <label>Name:</label>
-              <input className='w-[30rem] bg-slate-800 border-0 h-[2.5rem]' type='text' placeholder='' id="" />
+              <input className='xl:w-[30rem] bg-slate-800 border-0 h-[2.5rem]' type='text' placeholder='' id="" />
             </span>
             <span className='flex flex-col mb-[1rem]'>
               <label>Email:</label>
-              <input className="w-[30rem] bg-slate-800 border-0 h-[2.5rem] mb-[1rem] text-white" type='text' placeholder='' id="" />
+              <input className="xl:w-[30rem] bg-slate-800 border-0 h-[2.5rem] mb-[1rem] text-white" type='text' placeholder='' id="" />
             </span>
             <span className='flex flex-col mb-[1rem]'>
               <label>Subject:</label>
-              <input className='w-[30rem] bg-slate-800 border-0 h-[2.5rem] text-white' type='text' placeholder='' id="" />
+              <input className='xl:w-[30rem] bg-slate-800 border-0 h-[2.5rem] text-white' type='text' placeholder='' id="" />
             </span>
             <span className="flex flex-col mb-[1rem]">
               <label>Message:</label>
-              <textarea className="w-[30rem] h-[6rem] scroll-m-3 bg-slate-800 border-0 text-white" placeholder="Hello..." id="" />
+              <textarea className="xl:w-[30rem] w-[20rem] h-[6rem] scroll-m-3 bg-slate-800 border-0 text-white" placeholder="Hello..." id="" />
             </span>
             <button className="bg-yellow-300 w-[10rem] h-[3rem] rounded-full text-md uppercase font-bold mt-[2rem] text-black">Submit</button>
           </div>

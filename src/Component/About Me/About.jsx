@@ -7,7 +7,7 @@ import Image001 from "/twitter-x.svg"
 
 const About = () => {
   return (
-    <div>
+    <div className='bg-black'>
       {/* <h1>This is the About me Page</h1> */}
       <div>
         <div className='flex xl:flex-row flex-col justify-center items-center p-[2rem] xl:h-[40rem]'>
