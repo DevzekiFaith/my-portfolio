@@ -28,22 +28,22 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="ml-[6rem] mt-[4rem]">
+          <div className="xl:ml-[6rem] mt-[4rem]">
             <span className="flex flex-col mb-[1rem]">
               <label>Name:</label>
-              <input className='w-[30rem] bg-slate-800 border-0 h-[2.5rem]' type='text' placeholder='' id="" />
+              <input className='w-[20rem] bg-slate-800 border-0 h-[2.5rem]' type='text' placeholder='' id="" />
             </span>
             <span className='flex flex-col mb-[1rem]'>
               <label>Email:</label>
-              <input className="w-[30rem] bg-slate-800 border-0 h-[2.5rem] mb-[1rem] text-white" type='text' placeholder='' id="" />
+              <input className="w-[20rem] bg-slate-800 border-0 h-[2.5rem] mb-[1rem] text-white" type='text' placeholder='' id="" />
             </span>
             <span className='flex flex-col mb-[1rem]'>
               <label>Subject:</label>
-              <input className='w-[30rem] bg-slate-800 border-0 h-[2.5rem] text-white' type='text' placeholder='' id="" />
+              <input className='w-[20rem] bg-slate-800 border-0 h-[2.5rem] text-white' type='text' placeholder='' id="" />
             </span>
             <span className="flex flex-col mb-[1rem]">
               <label>Message:</label>
-              <textarea className="w-[30rem] h-[6rem] scroll-m-3 bg-slate-800 border-0 text-white" placeholder="Hello..." id="" />
+              <textarea className="w-[20rem] h-[6rem] scroll-m-3 bg-slate-800 border-0 text-white" placeholder="Hello..." id="" />
             </span>
             <button className="bg-yellow-300 w-[10rem] h-[3rem] rounded-full text-md uppercase font-bold mt-[2rem] text-black">Submit</button>
           </div>

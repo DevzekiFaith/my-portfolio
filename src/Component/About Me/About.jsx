@@ -4,6 +4,7 @@ import Image005 from "/linkedin.svg"
 import ImageProfile01 from "/image (1).png"
 import Image002 from "/instagram.svg"
 import Image001 from "/twitter-x.svg"
+import Image007 from "/image 25.png"
 
 const About = () => {
   return (
@@ -29,7 +30,7 @@ const About = () => {
           </div>
         </div>
         <div className='flex justify-center items-center mt-[2rem] mb-[6rem]'>
-          <img className='w-[85%]' src={ImageProfile01} placeholder="Blur" alt='About Image' />
+          <img className='w-[85%] h-[16rem] xl:h-screen' src={ImageProfile01} placeholder="Blur" alt='About Image' />
         </div>
 
         {/* MY CAPABILITIES LINE */}
@@ -40,7 +41,7 @@ const About = () => {
           </div>
           <div className='w-[100%]'>
             <p className='xl:w-[600px] mb-[4rem]'>I am always looking to adding more skill-set to my learning stacks in different language model and frame works. This will enable my flexibility and productivity in the area of service delivery and problem solving </p>
-            <div className=' flex flex-wrap xl:w-[34rem] w-[22rem] ml-[3rem] gap-2 mt-[2rem] '>
+            <div className=' flex flex-wrap xl:w-[34rem] w-[22rem] xl:ml-0 ml-[3rem] gap-2 mt-[2rem] '>
               <div className='border w-[8rem] text-center rounded-full mb-4 p-2 text-white'>Html</div>
               <div className='border w-[8rem] text-center rounded-full mb-4 p-2 text-white'>Css</div>
               <div className='border w-[8rem] text-center rounded-full mb-4 p-2 text-white'>Javascript</div>
@@ -80,6 +81,9 @@ const About = () => {
       {/* LET'S CONNECT LINE */}
 
       <div className=' mt-[2rem]'>
+        <div className='block xl:hidden ml-[2rem] mb-[2rem] mt-[3rem]'>
+          <img src={ Image007 } placeholder="blur" alt='pImage'/>
+        </div>
         <div className="flex xl:flex-row flex-col justify-center items-center xl:gap-[4rem] xl:mt-[4rem] xl:h-[35rem]">
           <div>
             <div className="xl:ml-[-5rem] ml-[2rem] mt-[0]">

@@ -36,7 +36,7 @@ const Home = () => {
 
         </div>
 
-        <div className='xl:w-[500px] w-[300px]'>
+        <div className='xl:w-[500px] w-[300px] xl:ml-[5rem]'>
           <img className="w-[100%]" src={ProfileImage} placeholder="Blur" alt='profile picture' />
         </div>
 
@@ -61,7 +61,9 @@ const Home = () => {
             Movie-App Landing page for our favorite show
           </h3>
           <p>Breathe life into a movie-app webpage for our beloved show, Adventure Time. Delivered a fully responsive design with dynamic content capabilities, seamlessly integrating a space for movie addition feature to keep fans updated with the latest Adventure </p>
-
+          <p className='text-green-500'><span className='text-white font-sans'>Technology stack:</span> React, Tailwind, MongoDB.</p>
+          <h2><span className='text-white font-sana'>Challenges:</span> In this project i did not use React Router, i did the foundational Routing by passing Props and that was a huge challenge at First</h2>
+          <h3><span className='text-white font-sans'>Solution:</span> After regular error prompts, i had to make research on the error and got different solutions for one challenge and that was how i learnt that exercise without Routing </h3>
           <h2 className='uppercase font-semibold mt-[1rem] mb-[.5rem] text-white'>Project info</h2>
           <hr />
           <span className='flex justify-between mt-[2rem]'>
@@ -106,6 +108,9 @@ const Home = () => {
             Real Estate Landing page for our favorite show
           </h3>
           <p>Breathe life into a movie-app webpage for our beloved show, Adventure Time. Delivered a fully responsive design with dynamic content capabilities, seamlessly integrating a space for movie addition feature to keep fans updated with the latest Adventure </p>
+          <p className='text-green-500'><span className='text-white font-sans'>Technology stack:</span> React, Tailwind, Html, Css, React Router, NavLink,useNavigate.</p>
+          <h2><span className='text-white font-sana'>Challenges:</span> In this project i did not use React Router, i did the foundational Routing by passing Props and that was a huge challenge at First</h2>
+          <h3><span className='text-white font-sans'>Solution:</span> After regular error prompts, i had to make research on the error and got different solutions for one challenge i had to use the React-Router-Documentation for a proffered solution </h3>
 
           <h2 className='uppercase font-semibold mt-[1rem] mb-[.5rem] text-white'>Project info</h2>
           <hr />
@@ -151,7 +156,10 @@ const Home = () => {
           <h3 className='text-lg font-medium uppercase text-white xl:mt-[5rem] mb-[1rem]'>
             Netflix Landing page for our favorite show
           </h3>
-          <p>Breathe life into a movie-app webpage for our beloved show, Adventure Time. Delivered a fully responsive design with dynamic content capabilities, seamlessly integrating a space for movie addition feature to keep fans updated with the latest Adventure </p>
+          <p>Breathe life into a movie-app webpage for our beloved show, Adventure Time. Delivered a fully responsive design with dynamic content capabilities, seamlessly integrating a space for movie addition feature to keep fans updated with the latest Adventure. The goal was to make the login bg transparent </p>
+          <p className='text-green-500'><span className='text-white font-sans'>Technology stack:</span> React, Tailwind, Scss and css </p>
+          <h2><span className='text-white font-sana'>Challenges:</span> In this project i cloned the Login page of Netflix to create a more styled background using transparency for glass-like feel</h2>
+          <h3><span className='text-white font-sans'>Solution:</span> After regular error prompts, i had to make research on the error and got different solutions for one challenge and that was how i learnt making background of things transparent</h3>
 
           <h2 className='uppercase font-semibold mt-[1rem] mb-[.5rem] text-white'>Project info</h2>
           <hr />
