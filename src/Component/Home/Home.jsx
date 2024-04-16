@@ -16,10 +16,10 @@ const Home = () => {
   return (
     <div>
 
-      <div className='flex xl:flex-row flex-col justify-center items-start h-screen p-[4rem] gap-[4rem]'>
-        <div className='w-[400px] mt-[8rem]'>
+      <div className='flex xl:flex-row flex-col justify-center items-start  p-[4rem] gap-[4rem]'>
+        <div className='w-[400px] xl:mt-[8rem]'>
           <strong><h1 className='uppercase text-6xl w-[250px] mb-[1rem]'>hi, i am robert garcia</h1></strong>
-          <p className='text-lg mb-[1rem] text-slate-600'>i build things for the web as a Nigerian base Software developer heavy on Front-end Engineering. Am passionate about building accessible user friendly website and Mobile Apps</p>
+          <p className='text-lg mb-[1rem] text-slate-600 w-[300px]'>i build things for the web as a Nigerian base Software developer heavy on Front-end Engineering. Am passionate about building accessible user friendly website and Mobile Apps</p>
           <div className='flex  items-center gap-[1rem]'>
 
             <Link to="/contact">
@@ -36,28 +36,23 @@ const Home = () => {
 
         </div>
 
-        <div className='w-[500px]'>
-          <img className="" src={ProfileImage} placeholder="Blur" alt='profile picture' />
+        <div className='xl:w-[500px] w-[300px]'>
+          <img className="w-[100%]" src={ProfileImage} placeholder="Blur" alt='profile picture' />
         </div>
 
         {/* // FEATURE PROJECT LINE */}
 
       </div>
-      <hr className="bg-slate-800 w-[80rem] ml-[2rem]" />
+      <hr className="bg-slate-800 xl:w-[80rem] w-full  xl:ml-[2rem]" />
 
       <div className='flex justify-center items-center gap-[3rem] p-[2rem] '>
         <div className='mt-[2rem]'>
           <h1 className='uppercase font-bold text-6xl'>feature projects</h1>
           <p className='w-[350px] text-slate-600'>Here are some of the selected projects that showcase my passion fro front-end Engineering</p>
-          <div className='bg-slate-700 w-[36rem] h-[28rem] mt-[2rem] relative z-[100]'>
-            <div className='flex justify-center items-center h-full shadow-2xl '>
+          <div className='bg-slate-700 w-[36rem] h-[28rem] mt-[2rem] '>
+            <div className='flex justify-center items-center xl:h-full shadow-2xl '>
               <img className='w-[55%]' src={ImageProject001} placeholder="Blur" alt='project image' />
             </div>
-            {/* <div className='absolute top-[6rem]'>
-              <img className='h-[22rem] w-[26rem]' src={Image006} placeholder="blur" alt='background Image' />
-            </div> */}
-
-
           </div>
         </div>
 

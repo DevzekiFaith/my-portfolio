@@ -10,12 +10,12 @@ const About = () => {
     <div>
       {/* <h1>This is the About me Page</h1> */}
       <div>
-        <div className='flex xl:flex-row flex-col justify-center items-center p-[2rem] h-[40rem]'>
+        <div className='flex xl:flex-row flex-col justify-center items-center p-[2rem] xl:h-[40rem]'>
           <div className='w-[100%]'>
-            <h1 className='text-6xl font-bold uppercase p-[2rem] text-center ml-[-5rem]'>about me</h1>
+            <h1 className='text-6xl font-bold uppercase p-[2rem] text-center xl:ml-[-5rem]'>about me</h1>
           </div>
-          <div className='w-[100%] p-[3rem]'>
-            <h2 className='w-[500px] mb-[2rem] uppercase text-white font-bold'>Am a Front-end Engineer based in Nigeria. I have An Architectural background </h2>
+          <div className='w-[100%] xl:p-[3rem]'>
+            <h2 className='xl:w-[500px] mb-[2rem] uppercase text-white font-bold'>Am a Front-end Engineer based in Nigeria. I have An Architectural background </h2>
             <p>I am a front-end Engineer based in Nigeria looking for exciting opportunities. I have an Architectural background. I like to focus on accessibility when developing. Am passionate and curious about solving Tech Challenges. Currently, i'm exploring some Front-end tools like React.js and Next.js. While i am programming I enjoy playing Basketball and more to improve my skills. </p>
             <div className="flex items-center w-full">
               <div>
@@ -29,18 +29,18 @@ const About = () => {
           </div>
         </div>
         <div className='flex justify-center items-center mt-[2rem] mb-[6rem]'>
-          <img src={ImageProfile01} placeholder="Blur" alt='About Image' />
+          <img className='w-[85%]' src={ImageProfile01} placeholder="Blur" alt='About Image' />
         </div>
 
         {/* MY CAPABILITIES LINE */}
 
-        <div className='flex xl:flex-row flex-col justify-center items-center gap-[4rem] mt-[3rem] p-4 mb-[3rem] h-[40rem]'>
+        <div className='flex xl:flex-row flex-col justify-center items-center xl:gap-[4rem] mt-[3rem] p-4 mb-[3rem] xl:h-[40rem]'>
           <div className='w-[100%]'>
-            <h1 className='text-6xl font-extrabold uppercase ml-[-4rem] text-center mb-[11rem]'>my capabilities</h1>
+            <h1 className='text-6xl font-extrabold uppercase xl:ml-[-4rem] text-center xl:mb-[11rem]'>my capabilities</h1>
           </div>
           <div className='w-[100%]'>
-            <p className='w-[600px] mb-[4rem]'>I am always looking to adding more skill-set to my learning stacks in different language model and frame works. This will enable my flexibility and productivity in the area of service delivery and problem solving </p>
-            <div className=' flex flex-wrap w-[34rem] gap-2 mt-[2rem] '>
+            <p className='xl:w-[600px] mb-[4rem]'>I am always looking to adding more skill-set to my learning stacks in different language model and frame works. This will enable my flexibility and productivity in the area of service delivery and problem solving </p>
+            <div className=' flex flex-wrap xl:w-[34rem] w-[22rem] ml-[3rem] gap-2 mt-[2rem] '>
               <div className='border w-[8rem] text-center rounded-full mb-4 p-2 text-white'>Html</div>
               <div className='border w-[8rem] text-center rounded-full mb-4 p-2 text-white'>Css</div>
               <div className='border w-[8rem] text-center rounded-full mb-4 p-2 text-white'>Javascript</div>
@@ -52,13 +52,13 @@ const About = () => {
             </div>
           </div>
         </div>
-        <hr className='w-[80rem] ml-[3rem] mt-[2rem]' />
+        <hr className='xl:w-[80rem] w-full xl:ml-[3rem] xl:mt-[2rem]' />
 
         {/* MY EXPERIENCE LINE */}
 
-        <div className='flex xl:flex-row flex-col justify-center items-center p-4 mt-[4rem] h-[40rem]'>
+        <div className='flex xl:flex-row flex-col justify-center items-center p-4 mt-[4rem] xl:h-[40rem]'>
           <div className='w-[100%]'>
-            <h1 className='uppercase font-extrabold text-6xl text-center ml-[-8rem] mb-[17rem]'>my experience</h1>
+            <h1 className='uppercase font-extrabold text-6xl text-center ml-[-8rem] xl:mb-[17rem]'>my experience</h1>
           </div>
           <div className='w-[100%] p-[1rem]'>
             <span className='flex justify-between mb-[1rem]'>
@@ -75,45 +75,45 @@ const About = () => {
         </div>
       </div>
 
-      <hr className='w-[80rem] ml-[3rem] mt-[2rem]' />
+      <hr className='xl:w-[80rem] w-full xl:ml-[3rem] xl:mt-[2rem]' />
 
       {/* LET'S CONNECT LINE */}
 
-      <div className=''>
-        <div className="flex xl:flex-row flex-col justify-center items-center gap-[4rem] mt-[4rem] h-[35rem]">
+      <div className=' mt-[2rem]'>
+        <div className="flex xl:flex-row flex-col justify-center items-center xl:gap-[4rem] xl:mt-[4rem] xl:h-[35rem]">
           <div>
-            <div className="ml-[-5rem] mt-[0]">
+            <div className="xl:ml-[-5rem] ml-[2rem] mt-[0]">
 
               <h1 className='uppercase text-6xl font-bold mb-[2rem]'>let's connect</h1>
               <p>say hello at <span className="underline cursor-pointer text-yellow-300">zekipossible@gmail.com</span></p>
               <a href="" target="_blank"></a>
               <p>for more info, here is my <span className='underline'>Resume</span></p>
             </div>
-            <div className="flex ml-[-5rem] gap-[1rem] mt-[1rem] ">
+            <div className="flex xl:ml-[-5rem] ml-[2rem] gap-[1rem] mt-[1rem] ">
               <img className="w-[1rem] h-[1rem]" src={Image004} alt="linkdin icon" />
               <img className="w-[1rem] h-[1rem]" src={Image005} alt="Github icon" />
               <img className="w-[1rem] h-[1rem]" src={Image001} alt="twitterImage" />
-              <img className="w-[1rem] h-[1rem]" src={Image002} alt="Instangram" />
+              <img className="w-[1rem] h-[1rem]" src={Image002} alt="Instagram" />
             </div>
-            <div className='ml-[-5rem] mt-[15rem] text-slate-600 text-sm'> <span>&copy; ROBERT GARCIA2023</span></div>
+            <div className='xl:ml-[-5rem] xl:mt-[15rem] mt-[4rem] text-slate-600 text-sm ml-[2rem]'> <span>&copy; ROBERT GARCIA2023</span></div>
           </div>
 
-          <div className="ml-[6rem] mt-[4rem]">
+          <div className="xl:ml-[6rem] xl:mt-[4rem] ml-[1rem]">
             <span className="flex flex-col mb-[1rem]">
               <label>Name:</label>
-              <input className='w-[30rem] bg-slate-800 border-0 h-[2.5rem]' type='text' placeholder='' id="" />
+              <input className='xl:w-[30rem] w-[22rem] bg-slate-800 border-0 h-[2.5rem]' type='text' placeholder='' id="" />
             </span>
             <span className='flex flex-col mb-[1rem]'>
               <label>Email:</label>
-              <input className="w-[30rem] bg-slate-800 border-0 h-[2.5rem] mb-[1rem]" type='text' placeholder='' id="" />
+              <input className="xl:w-[30rem] w-[22rem] bg-slate-800 border-0 h-[2.5rem] mb-[1rem]" type='text' placeholder='' id="" />
             </span>
             <span className='flex flex-col mb-[1rem]'>
               <label>Subject:</label>
-              <input className='w-[30rem] bg-slate-800 border-0 h-[2.5rem]' type='text' placeholder='' id="" />
+              <input className='xl:w-[30rem] w-[22rem] bg-slate-800 border-0 h-[2.5rem]' type='text' placeholder='' id="" />
             </span>
             <span className="flex flex-col mb-[1rem]">
               <label>Message:</label>
-              <textarea className="w-[30rem] h-[6rem] scroll-m-3 bg-slate-800 border-0 " placeholder="Hello..." id="" />
+              <textarea className="xl:w-[30rem] w-[22rem] h-[6rem] scroll-m-3 bg-slate-800 border-0 " placeholder="Hello..." id="" />
             </span>
             <button className="bg-yellow-300 w-[10rem] h-[3rem] rounded-full text-md uppercase font-bold mt-[2rem]">Submit</button>
           </div>
