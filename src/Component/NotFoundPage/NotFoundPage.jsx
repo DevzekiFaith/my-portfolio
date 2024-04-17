@@ -1,5 +1,5 @@
 import React from 'react'
-import SearchImage from "/public/SearchImage.jpg.svg"
+import SearchImage from "/SearchImage.jpg.svg"
 import { Link } from 'react-router-dom'
 
 const NotFoundPage = () => {
