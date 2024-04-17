@@ -96,7 +96,7 @@ const Home = () => {
           {/* <p className='w-[350px] text-slate-600 xl:ml-0 ml-[4rem]'>Here are some of the selected projects that showcase my passion fro front-end Engineering</p> */}
           <div className='bg-slate-700 xl:w-[36rem] w-[85%] xl:ml-0  ml-[2rem] h-[28rem] mt-[2rem] relative active:scale-0 cursor-pointer hover:-translate-y-6 '>
             <img className='h-[22rem]' src={Image004} placeholder="blur" alt='background Image' />
-            <div className='flex justify-center items-center h-full shadow-2xl'>
+            <div className='flex justify-center items-center shadow-2xl'>
               <img className='xl:w-[75%] h-[18rem] absolute top-[4rem] ' src={Image003} placeholder="Blur" alt='project image' />
 
             </div>
@@ -190,7 +190,7 @@ const Home = () => {
 
       <div className='flex xl:flex-row flex-col justify-center items-center xl:h-[25rem] mt-[2rem] '>
         <div className='w-[100%]'>
-          <h1 className='text-6xl font-bold uppercase p-[2rem] text-center xl:ml-[-5rem]'>about me</h1>
+          <h1 className='text-6xl font-bold uppercase p-[2rem] text-center xl:ml-[-5rem] active:scale-0 cursor-pointer hover:-translate-y-6'>about me</h1>
         </div>
         <div className='w-[100%] p-[3rem]'>
           <h2 className='xl:w-[500px] mb-[2rem] uppercase text-white font-bold'>Am a Front-end Engineer based in Nigeria. I have An Architectural background </h2>
@@ -211,7 +211,7 @@ const Home = () => {
           <div>
             <div className="xl:ml-[-5rem] ml-[2rem] mt-[3rem]">
 
-              <h1 className='uppercase text-6xl font-bold mb-[1.5rem]'>let's connect</h1>
+              <h1 className='uppercase text-6xl font-bold mb-[1.5rem] active:scale-0 cursor-pointer hover:-translate-y-6'>let's connect</h1>
               <p className=''>Say hello at <span className="underline cursor-pointer text-yellow-300 ml-1"> zekipossible@gmail.com</span></p>
               <a href="" target="_blank"></a>
               <p>for more info, here is my Resume</p>
