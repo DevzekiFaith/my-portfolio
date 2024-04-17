@@ -5,6 +5,7 @@ import ImageProfile01 from "/image (1).png"
 import Image002 from "/instagram.svg"
 import Image001 from "/twitter-x.svg"
 import Image007 from "/image 25.png"
+import DownloadImage from "/download.svg"
 
 const About = () => {
   return (
@@ -18,9 +19,12 @@ const About = () => {
           <div className='w-[100%] xl:p-[3rem]'>
             <h2 className='xl:w-[500px] mb-[2rem] uppercase text-white font-bold'>Am a Front-end Engineer based in Nigeria. I have An Architectural background </h2>
             <p>I am a front-end Engineer based in Nigeria looking for exciting opportunities. I have an Architectural background. I like to focus on accessibility when developing. Am passionate and curious about solving Tech Challenges. Currently, i'm exploring some Front-end tools like React.js and Next.js. While i am programming I enjoy playing Basketball and more to improve my skills. </p>
-            <div className="flex items-center w-full">
-              <div>
-                <button className='bg-yellow-300 w-[12rem] h-[2.5rem] rounded-full mt-[2rem] font-extrabold'>Download Resume</button>
+            <div className="flex gap-[1rem] items-center w-full">
+              <div className='flex justify-center items-center'>
+                <button className='bg-yellow-300 w-[14rem] h-[2.5rem] rounded-full mt-[2rem] font-extrabold'>Download Resume</button>
+                <div className='mt-[1.8rem] ml-[-2rem]'>
+                  <img src={DownloadImage} alt="Download image" />
+                </div>
               </div>
               <div className="flex justify-center items-center gap-1 mt-[2rem] w-[5rem]">
                 <img className='w-[2rem] h-[2rem]' src={Image004} alt="" />
@@ -82,7 +86,7 @@ const About = () => {
 
       <div className=' mt-[2rem]'>
         <div className='block xl:hidden ml-[2rem] mb-[2rem] mt-[3rem]'>
-          <img src={ Image007 } placeholder="blur" alt='pImage'/>
+          <img src={Image007} placeholder="blur" alt='pImage' />
         </div>
         <div className="flex xl:flex-row flex-col justify-center items-center xl:gap-[4rem] xl:mt-[4rem] xl:h-[35rem]">
           <div>

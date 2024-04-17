@@ -7,7 +7,7 @@ import Arrow from "/arrow-up-right-circle-fill.svg";
 import ImageProject001 from "/movie-app.jpg.png"
 import Image001 from "/twitter-x.svg"
 import Image002 from "/instagram.svg"
-import Image003 from "/office image.jpg"
+import Image003 from "/PRACTICE2.jpg"
 import Image004 from "/psychedelic-paper-shapes-with-copy-space.jpg"
 import Image005 from "/netflix login clone.png"
 import Image006 from "/add movie.png"
@@ -49,7 +49,7 @@ const Home = () => {
         <div className='xl:mt-[2rem] mt-0'>
           {/* <h1 className='uppercase font-bold text-6xl w-[400px] ml-[14rem] xl:ml-0 xl:w-[600px]'>feature projects</h1> */}
           {/* <p className='w-[350px] text-slate-600 ml-[14rem] xl:ml-0'>Here are some of the selected projects that showcase my passion fro front-end Engineering</p> */}
-          <div className='bg-slate-700 xl:w-[36rem] w-[22rem] h-[28rem] mt-[2rem] '>
+          <div className='bg-slate-700 xl:w-[36rem] w-[22rem] h-[28rem] mt-[2rem] active:scale-0 cursor-pointer hover:-translate-y-6  '>
             <div className='flex justify-center items-center xl:h-full shadow-2xl '>
               <img className='xl:w-[55%] w-[90%] xl:ml-0' src={ImageProject001} placeholder="Blur" alt='project image' />
             </div>
@@ -94,10 +94,10 @@ const Home = () => {
         <div className='xl:mt-[2rem]'>
           {/* <h1 className='uppercase font-bold text-6xl w-[400px] xl:w-[600px] xl:ml-0 ml-[4rem]'>feature projects</h1> */}
           {/* <p className='w-[350px] text-slate-600 xl:ml-0 ml-[4rem]'>Here are some of the selected projects that showcase my passion fro front-end Engineering</p> */}
-          <div className='bg-slate-700 xl:w-[36rem] w-[85%] xl:ml-0  ml-[2rem] h-[28rem] mt-[2rem] relative'>
+          <div className='bg-slate-700 xl:w-[36rem] w-[85%] xl:ml-0  ml-[2rem] h-[28rem] mt-[2rem] relative active:scale-0 cursor-pointer hover:-translate-y-6 '>
             <img className='h-[22rem]' src={Image004} placeholder="blur" alt='background Image' />
             <div className='flex justify-center items-center h-full shadow-2xl'>
-              <img className='xl:w-[85%] h-[16rem] absolute top-[4rem] ' src={Image003} placeholder="Blur" alt='project image' />
+              <img className='xl:w-[75%] h-[18rem] absolute top-[4rem] ' src={Image003} placeholder="Blur" alt='project image' />
 
             </div>
           </div>
@@ -144,7 +144,7 @@ const Home = () => {
         <div className='mt-[2rem]'>
           {/* <h1 className='uppercase font-bold text-6xl'>feature projects</h1> */}
           {/* <p className='w-[350px] text-slate-600'>Here are some of the selected projects that showcase my passion fro front-end Engineering</p> */}
-          <div className='bg-slate-700 xl:w-[36rem] h-[28rem] mt-[2rem]'>
+          <div className='bg-slate-700 xl:w-[36rem] h-[28rem] mt-[2rem] active:scale-0 cursor-pointer hover:-translate-y-6 '>
             <div className='flex justify-center items-center h-full shadow-2xl'>
               <img className='w-[100%] h-[16rem]' src={Image005} placeholder="Blur" alt='project image' />
 
