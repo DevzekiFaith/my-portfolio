@@ -57,7 +57,7 @@ const About = () => {
             </div>
           </div>
         </div>
-        <hr className='xl:w-[80rem] w-full xl:ml-[3rem] xl:mt-[2rem]' />
+        <hr className='xl:w-[80rem] w-full xl:ml-[3rem] xl:mt-[2rem]'/>
 
         {/* MY EXPERIENCE LINE */}
 

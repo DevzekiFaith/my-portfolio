@@ -81,8 +81,8 @@ const Home = () => {
               <img src={Arrow} alt="Arrow" />
             </span>
             {/* <h1 className='text-yellow-300 underline'>SEE ON GITHUB</h1> */}
-            <a href="https://github.com/DevzekiFaith/movie-app.git" target="_blank"></a><h1 className='uppercase text-yellow-300 underline'> <span className='flex gap-2'>
-              <img src={GitHubImage} alt='Github' />SEE ON GITHUB</span> </h1>
+            <a href="https://github.com/DevzekiFaith/movie-app.git" target="_blank"><h1 className='uppercase text-yellow-300 underline'> <span className='flex gap-2'>
+              <img src={GitHubImage} alt='Github' />SEE ON GITHUB</span> </h1></a>
           </div>
         </div>
       </div>
@@ -177,8 +177,8 @@ const Home = () => {
               <a href="https://tinyurl.com/yc7n9vb5" target="_blank"></a><h1 className='uppercase text-yellow-300 underline w-[6rem]'>LIVE DEMO</h1>
               <img src={Arrow} alt="Arrow" />
             </span>
-            <a href="https://github.com/DevzekiFaith/movie-app.git" target="_blank"></a><h1 className='uppercase text-yellow-300 underline'> <span className='flex gap-2'>
-              <img src={GitHubImage} alt='Github' />SEE ON GITHUB</span> </h1>
+            <a href="https://github.com/DevzekiFaith/movie-app.git" target="_blank"><h1 className='uppercase text-yellow-300 underline'> <span className='flex gap-2'>
+              <img src={GitHubImage} alt='Github' />SEE ON GITHUB</span> </h1></a>
           </div>
         </div>
       </div>
@@ -225,29 +225,31 @@ const Home = () => {
           </div>
 
           <div className="xl:ml-[6rem] mt-[4rem]">
-            <span className="flex flex-col mb-[1rem]">
-              <label>Name:</label>
-              <input className='xl:w-[30rem] bg-slate-800 border-0 h-[2.5rem]' type='text' placeholder='' id="" />
-            </span>
-            <span className='flex flex-col mb-[1rem]'>
-              <label>Email:</label>
-              <input className="xl:w-[30rem] bg-slate-800 border-0 h-[2.5rem] mb-[1rem] text-white" type='text' placeholder='' id="" />
-            </span>
-            <span className='flex flex-col mb-[1rem]'>
-              <label>Subject:</label>
-              <input className='xl:w-[30rem] bg-slate-800 border-0 h-[2.5rem] text-white' type='text' placeholder='' id="" />
-            </span>
-            <span className="flex flex-col mb-[1rem]">
-              <label>Message:</label>
-              <textarea className="xl:w-[30rem] w-[20rem] h-[6rem] scroll-m-3 bg-slate-800 border-0 text-white" placeholder="Hello..." id="" />
-            </span>
-            <button className="bg-yellow-300 w-[10rem] h-[3rem] rounded-full text-md uppercase font-bold mt-[2rem] text-black">Submit</button>
+            <form>
+              <span className="flex flex-col mb-[1rem]">
+                <label>Name:</label>
+                <input className='xl:w-[30rem] bg-slate-800 text-white border-0 h-[2.5rem]' type='text' placeholder='' id="" required />
+              </span>
+              <span className='flex flex-col mb-[1rem]'>
+                <label>Email:</label>
+                <input className="xl:w-[30rem] bg-slate-800 border-0 h-[2.5rem] mb-[1rem] text-white" type='text' placeholder='' id="" required />
+              </span>
+              <span className='flex flex-col mb-[1rem]'>
+                <label>Subject:</label>
+                <input className='xl:w-[30rem] bg-slate-800 border-0 h-[2.5rem] text-white' type='text' placeholder='' id="" required />
+              </span>
+              <span className="flex flex-col mb-[1rem]">
+                <label>Message:</label>
+                <textarea className="xl:w-[30rem] w-[20rem] h-[6rem] scroll-m-3 bg-slate-800 border-0 text-white" placeholder="Hello..." id="" />
+              </span>
+              <button className="bg-yellow-300 w-[10rem] h-[3rem] rounded-full text-md uppercase font-bold mt-[2rem] text-black">Submit</button>
+            </form>
           </div>
 
 
         </div>
       </div>
-    </div>
+    </div >
   )
 }
 
