@@ -2,9 +2,12 @@ import React from 'react'
 import SearchImage from "/SearchImage.jpg.svg"
 import { Link } from 'react-router-dom'
 
+
 const NotFoundPage = () => {
+
+ 
   return (
-    <div>
+    <div className="mt-[4rem] p-[1.5rem] bg-black">
       <p className='text-center'>Sorry, but the page you are looking for could not be found.</p>
       <div className='flex justify-center items-center'>
         <img className=' w-[45rem]' src={SearchImage} placeholder="blur" alt='' />

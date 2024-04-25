@@ -5,9 +5,16 @@ import Arrow from "/arrow-up-right-circle-fill.svg";
 import ImageProject001 from "/movie-app.jpg.png"
 import Image001 from "/twitter-x.svg"
 import Image002 from "/instagram.svg"
+import { useForm } from 'react-hook-form';
 
 
 const Contact = () => {
+
+  const { register, handleSubmit, formState: { errors } } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(data)
+  }
   return (
     <div className='bg-black'>
       <div className='mb-[2rem]'>
@@ -28,25 +35,47 @@ const Contact = () => {
             </div>
           </div>
 
+         
           <div className="xl:ml-[6rem] mt-[4rem]">
-            <form>
-              <span className="flex flex-col mb-[1rem]">
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <div className="flex flex-col mb-[1rem]">
                 <label>Name:</label>
-                <input className='w-[20rem] xl:w-[34rem] bg-slate-800 border-0 h-[2.5rem]' type='text' placeholder='' id="" required/>
-              </span>
-              <span className='flex flex-col mb-[1rem]'>
+                <input className='xl:w-[30rem] bg-slate-800 text-white border-0 h-[2.5rem]' type='text' placeholder='Enter UserName'
+                  {...register("Username",
+                    { required: "Username is required" })}
+                />
+                <span className="text-red-800 text-sm">
+                  {errors.Username?.message}
+                </span>
+              </div>
+              <div className='flex flex-col mb-[1rem]'>
                 <label>Email:</label>
-                <input className="w-[20rem] xl:w-[34rem] bg-slate-800 border-0 h-[2.5rem] mb-[1rem] text-white" type='text' placeholder='' id="" required />
-              </span>
-              <span className='flex flex-col mb-[1rem]'>
-                <label>Subject:</label>
-                <input className='w-[20rem] xl:w-[34rem] bg-slate-800 border-0 h-[2.5rem] text-white' type='text' placeholder='' id="" required />
-              </span>
+                <input className="xl:w-[30rem] bg-slate-800 border-0 h-[2.5rem] mb-[1rem] text-white text-sm" type='text' placeholder='Email'
+                  {...register("Email",
+                    { required: "Email is required", pattern: "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" })}
+                />
+                <span className="text-red-800 text-sm">
+                  {errors.Email?.message}
+                  {errors.Email?.type === "pattern" && "Email should have the right pattern"}
+                </span>
+              </div>
+              <div className='flex flex-col mb-[1rem]'>
+                <label>Password:</label>
+                <input className='xl:w-[30rem] bg-slate-800 border-0 h-[2.5rem] text-white' type='Password' placeholder='password'
+                  {...register("Password",
+                    { required: "Password is required", minLength: 5, maxLength: 10 })}
+                />
+                <span className="text-red-800 text-sm">
+                  {errors.Email?.message}
+                  {errors.Email?.type === "minLength" && "Password must not  be less than 4 character"}
+                  {errors.Email?.type === "maxLength" && "Password must be more than 10 character "}
+                </span>
+              </div>
               <span className="flex flex-col mb-[1rem]">
                 <label>Message:</label>
-                <textarea className="w-[20rem] xl:w-[34rem] h-[6rem] scroll-m-3 bg-slate-800 border-0 text-white" placeholder="Hello..." id="" required />
+                <textarea className="xl:w-[30rem] w-[20rem] h-[6rem] scroll-m-3 bg-slate-800 border-0 text-white" placeholder="Hello..." />
               </span>
-              <button className="bg-yellow-300 w-[10rem] h-[3rem] rounded-full text-md uppercase font-bold mt-[2rem] text-black">Submit</button>
+              <button type='submit' className="bg-yellow-300 w-[10rem] h-[3rem] rounded-full text-md uppercase font-bold mt-[2rem] text-black">Submit</button>
             </form>
           </div>
 
