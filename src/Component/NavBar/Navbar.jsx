@@ -1,10 +1,13 @@
 import { useState } from 'react'
+import {useLocation} from "react-router-dom"
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import burgerImage from "/list (2).svg"
 import CloseButton from "/x-circle.svg"
 
 const Navbar = () => {
+
+
 
   const activeLink = "text-white bg-yellow-950 border=none p-[0.2rem] rounded-full w-[5rem] text-center font-bold "
   const normalLink = ""
@@ -28,6 +31,7 @@ const Navbar = () => {
 
   return (
     <div>
+
 
       <div className='relative'>
         <div className='flex justify-between items-center py-[2rem] px-[2rem]'>
