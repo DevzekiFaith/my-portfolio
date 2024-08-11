@@ -118,6 +118,12 @@ const About = () => {
               <div className="border w-[8rem] text-center rounded-full mb-4 p-2 text-white">
                 Figma
               </div>
+              <div className="border w-[8rem] text-center rounded-full mb-4 p-2 text-white">
+                React Native
+              </div>
+              <div className="border w-[8rem] text-center rounded-full mb-4 p-2 text-white">
+                Scss
+              </div>
             </div>
           </div>
         </div>
@@ -141,11 +147,19 @@ const About = () => {
               </h3>
             </span>
             <p className="mb-[1rem]">
-              lorem Dolor laboris consequat adipisicing laborum amet deserunt
-              Lorem ullamco.Aliqua quis labore ullamco ullamco. Sunt incididunt
-              aute veniam do ex velit ullamco qui commodo. Officia aliquip ad
-              anim eiusmod do consectetur proident pariatur enim. Id laboris ea
-              incididunt culpa ex dolor.
+              As a Frontend Engineer over the past two years, I have tackled
+              numerous industrial challenges, from optimizing complex user
+              interfaces for high-traffic e-commerce platforms to enhancing
+              accessibility for diverse user bases. My journey began with a
+              pivotal role in redesigning a legacy system, where I successfully
+              integrated modern frameworks like React.js and Next.js, resulting
+              in a 40% increase in user engagement. I have consistently focused
+              on performance optimization, reducing page load times by 30%
+              through efficient code practices and leveraging tools like Webpack
+              and Lighthouse. My passion for solving intricate problems has
+              driven me to stay ahead of the curve, continuously learning and
+              implementing the latest frontend technologies to deliver seamless
+              and intuitive user experiences.
             </p>
             <span className="flex justify-between mb-[1rem]">
               <h3 className="text-white font-bold text-lg">
@@ -156,11 +170,18 @@ const About = () => {
               </h3>
             </span>
             <p>
-              lorem Dolor laboris consequat adipisicing laborum amet deserunt
-              Lorem ullamco.Aliqua quis labore ullamco ullamco. Sunt incididunt
-              aute veniam do ex velit ullamco qui commodo. Officia aliquip ad
-              anim eiusmod do consectetur proident pariatur enim. Id laboris ea
-              incididunt culpa ex dolor.
+              During my internship at Tech Studio, I played a crucial role in
+              developing a food app for the academy called Techeat. Working
+              collaboratively in a dynamic team, I was responsible for
+              implementing key features using React.js, Next.js, and TypeScript,
+              while styling the application with Tailwind CSS and SCSS.
+              Additionally, I contributed to the mobile version using React
+              Native and integrated Firebase for authentication and MongoDB for
+              data storage. This project not only honed my technical skills but
+              also significantly impacted the students by providing them with a
+              seamless and intuitive platform to manage their meals, enhancing
+              their overall learning experience and engagement with the
+              academy's offerings.
             </p>
           </div>
         </div>
@@ -220,71 +241,71 @@ const About = () => {
             </div>
           </div>
           <form onSubmit={handleSubmit(onSubmit)}>
-              <div className="flex flex-col mb-[1rem]">
-                <label>Name:</label>
-                <input
-                  className="xl:w-[30rem] bg-slate-800 text-white border-0 h-[2.5rem]"
-                  type="text"
-                  placeholder="Enter UserName"
-                  {...register("Username", {
-                    required: "Username is required",
-                  })}
-                />
-                <span className="text-red-800 text-sm">
-                  {errors.Username?.message}
-                </span>
-              </div>
-              <div className="flex flex-col mb-[1rem]">
-                <label>Email:</label>
-                <input
-                  className="xl:w-[30rem] bg-slate-800 border-0 h-[2.5rem] mb-[1rem] text-white text-sm"
-                  type="text"
-                  placeholder="Email"
-                  {...register("Email", {
-                    required: "Email is required",
-                    pattern: "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$",
-                  })}
-                />
-                <span className="text-red-800 text-sm">
-                  {errors.Email?.message}
-                  {errors.Email?.type === "pattern" &&
-                    "Email should have the right pattern"}
-                </span>
-              </div>
-              <div className="flex flex-col mb-[1rem]">
-                <label>Password:</label>
-                <input
-                  className="xl:w-[30rem] bg-slate-800 border-0 h-[2.5rem] text-white"
-                  type="Password"
-                  placeholder="password"
-                  {...register("Password", {
-                    required: "Password is required",
-                    minLength: 5,
-                    maxLength: 10,
-                  })}
-                />
-                <span className="text-red-800 text-sm">
-                  {errors.Email?.message}
-                  {errors.Email?.type === "minLength" &&
-                    "Password must not  be less than 4 character"}
-                  {errors.Email?.type === "maxLength" &&
-                    "Password must be more than 10 character "}
-                </span>
-              </div>
-              <span className="flex flex-col mb-[1rem]">
-                <label>Message:</label>
-                <textarea
-                  className="xl:w-[30rem] w-[20rem] h-[6rem] scroll-m-3 bg-slate-800 border-0 text-white"
-                  placeholder="Hello..."
-                />
+            <div className="flex flex-col mb-[1rem]">
+              <label>Name:</label>
+              <input
+                className="xl:w-[30rem] bg-slate-800 text-white border-0 h-[2.5rem]"
+                type="text"
+                placeholder="Enter UserName"
+                {...register("Username", {
+                  required: "Username is required",
+                })}
+              />
+              <span className="text-red-800 text-sm">
+                {errors.Username?.message}
               </span>
-              <button
-                type="submit"
-                className="bg-yellow-300 w-[10rem] h-[3rem] rounded-full text-md uppercase font-bold mt-[2rem] text-black"
-              >
-                Submit
-              </button>
-            </form>
+            </div>
+            <div className="flex flex-col mb-[1rem]">
+              <label>Email:</label>
+              <input
+                className="xl:w-[30rem] bg-slate-800 border-0 h-[2.5rem] mb-[1rem] text-white text-sm"
+                type="text"
+                placeholder="Email"
+                {...register("Email", {
+                  required: "Email is required",
+                  pattern: "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$",
+                })}
+              />
+              <span className="text-red-800 text-sm">
+                {errors.Email?.message}
+                {errors.Email?.type === "pattern" &&
+                  "Email should have the right pattern"}
+              </span>
+            </div>
+            <div className="flex flex-col mb-[1rem]">
+              <label>Password:</label>
+              <input
+                className="xl:w-[30rem] bg-slate-800 border-0 h-[2.5rem] text-white"
+                type="Password"
+                placeholder="password"
+                {...register("Password", {
+                  required: "Password is required",
+                  minLength: 5,
+                  maxLength: 10,
+                })}
+              />
+              <span className="text-red-800 text-sm">
+                {errors.Email?.message}
+                {errors.Email?.type === "minLength" &&
+                  "Password must not  be less than 4 character"}
+                {errors.Email?.type === "maxLength" &&
+                  "Password must be more than 10 character "}
+              </span>
+            </div>
+            <span className="flex flex-col mb-[1rem]">
+              <label>Message:</label>
+              <textarea
+                className="xl:w-[30rem] w-[20rem] h-[6rem] scroll-m-3 bg-slate-800 border-0 text-white"
+                placeholder="Hello..."
+              />
+            </span>
+            <button
+              type="submit"
+              className="bg-yellow-300 w-[10rem] h-[3rem] rounded-full text-md uppercase font-bold mt-[2rem] text-black"
+            >
+              Submit
+            </button>
+          </form>
         </div>
       </div>
     </div>

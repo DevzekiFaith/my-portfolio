@@ -18,7 +18,8 @@ import Typewriter from "typewriter-effect";
 const Home = () => {
   const {
     register,
-    handleSubmit,reset,
+    handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
@@ -36,9 +37,7 @@ const Home = () => {
             options={{
               strings: [
                 `Hi, i am Ezekiel Oghojafor Ubor`,
-                `I build Software solutions for the web, mobile and data analysis as a Software Engineer
-                heavy on Front-end Engineering. Am passionate about building
-                accessible user friendly website and Mobile Apps`,
+                `I am a Front-end Engineer based in Nigeria with a background in Architecture, dedicated to creating accessible and user-friendly applications. Passionate about solving technical challenges, I am currently exploring advanced front-end tools such as React.js and Next.js. In addition to my professional pursuits, I enjoy playing basketball and continuously seek to improve my skills.`,
               ],
               autoStart: true,
               loop: true,
@@ -87,7 +86,7 @@ const Home = () => {
         <div className="xl:mt-[2rem] mt-0">
           {/* <h1 className='uppercase font-bold text-6xl w-[400px] ml-[14rem] xl:ml-0 xl:w-[600px]'>feature projects</h1> */}
           {/* <p className='w-[350px] text-slate-600 ml-[14rem] xl:ml-0'>Here are some of the selected projects that showcase my passion fro front-end Engineering</p> */}
-          <div className="bg-slate-700 xl:w-[36rem] w-[22rem] h-[28rem] mt-[2rem] active:scale-0 cursor-pointer hover:-translate-y-6  ">
+          <div className="xl:w-[36rem] w-[22rem] h-[28rem] mt-[2rem] active:scale-0 cursor-pointer hover:-translate-y-6  ">
             <div className="flex justify-center items-center xl:h-full shadow-2xl ">
               <img
                 className="xl:w-[55%] w-[90%] xl:ml-0"
@@ -164,8 +163,7 @@ const Home = () => {
 
       <div className="flex  xl:flex-row flex-col justify-center items-center xl:gap-[3rem] xl:p-[2rem] mt-[2rem]">
         <div className="xl:mt-[2rem]">
-         
-          <div className="bg-slate-700 xl:w-[36rem] w-[85%] xl:ml-0  ml-[2rem] h-[28rem] mt-[2rem] relative active:scale-0 cursor-pointer hover:-translate-y-6 ">
+          <div className="xl:w-[36rem] w-[85%] xl:ml-0  ml-[2rem] h-[28rem] mt-[2rem] relative active:scale-0 cursor-pointer hover:-translate-y-6 ">
             <img
               className="h-[22rem]"
               src={Image004}
@@ -250,7 +248,7 @@ const Home = () => {
         <div className="mt-[2rem]">
           {/* <h1 className='uppercase font-bold text-6xl'>feature projects</h1> */}
           {/* <p className='w-[350px] text-slate-600'>Here are some of the selected projects that showcase my passion fro front-end Engineering</p> */}
-          <div className="bg-slate-700 xl:w-[36rem] h-[28rem] mt-[2rem] active:scale-0 cursor-pointer hover:-translate-y-6 ">
+          <div className=" xl:w-[36rem] h-[28rem] mt-[2rem] active:scale-0 cursor-pointer hover:-translate-y-6 ">
             <div className="flex justify-center items-center h-full shadow-2xl">
               <img
                 className="w-[100%] h-[16rem]"
@@ -345,8 +343,8 @@ const Home = () => {
             I am a front-end Engineer based in Nigeria looking for exciting
             opportunities. I have an Architectural background. I like to focus
             on accessibility when developing. Am passionate and curious about
-            solving Tech Challenges. Currently, i'm exploring some Front-end
-            tools like React.js and Next.js. While i am programming I enjoy
+            solving Tech Challenges. Currently, i'm exploring some Language
+            tools like React Native and Python. When am not programming, I enjoy
             playing Basketball and more to improve my skills.{" "}
           </p>
 
