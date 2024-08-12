@@ -7,13 +7,17 @@ import Arrow from "/arrow-up-right-circle-fill.svg";
 import ImageProject001 from "/movie-app.jpg.png";
 import Image001 from "/twitter-x.svg";
 import Image002 from "/instagram.svg";
-import Image003 from "/PRACTICE2.jpg";
-import Image004 from "/psychedelic-paper-shapes-with-copy-space.jpg";
-import Image005 from "/netflix login clone.png";
+import Image003 from "/HeroPage.png";
+import Image004 from "/food Category.png";
+import Image005 from "/Techeat food app.png";
 import Image006 from "/add movie.png";
+import Image008 from "/signupPage.png";
 import { useForm } from "react-hook-form";
 import Typewriter from "typewriter-effect";
-// import Form from "react-hook-form"
+import { FaSquareGithub } from "react-icons/fa6";
+import { FaLinkedin } from "react-icons/fa";
+import { MdMarkEmailRead } from "react-icons/md";
+
 
 const Home = () => {
   const {
@@ -37,7 +41,7 @@ const Home = () => {
             options={{
               strings: [
                 `Hi, i am Ezekiel Oghojafor Ubor`,
-                `I am a Front-end Engineer based in Nigeria with a background in Architecture, dedicated to creating accessible and user-friendly applications. Passionate about solving technical challenges, I am currently exploring advanced front-end tools such as React.js and Next.js. In addition to my professional pursuits, I enjoy playing basketball and continuously seek to improve my skills.`,
+                `I am a Front-end Engineer with a background in Architecture, dedicated to creating accessible and user-friendly applications. Passionate about solving technical challenges, I am currently exploring other Languages such as Python. In addition to my professional pursuits, I enjoy playing basketball and continuously seek to improve my skills.`,
               ],
               autoStart: true,
               loop: true,
@@ -51,20 +55,16 @@ const Home = () => {
               </button>
             </Link>
 
-            <button className="w-[2.5rem] h-[2.5rem] shadow-2xl bg-slate-800  rounded-full">
-              <img
-                className="w-[2rem] h-[2rem] rounded-full ml-[.32rem]"
-                src={LinkdlnImage}
-                alt="linkedin logo"
-              />
-            </button>
-            <button className="w-[2.5rem] h-[2.5rem]  bg-slate-800  rounded-full">
-              <img
-                className="w-[2rem] h-[2rem] rounded-full ml-[.32rem]"
-                src={GitHubImage}
-                alt="Github logo"
-              />
-            </button>
+            <div className="flex justify-center items-center gap-1  w-[5rem]">
+               
+                <a href="https://www.linkedin.com/in/ezekiel-oghojafor-268889196/">
+                  <FaLinkedin className="w-[2rem] h-[2rem] cursor-pointer" />
+                </a>
+                <a href="https://github.com/DevzekiFaith">
+                  <FaSquareGithub className="w-[2rem] h-[2rem] cursor-pointer" />
+                </a>
+              
+              </div>
           </div>
         </div>
         <div className="">
@@ -81,7 +81,9 @@ const Home = () => {
         {/* // FEATURE PROJECT LINE */}
       </div>
       <hr className="bg-slate-800 xl:w-[80rem] w-full  xl:ml-[2rem]" />
-
+      <div className="ml-[9.5rem] mt-[2rem]">
+        <h1 className="text-[2rem]">FEATURED PROJECTS</h1>
+      </div>
       <div className="flex xl:flex-row flex-col justify-center items-center xl:gap-[3rem] xl:p-[2rem] p-0 ">
         <div className="xl:mt-[2rem] mt-0">
           {/* <h1 className='uppercase font-bold text-6xl w-[400px] ml-[14rem] xl:ml-0 xl:w-[600px]'>feature projects</h1> */}
@@ -103,14 +105,17 @@ const Home = () => {
             Movie-App Landing page for our favorite show
           </h3>
           <p>
-            Breathe life into a movie-app webpage for our beloved show,
-            Adventure Time. Delivered a fully responsive design with dynamic
-            content capabilities, seamlessly integrating a space for movie
-            addition feature to keep fans updated with the latest Adventure{" "}
+            Responsive web and mobile App.Breathe life into a movie-app webpage
+            for our beloved show, Adventure Time. Delivered a fully responsive
+            design with dynamic content capabilities, seamlessly integrating a
+            space for movie addition feature to keep fans updated with the
+            latest Adventure. So now, you can go to the Add movie, add your link, Image and rating and it will display on the All Movie Page.{" "}
           </p>
-          <p className="text-green-500">
-            <span className="text-white font-sans">Technology stack:</span>{" "}
-            React, Tailwind, MongoDB.
+          <p className="text-green-500 mt-2 mb-2">
+            <span className="text-white font-sans border border-slate-600 p-2 rounded-xl">
+              Technology stack:
+            </span>{" "}
+            React, Tailwind Css
           </p>
           <h2>
             <span className="text-white font-sana">Challenges:</span> In this
@@ -118,7 +123,7 @@ const Home = () => {
             by passing Props and that was a huge challenge at First
           </h2>
           <h3>
-            <span className="text-white font-sans">Solution:</span> After
+            <span className="text-white font-sans ">Solution:</span> After
             regular error prompts, i had to make research on the error and got
             different solutions for one challenge and that was how i learnt that
             exercise without Routing{" "}
@@ -137,10 +142,19 @@ const Home = () => {
             <p>Front-end Engineering</p>
           </span>
           <div className=" flex justify-between mt-[2rem] cursor-pointer">
-            <span className="flex cursor-pointer w-[10rem] gap-2">
-              <a href="https://tinyurl.com/yc7n9vb5" target="_blank"></a>
-              <h1 className="uppercase text-yellow-300 underline">LIVE DEMO</h1>
-              <img src={Arrow} alt="Arrow" />
+          <span className="flex cursor-pointer gap-2">
+              <a
+                href="https://movie-app-two-liart.vercel.app/"
+                target="_blank"
+              >
+                <h1 className="uppercase text-yellow-300 underline">
+                  {" "}
+                  <span className="flex gap-2">
+                    <img src={Arrow} alt="Arrow" />
+                    LIVE DEMO
+                  </span>{" "}
+                </h1>
+              </a>
             </span>
             {/* <h1 className='text-yellow-300 underline'>SEE ON GITHUB</h1> */}
             <a
@@ -172,7 +186,7 @@ const Home = () => {
             />
             <div className="flex justify-center items-center shadow-2xl">
               <img
-                className="xl:w-[75%] h-[18rem] absolute top-[4rem] "
+                className="xl:w-[85%] h-[22rem] absolute top-[10rem] "
                 src={Image003}
                 placeholder="Blur"
                 alt="project image"
@@ -183,17 +197,27 @@ const Home = () => {
 
         <div className="xl:w-[40%] w-[80%] mt-[2rem]">
           <h3 className="text-lg font-medium uppercase text-white xl:mt-[5rem] mb-[1rem]">
-            Real Estate Landing page for our favorite show
+            Recipe Food App For Restaurants
           </h3>
           <p>
-            Basic Real Estate Web and mobile App development, Adventure Time.
-            Delivered a fully responsive design with dynamic content
-            capabilities, seamlessly integrating a space for Property Addition
-            and image feature to keep fans updated with the latest Adventure{" "}
+            Responsive Web and Mobile Savour-App is a versatile recipe app
+            designed for both home cooks and restaurant chefs, offering a
+            comprehensive platform to discover, create, and manage recipes.
+            Built with Next.js for a seamless user experience, the app features
+            an intuitive interface that allows users to easily browse through a
+            vast collection of recipes, save their favorites, and generate
+            shopping lists. Advanced search and filtering options enable users
+            to find recipes based on ingredients, cuisine, and dietary
+            preferences. With robust styling using Tailwind CSS and SCSS, and
+            secure data management through Firebase and MongoDB, RecipeMaster
+            enhances culinary creativity and efficiency in both home kitchens
+            and professional settings.
           </p>
-          <p className="text-green-500">
-            <span className="text-white font-sans">Technology stack:</span>{" "}
-            React, Tailwind, Html, Css, React Router, NavLink,useNavigate.
+          <p className="text-green-500 mt-2 mb-2">
+            <span className="text-white font-sans border border-slate-600 p-2 rounded-xl shadow-xl">
+              Technology stack:
+            </span>{" "}
+            Next.js, Typescript, Tailwind Css, Jsx, Css, Scss.
           </p>
           <h2>
             <span className="text-white font-sana">Challenges:</span> In this
@@ -204,14 +228,14 @@ const Home = () => {
             <span className="text-white font-sans">Solution:</span> After
             regular error prompts, i had to make research on the error and got
             different solutions for one challenge i had to use the
-            React-Router-Documentation for a proffered solution{" "}
+            React-Router-Documentation for a profered solution{" "}
           </h3>
 
           <h2 className="uppercase font-semibold mt-[1rem] mb-[.5rem] text-white">
             Project info
           </h2>
           <hr />
-          <span className="flex justify-between mt-[2rem]">
+          <span className="flex justify-between mt-[2rem] ">
             <p className="text-white">Year</p>
             <p>2023</p>
           </span>
@@ -220,24 +244,33 @@ const Home = () => {
             <p className="text-white">Role</p>
             <p>Front-end Engineering</p>
           </span>
-          <div className=" flex justify-between mt-[2rem] cursor-pointer ">
+          <div className=" flex justify-between mt-[2rem] cursor-pointer">
             <span className="flex cursor-pointer gap-2">
-              <a href="https://tinyurl.com/yc7n9vb5" target="_blank"></a>
-              <h1 className="uppercase text-yellow-300 underline">LIVE DEMO</h1>
-              <img src={Arrow} alt="Arrow" />
+              <a
+                href="https://savour-a6hnlhowu-devzekifaiths-projects.vercel.app/"
+                target="_blank"
+              >
+                <h1 className="uppercase text-yellow-300 underline">
+                  {" "}
+                  <span className="flex gap-2">
+                    <img src={Arrow} alt="Arrow" />
+                    LIVE DEMO
+                  </span>{" "}
+                </h1>
+              </a>
             </span>
-            {/* <h1 className='text-yellow-300 underline'>SEE ON GITHUB</h1> */}
             <a
-              href="https://github.com/DevzekiFaith/movie-app.git"
+              href="https://github.com/DevzekiFaith/Savour-app.git"
               target="_blank"
-            ></a>
-            <h1 className="uppercase text-yellow-300 underline">
-              {" "}
-              <span className="flex gap-2">
-                <img src={GitHubImage} alt="Github" />
-                SEE ON GITHUB
-              </span>{" "}
-            </h1>
+            >
+              <h1 className="uppercase text-yellow-300 underline">
+                {" "}
+                <span className="flex gap-2">
+                  <img src={GitHubImage} alt="Github" />
+                  SEE ON GITHUB
+                </span>{" "}
+              </h1>
+            </a>
           </div>
         </div>
       </div>
@@ -248,13 +281,21 @@ const Home = () => {
         <div className="mt-[2rem]">
           {/* <h1 className='uppercase font-bold text-6xl'>feature projects</h1> */}
           {/* <p className='w-[350px] text-slate-600'>Here are some of the selected projects that showcase my passion fro front-end Engineering</p> */}
-          <div className=" xl:w-[36rem] h-[28rem] mt-[2rem] active:scale-0 cursor-pointer hover:-translate-y-6 ">
+          <div className=" xl:w-[36rem] h-[28rem] mt-[2rem] active:scale-0 cursor-pointer hover:-translate-y-6 relative">
             <div className="flex justify-center items-center h-full shadow-2xl">
               <img
-                className="w-[100%] h-[16rem]"
+                className="w-[90%] h-[24rem]"
                 src={Image005}
                 placeholder="Blur"
                 alt="project image"
+              />
+            </div>
+            <div className="absolute top-[12rem]">
+              <img
+                className="h-[18rem] w-[28rem]"
+                src={Image008}
+                placeholder="blur"
+                alt="background Image"
               />
             </div>
           </div>
@@ -262,29 +303,38 @@ const Home = () => {
 
         <div className="xl:w-[40%]">
           <h3 className="text-lg font-medium uppercase text-white xl:mt-[5rem] mb-[1rem]">
-            Netflix Landing page for our favorite show
+            TECHEAT APP
           </h3>
           <p>
-            Built a clone Login webpage of Netflix for our beloved show,
-            Adventure Time. Delivered a fully responsive design with dynamic
-            content capabilities, seamlessly integrating a space for movie
-            addition feature to keep fans updated with the latest Adventure. The
-            goal was to make the login bg transparent{" "}
+            Techeat is a Responsive Web and Mobile innovative food app designed
+            for students,providing a seamless platform to manage their meals.
+            The app features a user-friendly interface built with React.js and
+            Next.js, ensuring a responsive and intuitive experience. It allows
+            students to browse meal options, place orders, and track their
+            nutrition intake effortlessly. Leveraging technologies and
+            integrating Firebase for secure authentication and MongoDB for
+            efficient data management, Techeat enhances the overall student
+            experience by simplifying meal planning and promoting healthy eating
+            habits.{" "}
           </p>
-          <p className="text-green-500">
-            <span className="text-white font-sans">Technology stack:</span>{" "}
-            React, Tailwind, Scss and css{" "}
+          <p className="text-green-500 mt-2 mb-2">
+            <span className="text-white font-sans border border-slate-600 p-2 rounded-xl pt-2 pb-2">
+              Technology stack:
+            </span>{" "}
+            React, Tailwind Css, Scss and css{" "}
           </p>
           <h2>
-            <span className="text-white font-sana">Challenges:</span> In this
-            project i cloned the Login page of Netflix to create a more styled
-            background using transparency for glass-like feel
+            <span className="text-white font-sana">Challenges:</span>In this
+            project, I designed a visually appealing login page for Techeat. One
+            of the challenges i encountered was toggling the screen from SignUp
+            to Sign. this challenge came in as a result of the Product design .
           </h2>
           <h3>
             <span className="text-white font-sans">Solution:</span> After
-            regular error prompts, i had to make research on the error and got
-            different solutions for one challenge and that was how i learnt
-            making background of things transparent
+            regular error prompts, i had to make research on the error and 
+            brought the solution to the team which lead to changing the way the
+            SignUp and SignIn card was designed cause the methods were
+            conflicting.
           </h3>
 
           <h2 className="uppercase font-semibold mt-[1rem] mb-[.5rem] text-white">
@@ -301,15 +351,19 @@ const Home = () => {
             <p>Front-end Engineering</p>
           </span>
           <div className=" flex justify-between mt-[2rem] cursor-pointer">
-            <span className="flex cursor-pointer">
-              <a href="https://tinyurl.com/yc7n9vb5" target="_blank"></a>
-              <h1 className="uppercase text-yellow-300 underline w-[6rem]">
-                LIVE DEMO
-              </h1>
-              <img src={Arrow} alt="Arrow" />
+            <span className="flex cursor-pointer gap-2">
+              <a href="https://techitz.netlify.app/signup" target="_blank">
+                <h1 className="uppercase text-yellow-300 underline">
+                  {" "}
+                  <span className="flex gap-2">
+                    <img src={Arrow} alt="Arrow" />
+                    LIVE DEMO
+                  </span>{" "}
+                </h1>
+              </a>
             </span>
             <a
-              href="https://github.com/DevzekiFaith/movie-app.git"
+              href="https://github.com/willybrown100/techeat.git"
               target="_blank"
             >
               <h1 className="uppercase text-yellow-300 underline">
@@ -367,40 +421,39 @@ const Home = () => {
               <h1 className="uppercase text-6xl font-bold mb-[1.5rem] active:scale-0 cursor-pointer hover:-translate-y-6">
                 let's connect
               </h1>
-              <p className="">
+              <p className="flex">
                 Say hello at{" "}
                 <span className="underline cursor-pointer text-yellow-300 ml-1">
-                  {" "}
-                  zekipossible@gmail.com
+
+                 
+                  
+                <a href="https://mail.google.com/mail/u/0/#inbox?compose=new">
+                  <MdMarkEmailRead className="w-[1.5rem] h-[1.5rem] cursor-pointer" />
+                </a>
                 </span>
               </p>
-              <a href="" target="_blank"></a>
-              <p>for more info, here is my Resume</p>
+            
             </div>
-            <div className="flex xl:ml-[-5rem] ml-[2rem] gap-[1rem] mt-[1rem] ">
-              <img
-                className="w-[1rem] h-[1rem]"
-                src={LinkdlnImage}
-                alt="linkdin icon"
-              />
-              <img
-                className="w-[1rem] h-[1rem]"
-                src={GitHubImage}
-                alt="Github icon"
-              />
-              <img className="w-[1rem] h-[1rem]" src={Image001} alt="" />
-              <img className="w-[1rem] h-[1rem]" src={Image002} alt="" />
-            </div>
+            <div className="flex justify-center items-center gap-1  w-[5rem] mt-2">
+               
+                <a href="https://www.linkedin.com/in/ezekiel-oghojafor-268889196/">
+                  <FaLinkedin className="w-[2rem] h-[2rem] cursor-pointer" />
+                </a>
+                <a href="https://github.com/DevzekiFaith">
+                  <FaSquareGithub className="w-[2rem] h-[2rem] cursor-pointer" />
+                </a>
+              
+              </div>
           </div>
 
           <div className="xl:ml-[6rem] mt-[4rem]">
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="flex flex-col mb-[1rem]">
-                <label>Name:</label>
+                <label>Name</label>
                 <input
-                  className="xl:w-[30rem] bg-slate-800 text-white border-0 h-[2.5rem]"
+                  className="xl:w-[30rem] bg-transparent text-white border-0 h-[2.5rem]"
                   type="text"
-                  placeholder="Enter UserName"
+                  placeholder=""
                   {...register("Username", {
                     required: "Username is required",
                   })}
@@ -410,11 +463,11 @@ const Home = () => {
                 </span>
               </div>
               <div className="flex flex-col mb-[1rem]">
-                <label>Email:</label>
+                <label>Email</label>
                 <input
-                  className="xl:w-[30rem] bg-slate-800 border-0 h-[2.5rem] mb-[1rem] text-white text-sm"
+                  className="xl:w-[30rem] bg-transparent border-0 h-[2.5rem] mb-[1rem] text-white text-sm"
                   type="text"
-                  placeholder="Email"
+                  placeholder=""
                   {...register("Email", {
                     required: "Email is required",
                     pattern: "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$",
@@ -427,11 +480,11 @@ const Home = () => {
                 </span>
               </div>
               <div className="flex flex-col mb-[1rem]">
-                <label>Password:</label>
+                <label>Password</label>
                 <input
-                  className="xl:w-[30rem] bg-slate-800 border-0 h-[2.5rem] text-white"
+                  className="xl:w-[30rem] bg-transparent border-0 h-[2.5rem] text-white"
                   type="Password"
-                  placeholder="password"
+                  placeholder=""
                   {...register("Password", {
                     required: "Password is required",
                     minLength: 5,
@@ -447,7 +500,7 @@ const Home = () => {
                 </span>
               </div>
               <span className="flex flex-col mb-[1rem]">
-                <label>Message:</label>
+                <label>Message</label>
                 <textarea
                   className="xl:w-[30rem] w-[20rem] h-[6rem] scroll-m-3 bg-slate-800 border-0 text-white"
                   placeholder="Hello..."

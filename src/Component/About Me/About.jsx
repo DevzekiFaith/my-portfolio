@@ -8,6 +8,8 @@ import Image007 from "/image 25.png";
 import DownloadImage from "/download.svg";
 import Typewriter from "typewriter-effect";
 import { useForm } from "react-hook-form";
+import { FaSquareGithub } from "react-icons/fa6";
+import { FaLinkedin } from "react-icons/fa";
 
 const About = () => {
   const {
@@ -35,31 +37,37 @@ const About = () => {
           </div>
           <div className="w-[100%] xl:p-[3rem]">
             <h2 className="xl:w-[500px] mb-[2rem] uppercase text-white font-bold">
-              Am a Front-end Engineer.
+            Front-end Engineer.
             </h2>
             <Typewriter
               options={{
                 strings: [
                   "Hello",
-                  "I am a Software Engineer front-end heavy looking for exciting opportunities. I have an Architectural background. I like to focus on accessibility when developing. Am passionate and curious about solving Tech Challenges. Currently, i'm exploring some Front-end tools like React.js and Next.js. While i am programming I enjoy playing Basketball and more to improve my skills",
+                  "I am a Software Engineer front-end heavy looking for exciting opportunities. I have an Architectural background. I like to focus on accessibility when developing. Am passionate and curious about solving Tech Challenges. Currently, i'm exploring some Front-end tools like React.js and Next.js. When i am programming I enjoy playing Basketball and more to improve my skills and my brain strenght",
                 ],
                 autoStart: true,
                 loop: true,
               }}
             />
 
-            <div className="flex gap-[1rem] items-center w-full">
-              <div className="flex justify-center items-center">
-                <button className="bg-yellow-300 w-[14rem] h-[2.5rem] rounded-full mt-[2rem] font-extrabold">
+            <div className="flex justify-start gap-[1rem] items-center w-full h-[3rem] mt-[3rem]">
+              <div className="flex justify-center items-center gap-[1rem]">
+                <a  href="MAIN RESUME.pdf" download className="bg-yellow-300 w-[14rem] rounded-full font-extrabold pl-[2rem] pt-[.7rem] h-[3rem] cursor-pointer">
                   Download Resume
-                </button>
-                <div className="mt-[1.8rem] ml-[-2rem]">
+                </a>
+                <span className=" ml-[-4rem]">
                   <img src={DownloadImage} alt="Download image" />
-                </div>
+                </span>
               </div>
-              <div className="flex justify-center items-center gap-1 mt-[2rem] w-[5rem]">
-                <img className="w-[2rem] h-[2rem]" src={Image004} alt="" />
-                <img className="w-[2rem] h-[2rem]" src={Image005} alt="" />
+              <div className="flex justify-center items-center gap-1 mt-[1.2rem] w-[5rem] ml-[2rem]">
+              
+                <a href="https://www.linkedin.com/in/ezekiel-oghojafor-268889196/">
+                  <FaLinkedin className="w-[1.8rem] h-[1.8rem]" />
+                </a>
+                <a href="https://github.com/DevzekiFaith">
+                  <FaSquareGithub className="w-[1.8rem] h-[1.8rem]" />
+                </a>
+                
               </div>
             </div>
           </div>
@@ -208,10 +216,10 @@ const About = () => {
                 </span>
               </p>
               <a href="" target="_blank"></a>
-              <p>
+              {/* <p>
                 for more info, here is my{" "}
                 <span className="underline">Resume</span>
-              </p>
+              </p> */}
             </div>
             <div className="flex xl:ml-[-5rem] ml-[2rem] gap-[1rem] mt-[1rem] ">
               <img
@@ -237,7 +245,7 @@ const About = () => {
             </div>
             <div className="xl:ml-[-5rem] xl:mt-[15rem] mt-[4rem] text-slate-600 text-sm ml-[2rem]">
               {" "}
-              <span>&copy; ROBERT GARCIA2023</span>
+              <span>&copy; EZEKIEL OGHOJAFOR UBOR2023</span>
             </div>
           </div>
           <form onSubmit={handleSubmit(onSubmit)}>
