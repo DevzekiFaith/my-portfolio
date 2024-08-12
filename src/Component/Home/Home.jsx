@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ProfileImage from "/image.png";
+import ProfileImage from "/p.image.jpg";
 import LinkdlnImage from "/linkedin.svg";
 import GitHubImage from "/github.svg";
 import Arrow from "/arrow-up-right-circle-fill.svg";
@@ -67,10 +67,10 @@ const Home = () => {
               </div>
           </div>
         </div>
-        <div className="">
-          <div className="xl:w-[500px] w-[300px] xl:ml-[5rem] ">
+        <div className="rounded-2xl">
+          <div className="xl:w-[500px] w-[300px] xl:ml-[5rem]">
             <img
-              className="w-[100%]"
+              className="w-[100%] rounded-2xl"
               src={ProfileImage}
               placeholder="Blur"
               alt="profile picture"
