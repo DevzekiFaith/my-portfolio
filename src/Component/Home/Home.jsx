@@ -414,14 +414,14 @@ const Home = () => {
               </h1>
               <p className="flex">
                 Say hello at{" "}
-                <span className="underline cursor-pointer text-yellow-300 ml-1">
+                {/* <span className="underline cursor-pointer text-yellow-300 ml-1">
                   <a href="https://mail.google.com/mail/u/0/#inbox?compose=new">
                     <MdMarkEmailRead className="w-[1.5rem] h-[1.5rem] cursor-pointer" />
                   </a>
-                </span>
+                </span> */}
               </p>
             </div>
-            <div className="flex justify-center items-center gap-1  w-[5rem] mt-2 ml-[2rem]">
+            <div className="flex justify-center items-center gap-1  w-[5rem] mt-2 pl-[2rem]">
               <a className="" href="https://www.linkedin.com/in/ezekiel-oghojafor-268889196/">
                 <FaLinkedin className="w-[2rem] h-[2rem] cursor-pointer"/>
               </a>

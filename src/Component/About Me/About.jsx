@@ -134,6 +134,12 @@ const About = () => {
               <div className="border w-[8rem] text-center rounded-full mb-4 p-2 text-white">
                 Scss
               </div>
+              <div className="border w-[8rem] text-center rounded-full mb-4 p-2 text-white">
+                Git
+              </div>
+              <div className="border w-[8rem] text-center rounded-full mb-4 p-2 text-white">
+                GitHub
+              </div>
             </div>
           </div>
         </div>
