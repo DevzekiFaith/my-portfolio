@@ -18,7 +18,6 @@ import { FaSquareGithub } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 import { MdMarkEmailRead } from "react-icons/md";
 
-
 const Home = () => {
   const {
     register,
@@ -56,15 +55,13 @@ const Home = () => {
             </Link>
 
             <div className="flex justify-center items-center gap-1  w-[5rem]">
-               
-                <a href="https://www.linkedin.com/in/ezekiel-oghojafor-268889196/">
-                  <FaLinkedin className="w-[2rem] h-[2rem] cursor-pointer" />
-                </a>
-                <a href="https://github.com/DevzekiFaith">
-                  <FaSquareGithub className="w-[2rem] h-[2rem] cursor-pointer" />
-                </a>
-              
-              </div>
+              <a href="https://www.linkedin.com/in/ezekiel-oghojafor-268889196/">
+                <FaLinkedin className="w-[2rem] h-[2rem] cursor-pointer" />
+              </a>
+              <a href="https://github.com/DevzekiFaith">
+                <FaSquareGithub className="w-[2rem] h-[2rem] cursor-pointer" />
+              </a>
+            </div>
           </div>
         </div>
         <div className="rounded-2xl">
@@ -109,7 +106,8 @@ const Home = () => {
             for our beloved show, Adventure Time. Delivered a fully responsive
             design with dynamic content capabilities, seamlessly integrating a
             space for movie addition feature to keep fans updated with the
-            latest Adventure. So now, you can go to the Add movie, add your link, Image and rating and it will display on the All Movie Page.{" "}
+            latest Adventure. So now, you can go to the Add movie, add your
+            link, Image and rating and it will display on the All Movie Page.{" "}
           </p>
           <p className="text-green-500 mt-2 mb-2">
             <span className="text-white font-sans border border-slate-600 p-2 rounded-xl">
@@ -118,12 +116,12 @@ const Home = () => {
             React, Tailwind Css
           </p>
           <h2>
-            <span className="text-white font-sana">Challenges:</span> In this
+            <span className="text-white font-sana">Challenges: </span> In this
             project i did not use React Router, i did the foundational Routing
             by passing Props and that was a huge challenge at First
           </h2>
           <h3>
-            <span className="text-white font-sans ">Solution:</span> After
+            <span className="text-white font-sans ">Solution: </span> After
             regular error prompts, i had to make research on the error and got
             different solutions for one challenge and that was how i learnt that
             exercise without Routing{" "}
@@ -142,11 +140,8 @@ const Home = () => {
             <p>Front-end Engineering</p>
           </span>
           <div className=" flex justify-between mt-[2rem] cursor-pointer">
-          <span className="flex cursor-pointer gap-2">
-              <a
-                href="https://movie-app-two-liart.vercel.app/"
-                target="_blank"
-              >
+            <span className="flex cursor-pointer gap-2">
+              <a href="https://movie-app-two-liart.vercel.app/" target="_blank">
                 <h1 className="uppercase text-yellow-300 underline">
                   {" "}
                   <span className="flex gap-2">
@@ -220,7 +215,7 @@ const Home = () => {
             Next.js, Typescript, Tailwind Css, Jsx, Css, Scss.
           </p>
           <h2>
-            <span className="text-white font-sana">Challenges:</span> In this
+            <span className="text-white font-sana">Challenges: </span> In this
             project i did not use React Router, i did the foundational Routing
             by passing Props and that was a huge challenge at First
           </h2>
@@ -247,7 +242,7 @@ const Home = () => {
           <div className=" flex justify-between mt-[2rem] cursor-pointer">
             <span className="flex cursor-pointer gap-2">
               <a
-                href="https://savour-a6hnlhowu-devzekifaiths-projects.vercel.app/"
+                href="https://savour-app.vercel.app/"
                 target="_blank"
               >
                 <h1 className="uppercase text-yellow-300 underline">
@@ -331,7 +326,7 @@ const Home = () => {
           </h2>
           <h3>
             <span className="text-white font-sans">Solution:</span> After
-            regular error prompts, i had to make research on the error and 
+            regular error prompts, i had to make research on the error and
             brought the solution to the team which lead to changing the way the
             SignUp and SignIn card was designed cause the methods were
             conflicting.
@@ -390,8 +385,7 @@ const Home = () => {
         </div>
         <div className="w-[100%] p-[3rem]">
           <h2 className="xl:w-[500px] mb-[2rem] uppercase text-white font-bold">
-            Am a Front-end Engineer and  I have An Architectural
-            background{" "}
+            Am a Front-end Engineer and I have An Architectural background{" "}
           </h2>
           <p>
             I am a front-end Engineer based in Nigeria looking for exciting
@@ -424,26 +418,20 @@ const Home = () => {
               <p className="flex">
                 Say hello at{" "}
                 <span className="underline cursor-pointer text-yellow-300 ml-1">
-
-                 
-                  
-                <a href="https://mail.google.com/mail/u/0/#inbox?compose=new">
-                  <MdMarkEmailRead className="w-[1.5rem] h-[1.5rem] cursor-pointer" />
-                </a>
+                  <a href="https://mail.google.com/mail/u/0/#inbox?compose=new">
+                    <MdMarkEmailRead className="w-[1.5rem] h-[1.5rem] cursor-pointer" />
+                  </a>
                 </span>
               </p>
-            
             </div>
             <div className="flex justify-center items-center gap-1  w-[5rem] mt-2">
-               
-                <a href="https://www.linkedin.com/in/ezekiel-oghojafor-268889196/">
-                  <FaLinkedin className="w-[2rem] h-[2rem] cursor-pointer" />
-                </a>
-                <a href="https://github.com/DevzekiFaith">
-                  <FaSquareGithub className="w-[2rem] h-[2rem] cursor-pointer" />
-                </a>
-              
-              </div>
+              <a href="https://www.linkedin.com/in/ezekiel-oghojafor-268889196/">
+                <FaLinkedin className="w-[2rem] h-[2rem] cursor-pointer" />
+              </a>
+              <a href="https://github.com/DevzekiFaith">
+                <FaSquareGithub className="w-[2rem] h-[2rem] cursor-pointer" />
+              </a>
+            </div>
           </div>
 
           <div className="xl:ml-[6rem] mt-[4rem]">
