@@ -390,7 +390,7 @@ const Home = () => {
         </div>
         <div className="w-[100%] p-[3rem]">
           <h2 className="xl:w-[500px] mb-[2rem] uppercase text-white font-bold">
-            Am a Front-end Engineer based in Nigeria. I have An Architectural
+            Am a Front-end Engineer and  I have An Architectural
             background{" "}
           </h2>
           <p>

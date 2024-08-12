@@ -37,7 +37,7 @@ const About = () => {
           </div>
           <div className="w-[100%] xl:p-[3rem]">
             <h2 className="xl:w-[500px] mb-[2rem] uppercase text-white font-bold">
-            Front-end Engineer.
+              Front-end Engineer.
             </h2>
             <Typewriter
               options={{
@@ -52,7 +52,11 @@ const About = () => {
 
             <div className="flex justify-start gap-[1rem] items-center w-full h-[3rem] mt-[3rem]">
               <div className="flex justify-center items-center gap-[1rem]">
-                <a  href="MAIN RESUME.pdf" download className="bg-yellow-300 w-[14rem] rounded-full font-extrabold pl-[2rem] pt-[.7rem] h-[3rem] cursor-pointer">
+                <a
+                  href="MAIN RESUME.pdf"
+                  download
+                  className="bg-yellow-300 w-[14rem] rounded-full font-extrabold pl-[2rem] pt-[.7rem] h-[3rem] cursor-pointer"
+                >
                   Download Resume
                 </a>
                 <span className=" ml-[-4rem]">
@@ -60,14 +64,12 @@ const About = () => {
                 </span>
               </div>
               <div className="flex justify-center items-center gap-1 mt-[1.2rem] w-[5rem] ml-[2rem]">
-              
                 <a href="https://www.linkedin.com/in/ezekiel-oghojafor-268889196/">
                   <FaLinkedin className="w-[1.8rem] h-[1.8rem]" />
                 </a>
                 <a href="https://github.com/DevzekiFaith">
                   <FaSquareGithub className="w-[1.8rem] h-[1.8rem]" />
                 </a>
-                
               </div>
             </div>
           </div>
