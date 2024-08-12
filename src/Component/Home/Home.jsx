@@ -241,10 +241,7 @@ const Home = () => {
           </span>
           <div className=" flex justify-between mt-[2rem] cursor-pointer">
             <span className="flex cursor-pointer gap-2">
-              <a
-                href="https://savour-app.vercel.app/"
-                target="_blank"
-              >
+              <a href="https://savour-app.vercel.app/" target="_blank">
                 <h1 className="uppercase text-yellow-300 underline">
                   {" "}
                   <span className="flex gap-2">
@@ -424,9 +421,9 @@ const Home = () => {
                 </span>
               </p>
             </div>
-            <div className="flex justify-center items-center gap-1  w-[5rem] mt-2">
-              <a href="https://www.linkedin.com/in/ezekiel-oghojafor-268889196/">
-                <FaLinkedin className="w-[2rem] h-[2rem] cursor-pointer" />
+            <div className="flex justify-center items-center gap-1  w-[5rem] mt-2 ml-[2rem]">
+              <a className="" href="https://www.linkedin.com/in/ezekiel-oghojafor-268889196/">
+                <FaLinkedin className="w-[2rem] h-[2rem] cursor-pointer"/>
               </a>
               <a href="https://github.com/DevzekiFaith">
                 <FaSquareGithub className="w-[2rem] h-[2rem] cursor-pointer" />
