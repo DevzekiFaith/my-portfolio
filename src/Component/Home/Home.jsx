@@ -33,8 +33,8 @@ const Home = () => {
   };
   return (
     <div className="bg-black">
-      <div className="flex xl:flex-row flex-col justify-center items-start  p-[4rem] gap-[4rem] md:flex md:justify-center md:items-center  md:w-[450]">
-        <div className="w-[400px] xl:mt-[8rem]">
+      <div className="flex xl:flex-row flex-col justify-center items-start  p-[4rem] gap-[4rem] md:flex md:justify-center md:items-center md:w-[450]">
+        <div className="w-[300px] xl:mt-[8rem]">
           <Typewriter
             className="font-bold text-[3rem]"
             options={{
@@ -67,7 +67,7 @@ const Home = () => {
         <div className="rounded-2xl">
           <div className="xl:w-[500px] w-[300px] xl:ml-[5rem]">
             <img
-              className="w-[100%] rounded-2xl"
+              className="w-[100%] rounded-2xl ml-[-1rem]"
               src={ProfileImage}
               placeholder="Blur"
               alt="profile picture"
@@ -79,7 +79,7 @@ const Home = () => {
       </div>
       <hr className="bg-slate-800 xl:w-[80rem] w-full  xl:ml-[2rem]" />
       <div className="ml-[9.5rem] mt-[2rem]">
-        <h1 className="text-[2rem]">FEATURED PROJECTS</h1>
+        <h1 className="xl:text-[2rem] text-[2rem] xl:ml-0 ml-[-2rem]">FEATURED PROJECTS</h1>
       </div>
       <div className="flex xl:flex-row flex-col justify-center items-center xl:gap-[3rem] xl:p-[2rem] p-0 ">
         <div className="xl:mt-[2rem] mt-0">
@@ -174,14 +174,14 @@ const Home = () => {
         <div className="xl:mt-[2rem]">
           <div className="xl:w-[36rem] w-[85%] xl:ml-0  ml-[2rem] h-[28rem] mt-[2rem] relative active:scale-0 cursor-pointer hover:-translate-y-6 ">
             <img
-              className="h-[22rem]"
+              className="h-[22rem] rounded-xl"
               src={Image004}
               placeholder="blur"
               alt="background Image"
             />
             <div className="flex justify-center items-center shadow-2xl">
               <img
-                className="xl:w-[85%] h-[22rem] absolute top-[10rem] "
+                className="xl:w-[85%] xl:h-[22rem] h-[14rem] absolute top-[10rem] rounded-xl w-[300px]"
                 src={Image003}
                 placeholder="Blur"
                 alt="project image"
@@ -276,15 +276,15 @@ const Home = () => {
           <div className=" xl:w-[36rem] h-[28rem] mt-[2rem] active:scale-0 cursor-pointer hover:-translate-y-6 relative">
             <div className="flex justify-center items-center h-full shadow-2xl">
               <img
-                className="w-[90%] h-[24rem]"
+                className="w-[90%] h-[24rem] rounded-xl"
                 src={Image005}
                 placeholder="Blur"
                 alt="project image"
               />
             </div>
-            <div className="absolute top-[12rem]">
+            <div className="absolute top-[12rem] ">
               <img
-                className="h-[18rem] w-[28rem]"
+                className="xl:h-[18rem] w-[28rem] rounded-xl h-[14rem]"
                 src={Image008}
                 placeholder="blur"
                 alt="background Image"
