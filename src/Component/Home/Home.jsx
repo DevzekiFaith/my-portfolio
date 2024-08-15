@@ -78,8 +78,8 @@ const Home = () => {
         {/* // FEATURE PROJECT LINE */}
       </div>
       <hr className="bg-slate-800 xl:w-[80rem] w-full  xl:ml-[2rem]" />
-      <div className="ml-[9.5rem] mt-[2rem]">
-        <h1 className="xl:text-[2rem] text-[2rem] xl:ml-0 ml-[-2rem]">FEATURED PROJECTS</h1>
+      <div className="ml-[9.5rem] mt-[2rem] mb-4 font-bold">
+        <h1 className="xl:text-[2rem] text-[2rem] xl:ml-0 ml-[-6rem]">FEATURED PROJECTS</h1>
       </div>
       <div className="flex xl:flex-row flex-col justify-center items-center xl:gap-[3rem] xl:p-[2rem] p-0 ">
         <div className="xl:mt-[2rem] mt-0">

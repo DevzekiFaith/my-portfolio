@@ -85,7 +85,7 @@ const About = () => {
 
         {/* MY CAPABILITIES LINE */}
 
-        <div className="flex xl:flex-row flex-col justify-center items-center xl:gap-[4rem] mt-[3rem] p-4 mb-[3rem] xl:h-[40rem]">
+        <div className="flex xl:flex-row flex-col justify-center items-center xl:gap-[2rem] mt-[3rem] p-4 mb-[3rem] xl:h-[40rem] xl:mr-4">
           <div className="w-[100%]">
             <h1 className="text-6xl font-extrabold uppercase xl:pl-[-8rem] text-center xl:mb-[11rem]">
               my capabilities
@@ -189,7 +189,7 @@ const About = () => {
               During my internship at Tech Studio, I played a crucial role in
               developing a food app for the academy called Techeat. Working
               collaboratively in a dynamic team, I was responsible for
-              implementing key features using React.js, Next.js, and TypeScript,
+              implementing key features using React.js and Tailwind,
               while styling the application with Tailwind CSS and SCSS.
               Additionally, I contributed to the mobile version using React
               Native and integrated Firebase for authentication and MongoDB for
@@ -260,9 +260,9 @@ const About = () => {
             <div className="flex flex-col mb-[1rem]">
               <label>Name:</label>
               <input
-                className="xl:w-[30rem] bg-slate-800 text-white border-0 h-[2.5rem]"
+                className="xl:w-[30rem] bg-transparent text-white border-0 h-[2.5rem]"
                 type="text"
-                placeholder="Enter UserName"
+                placeholder="enter username"
                 {...register("Username", {
                   required: "Username is required",
                 })}
@@ -274,9 +274,9 @@ const About = () => {
             <div className="flex flex-col mb-[1rem]">
               <label>Email:</label>
               <input
-                className="xl:w-[30rem] bg-slate-800 border-0 h-[2.5rem] mb-[1rem] text-white text-sm"
+                className="xl:w-[30rem] bg-transparent border-0 h-[2.5rem] mb-[1rem] text-white text-sm"
                 type="text"
-                placeholder="Email"
+                placeholder="email"
                 {...register("Email", {
                   required: "Email is required",
                   pattern: "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$",
@@ -291,7 +291,7 @@ const About = () => {
             <div className="flex flex-col mb-[1rem]">
               <label>Password:</label>
               <input
-                className="xl:w-[30rem] bg-slate-800 border-0 h-[2.5rem] text-white"
+                className="xl:w-[30rem] bg-transparent border-0 h-[2.5rem] text-white"
                 type="Password"
                 placeholder="password"
                 {...register("Password", {
@@ -311,7 +311,7 @@ const About = () => {
             <span className="flex flex-col mb-[1rem]">
               <label>Message:</label>
               <textarea
-                className="xl:w-[30rem] w-[20rem] h-[6rem] scroll-m-3 bg-slate-800 border-0 text-white"
+                className="xl:w-[30rem] w-[20rem] h-[6rem] scroll-m-3 bg-transparent border-0 text-white"
                 placeholder="Hello..."
               />
             </span>
