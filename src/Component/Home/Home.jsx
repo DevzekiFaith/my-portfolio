@@ -40,7 +40,7 @@ const Home = () => {
             options={{
               strings: [
                 `Hi, i am Ezekiel Oghojafor Ubor`,
-                `I am a Front-end Engineer with a background in Architecture, dedicated to creating accessible and user-friendly applications. Passionate about solving technical challenges, I am currently exploring other Languages such as Python. In addition to my professional pursuits, I enjoy playing basketball and continuously seek to improve my skills.`,
+                `Dynamic and results-driven Frontend Engineer with a Bachelor of Science in Architecture and extensive experience in developing high-quality web and mobile applications. Proficient in modern web technologies including React.js, Next.js, React Native, Scss and Tailwind CSS, with a proven track record of enhancing user experiences and driving business growth. Adept at collaborating with cross-functional teams to deliver innovative solutions within tight deadlines. Seeking to leverage my skills and contribute to impactful projects in a challenging environment.`,
               ],
               autoStart: true,
               loop: true,

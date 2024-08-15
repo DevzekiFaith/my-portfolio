@@ -1,10 +1,10 @@
 import React from "react";
 import Image004 from "/github.svg";
 import Image005 from "/linkedin.svg";
-import ImageProfile01 from "/image (1).png";
+import ImageProfile01 from "/m-page2.jpg";
 import Image002 from "/instagram.svg";
 import Image001 from "/twitter-x.svg";
-import Image007 from "/image 25.png";
+import Image007 from "/mobile3.png";
 import DownloadImage from "/download.svg";
 import Typewriter from "typewriter-effect";
 import { useForm } from "react-hook-form";
@@ -53,7 +53,7 @@ const About = () => {
             <div className="flex justify-start gap-[1rem] items-center w-full h-[3rem] mt-[3rem]">
               <div className="flex justify-center items-center gap-[1rem]">
                 <a
-                  href="MAIN RESUME.pdf"
+                  href="Ezekiel's Resume.pdf"
                   download
                   className="bg-yellow-300 w-[14rem] rounded-full font-extrabold pl-[2rem] pt-[.7rem] h-[3rem] cursor-pointer"
                 >
