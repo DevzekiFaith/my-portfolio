@@ -10,6 +10,18 @@ import Typewriter from "typewriter-effect";
 import { useForm } from "react-hook-form";
 import { FaSquareGithub } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
+import { RiJavascriptFill } from "react-icons/ri";
+import { FaReact } from "react-icons/fa6";
+import { FaCss3 } from "react-icons/fa6";
+import { IoLogoHtml5 } from "react-icons/io";
+import { SiVercel } from "react-icons/si";
+import { SiTailwindcss } from "react-icons/si";
+import { BiLogoTypescript } from "react-icons/bi";
+import { FaFigma } from "react-icons/fa6";
+import { TbBrandReactNative } from "react-icons/tb";
+import { FaSass } from "react-icons/fa6";
+import { FaGitAlt } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 
 const About = () => {
   const {
@@ -104,41 +116,53 @@ const About = () => {
             />
 
             <div className=" flex flex-wrap xl:w-[34rem] w-[22rem] xl:ml-0 ml-[3rem] gap-2 mt-[2rem] ">
-              <div className="border w-[8rem] text-center rounded-full mb-4 p-2 text-white">
+              <div className="border w-[8rem] text-center rounded-full mb-4 p-2 text-white flex justify-center items-center gap-1">
                 Html
+                <IoLogoHtml5 className="text-gray-600" />
               </div>
-              <div className="border w-[8rem] text-center rounded-full mb-4 p-2 text-white">
+              <div className="border w-[8rem] text-center rounded-full mb-4 p-2 text-white flex justify-center items-center gap-1">
                 Css
+                <FaCss3 className="text-gray-600" />
               </div>
-              <div className="border w-[8rem] text-center rounded-full mb-4 p-2 text-white">
+              <div className="border w-[8rem] text-center rounded-full mb-4 p-2 text-white flex justify-center items-center gap-1">
                 Javascript
+                <RiJavascriptFill className="text-gray-600" />
               </div>
-              <div className="border w-[8rem] text-center rounded-full mb-4 p-2 text-white">
+              <div className="border w-[8rem] text-center rounded-full mb-4 p-2 text-white flex justify-center items-center gap-1">
                 React.js
+                <FaReact className="text-gray-600" />
               </div>
-              <div className="border w-[8rem] text-center rounded-full mb-4 p-2 text-white">
+              <div className="border w-[8rem] text-center rounded-full mb-4 p-2 text-white flex justify-center items-center gap-1">
                 Next.js
+                <SiVercel className="text-gray-600" />
               </div>
-              <div className="border w-[8rem] text-center rounded-full mb-4 p-2 text-white">
+              <div className="border w-[8rem] text-center rounded-full mb-4 p-2 text-white flex justify-center items-center gap-1">
                 Tailwind
+                <SiTailwindcss className="text-gray-600" />
               </div>
-              <div className="border w-[8rem] text-center rounded-full mb-4 p-2 text-white">
+              <div className="border w-[8rem] text-center rounded-full mb-4 p-2 text-white flex justify-center items-center gap-1">
                 Typescript
+                <BiLogoTypescript className="text-gray-600" />
               </div>
-              <div className="border w-[8rem] text-center rounded-full mb-4 p-2 text-white">
+              <div className="border w-[8rem] text-center rounded-full mb-4 p-2 text-white flex justify-center items-center gap-1">
                 Figma
+                <FaFigma className="text-gray-600" />
               </div>
-              <div className="border w-[8rem] text-center rounded-full mb-4 p-2 text-white">
+              <div className="border w-[8rem] text-center rounded-full mb-4 p-2 text-white flex justify-center items-center gap-1">
                 React Native
+                <TbBrandReactNative className="text-gray-600" />
               </div>
-              <div className="border w-[8rem] text-center rounded-full mb-4 p-2 text-white">
+              <div className="border w-[8rem] text-center rounded-full mb-4 p-2 text-white  flex justify-center items-center gap-2">
                 Scss
+                <FaSass className="text-gray-600 w-10" />
               </div>
-              <div className="border w-[8rem] text-center rounded-full mb-4 p-2 text-white">
+              <div className="border w-[8rem] text-center rounded-full mb-4 p-2 text-white flex justify-center items-center gap-1">
                 Git
+                <FaGitAlt className="text-gray-600" />
               </div>
-              <div className="border w-[8rem] text-center rounded-full mb-4 p-2 text-white">
+              <div className="border w-[8rem] text-center rounded-full mb-4 p-2 text-white flex justify-center items-center gap-2">
                 GitHub
+                <FaGithub className="text-gray-600" />
               </div>
             </div>
           </div>
@@ -189,12 +213,12 @@ const About = () => {
               During my internship at Tech Studio, I played a crucial role in
               developing a food app for the academy called Techeat. Working
               collaboratively in a dynamic team, I was responsible for
-              implementing key features using React.js and Tailwind,
-              while styling the application with Tailwind CSS and SCSS.
-              Additionally, I contributed to the mobile version using React
-              Native and integrated Firebase for authentication and MongoDB for
-              data storage. This project not only honed my technical skills but
-              also significantly impacted the students by providing them with a
+              implementing key features using React.js and Tailwind, while
+              styling the application with Tailwind CSS and SCSS. Additionally,
+              I contributed to the mobile version using React Native and
+              integrated Firebase for authentication and MongoDB for data
+              storage. This project not only honed my technical skills but also
+              significantly impacted the students by providing them with a
               seamless and intuitive platform to manage their meals, enhancing
               their overall learning experience and engagement with the
               academy's offerings.

@@ -79,7 +79,9 @@ const Home = () => {
       </div>
       <hr className="bg-slate-800 xl:w-[80rem] w-full  xl:ml-[2rem]" />
       <div className="ml-[9.5rem] mt-[2rem] mb-4 font-bold">
-        <h1 className="xl:text-[2rem] text-[2rem] xl:ml-0 ml-[-6rem]">FEATURED PROJECTS</h1>
+        <h1 className="xl:text-[2rem] text-[2rem] xl:ml-0 ml-[-6rem]">
+          FEATURED PROJECTS
+        </h1>
       </div>
       <div className="flex xl:flex-row flex-col justify-center items-center xl:gap-[3rem] xl:p-[2rem] p-0 ">
         <div className="xl:mt-[2rem] mt-0">
@@ -422,8 +424,11 @@ const Home = () => {
               </p>
             </div>
             <div className="flex justify-center items-center gap-1  w-[5rem] mt-2 pl-[2rem]">
-              <a className="" href="https://www.linkedin.com/in/ezekiel-oghojafor-268889196/">
-                <FaLinkedin className="w-[2rem] h-[2rem] cursor-pointer"/>
+              <a
+                className=""
+                href="https://www.linkedin.com/in/ezekiel-oghojafor-268889196/"
+              >
+                <FaLinkedin className="w-[2rem] h-[2rem] cursor-pointer" />
               </a>
               <a href="https://github.com/DevzekiFaith">
                 <FaSquareGithub className="w-[2rem] h-[2rem] cursor-pointer" />
