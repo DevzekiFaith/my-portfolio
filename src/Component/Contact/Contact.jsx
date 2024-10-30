@@ -8,19 +8,22 @@ import Image002 from "/instagram.svg";
 
 const Contact = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
-  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [toastVisible, setToastVisible] = useState(false);
   const navigate = useNavigate();
 
   const onSubmit = async (data) => {
     console.log(data);
     // Simulate an API call
     await new Promise((resolve) => setTimeout(resolve, 1000));
-    setSubmitSuccess(true);
+    
+    // Show toast notification
+    setToastVisible(true);
 
-    // Display success message and navigate to home after a short delay
+    // Hide toast after 3 seconds and navigate to home
     setTimeout(() => {
+      setToastVisible(false);
       navigate('/'); // Navigate to the home page after submission
-    }, 4000); // Adjust the delay as needed (2000ms = 2 seconds)
+    }, 3000); // Adjust the delay as needed (3000ms = 3 seconds)
   };
 
   return (
@@ -37,63 +40,63 @@ const Contact = () => {
         <span className="underline cursor-pointer text-yellow-500">Resume</span>
       </p>
 
-      {submitSuccess ? (
-        <div className="bg-green-500 text-white p-4 rounded-lg mb-4">
+      {toastVisible && (
+        <div className="fixed top-4 right-4 bg-green-500 text-white p-4 rounded-lg shadow-lg transition-opacity duration-300">
           Thank you for your message! You will be redirected shortly.
         </div>
-      ) : (
-        <form onSubmit={handleSubmit(onSubmit)} className="bg-gray-900 p-6 rounded-lg shadow-lg w-full max-w-md">
-          <div className="mb-4">
-            <label className="block text-white text-sm font-bold mb-2" htmlFor="name">
-              Name:
-            </label>
-            <input
-              className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors.name ? 'border-red-500' : ''}`}
-              id="name"
-              type="text"
-              {...register("name", { required: "Name is required" })}
-            />
-            {errors.name && <span className="text-red-500 text-xs italic">{errors.name.message}</span>}
-          </div>
-          <div className="mb-4">
-            <label className="block text-white text-sm font-bold mb-2" htmlFor="email">
-              Email:
-            </label>
-            <input
-              className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors.email ? 'border-red-500' : ''}`}
-              id="email"
-              type="email"
-              {...register("email", {
-                required: "Email is required",
-                pattern: {
-                  value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-                  message: "Invalid email address",
-                },
-              })}
-            />
-            {errors.email && <span className="text-red-500 text-xs italic">{errors.email.message}</span>}
-          </div>
-          <div className="mb-6">
-            <label className="block text-white text-sm font-bold mb-2" htmlFor="message">
-              Message:
-            </label>
-            <textarea
-              className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors.message ? 'border-red-500' : ''}`}
-              id="message"
-              {...register("message", { required: "Message is required" })}
-            />
-            {errors.message && <span className="text-red-500 text-xs italic">{errors.message.message}</span>}
-          </div>
-          <div className="flex items-center justify-between">
-            <button
-              className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration- w-full"
-              type="submit"
-            >
-              Submit
-            </button>
-          </div>
-        </form>
       )}
+
+      <form onSubmit={handleSubmit(onSubmit)} className="bg-gray-900 p-6 rounded-lg shadow-lg w-full max-w-md">
+        <div className="mb-4">
+          <label className="block text-white text-sm font-bold mb-2" htmlFor="name">
+            Name:
+          </label>
+          <input
+            className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors.name ? 'border-red-500' : ''}`}
+            id="name"
+            type="text"
+            {...register("name", { required: "Name is required" })}
+          />
+          {errors.name && <span className="text-red-500 text-xs italic">{errors.name.message}</span>}
+        </div>
+        <div className="mb-4">
+          <label className="block text-white text-sm font-bold mb-2" htmlFor="email">
+            Email:
+          </label>
+          <input
+            className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors.email ? 'border-red-500' : ''}`}
+            id="email"
+            type="email"
+            {...register("email", {
+              required: "Email is required",
+              pattern: {
+                value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+                message: "Invalid email address",
+              },
+            })}
+          />
+          {errors.email && <span className="text-red-500 text-xs italic">{errors.email.message}</span>}
+        </div>
+        <div className="mb-6">
+          <label className="block text-white text-sm font-bold mb-2" htmlFor="message">
+            Message:
+          </label>
+          <textarea
+            className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors.message ? 'border-red-500' : ''}`}
+            id="message"
+            {...register("message", { required: "Message is required" })}
+          />
+          {errors.message && <span className="text-red-500 text-xs italic">{errors.message.message}</span>}
+        </div>
+        <div className="flex items-center justify-between">
+          <button
+            className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300 w-full"
+            type="submit"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
 
       {/* Social Media Links */}
       <div className="flex gap-4 mt-6">

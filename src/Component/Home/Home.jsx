@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import ProfileImage from "/p.image.jpg";
 import LinkdlnImage from "/linkedin.svg";
@@ -18,6 +18,7 @@ import { FaSquareGithub } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 import { MdMarkEmailRead } from "react-icons/md";
 
+
 const Home = () => {
   const {
     register,
@@ -25,14 +26,32 @@ const Home = () => {
     reset,
     formState: { errors },
   } = useForm();
+  const [toastVisible, setToastVisible] = useState(false);
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     console.log(data);
-    reset();
+    // Simulate an API call
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    
+    // Show toast notification
+    setToastVisible(true);
+
+    // Hide toast after 3 seconds
+    setTimeout(() => {
+      setToastVisible(false);
+      reset(); // Reset the form fields
+    }, 3000); // Adjust the delay as needed (3000ms = 3 seconds)
   };
 
   return (
     <div className="bg-black min-h-screen">
+      {/* Toast Notification */}
+      {toastVisible && (
+        <div className="fixed top-4 right-4 bg-green-500 text-white p-4 rounded-lg shadow-lg transition-opacity duration-300">
+          Thank you for your message! You will be redirected shortly.
+        </div>
+      )}
+
       {/* Hero Section */}
       <div className="container mx-auto px-4 py-12">
         <div className="flex xl:flex-row flex-col justify-center items-start gap-12 md:items-center">
