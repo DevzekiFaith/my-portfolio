@@ -28,484 +28,433 @@ const Home = () => {
 
   const onSubmit = (data) => {
     console.log(data);
-
     reset();
   };
+
   return (
-    <div className="bg-black">
-      <div className="flex xl:flex-row flex-col justify-center items-start  p-[4rem] gap-[4rem] md:flex md:justify-center md:items-center md:w-[450]">
-        <div className="w-[300px] xl:mt-[8rem]">
-          <Typewriter
-            className="font-bold text-[3rem]"
-            options={{
-              strings: [
-                `Hi, i am Ezekiel Oghojafor Ubor`,
-                `Dynamic and results-driven Frontend Engineer with a Bachelor of Science in Architecture and extensive experience in developing high-quality web and mobile applications. Proficient in modern web technologies including React.js, Next.js, React Native, Scss and Tailwind CSS, with a proven track record of enhancing user experiences and driving business growth. Adept at collaborating with cross-functional teams to deliver innovative solutions within tight deadlines. Seeking to leverage my skills and contribute to impactful projects in a challenging environment.`,
-              ],
-              autoStart: true,
-              loop: true,
-            }}
-          />
-
-          <div className="flex items-center gap-[1rem] mt-[2rem]">
-            <Link to="/contact">
-              <button className="bg-yellow-300 p-[.4rem] w-[8rem] mr-[1rem] rounded-full uppercase  font-bold text-sm">
-                Contact me
-              </button>
-            </Link>
-
-            <div className="flex justify-center items-center gap-1  w-[5rem]">
-              <a href="https://www.linkedin.com/in/ezekiel-oghojafor-268889196/">
-                <FaLinkedin className="w-[2rem] h-[2rem] cursor-pointer" />
-              </a>
-              <a href="https://github.com/DevzekiFaith">
-                <FaSquareGithub className="w-[2rem] h-[2rem] cursor-pointer" />
-              </a>
-            </div>
-          </div>
-        </div>
-        <div className="rounded-2xl">
-          <div className="xl:w-[500px] w-[300px] xl:ml-[5rem]">
-            <img
-              className="w-[100%] rounded-2xl ml-[-1rem]"
-              src={ProfileImage}
-              placeholder="Blur"
-              alt="profile picture"
-            />
-          </div>
-        </div>
-
-        {/* // FEATURE PROJECT LINE */}
-      </div>
-      <hr className="bg-slate-800 xl:w-[80rem] w-full  xl:ml-[2rem]" />
-      <div className="ml-[9.5rem] mt-[2rem] mb-4 font-bold">
-        <h1 className="xl:text-[2rem] text-[2rem] xl:ml-0 ml-[-6rem]">
-          FEATURED PROJECTS
-        </h1>
-      </div>
-      <div className="flex xl:flex-row flex-col justify-center items-center xl:gap-[3rem] xl:p-[2rem] p-0 ">
-        <div className="xl:mt-[2rem] mt-0">
-          {/* <h1 className='uppercase font-bold text-6xl w-[400px] ml-[14rem] xl:ml-0 xl:w-[600px]'>feature projects</h1> */}
-          {/* <p className='w-[350px] text-slate-600 ml-[14rem] xl:ml-0'>Here are some of the selected projects that showcase my passion fro front-end Engineering</p> */}
-          <div className="xl:w-[36rem] w-[22rem] h-[28rem] mt-[2rem] active:scale-0 cursor-pointer hover:-translate-y-6  ">
-            <div className="flex justify-center items-center xl:h-full shadow-2xl ">
-              <img
-                className="xl:w-[55%] w-[90%] xl:ml-0"
-                src={ImageProject001}
-                placeholder="Blur"
-                alt="project image"
+    <div className="bg-black min-h-screen">
+      {/* Hero Section */}
+      <div className="container mx-auto px-4 py-12">
+        <div className="flex xl:flex-row flex-col justify-center items-start gap-12 md:items-center">
+          <div className="max-w-xl">
+            <div className="prose prose-lg text-white">
+              <Typewriter
+                options={{
+                  strings: [
+                    `Hi, i am Ezekiel Oghojafor Ubor`,
+                    `Dynamic and results-driven Frontend Engineer with a Bachelor of Science in Architecture and extensive experience in developing high-quality web and mobile applications. Proficient in modern web technologies including React.js, Next.js, React Native, Scss and Tailwind CSS, with a proven track record of enhancing user experiences and driving business growth. Adept at collaborating with cross-functional teams to deliver innovative solutions within tight deadlines. Seeking to leverage my skills and contribute to impactful projects in a challenging environment.`,
+                  ],
+                  autoStart: true,
+                  loop: true,
+                }}
               />
             </div>
-          </div>
-        </div>
 
-        <div className="xl:w-[40%] w-[80%]">
-          <h3 className="text-lg font-medium uppercase text-white xl:mt-[5rem] mb-[1rem] w-[300px] xl:w-600px mt-[2rem]">
-            Movie-App Landing page for our favorite show
-          </h3>
-          <p>
-            Responsive web and mobile App.Breathe life into a movie-app webpage
-            for our beloved show, Adventure Time. Delivered a fully responsive
-            design with dynamic content capabilities, seamlessly integrating a
-            space for movie addition feature to keep fans updated with the
-            latest Adventure. So now, you can go to the Add movie, add your
-            link, Image and rating and it will display on the All Movie Page.{" "}
-          </p>
-          <p className="text-green-500 mt-2 mb-2">
-            <span className="text-white font-sans border border-slate-600 p-2 rounded-xl">
-              Technology stack:
-            </span>{" "}
-            React, Tailwind Css
-          </p>
-          <h2>
-            <span className="text-white font-sana">Challenges: </span> In this
-            project i did not use React Router, i did the foundational Routing
-            by passing Props and that was a huge challenge at First
-          </h2>
-          <h3>
-            <span className="text-white font-sans ">Solution: </span> After
-            regular error prompts, i had to make research on the error and got
-            different solutions for one challenge and that was how i learnt that
-            exercise without Routing{" "}
-          </h3>
-          <h2 className="uppercase font-semibold mt-[1rem] mb-[.5rem] text-white">
-            Project info
-          </h2>
-          <hr />
-          <span className="flex justify-between mt-[2rem]">
-            <p className="text-white">Year</p>
-            <p>2023</p>
-          </span>
+            <div className="flex items-center gap-6 mt-8">
+              <Link to="/contact">
+                <button className="transform hover:scale-105 transition-transform duration-300 bg-yellow-300 px-6 py-2 rounded-full uppercase font-bold text-sm hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                  Contact me
+                </button>
+              </Link>
 
-          <span className="flex justify-between mt-[2rem]">
-            <p className="text-white">Role</p>
-            <p>Front-end Engineering</p>
-          </span>
-          <div className=" flex justify-between mt-[2rem] cursor-pointer">
-            <span className="flex cursor-pointer gap-2">
-              <a href="https://movie-app-two-liart.vercel.app/" target="_blank">
-                <h1 className="uppercase text-yellow-300 underline">
-                  {" "}
-                  <span className="flex gap-2">
-                    <img src={Arrow} alt="Arrow" />
-                    LIVE DEMO
-                  </span>{" "}
-                </h1>
-              </a>
-            </span>
-            {/* <h1 className='text-yellow-300 underline'>SEE ON GITHUB</h1> */}
-            <a
-              href="https://github.com/DevzekiFaith/movie-app.git"
-              target="_blank"
-            >
-              <h1 className="uppercase text-yellow-300 underline">
-                {" "}
-                <span className="flex gap-2">
-                  <img src={GitHubImage} alt="Github" />
-                  SEE ON GITHUB
-                </span>{" "}
-              </h1>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* PROJECT TWO */}
-
-      <div className="flex  xl:flex-row flex-col justify-center items-center xl:gap-[3rem] xl:p-[2rem] mt-[2rem]">
-        <div className="xl:mt-[2rem]">
-          <div className="xl:w-[36rem] w-[85%] xl:ml-0  ml-[2rem] h-[28rem] mt-[2rem] relative active:scale-0 cursor-pointer hover:-translate-y-6 ">
-            <img
-              className="h-[22rem] rounded-xl"
-              src={Image004}
-              placeholder="blur"
-              alt="background Image"
-            />
-            <div className="flex justify-center items-center shadow-2xl">
-              <img
-                className="xl:w-[85%] xl:h-[22rem] h-[14rem] absolute top-[10rem] rounded-xl w-[300px]"
-                src={Image003}
-                placeholder="Blur"
-                alt="project image"
-              />
-            </div>
-          </div>
-        </div>
-
-        <div className="xl:w-[40%] w-[80%] mt-[2rem]">
-          <h3 className="text-lg font-medium uppercase text-white xl:mt-[5rem] mb-[1rem]">
-            Recipe Food App For Restaurants
-          </h3>
-          <p>
-            Responsive Web and Mobile Savour-App is a versatile recipe app
-            designed for both home cooks and restaurant chefs, offering a
-            comprehensive platform to discover, create, and manage recipes.
-            Built with Next.js for a seamless user experience, the app features
-            an intuitive interface that allows users to easily browse through a
-            vast collection of recipes, save their favorites, and generate
-            shopping lists. Advanced search and filtering options enable users
-            to find recipes based on ingredients, cuisine, and dietary
-            preferences. With robust styling using Tailwind CSS and SCSS, and
-            secure data management through Firebase and MongoDB, RecipeMaster
-            enhances culinary creativity and efficiency in both home kitchens
-            and professional settings.
-          </p>
-          <p className="text-green-500 mt-2 mb-2">
-            <span className="text-white font-sans border border-slate-600 p-2 rounded-xl shadow-xl">
-              Technology stack:
-            </span>{" "}
-            Next.js, Typescript, Tailwind Css, Jsx, Css, Scss.
-          </p>
-          <h2>
-            <span className="text-white font-sana">Challenges: </span> In this
-            project i did not use React Router, i did the foundational Routing
-            by passing Props and that was a huge challenge at First
-          </h2>
-          <h3>
-            <span className="text-white font-sans">Solution:</span> After
-            regular error prompts, i had to make research on the error and got
-            different solutions for one challenge i had to use the
-            React-Router-Documentation for a profered solution{" "}
-          </h3>
-
-          <h2 className="uppercase font-semibold mt-[1rem] mb-[.5rem] text-white">
-            Project info
-          </h2>
-          <hr />
-          <span className="flex justify-between mt-[2rem] ">
-            <p className="text-white">Year</p>
-            <p>2023</p>
-          </span>
-
-          <span className="flex justify-between mt-[2rem]">
-            <p className="text-white">Role</p>
-            <p>Front-end Engineering</p>
-          </span>
-          <div className=" flex justify-between mt-[2rem] cursor-pointer">
-            <span className="flex cursor-pointer gap-2">
-              <a href="https://savour-app.vercel.app/" target="_blank">
-                <h1 className="uppercase text-yellow-300 underline">
-                  {" "}
-                  <span className="flex gap-2">
-                    <img src={Arrow} alt="Arrow" />
-                    LIVE DEMO
-                  </span>{" "}
-                </h1>
-              </a>
-            </span>
-            <a
-              href="https://github.com/DevzekiFaith/Savour-app.git"
-              target="_blank"
-            >
-              <h1 className="uppercase text-yellow-300 underline">
-                {" "}
-                <span className="flex gap-2">
-                  <img src={GitHubImage} alt="Github" />
-                  SEE ON GITHUB
-                </span>{" "}
-              </h1>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* project 3 */}
-
-      <div className="flex xl:flex-row flex-col justify-center items-center gap-[3rem] p-[2rem] mb-[3rem]">
-        <div className="mt-[2rem]">
-          {/* <h1 className='uppercase font-bold text-6xl'>feature projects</h1> */}
-          {/* <p className='w-[350px] text-slate-600'>Here are some of the selected projects that showcase my passion fro front-end Engineering</p> */}
-          <div className=" xl:w-[36rem] h-[28rem] mt-[2rem] active:scale-0 cursor-pointer hover:-translate-y-6 relative">
-            <div className="flex justify-center items-center h-full shadow-2xl">
-              <img
-                className="w-[90%] h-[24rem] rounded-xl"
-                src={Image005}
-                placeholder="Blur"
-                alt="project image"
-              />
-            </div>
-            <div className="absolute top-[12rem] ">
-              <img
-                className="xl:h-[18rem] w-[28rem] rounded-xl h-[14rem]"
-                src={Image008}
-                placeholder="blur"
-                alt="background Image"
-              />
-            </div>
-          </div>
-        </div>
-
-        <div className="xl:w-[40%]">
-          <h3 className="text-lg font-medium uppercase text-white xl:mt-[5rem] mb-[1rem]">
-            TECHEAT APP
-          </h3>
-          <p>
-            Techeat is a Responsive Web and Mobile innovative food app designed
-            for students,providing a seamless platform to manage their meals.
-            The app features a user-friendly interface built with React.js and
-            Next.js, ensuring a responsive and intuitive experience. It allows
-            students to browse meal options, place orders, and track their
-            nutrition intake effortlessly. Leveraging technologies and
-            integrating Firebase for secure authentication and MongoDB for
-            efficient data management, Techeat enhances the overall student
-            experience by simplifying meal planning and promoting healthy eating
-            habits.{" "}
-          </p>
-          <p className="text-green-500 mt-2 mb-2">
-            <span className="text-white font-sans border border-slate-600 p-2 rounded-xl pt-2 pb-2">
-              Technology stack:
-            </span>{" "}
-            React, Tailwind Css, Scss and css{" "}
-          </p>
-          <h2>
-            <span className="text-white font-sana">Challenges:</span>In this
-            project, I designed a visually appealing login page for Techeat. One
-            of the challenges i encountered was toggling the screen from SignUp
-            to Sign. this challenge came in as a result of the Product design .
-          </h2>
-          <h3>
-            <span className="text-white font-sans">Solution:</span> After
-            regular error prompts, i had to make research on the error and
-            brought the solution to the team which lead to changing the way the
-            SignUp and SignIn card was designed cause the methods were
-            conflicting.
-          </h3>
-
-          <h2 className="uppercase font-semibold mt-[1rem] mb-[.5rem] text-white">
-            Project info
-          </h2>
-          <hr />
-          <span className="flex justify-between mt-[2rem]">
-            <p className="text-white">Year</p>
-            <p>2023</p>
-          </span>
-
-          <span className="flex justify-between mt-[2rem]">
-            <p className="text-white">Role</p>
-            <p>Front-end Engineering</p>
-          </span>
-          <div className=" flex justify-between mt-[2rem] cursor-pointer">
-            <span className="flex cursor-pointer gap-2">
-              <a href="https://techitz.netlify.app/signup" target="_blank">
-                <h1 className="uppercase text-yellow-300 underline">
-                  {" "}
-                  <span className="flex gap-2">
-                    <img src={Arrow} alt="Arrow" />
-                    LIVE DEMO
-                  </span>{" "}
-                </h1>
-              </a>
-            </span>
-            <a
-              href="https://github.com/willybrown100/techeat.git"
-              target="_blank"
-            >
-              <h1 className="uppercase text-yellow-300 underline">
-                {" "}
-                <span className="flex gap-2">
-                  <img src={GitHubImage} alt="Github" />
-                  SEE ON GITHUB
-                </span>{" "}
-              </h1>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <hr className="xl:w-[80rem] xl:ml-[2rem] " />
-
-      {/* ABOUT ME LINE */}
-
-      <div className="flex xl:flex-row flex-col justify-center items-center xl:h-[25rem] mt-[2rem] ">
-        <div className="w-[100%]">
-          <h1 className="text-6xl font-bold uppercase p-[2rem] text-center xl:ml-[-5rem] active:scale-0 cursor-pointer hover:-translate-y-6">
-            about me
-          </h1>
-        </div>
-        <div className="w-[100%] p-[3rem]">
-          <h2 className="xl:w-[500px] mb-[2rem] uppercase text-white font-bold">
-            Am a Front-end Engineer and I have An Architectural background{" "}
-          </h2>
-          <p>
-            I am a front-end Engineer based in Nigeria looking for exciting
-            opportunities. I have an Architectural background. I like to focus
-            on accessibility when developing. Am passionate and curious about
-            solving Tech Challenges. Currently, i'm exploring some Language
-            tools like React Native and Python. When am not programming, I enjoy
-            playing Basketball and more to improve my skills.{" "}
-          </p>
-
-          <Link to="/About">
-            <h1 className="uppercase underline text-yellow-300 mt-[1rem]">
-              MORE ABOUT ME
-            </h1>
-          </Link>
-        </div>
-      </div>
-
-      <hr className="xl:w-[80rem] xl:ml-[2rem]" />
-
-      {/* LET'S CONNECT LINE */}
-
-      <div>
-        <div className="flex xl:flex-row flex-col justify-center items-center xl:gap-[4rem]">
-          <div>
-            <div className="xl:ml-[-5rem] ml-[2rem] mt-[3rem]">
-              <h1 className="uppercase text-6xl font-bold mb-[1.5rem] active:scale-0 cursor-pointer hover:-translate-y-6">
-                let's connect
-              </h1>
-              <p className="flex">
-                Say hello at{" "}
-                {/* <span className="underline cursor-pointer text-yellow-300 ml-1">
-                  <a href="https://mail.google.com/mail/u/0/#inbox?compose=new">
-                    <MdMarkEmailRead className="w-[1.5rem] h-[1.5rem] cursor-pointer" />
-                  </a>
-                </span> */}
-              </p>
-            </div>
-            <div className="flex justify-center items-center gap-1  w-[5rem] mt-2 pl-[2rem]">
-              <a
-                className=""
-                href="https://www.linkedin.com/in/ezekiel-oghojafor-268889196/"
-              >
-                <FaLinkedin className="w-[2rem] h-[2rem] cursor-pointer" />
-              </a>
-              <a href="https://github.com/DevzekiFaith">
-                <FaSquareGithub className="w-[2rem] h-[2rem] cursor-pointer" />
-              </a>
-            </div>
-          </div>
-
-          <div className="xl:ml-[6rem] mt-[4rem]">
-            <form onSubmit={handleSubmit(onSubmit)}>
-              <div className="flex flex-col mb-[1rem]">
-                <label>Name</label>
-                <input
-                  className="xl:w-[30rem] bg-transparent text-white border-0 h-[2.5rem]"
-                  type="text"
-                  placeholder=""
-                  {...register("Username", {
-                    required: "Username is required",
-                  })}
-                />
-                <span className="text-red-800 text-sm">
-                  {errors.Username?.message}
-                </span>
+              <div className="flex gap-4">
+                <a 
+                  href="https://www.linkedin.com/in/ezekiel-oghojafor-268889196/"
+                  className="transform hover:scale-110 transition-transform duration-300"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaLinkedin className="w-8 h-8 text-blue-500 hover:text-blue-600" />
+                </a>
+                <a 
+                  href="https://github.com/DevzekiFaith"
+                  className="transform hover:scale-110 transition-transform duration-300"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaSquareGithub className="w-8 h-8 hover:text-gray-700" />
+                </a>
               </div>
-              <div className="flex flex-col mb-[1rem]">
-                <label>Email</label>
+            </div>
+          </div>
+
+          <div className="xl:w-[500px] w-full max-w-md">
+            <img
+              className="w-full h-auto rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500"
+              src={ProfileImage}
+              alt="profile picture"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+
+      <hr className="border-slate-800 mx-auto max-w-7xl my-12" />
+
+      {/* Featured Projects Section */}
+      <section className="container mx-auto px-4 py-12">
+        <h2 className="text-4xl font-bold text-white mb-12 text-center">
+          FEATURED PROJECTS
+        </h2>
+
+        {/* Project Cards */}
+        <div className="space-y-24">
+          {/* Project 1 */}
+          <div className="flex xl:flex-row flex-col justify-center items-center gap-12">
+            <div className="xl:w-[36rem] w-full">
+              <div className="group relative overflow-hidden rounded-xl shadow-2xl transform hover:-translate-y-2 transition-all duration-500">
+                <img
+                  className="w-full h-auto"
+                  src={ImageProject001}
+                  alt="Movie App project"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <div className="text-white text-center p-4">
+                    <h3 className="text-xl font-bold mb-2">Movie App</h3>
+                    <p className="text-sm">Click to view details</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="xl:w-[40%] w-full">
+              <div className="space-y-6">
+                <h3 className="text-2xl font-bold text-white">
+                  Movie-App Landing Page
+                </h3>
+                <p className="text-gray-300 leading-relaxed">
+                  Responsive web and mobile App. Breathe life into a movie-app webpage
+                  for our beloved show, Adventure Time. Delivered a fully responsive
+                  design with dynamic content capabilities.
+                </p>
+                
+                <div className="bg-gray-900 rounded-lg p-6 space-y-4">
+                  <div className="flex items-center gap-2">
+                    <span className="text-white font-medium">Tech Stack:</span>
+                    <span className="text-green-500">React, Tailwind CSS</span>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <h4 className="text-white font-medium">Challenges & Solutions:</h4>
+                    <p className="text-gray-400 text-sm">
+                      Implemented routing without React Router initially, which presented 
+                      unique challenges in state management and navigation.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex justify-between items-center pt-6">
+                  <a 
+                    href="https://movie-app-two-liart.vercel.app/" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-yellow-300 hover:text-yellow-400 transition-colors duration-300"
+                  >
+                    <img src={Arrow} alt="Arrow" className="w-5 h-5" />
+                    <span className="uppercase font-medium">Live Demo</span>
+                  </a>
+                  
+                  <a 
+                    href="https://github.com/DevzekiFaith/movie-app.git"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-yellow-300 hover:text-yellow-400 transition-colors duration-300"
+                  >
+                    <img src={GitHubImage} alt="Github" className="w-5 h-5" />
+                    <span className="uppercase font-medium">View Code</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Project 2 */}
+          <div className="flex xl:flex-row flex-col justify-center items-center gap-12">
+            <div className="xl:w-[36rem] w-full">
+              <div className="group relative overflow-hidden rounded-xl shadow-2xl transform hover:-translate-y-2 transition-all duration-500">
+                <img
+                  className="w-full h-auto rounded-xl"
+                  src={Image004}
+                  alt="Recipe App background"
+                  loading="lazy"
+                />
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 translate-y-[-30%] w-[85%]">
+                  <img
+                    className="w-full h-auto rounded-xl shadow-2xl"
+                    src={Image003}
+                    alt="Recipe App interface"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className="xl:w-[40%] w-full">
+              <div className="space-y-6">
+                <h3 className="text-2xl font-bold text-white">
+                  Recipe Food App For Restaurants
+                </h3>
+                <p className="text-gray-300 leading-relaxed">
+                  Savour-App is a versatile recipe application designed for both home cooks
+                  and restaurant chefs. Built with Next.js and featuring an intuitive interface
+                  for recipe discovery and management.
+                </p>
+                
+                <div className="bg-gray-900 rounded-lg p-6 space-y-4">
+                  <div className="flex items-center gap-2">
+                    <span className="text-white font-medium">Tech Stack:</span>
+                    <span className="text-green-500">
+                      Next.js, TypeScript, Tailwind CSS, SCSS
+                    </span>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <h4 className="text-white font-medium">Key Features:</h4>
+                    <ul className="text-gray-400 text-sm space-y-1 list-disc list-inside">
+                      <li>Advanced search and filtering</li>
+                      <li>Favorite recipe management</li>
+                      <li>Shopping list generation</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="flex justify-between items-center pt-6">
+                  <a 
+                    href="https://savour-app.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-yellow-300 hover:text-yellow-400 transition-colors duration-300"
+                  >
+                    <img src={Arrow} alt="Arrow" className="w-5 h-5" />
+                    <span className="uppercase font-medium">Live Demo</span>
+                  </a>
+                  
+                  <a 
+                    href="https://github.com/DevzekiFaith/Savour-app.git"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-yellow-300 hover:text-yellow-400 transition-colors duration-300"
+                  >
+                    <img src={GitHubImage} alt="Github" className="w-5 h-5" />
+                    <span className="uppercase font-medium">View Code</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Project 3 */}
+          <div className="flex xl:flex-row flex-col justify-center items-center gap-12">
+            <div className="xl:w-[36rem] w-full">
+              <div className="group relative overflow-hidden rounded-xl shadow-2xl transform hover:-translate-y-2 transition-all duration-500">
+                <img
+                  className="w-full h-auto rounded-xl"
+                  src={Image005}
+                  alt="Techeat App main"
+                  loading="lazy"
+                />
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 translate-y-[-20%] w-[85%]">
+                  <img
+                    className="w-full h-auto rounded-xl shadow-2xl"
+                    src={Image008}
+                    alt="Techeat App signup"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className="xl:w-[40%] w-full">
+              <div className="space-y-6">
+                <h3 className="text-2xl font-bold text-white">
+                  TECHEAT APP
+                </h3>
+                <p className="text-gray-300 leading-relaxed">
+                  An innovative food app designed specifically for students, providing
+                  a seamless platform for meal management and nutrition tracking.
+                </p>
+                
+                <div className="bg-gray-900 rounded-lg p-6 space-y-4">
+                  <div className="flex items-center gap-2">
+                    <span className="text-white font-medium">Tech Stack:</span>
+                    <span className="text-green-500">
+                      React, Tailwind CSS, SCSS
+                    </span>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <h4 className="text-white font-medium">Key Features:</h4>
+                    <ul className="text-gray-400 text-sm space-y-1 list-disc list-inside">
+                      <li>User authentication</li>
+                      <li>Order management</li>
+                      <li>Nutrition tracking</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="flex justify-between items-center pt-6">
+                  <a 
+                    href="https://techitz.netlify.app/signup"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-yellow-300 hover:text-yellow-400 transition-colors duration-300"
+                  >
+                    <img src={Arrow} alt="Arrow" className="w-5 h-5" />
+                    <span className="uppercase font-medium">Live Demo</span>
+                  </a>
+                  
+                  <a 
+                    href="https://github.com/willybrown100/techeat.git"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-yellow-300 hover:text-yellow-400 transition-colors duration-300"
+                  >
+                    <img src={GitHubImage} alt="Github" className="w-5 h-5" />
+                    <span className="uppercase font-medium">View Code</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr className="border-slate-800 mx-auto max-w-7xl my-12" />
+
+      {/* About Section */}
+      <section className="container mx-auto px-4 py-12">
+        <div className="flex xl:flex-row flex-col justify-center items-center gap-12">
+          <div className="xl:w-1/2">
+            <h2 className="text-4xl font-bold uppercase text-white mb-8 transform hover:-translate-y-2 transition-transform duration-300">
+              about me
+            </h2>
+          </div>
+          
+          <div className="xl:w-1/2 space-y-6">
+            <h3 className="text-xl font-bold uppercase text-white">
+              Front-end Engineer with Architectural Background
+            </h3>
+            
+            <p className="text-gray-300 leading-relaxed">
+              I am a front-end Engineer based in Nigeria looking for exciting
+              opportunities. With my unique background in Architecture, I bring
+              a fresh perspective to web development, focusing on accessibility
+              and user experience.
+            </p>
+            
+            <Link 
+              to="/About"
+              className="inline-block text-yellow-300 hover:text-yellow-400 uppercase font-medium transition-colors duration-300"
+            >
+              More About Me
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <hr className="border-slate-800 mx-auto max-w-7xl my-12" />
+
+      {/* Contact Section */}
+      <section className="container mx-auto px-4 py-12">
+        <div className="flex xl:flex-row flex-col justify-center items-start gap-12">
+          <div className="xl:w-1/2">
+            <h2 className="text-4xl font-bold uppercase text-white mb-8 transform hover:-translate-y-2 transition-transform duration-300">
+              let's connect
+            </h2>
+            
+            <div className="flex items-center gap-4">
+              <a 
+                href="https://www.linkedin.com/in/ezekiel-oghojafor-268889196/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transform hover:scale-110 transition-transform duration-300"
+              >
+                <FaLinkedin className="w-8 h-8 text-blue-500 hover:text-blue-600" />
+              </a>
+              <a 
+                href="https://github.com/DevzekiFaith"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transform hover:scale-110 transition-transform duration-300"
+              >
+                <FaSquareGithub className="w-8 h-8 hover:text-gray-700" />
+              </a>
+            </div>
+          </div>
+
+          <div className="xl:w-1/2 w-full">
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+              <div className="space-y-2">
+                <label className="text-white">Name</label>
                 <input
-                  className="xl:w-[30rem] bg-transparent border-0 h-[2.5rem] mb-[1rem] text-white text-sm"
+                  className="w-full bg-gray-900 border border-gray-800 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-yellow-300 transition-colors duration-300"
                   type="text"
-                  placeholder=""
+                  {...register("Username", { required: "Username is required" })}
+                />
+                {errors.Username && (
+                  <span className="text-red-500 text-sm">{errors.Username.message}</span>
+                )}
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-white">Email</label>
+                <input
+                  className="w-full bg-gray-900 border border-gray-800 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-yellow-300 transition-colors duration-300"
+                  type="email"
                   {...register("Email", {
                     required: "Email is required",
-                    pattern: "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$",
+                    pattern: {
+                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                      message: "Invalid email address"
+                    }
                   })}
                 />
-                <span className="text-red-800 text-sm">
-                  {errors.Email?.message}
-                  {errors.Email?.type === "pattern" &&
-                    "Email should have the right pattern"}
-                </span>
+                {errors.Email && (
+                  <span className="text-red-500 text-sm">{errors.Email.message}</span>
+                )}
               </div>
-              <div className="flex flex-col mb-[1rem]">
-                <label>Password</label>
+
+              <div className="space-y-2">
+                <label className="text-white">Password</label>
                 <input
-                  className="xl:w-[30rem] bg-transparent border-0 h-[2.5rem] text-white"
-                  type="Password"
-                  placeholder=""
+                  className="w-full bg-gray-900 border border-gray-800 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-yellow-300 transition-colors duration-300"
+                  type="password"
                   {...register("Password", {
                     required: "Password is required",
-                    minLength: 5,
-                    maxLength: 10,
+                    minLength: {
+                      value: 5,
+                      message: "Password must be at least 5 characters"
+                    },
+                    maxLength: {
+                      value: 20,
+                      message: "Password must not exceed 20 characters"
+                    }
                   })}
                 />
-                <span className="text-red-800 text-sm">
-                  {errors.Email?.message}
-                  {errors.Email?.type === "minLength" &&
-                    "Password must not  be less than 4 character"}
-                  {errors.Email?.type === "maxLength" &&
-                    "Password must be more than 10 character "}
-                </span>
+                {errors.Password && (
+                  <span className="text-red-500 text-sm">{errors.Password.message}</span>
+                )}
               </div>
-              <span className="flex flex-col mb-[1rem]">
-                <label>Message</label>
+
+              <div className="space-y-2">
+                <label className="text-white">Message</label>
                 <textarea
-                  className="xl:w-[30rem] w-[20rem] h-[6rem] scroll-m-3 bg-slate-800 border-0 text-white"
+                  className="w-full h-32 bg-gray-900 border border-gray-800 rounded-lg px-4 py-2 text-white resize-none focus:outline-none focus:border-yellow-300 transition-colors duration-300"
                   placeholder="Hello..."
                 />
-              </span>
+              </div>
+
               <button
                 type="submit"
-                className="bg-yellow-300 w-[10rem] h-[3rem] rounded-full text-md uppercase font-bold mt-[2rem] text-black"
+                className="w-full bg-yellow-300 hover:bg-yellow-400 text-black font-bold py-3 px-6 rounded-full uppercase transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-yellow-500"
               >
                 Submit
               </button>
             </form>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };

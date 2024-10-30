@@ -1,105 +1,134 @@
-import { useState } from "react";
-import { useLocation } from "react-router-dom";
-import React from "react";
+import { useState, useEffect, useCallback } from "react";
 import { NavLink } from "react-router-dom";
+import PropTypes from 'prop-types';
 import burgerImage from "/list (2).svg";
 import CloseButton from "/x-circle.svg";
 
+// Constants for styling and configuration
+const STYLE_CONSTANTS = {
+  ACTIVE_LINK: "text-white bg-yellow-500 p-2 rounded-full font-bold",
+  NORMAL_LINK: "text-gray-300 hover:text-white transition duration-200",
+  NAVBAR_LINKS: [
+    { path: "/", label: "Home" },
+    { path: "/about", label: "About" },
+    { path: "/contact", label: "Contact" }
+  ]
+};
+
+const NavBarLink = ({ to, children }) => (
+  <NavLink
+    className={({ isActive }) => 
+      isActive ? STYLE_CONSTANTS.ACTIVE_LINK : STYLE_CONSTANTS.NORMAL_LINK
+    }
+    to={to}
+  >
+    {children}
+  </NavLink>
+);
+
+NavBarLink.propTypes = {
+  to: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired
+};
+
 const Navbar = () => {
-  const activeLink =
-    "text-white bg-yellow-950 border=none p-[0.2rem] rounded-full w-[5rem] text-center font-bold underline ";
-  const normalLink = "";
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // TOGGLE STATE OF THE MODAL
-  const [openModal, setOpenModal] = useState(false);
-  // const [toggle, setToggle] = useState(false);
+  // Handle escape key press to close menu
+  const handleEscapeKey = useCallback((event) => {
+    if (event.key === 'Escape' && isMenuOpen) {
+      setIsMenuOpen(false);
+    }
+  }, [isMenuOpen]);
 
-  // FUNCTION OF THE TOGGLE STATE
+  // Handle click outside to close menu
+  const handleClickOutside = useCallback((event) => {
+    if (isMenuOpen && !event.target.closest('.navbar-menu')) {
+      setIsMenuOpen(false);
+    }
+  }, [isMenuOpen]);
 
-  const HandleClick = () => {
-    setOpenModal(!openModal);
+  // Setup event listeners
+  useEffect(() => {
+    document.addEventListener('keydown', handleEscapeKey);
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('keydown', handleEscapeKey);
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [handleEscapeKey, handleClickOutside]);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(prev => !prev);
   };
 
-  // const Toggle = () => {
-  //   setToggle(!toggle);
-  // }
+  // Prevent scroll when menu is open
+  useEffect(() => {
+    document.body.style.overflow = isMenuOpen ? 'hidden' : 'unset';
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMenuOpen]);
 
   return (
-    <div>
-      <div className="relative">
-        <div className="flex justify-between items-center py-[2rem] px-[2rem]">
-          <div>
-            <h1 className="font-bold text-slate-600">
-              Ezekiel Oghojafor Ubor
-            </h1>
-          </div>
-          <div className="xl:flex xl:gap-[2rem] hidden">
-            <NavLink
-              className={({ isActive }) => (isActive ? activeLink : normalLink)}
-              to="/"
-            >
-              Home
-            </NavLink>
-            <NavLink
-              className={({ isActive }) => (isActive ? activeLink : normalLink)}
-              to="/about"
-            >
-              About
-            </NavLink>
-            <NavLink
-              className={({ isActive }) => (isActive ? activeLink : normalLink)}
-              to="/contact"
-            >
-              Contact
-            </NavLink>
-          </div>
+    <nav className="relative bg-transparent" role="navigation" aria-label="Main navigation">
+      <div className="flex justify-between items-center py-4 px-6">
+        <h1 className="text-white font-bold text-xl">Ezekiel Oghojafor Ubor</h1>
+
+        {/* Desktop Navigation */}
+        <div className="hidden xl:flex xl:gap-6">
+          {STYLE_CONSTANTS.NAVBAR_LINKS.map(({ path, label }) => (
+            <NavBarLink key={path} to={path}>
+              {label}
+            </NavBarLink>
+          ))}
+        </div>
+
+        {/* Mobile Navigation */}
+        <div className="xl:hidden">
+          <button
+            className="focus:outline-none focus:ring-2 focus:ring-yellow-500 rounded-lg"
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+            aria-expanded={isMenuOpen}
+          >
+            <img className="w-6 h-6" src={burgerImage} alt="Menu icon" />
+          </button>
         </div>
       </div>
 
-      {/* TENARY OPERATOR FOR TOGGLE CONDITIONING */}
+      {/* Overlay when mobile menu is open */}
+      {isMenuOpen && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-50 z-10"
+          aria-hidden="true"
+          onClick={toggleMenu}
+        />
+      )}
 
-      {!openModal ? (
-        <div className="absolute top-6  right-3">
-          <img
-            className="block xl:hidden w-[2rem] h-[2rem] cursor-pointer"
-            src={burgerImage}
-            alt="Burger icon"
-            onClick={HandleClick}
-          />
-        </div>
-      ) : (
-        <div className="absolute top-6 right-3 w-[13rem] h-[4rem] bg-[#0B0705] flex justify-between shadow-2xl">
-          <div className="flex flex-col xl:gap-[3rem]">
-            <NavLink
-              className={({ isActive }) => (isActive ? activeLink : normalLink)}
-              to="/"
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="absolute top-16 right-0 w-48 bg-gray-900 shadow-lg rounded-lg navbar-menu z-20 transition-transform transform translate-y-0">
+          <div className="flex justify-end p-2">
+            <button
+              onClick={toggleMenu}
+              aria-label="Close menu"
+              className="focus:outline-none focus:ring-2 focus:ring-yellow-500 rounded-lg"
             >
-              Home
-            </NavLink>
-            <NavLink
-              className={({ isActive }) => (isActive ? activeLink : normalLink)}
-              to="/about"
-            >
-              About
-            </NavLink>
-            <NavLink
-              className={({ isActive }) => (isActive ? activeLink : normalLink)}
-              to="/contact"
-            >
-              Contact
-            </NavLink>
+              <img className="w-6 h-6" src={CloseButton} alt="Close menu" />
+            </button>
           </div>
-          <div>
-            <img
-              className="block xl:hidden w-[2rem] h-[2rem] cursor-pointer"
-              src={CloseButton}
-              alt="Burger icon"
-              onClick={HandleClick}
-            />
-          </div>
+          <nav className="flex flex-col gap-4 p-4">
+            {STYLE_CONSTANTS.NAVBAR_LINKS.map(({ path, label }) => (
+              <NavBarLink key={path} to={path}>
+                {label}
+              </NavBarLink>
+            ))}
+          </nav>
         </div>
       )}
-    </div>
+    </nav>
   );
 };
 
