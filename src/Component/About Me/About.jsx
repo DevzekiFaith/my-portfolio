@@ -35,6 +35,7 @@ const About = () => {
     reset,
   } = useForm();
   const [toastVisible, setToastVisible] = useState(false); // State for toast visibility
+  const [showPassword, setShowPassword] = useState(false); // State for password visibility
 
   const onSubmit = async (data) => {
     console.log(data);
@@ -84,7 +85,7 @@ const About = () => {
       {/* Toast Notification */}
       {toastVisible && (
         <div className="fixed top-4 right-4 bg-green-500 text-white p-4 rounded-lg shadow-lg transition-opacity duration-300">
-          Thank you for your message! we will reach out to you soonest.
+          Thank you for your message! You will be redirected shortly.
         </div>
       )}
 
@@ -270,6 +271,37 @@ const About = () => {
                 />
                 {errors.Email && (
                   <p className="mt-1 text-sm text-red-500">{errors.Email.message}</p>
+                )}
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-300 mb-2">
+                  Password
+                </label>
+                <div className="relative">
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-yellow-300 focus:border-transparent transition-colors duration-300 text-white"
+                    {...register("password", { required: "Password is required" })}
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute inset-y-0 right-0 flex items-center pr-3"
+                  >
+                    {showPassword ? (
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.875 18.825A10.001 10.001 0 0112 21c-5.523 0-10-4.477-10-10 0-1.657.4-3.215 1.1-4.575M15.362 15.362A10.001 10.001 0 0021 12c0-1.657-.4-3.215-1.1-4.575M9.636 9.636A3 3 0 0112 9a3 3 0 012.364 4.636M9.636 9.636L12 12m-2.364 2.364A3 3 0 0012 15a3 3 0 002.364-4.636M9.636 9.636L12 12m-2.364 2.364A3 3 0 0012 15a3 3 0 002.364-4.636" />
+                      </svg>
+                    ) : (
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3l18 18M21 12c0 4.418-3.582 8-8 8-1.657 0-3.215-.4-4.575-1.1M3 12c0-4.418 3.582-8 8-8 1.657 0 3.215.4 4.575 1.1" />
+                      </svg>
+                    )}
+                  </button>
+                </div>
+                {errors.password && (
+                  <p className="mt-1 text-sm text-red-500">{errors.password.message}</p>
                 )}
               </div>
 
