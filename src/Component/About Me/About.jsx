@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ImageProfile01 from "/m-page2.jpg";
 import DownloadImage from "/download.svg";
 import Typewriter from "typewriter-effect";
@@ -34,10 +34,21 @@ const About = () => {
     formState: { errors },
     reset,
   } = useForm();
+  const [toastVisible, setToastVisible] = useState(false); // State for toast visibility
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     console.log(data);
-    reset();
+    // Simulate an API call
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    
+    // Show toast notification
+    setToastVisible(true);
+
+    // Hide toast after 3 seconds
+    setTimeout(() => {
+      setToastVisible(false);
+      reset(); // Reset the form fields
+    }, 3000); // Adjust the delay as needed (3000ms = 3 seconds)
   };
 
   const techStack = [
@@ -70,6 +81,13 @@ const About = () => {
 
   return (
     <div className="bg-black min-h-screen text-gray-200">
+      {/* Toast Notification */}
+      {toastVisible && (
+        <div className="fixed top-4 right-4 bg-green-500 text-white p-4 rounded-lg shadow-lg transition-opacity duration-300">
+          Thank you for your message! we will reach out to you soonest.
+        </div>
+      )}
+
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-16">
         <div className="flex xl:flex-row flex-col justify-between items-center gap-12">
@@ -82,7 +100,7 @@ const About = () => {
               <Typewriter
                 options={{
                   strings: [
-                    "I am a Software Engineer front-end heavy looking for exciting opportunities. I have an Architectural background. I like to focus on accessibility when developing. Am passionate and curious about solving Tech Challenges. Currently, i'm exploring some Front-end tools like React.js and Next.js.",
+                    "I am a Software Engineer front-end heavy looking for exciting opportunities. I have an Architectural background. I like to focus on accessibility when developing. Am passionate and curious about solving Tech Challenges. Currently, I'm exploring some Front-end tools like React.js and Next.js.",
                   ],
                   autoStart: true,
                   loop: true,

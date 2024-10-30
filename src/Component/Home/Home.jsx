@@ -19,7 +19,6 @@ import { FaSquareGithub } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 import { MdMarkEmailRead } from "react-icons/md";
 
-
 const Home = () => {
   const {
     register,
@@ -33,7 +32,7 @@ const Home = () => {
     console.log(data);
     // Simulate an API call
     await new Promise((resolve) => setTimeout(resolve, 1000));
-    
+
     // Show toast notification
     setToastVisible(true);
 
@@ -361,12 +360,10 @@ const Home = () => {
 
             <div className="xl:w-[40%] w-full">
               <div className="space-y-6">
-                <h3 className="text-2xl font-bold text-white">
-                  Reflectify
-                </h3>
+                <h3 className="text-2xl font-bold text-white">Reflectify</h3>
                 <p className="text-gray-300 leading-relaxed">
-                 This application creates the best way to Journaling
-                 as quickly as possible because, Your journaling process just got better!
+                  This application creates the best way to Journaling as quickly
+                  as possible because, Your journaling process just got better!
                 </p>
 
                 <div className="bg-gray-900 rounded-lg p-6 space-y-4">
@@ -411,7 +408,6 @@ const Home = () => {
               </div>
             </div>
           </div>
-
         </div>
       </section>
 
@@ -558,7 +554,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-      
     </div>
   );
 };
