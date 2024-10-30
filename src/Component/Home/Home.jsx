@@ -58,7 +58,7 @@ const Home = () => {
               </Link>
 
               <div className="flex gap-4">
-                <a 
+                <a
                   href="https://www.linkedin.com/in/ezekiel-oghojafor-268889196/"
                   className="transform hover:scale-110 transition-transform duration-300"
                   target="_blank"
@@ -66,7 +66,7 @@ const Home = () => {
                 >
                   <FaLinkedin className="w-8 h-8 text-blue-500 hover:text-blue-600" />
                 </a>
-                <a 
+                <a
                   href="https://github.com/DevzekiFaith"
                   className="transform hover:scale-110 transition-transform duration-300"
                   target="_blank"
@@ -124,29 +124,32 @@ const Home = () => {
                   Movie-App Landing Page
                 </h3>
                 <p className="text-gray-300 leading-relaxed">
-                  Responsive web and mobile App. Breathe life into a movie-app webpage
-                  for our beloved show, Adventure Time. Delivered a fully responsive
-                  design with dynamic content capabilities.
+                  Responsive web and mobile App. Breathe life into a movie-app
+                  webpage for our beloved show, Adventure Time. Delivered a
+                  fully responsive design with dynamic content capabilities.
                 </p>
-                
+
                 <div className="bg-gray-900 rounded-lg p-6 space-y-4">
                   <div className="flex items-center gap-2">
                     <span className="text-white font-medium">Tech Stack:</span>
                     <span className="text-green-500">React, Tailwind CSS</span>
                   </div>
-                  
+
                   <div className="space-y-2">
-                    <h4 className="text-white font-medium">Challenges & Solutions:</h4>
+                    <h4 className="text-white font-medium">
+                      Challenges & Solutions:
+                    </h4>
                     <p className="text-gray-400 text-sm">
-                      Implemented routing without React Router initially, which presented 
-                      unique challenges in state management and navigation.
+                      Implemented routing without React Router initially, which
+                      presented unique challenges in state management and
+                      navigation.
                     </p>
                   </div>
                 </div>
 
                 <div className="flex justify-between items-center pt-6">
-                  <a 
-                    href="https://movie-app-two-liart.vercel.app/" 
+                  <a
+                    href="https://movie-app-two-liart.vercel.app/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-yellow-300 hover:text-yellow-400 transition-colors duration-300"
@@ -154,8 +157,8 @@ const Home = () => {
                     <img src={Arrow} alt="Arrow" className="w-5 h-5" />
                     <span className="uppercase font-medium">Live Demo</span>
                   </a>
-                  
-                  <a 
+
+                  <a
                     href="https://github.com/DevzekiFaith/movie-app.git"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -196,11 +199,12 @@ const Home = () => {
                   Recipe Food App For Restaurants
                 </h3>
                 <p className="text-gray-300 leading-relaxed">
-                  Savour-App is a versatile recipe application designed for both home cooks
-                  and restaurant chefs. Built with Next.js and featuring an intuitive interface
-                  for recipe discovery and management.
+                  Savour-App is a versatile recipe application designed for both
+                  home cooks and restaurant chefs. Built with Next.js and
+                  featuring an intuitive interface for recipe discovery and
+                  management.
                 </p>
-                
+
                 <div className="bg-gray-900 rounded-lg p-6 space-y-4">
                   <div className="flex items-center gap-2">
                     <span className="text-white font-medium">Tech Stack:</span>
@@ -208,7 +212,7 @@ const Home = () => {
                       Next.js, TypeScript, Tailwind CSS, SCSS
                     </span>
                   </div>
-                  
+
                   <div className="space-y-2">
                     <h4 className="text-white font-medium">Key Features:</h4>
                     <ul className="text-gray-400 text-sm space-y-1 list-disc list-inside">
@@ -220,7 +224,7 @@ const Home = () => {
                 </div>
 
                 <div className="flex justify-between items-center pt-6">
-                  <a 
+                  <a
                     href="https://savour-app.vercel.app/"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -229,8 +233,8 @@ const Home = () => {
                     <img src={Arrow} alt="Arrow" className="w-5 h-5" />
                     <span className="uppercase font-medium">Live Demo</span>
                   </a>
-                  
-                  <a 
+
+                  <a
                     href="https://github.com/DevzekiFaith/Savour-app.git"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -267,14 +271,13 @@ const Home = () => {
 
             <div className="xl:w-[40%] w-full">
               <div className="space-y-6">
-                <h3 className="text-2xl font-bold text-white">
-                  TECHEAT APP
-                </h3>
+                <h3 className="text-2xl font-bold text-white">TECHEAT APP</h3>
                 <p className="text-gray-300 leading-relaxed">
-                  An innovative food app designed specifically for students, providing
-                  a seamless platform for meal management and nutrition tracking.
+                  An innovative food app designed specifically for students,
+                  providing a seamless platform for meal management and
+                  nutrition tracking.
                 </p>
-                
+
                 <div className="bg-gray-900 rounded-lg p-6 space-y-4">
                   <div className="flex items-center gap-2">
                     <span className="text-white font-medium">Tech Stack:</span>
@@ -282,7 +285,7 @@ const Home = () => {
                       React, Tailwind CSS, SCSS
                     </span>
                   </div>
-                  
+
                   <div className="space-y-2">
                     <h4 className="text-white font-medium">Key Features:</h4>
                     <ul className="text-gray-400 text-sm space-y-1 list-disc list-inside">
@@ -294,7 +297,7 @@ const Home = () => {
                 </div>
 
                 <div className="flex justify-between items-center pt-6">
-                  <a 
+                  <a
                     href="https://techitz.netlify.app/signup"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -303,8 +306,8 @@ const Home = () => {
                     <img src={Arrow} alt="Arrow" className="w-5 h-5" />
                     <span className="uppercase font-medium">Live Demo</span>
                   </a>
-                  
-                  <a 
+
+                  <a
                     href="https://github.com/willybrown100/techeat.git"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -330,20 +333,20 @@ const Home = () => {
               about me
             </h2>
           </div>
-          
+
           <div className="xl:w-1/2 space-y-6">
             <h3 className="text-xl font-bold uppercase text-white">
               Front-end Engineer with Architectural Background
             </h3>
-            
+
             <p className="text-gray-300 leading-relaxed">
               I am a front-end Engineer based in Nigeria looking for exciting
               opportunities. With my unique background in Architecture, I bring
               a fresh perspective to web development, focusing on accessibility
               and user experience.
             </p>
-            
-            <Link 
+
+            <Link
               to="/About"
               className="inline-block text-yellow-300 hover:text-yellow-400 uppercase font-medium transition-colors duration-300"
             >
@@ -362,9 +365,9 @@ const Home = () => {
             <h2 className="text-4xl font-bold uppercase text-white mb-8 transform hover:-translate-y-2 transition-transform duration-300">
               let's connect
             </h2>
-            
+
             <div className="flex items-center gap-4">
-              <a 
+              <a
                 href="https://www.linkedin.com/in/ezekiel-oghojafor-268889196/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -372,7 +375,7 @@ const Home = () => {
               >
                 <FaLinkedin className="w-8 h-8 text-blue-500 hover:text-blue-600" />
               </a>
-              <a 
+              <a
                 href="https://github.com/DevzekiFaith"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -390,10 +393,14 @@ const Home = () => {
                 <input
                   className="w-full bg-gray-900 border border-gray-800 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-yellow-300 transition-colors duration-300"
                   type="text"
-                  {...register("Username", { required: "Username is required" })}
+                  {...register("Username", {
+                    required: "Username is required",
+                  })}
                 />
                 {errors.Username && (
-                  <span className="text-red-500 text-sm">{errors.Username.message}</span>
+                  <span className="text-red-500 text-sm">
+                    {errors.Username.message}
+                  </span>
                 )}
               </div>
 
@@ -406,12 +413,14 @@ const Home = () => {
                     required: "Email is required",
                     pattern: {
                       value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                      message: "Invalid email address"
-                    }
+                      message: "Invalid email address",
+                    },
                   })}
                 />
                 {errors.Email && (
-                  <span className="text-red-500 text-sm">{errors.Email.message}</span>
+                  <span className="text-red-500 text-sm">
+                    {errors.Email.message}
+                  </span>
                 )}
               </div>
 
@@ -424,16 +433,18 @@ const Home = () => {
                     required: "Password is required",
                     minLength: {
                       value: 5,
-                      message: "Password must be at least 5 characters"
+                      message: "Password must be at least 5 characters",
                     },
                     maxLength: {
                       value: 20,
-                      message: "Password must not exceed 20 characters"
-                    }
+                      message: "Password must not exceed 20 characters",
+                    },
                   })}
                 />
                 {errors.Password && (
-                  <span className="text-red-500 text-sm">{errors.Password.message}</span>
+                  <span className="text-red-500 text-sm">
+                    {errors.Password.message}
+                  </span>
                 )}
               </div>
 
@@ -455,6 +466,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+      
     </div>
   );
 };
