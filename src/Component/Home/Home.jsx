@@ -5,6 +5,7 @@ import LinkdlnImage from "/linkedin.svg";
 import GitHubImage from "/github.svg";
 import Arrow from "/arrow-up-right-circle-fill.svg";
 import ImageProject001 from "/movie-app.jpg.png";
+import ImageProject002 from "/next-p.png";
 import Image001 from "/twitter-x.svg";
 import Image002 from "/instagram.svg";
 import Image003 from "/HeroPage.png";
@@ -48,7 +49,7 @@ const Home = () => {
       {/* Toast Notification */}
       {toastVisible && (
         <div className="fixed top-4 right-4 bg-green-500 text-white p-4 rounded-lg shadow-lg transition-opacity duration-300">
-          Thank you for your message! You will be redirected shortly.
+          Thank you for your message! You will be get back to you soon.
         </div>
       )}
 
@@ -339,6 +340,78 @@ const Home = () => {
               </div>
             </div>
           </div>
+
+          <div className="flex xl:flex-row flex-col justify-center items-center gap-12">
+            <div className="xl:w-[36rem] w-full">
+              <div className="group relative overflow-hidden rounded-xl shadow-2xl transform hover:-translate-y-2 transition-all duration-500">
+                <img
+                  className="w-full h-auto"
+                  src={ImageProject002}
+                  alt="Movie App project"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <div className="text-white text-center p-4">
+                    <h3 className="text-xl font-bold mb-2">Preview</h3>
+                    <p className="text-sm">Click to view details</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="xl:w-[40%] w-full">
+              <div className="space-y-6">
+                <h3 className="text-2xl font-bold text-white">
+                  Reflectify
+                </h3>
+                <p className="text-gray-300 leading-relaxed">
+                 This application creates the best way to Journaling
+                 as quickly as possible because, Your journaling process just got better!
+                </p>
+
+                <div className="bg-gray-900 rounded-lg p-6 space-y-4">
+                  <div className="flex items-center gap-2">
+                    <span className="text-white font-medium">Tech Stack:</span>
+                    <span className="text-green-500">React, Tailwind CSS</span>
+                  </div>
+
+                  <div className="space-y-2">
+                    <h4 className="text-white font-medium">
+                      Challenges & Solutions:
+                    </h4>
+                    <p className="text-gray-400 text-sm">
+                      Implemented routing without React Router initially, which
+                      presented unique challenges in state management and
+                      navigation.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex justify-between items-center pt-6">
+                  <a
+                    href="https://movie-app-two-liart.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-yellow-300 hover:text-yellow-400 transition-colors duration-300"
+                  >
+                    <img src={Arrow} alt="Arrow" className="w-5 h-5" />
+                    <span className="uppercase font-medium">Live Demo</span>
+                  </a>
+
+                  <a
+                    href="https://github.com/DevzekiFaith/movie-app.git"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-yellow-300 hover:text-yellow-400 transition-colors duration-300"
+                  >
+                    <img src={GitHubImage} alt="Github" className="w-5 h-5" />
+                    <span className="uppercase font-medium">View Code</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 
