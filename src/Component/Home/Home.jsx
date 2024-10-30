@@ -341,6 +341,8 @@ const Home = () => {
             </div>
           </div>
 
+          {/* project 4 */}
+
           <div className="flex xl:flex-row flex-col justify-center items-center gap-12">
             <div className="xl:w-[36rem] w-full">
               <div className="group relative overflow-hidden rounded-xl shadow-2xl transform hover:-translate-y-2 transition-all duration-500">
@@ -370,7 +372,7 @@ const Home = () => {
                 <div className="bg-gray-900 rounded-lg p-6 space-y-4">
                   <div className="flex items-center gap-2">
                     <span className="text-white font-medium">Tech Stack:</span>
-                    <span className="text-green-500">React, Tailwind CSS</span>
+                    <span className="text-green-500">Nextjs, TypeScript , Tailwind CSS</span>
                   </div>
 
                   <div className="space-y-2">
@@ -378,9 +380,8 @@ const Home = () => {
                       Challenges & Solutions:
                     </h4>
                     <p className="text-gray-400 text-sm">
-                      Implemented routing without React Router initially, which
-                      presented unique challenges in state management and
-                      navigation.
+                      Implementing the google Authentication for sign-in and sign-out was very tricky. I had to use firebase for my Authentication, storage and yet i kept experiencing popup block, and after popup block, auth(app) started throwing errors.
+                      I had to calm-down , left the code for a while and came back with a clear head to find out that i did not enter the custom domain in the firebase Authentication after some careful research. Phewwww, am super happy cause it worked.
                     </p>
                   </div>
                 </div>
