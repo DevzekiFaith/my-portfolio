@@ -3,7 +3,7 @@ import ImageProfile01 from "/m-page2.jpg";
 import DownloadImage from "/download.svg";
 import Typewriter from "typewriter-effect";
 import { useForm } from "react-hook-form";
-import { FaSquareGithub, FaLinkedin, FaReact, FaCss3, FaFigma, FaSass, FaGitAlt, FaGithub } from "react-icons/fa6";
+import { FaLinkedin, FaReact, FaCss3, FaFigma, FaSass, FaGitAlt, FaGithub } from "react-icons/fa6";
 import { RiJavascriptFill } from "react-icons/ri";
 import { IoLogoHtml5 } from "react-icons/io";
 import { SiVercel, SiTailwindcss } from "react-icons/si";
@@ -11,19 +11,19 @@ import { BiLogoTypescript } from "react-icons/bi";
 import { TbBrandReactNative } from "react-icons/tb";
 
 const TechBadge = ({ name, icon: Icon }) => (
-  <div className="border border-gray-700 bg-gray-900 hover:bg-gray-800 transition-colors duration-300 w-32 text-center rounded-full mb-4 p-2 text-white flex justify-center items-center gap-2 transform hover:scale-105">
-    {name}
-    <Icon className="text-gray-400 hover:text-gray-300" />
+  <div className="group bg-white border border-gray-200 hover:border-[#635bff] transition-all duration-300 w-32 text-center rounded-2xl mb-4 p-4 text-gray-700 flex flex-col justify-center items-center gap-2 transform hover:scale-105 hover:shadow-lg hover:shadow-[#635bff]/20">
+    <Icon className="text-2xl text-[#635bff] group-hover:scale-110 transition-transform duration-300" />
+    <span className="text-sm font-medium">{name}</span>
   </div>
 );
 
 const ExperienceItem = ({ title, period, description }) => (
-  <div className="mb-8">
-    <div className="flex justify-between items-center mb-4">
-      <h3 className="text-xl font-bold text-white">{title}</h3>
-      <span className="text-yellow-300 font-medium">{period}</span>
+  <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+    <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">
+      <h3 className="text-2xl font-bold text-gray-900 mb-2 sm:mb-0">{title}</h3>
+      <span className="px-4 py-2 bg-gradient-to-r from-[#635bff] to-[#a084ee] text-white rounded-full text-sm font-semibold">{period}</span>
     </div>
-    <p className="text-gray-300 leading-relaxed">{description}</p>
+    <p className="text-gray-600 leading-relaxed text-lg">{description}</p>
   </div>
 );
 
@@ -34,8 +34,8 @@ const About = () => {
     formState: { errors },
     reset,
   } = useForm();
-  const [toastVisible, setToastVisible] = useState(false); // State for toast visibility
-  const [showPassword, setShowPassword] = useState(false); // State for password visibility
+  const [toastVisible, setToastVisible] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const onSubmit = async (data) => {
     console.log(data);
@@ -49,7 +49,7 @@ const About = () => {
     setTimeout(() => {
       setToastVisible(false);
       reset(); // Reset the form fields
-    }, 3000); // Adjust the delay as needed (3000ms = 3 seconds)
+    }, 3000);
   };
 
   const techStack = [
@@ -81,23 +81,29 @@ const About = () => {
   ];
 
   return (
-    <div className="bg-black min-h-screen text-gray-200">
+    <div className="bg-white min-h-screen text-gray-900">
       {/* Toast Notification */}
       {toastVisible && (
-        <div className="fixed top-4 right-4 bg-green-500 text-white p-4 rounded-lg shadow-lg transition-opacity duration-300">
-          Thank you for your message! You will be redirected shortly.
+        <div className="fixed top-6 right-6 bg-gradient-to-r from-[#635bff] to-[#a084ee] text-white px-6 py-4 rounded-xl shadow-2xl transition-all duration-500 z-50">
+          <div className="flex items-center gap-3">
+            <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+            <span className="font-medium">Message sent successfully!</span>
+          </div>
         </div>
       )}
 
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="flex xl:flex-row flex-col justify-between items-center gap-12">
+      <section className="container mx-auto px-6 py-20">
+        <div className="flex xl:flex-row flex-col justify-between items-center gap-16">
           <div className="xl:w-1/2">
-            <h1 className="text-5xl font-bold text-white mb-8 animate-fade-in">
-              about me
+            <h1 className="text-5xl xl:text-7xl font-bold text-gray-900 mb-8">
+              About{" "}
+              <span className="bg-gradient-to-r from-[#635bff] to-[#a084ee] bg-clip-text text-transparent">
+                Me
+              </span>
             </h1>
             
-            <div className="prose prose-lg text-gray-300 mb-8">
+            <div className="text-xl text-gray-600 mb-8 leading-relaxed">
               <Typewriter
                 options={{
                   strings: [
@@ -105,18 +111,21 @@ const About = () => {
                   ],
                   autoStart: true,
                   loop: true,
+                  deleteSpeed: 50,
+                  delay: 50,
                 }}
               />
             </div>
 
-            <div className="flex items-center gap-6">
+            <div className="flex flex-col sm:flex-row items-center gap-6">
               <a
                 href="Ezekiel's Resume.pdf"
                 download
-                className="flex items-center gap-2 bg-yellow-300 hover:bg-yellow-400 text-black px-6 py-3 rounded-full font-bold transition-all duration-300 transform hover:scale-105"
+                className="group flex items-center gap-3 bg-gradient-to-r from-[#635bff] to-[#a084ee] text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:shadow-2xl hover:shadow-[#635bff]/25 transform hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-[#635bff]/20"
               >
-                Download Resume
                 <img src={DownloadImage} alt="Download" className="w-5 h-5" />
+                <span>Download Resume</span>
+                <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
               </a>
 
               <div className="flex gap-4">
@@ -124,17 +133,17 @@ const About = () => {
                   href="https://www.linkedin.com/in/ezekiel-oghojafor-268889196/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="transform hover:scale-110 transition-transform duration-300"
+                  className="group p-3 bg-gray-100 rounded-xl hover:bg-[#635bff] hover:text-white transition-all duration-300 transform hover:-translate-y-1"
                 >
-                  <FaLinkedin className="w-8 h-8 text-blue-500 hover:text-blue-400" />
+                  <FaLinkedin className="w-6 h-6" />
                 </a>
                 <a
                   href="https://github.com/DevzekiFaith"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="transform hover:scale-110 transition-transform duration-300"
+                  className="group p-3 bg-gray-100 rounded-xl hover:bg-[#635bff] hover:text-white transition-all duration-300 transform hover:-translate-y-1"
                 >
-                  <FaSquareGithub className="w-8 h-8 hover:text-gray-400" />
+                  <FaGithub className="w-6 h-6" />
                 </a>
               </div>
             </div>
@@ -142,38 +151,44 @@ const About = () => {
 
           <div className="xl:w-1/2">
             <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-[#635bff] to-[#a084ee] rounded-3xl transform rotate-6 scale-105 opacity-20"></div>
               <img
                 src={ImageProfile01}
-                alt="Profile"
-                className="w-full rounded-2xl shadow-2xl transform hover:scale-105 transition-duration-500"
+                alt="Ezekiel Oghojafor"
+                className="relative w-full h-auto rounded-3xl shadow-2xl transform hover:scale-105 transition-transform duration-500"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-2xl"></div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Capabilities Section */}
-      <section className="container mx-auto px-4 py-16 bg-gray-900/30">
-        <h2 className="text-4xl font-bold text-center text-white mb-12">
-          my capabilities
-        </h2>
-
-        <div className="max-w-4xl mx-auto">
-          <div className="prose prose-lg text-gray-300 mb-8 text-center">
-            <Typewriter
-              options={{
-                strings: [
-                  "I am always looking to adding more skill-set to my learning stacks in different language model and frame works. This will enable my flexibility and productivity in the area of service delivery and problem solving",
-                ],
-                autoStart: true,
-                loop: true,
-              }}
-            />
+      <section className="py-24 bg-gray-50">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl xl:text-6xl font-bold text-gray-900 mb-6">
+              My{" "}
+              <span className="bg-gradient-to-r from-[#635bff] to-[#a084ee] bg-clip-text text-transparent">
+                Capabilities
+              </span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              <Typewriter
+                options={{
+                  strings: [
+                    "I am always looking to adding more skill-set to my learning stacks in different language model and frame works. This will enable my flexibility and productivity in the area of service delivery and problem solving",
+                  ],
+                  autoStart: true,
+                  loop: true,
+                  deleteSpeed: 50,
+                  delay: 50,
+                }}
+              />
+            </p>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-4 mt-8">
+          <div className="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto">
             {techStack.map((tech, index) => (
               <TechBadge key={index} name={tech.name} icon={tech.icon} />
             ))}
@@ -182,151 +197,146 @@ const About = () => {
       </section>
 
       {/* Experience Section */}
-      <section className="container mx-auto px-4 py-16">
-        <h2 className="text-4xl font-bold text-center text-white mb-12">
-          my experience
-        </h2>
+      <section className="py-24">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl xl:text-6xl font-bold text-gray-900 mb-6">
+              My{" "}
+              <span className="bg-gradient-to-r from-[#635bff] to-[#a084ee] bg-clip-text text-transparent">
+                Experience
+              </span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              A journey of growth and learning in the world of frontend development.
+            </p>
+          </div>
 
-        <div className="max-w-4xl mx-auto space-y-8">
-          {experiences.map((exp, index) => (
-            <ExperienceItem
-              key={index}
-              title={exp.title}
-              period={exp.period}
-              description={exp.description}
-            />
-          ))}
+          <div className="max-w-4xl mx-auto space-y-8">
+            {experiences.map((exp, index) => (
+              <ExperienceItem
+                key={index}
+                title={exp.title}
+                period={exp.period}
+                description={exp.description}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section className="container mx-auto px-4 py-16 bg-gray-900/30">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold text-white mb-12 text-center">
-            let's connect
-          </h2>
-
-          <div className="grid xl:grid-cols-2 gap-12">
-            <div>
-              <h3 className="text-2xl font-bold text-white mb-4">Get in touch</h3>
-              <p className="text-gray-300 mb-6">
-                Say hello at{" "}
-                <a
-                  href="mailto:zekipossible@gmail.com"
-                  className="text-yellow-300 hover:text-yellow-400 underline"
-                >
-                  zekipossible@gmail.com
-                </a>
+      <section className="py-24 bg-gray-50">
+        <div className="container mx-auto px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-5xl xl:text-6xl font-bold text-gray-900 mb-6">
+                Let's{" "}
+                <span className="bg-gradient-to-r from-[#635bff] to-[#a084ee] bg-clip-text text-transparent">
+                  Connect
+                </span>
+              </h2>
+              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                Ready to bring your ideas to life? Let's discuss how we can work together.
               </p>
+            </div>
 
-              <div className="flex gap-4">
-                <a
-                  href="https://www.linkedin.com/in/ezekiel-oghojafor-268889196/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transform hover:scale-110 transition-transform duration-300"
-                >
-                  <FaLinkedin className="w-8 h-8 text-blue-500 hover:text-blue-400" />
-                </a>
-                <a
+            <div className="grid xl:grid-cols-2 gap-16">
+              <div className="space-y-8">
+                <div>
+                  <h3 className="text-3xl font-bold text-gray-900 mb-4">Get in touch</h3>
+                  <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                    I'm always open to discussing new opportunities and exciting projects. 
+                    Feel free to reach out if you'd like to connect!
+                  </p>
+                  <p className="text-lg text-gray-600 mb-8">
+                    Say hello at{" "}
+                    <a
+                      href="mailto:zekipossible@gmail.com"
+                      className="text-[#635bff] hover:text-[#a084ee] font-semibold underline transition-colors duration-300"
+                    >
+                      zekipossible@gmail.com
+                    </a>
+                  </p>
+                </div>
+
+                <div className="flex gap-6">
+                  <a
+                    href="https://www.linkedin.com/in/ezekiel-oghojafor-268889196/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group p-4 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                  >
+                    <FaLinkedin className="w-6 h-6 text-[#635bff] group-hover:scale-110 transition-transform duration-300" />
+                  </a>
+                                  <a
                   href="https://github.com/DevzekiFaith"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="transform hover:scale-110 transition-transform duration-300"
+                  className="group p-4 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                 >
-                  <FaSquareGithub className="w-8 h-8 hover:text-gray-400" />
+                  <FaGithub className="w-6 h-6 text-[#635bff] group-hover:scale-110 transition-transform duration-300" />
                 </a>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+                <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                  <div className="space-y-2">
+                    <label className="text-gray-900 font-semibold">Name</label>
+                    <input
+                      type="text"
+                      className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:border-[#635bff] focus:ring-4 focus:ring-[#635bff]/10 transition-all duration-300"
+                      placeholder="Your name"
+                      {...register("Username", { required: "Name is required" })}
+                    />
+                    {errors.Username && (
+                      <p className="text-red-500 text-sm">{errors.Username.message}</p>
+                    )}
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className="text-gray-900 font-semibold">Email</label>
+                    <input
+                      type="email"
+                      className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:border-[#635bff] focus:ring-4 focus:ring-[#635bff]/10 transition-all duration-300"
+                      placeholder="your.email@example.com"
+                      {...register("Email", {
+                        required: "Email is required",
+                        pattern: {
+                          value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                          message: "Invalid email address",
+                        },
+                      })}
+                    />
+                    {errors.Email && (
+                      <p className="text-red-500 text-sm">{errors.Email.message}</p>
+                    )}
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className="text-gray-900 font-semibold">Message</label>
+                    <textarea
+                      className="w-full h-32 bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 resize-none focus:outline-none focus:border-[#635bff] focus:ring-4 focus:ring-[#635bff]/10 transition-all duration-300"
+                      placeholder="Tell me about your project..."
+                    ></textarea>
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="w-full bg-gradient-to-r from-[#635bff] to-[#a084ee] text-white font-semibold py-4 px-6 rounded-xl hover:shadow-xl hover:shadow-[#635bff]/25 transform hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-[#635bff]/20"
+                  >
+                    Send Message
+                  </button>
+                </form>
               </div>
             </div>
-
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-              <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-yellow-300 focus:border-transparent transition-colors duration-300 text-white"
-                  {...register("Username", { required: "Name is required" })}
-                />
-                {errors.Username && (
-                  <p className="mt-1 text-sm text-red-500">{errors.Username.message}</p>
-                )}
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-yellow-300 focus:border-transparent transition-colors duration-300 text-white"
-                  {...register("Email", {
-                    required: "Email is required",
-                    pattern: {
-                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                      message: "Invalid email address",
-                    },
-                  })}
-                />
-                {errors.Email && (
-                  <p className="mt-1 text-sm text-red-500">{errors.Email.message}</p>
-                )}
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">
-                  Password
-                </label>
-                <div className="relative">
-                  <input
-                    type={showPassword ? "text" : "password"}
-                    className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-yellow-300 focus:border-transparent transition-colors duration-300 text-white"
-                    {...register("password", { required: "Password is required" })}
-                  />
-                  <button
-                    type="button"
-                    onClick={() => setShowPassword(!showPassword)}
-                    className="absolute inset-y-0 right-0 flex items-center pr-3"
-                  >
-                    {showPassword ? (
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.875 18.825A10.001 10.001 0 0112 21c-5.523 0-10-4.477-10-10 0-1.657.4-3.215 1.1-4.575M15.362 15.362A10.001 10.001 0 0021 12c0-1.657-.4-3.215-1.1-4.575M9.636 9.636A3 3 0 0112 9a3 3 0 012.364 4.636M9.636 9.636L12 12m-2.364 2.364A3 3 0 0012 15a3 3 0 002.364-4.636M9.636 9.636L12 12m-2.364 2.364A3 3 0 0012 15a3 3 0 002.364-4.636" />
-                      </svg>
-                    ) : (
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3l18 18M21 12c0 4.418-3.582 8-8 8-1.657 0-3.215-.4-4.575-1.1M3 12c0-4.418 3.582-8 8-8 1.657 0 3.215.4 4.575 1.1" />
-                      </svg>
-                    )}
-                  </button>
-                </div>
-                {errors.password && (
-                  <p className="mt-1 text-sm text-red-500">{errors.password.message}</p>
-                )}
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">
-                  Message
-                </label>
-                <textarea
-                  className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg h-32 focus:ring-2 focus:ring-yellow-300 focus:border-transparent transition-colors duration-300 text-white resize-none"
-                  placeholder="Your message..."
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                className="w-full bg-yellow-300 hover:bg-yellow-400 text-black font-bold py-3 px-6 rounded-full transition-colors duration-300 transform hover:scale-105"
-              >
-                Send Message
-              </button>
-            </form>
           </div>
-        </div>
 
-        <div className="text-center mt-16 text-sm text-gray-500">
-          © EZEKIEL OGHOJAFOR UBOR {new Date().getFullYear()}
+          <div className="text-center mt-16 pt-8 border-t border-gray-200">
+            <p className="text-gray-500">
+              © EZEKIEL OGHOJAFOR UBOR {new Date().getFullYear()}
+            </p>
+          </div>
         </div>
       </section>
     </div>
