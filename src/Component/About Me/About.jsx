@@ -98,7 +98,7 @@ const About = () => {
           <div className="xl:w-1/2">
             <h1 className="text-5xl xl:text-7xl font-bold text-gray-900 mb-8">
               About{" "}
-              <span className="bg-gradient-to-r from-[#635bff] to-[#a084ee] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#635bff] to-[#a084ee] bg-clip-text text-transparent text-white">
                 Me
               </span>
             </h1>
@@ -169,7 +169,7 @@ const About = () => {
           <div className="text-center mb-16">
             <h2 className="text-5xl xl:text-6xl font-bold text-gray-900 mb-6">
               My{" "}
-              <span className="bg-gradient-to-r from-[#635bff] to-[#a084ee] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#635bff] to-[#a084ee] bg-clip-text text-transparent text-white">
                 Capabilities
               </span>
             </h2>
@@ -202,7 +202,7 @@ const About = () => {
           <div className="text-center mb-16">
             <h2 className="text-5xl xl:text-6xl font-bold text-gray-900 mb-6">
               My{" "}
-              <span className="bg-gradient-to-r from-[#635bff] to-[#a084ee] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#635bff] to-[#a084ee] bg-clip-text text-transparent text-white">
                 Experience
               </span>
             </h2>
@@ -231,7 +231,7 @@ const About = () => {
             <div className="text-center mb-16">
               <h2 className="text-5xl xl:text-6xl font-bold text-gray-900 mb-6">
                 Let's{" "}
-                <span className="bg-gradient-to-r from-[#635bff] to-[#a084ee] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#635bff] to-[#a084ee] bg-clip-text text-transparent text-white">
                   Connect
                 </span>
               </h2>
