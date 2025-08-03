@@ -31,7 +31,7 @@ const Footer = () => {
         </div>
         <div className="border-t border-gray-700 mt-4 pt-4 text-center">
           <p className="text-gray-400 text-sm">
-            &copy; {new Date().getFullYear()} Ezekiel Oghojafor Ubor. All rights reserved.
+            &copy; {new Date().getFullYear()} Yonan Technologies. All rights reserved.
           </p>
         </div>
       </div>
