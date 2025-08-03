@@ -98,7 +98,7 @@ const Navbar = () => {
             <h1 className={`font-bold text-xl transition-colors duration-300 ${
               isScrolled ? 'text-gray-900' : 'text-white'
             }`}>
-              Ezekiel{" "}
+              Faith{" "}
               <span className="bg-gradient-to-r from-[#635bff] to-[#a084ee] bg-clip-text text-transparent">
                 Oghojafor
               </span>

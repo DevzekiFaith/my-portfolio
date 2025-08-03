@@ -64,7 +64,7 @@ const Home = () => {
               <h1 className="text-5xl xl:text-7xl font-bold text-gray-900 mb-6 leading-tight">
                 Hi, I'm{" "}
                 <span className="bg-gradient-to-r from-[#635bff] to-[#a084ee] bg-clip-text text-transparent">
-                  Ezekiel
+                  Faith
                 </span>
               </h1>
               <div className="text-xl xl:text-2xl text-gray-600 font-light leading-relaxed">
