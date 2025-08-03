@@ -453,7 +453,7 @@ const Home = () => {
             <div className="xl:w-1/2">
               <h2 className="text-5xl xl:text-6xl font-bold text-gray-900 mb-8">
                 About{" "}
-                <span className="bg-gradient-to-r from-[#635bff] to-[#a084ee] bg-clip-text text-transparent text-white">
+                <span className="bg-gradient-to-r from-[#635bff] to-[#a084ee] bg-clip-text text-transparent">
                   Me
                 </span>
               </h2>
@@ -490,7 +490,7 @@ const Home = () => {
             <div className="xl:w-1/2">
               <h2 className="text-5xl xl:text-6xl font-bold text-gray-900 mb-8">
                 Let's{" "}
-                <span className="bg-gradient-to-r from-[#635bff] to-[#a084ee] bg-clip-text text-transparent text-white">
+                <span className="bg-gradient-to-r from-[#635bff] to-[#a084ee] bg-clip-text text-transparent">
                   Connect
                 </span>
               </h2>
