@@ -2,23 +2,10 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import ProfileImage from "/p.image.jpg";
-import LinkdlnImage from "/linkedin.svg";
-import GitHubImage from "/github.svg";
-import Arrow from "/arrow-up-right-circle-fill.svg";
-import ImageProject001 from "/md1.jpg";
-import ImageProject002 from "/md2.jpg";
-import Image001 from "/twitter-x.svg";
-import Image002 from "/instagram.svg";
-import Image003 from "/md3.jpg";
-import Image004 from "/md4.jpg";
-import Image005 from "/md5.jpg";
-import Image006 from "/add movie.png";
-import Image008 from "/md6.jpg";
 import { useForm } from "react-hook-form";
 import Typewriter from "typewriter-effect";
-import { FaGithub } from "react-icons/fa6";
-import { FaLinkedin } from "react-icons/fa";
-import { MdMarkEmailRead } from "react-icons/md";
+import { FaGithub, FaLinkedin, FaArrowRight, FaCode, FaHeartbeat, FaChartLine, FaShieldAlt, FaMobileAlt, FaDatabase, FaUsers, FaCreditCard, FaStethoscope, FaUserMd, FaFileMedical } from "react-icons/fa";
+import { MdMarkEmailRead, MdBusiness, MdAccountBalance, MdHealthAndSafety, MdTrendingUp, MdSecurity } from "react-icons/md";
 import { useTheme } from "../../contexts/ThemeContext";
 
 const Home = () => {
@@ -35,17 +22,12 @@ const Home = () => {
 
   const onSubmit = async (data) => {
     console.log(data);
-    // Simulate an API call
     await new Promise((resolve) => setTimeout(resolve, 1000));
-
-    // Show toast notification
     setToastVisible(true);
-
-    // Hide toast after 3 seconds
     setTimeout(() => {
       setToastVisible(false);
-      reset(); // Reset the form fields
-    }, 3000); // Adjust the delay as needed (3000ms = 3 seconds)
+      reset();
+    }, 3000);
   };
 
   return (
@@ -67,10 +49,10 @@ const Home = () => {
       )}
 
       {/* Hero Section */}
-      <div className="container mx-auto px-6 py-20">
-        <div className="flex xl:flex-row flex-col justify-center items-center gap-16">
+      <section className="container mx-auto px-6 py-20">
+        <div className="flex xl:flex-row flex-col justify-between items-center gap-16 min-h-[80vh]">
           <motion.div 
-            className="max-w-2xl text-center xl:text-left"
+            className="flex-1 max-w-2xl text-center xl:text-left"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -84,7 +66,7 @@ const Home = () => {
               >
                 Hi, I'm{" "}
                 <motion.span 
-                  className="text-emerald-600"
+                  className="text-purple-600"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.6, delay: 0.4 }}
@@ -101,9 +83,9 @@ const Home = () => {
                 <Typewriter
                   options={{
                     strings: [
-                      "HealthTech Frontend Engineer specializing in telemedicine and patient care solutions.",
-                      "Building digital health platforms that improve patient outcomes and healthcare accessibility.",
-                      "Creating intuitive interfaces for healthcare professionals and patients worldwide."
+                      "Full-Stack Developer specializing in Business Solutions & HealthTech.",
+                      "Building innovative applications for SMEs, FinTech, and Healthcare sectors.",
+                      "Creating digital solutions that drive business growth and improve lives."
                     ],
                     autoStart: true,
                     loop: true,
@@ -115,49 +97,48 @@ const Home = () => {
             </div>
 
             <motion.div 
-              className="flex flex-col sm:flex-row items-center gap-6 justify-center xl:justify-start"
+              className="flex flex-col sm:flex-row items-center gap-6"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-              <Link to="/contact">
-                <motion.button 
-                  className={`group ${colors.cardBackground} ${colors.accent} px-8 py-4 rounded-2xl font-semibold text-lg ${colors.shadow.medium} hover:${colors.shadow.inset} transition-all duration-300 focus:outline-none`}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Let's Connect
-                  <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
-                </motion.button>
-              </Link>
+              <motion.a
+                href="#projects"
+                className={`group flex items-center gap-3 ${colors.cardBackground} ${colors.accent} px-8 py-4 rounded-2xl font-semibold text-lg ${colors.shadow.medium} hover:${colors.shadow.inset} transition-all duration-300 focus:outline-none`}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <span>View My Work</span>
+                <FaArrowRight className="group-hover:translate-x-1 transition-transform duration-300" />
+              </motion.a>
 
               <div className="flex gap-4">
                 <motion.a
                   href="https://www.linkedin.com/in/ezekiel-oghojafor-268889196/"
-                  className={`group p-3 ${colors.cardBackground} rounded-xl ${colors.shadow.small} hover:${colors.shadow.inset} transition-all duration-300`}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className={`group p-3 ${colors.cardBackground} rounded-xl ${colors.shadow.small} hover:${colors.shadow.inset} transition-all duration-300`}
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  <FaLinkedin className="w-5 h-5 text-emerald-600" />
+                  <FaLinkedin className="w-5 h-5 text-purple-600" />
                 </motion.a>
                 <motion.a
                   href="https://github.com/DevzekiFaith"
-                  className={`group p-3 ${colors.cardBackground} rounded-xl ${colors.shadow.small} hover:${colors.shadow.inset} transition-all duration-300`}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className={`group p-3 ${colors.cardBackground} rounded-xl ${colors.shadow.small} hover:${colors.shadow.inset} transition-all duration-300`}
                   whileHover={{ scale: 1.1, rotate: -5 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  <FaGithub className="w-5 h-5 text-emerald-600" />
+                  <FaGithub className="w-5 h-5 text-purple-600" />
                 </motion.a>
               </div>
             </motion.div>
           </motion.div>
 
           <motion.div 
-            className="xl:w-[400px] w-full max-w-sm"
+            className="flex-1 xl:max-w-lg"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
@@ -168,592 +149,400 @@ const Home = () => {
               transition={{ duration: 0.3 }}
             >
               <img
-                className="w-full h-auto rounded-2xl"
                 src={ProfileImage}
-                alt="Ezekiel Oghojafor"
+                alt="Faith Oghojafor"
+                className="w-full h-auto rounded-2xl"
                 loading="lazy"
               />
             </motion.div>
           </motion.div>
         </div>
-      </div>
+      </section>
 
-      {/* Featured Projects Section */}
-      <section className="py-24">
+      {/* Section Navigation */}
+      <section className="container mx-auto px-6 py-16">
+        <motion.div 
+          className="flex flex-col lg:flex-row gap-8 justify-center items-stretch max-w-4xl mx-auto"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <motion.a
+            href="#business-solutions"
+            className={`group flex items-center gap-4 ${colors.cardBackground} px-8 py-6 rounded-2xl ${colors.shadow.medium} hover:${colors.shadow.inset} transition-all duration-300 flex-1`}
+            whileHover={{ scale: 1.02, y: -5 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            <div className="p-3 bg-purple-100 rounded-xl">
+              <MdBusiness className="w-8 h-8 text-purple-600" />
+            </div>
+            <div className="text-left">
+              <h3 className={`text-xl font-bold ${colors.text}`}>Business Solutions</h3>
+              <p className={`${colors.textSecondary} text-sm`}>SMEs & FinTech Applications</p>
+            </div>
+            <FaArrowRight className="ml-auto group-hover:translate-x-1 transition-transform duration-300" />
+          </motion.a>
+
+          <motion.a
+            href="#health-solutions"
+            className={`group flex items-center gap-4 ${colors.cardBackground} px-8 py-6 rounded-2xl ${colors.shadow.medium} hover:${colors.shadow.inset} transition-all duration-300 flex-1`}
+            whileHover={{ scale: 1.02, y: -5 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            <div className="p-3 bg-purple-100 rounded-xl">
+              <MdHealthAndSafety className="w-8 h-8 text-purple-600" />
+            </div>
+            <div className="text-left">
+              <h3 className={`text-xl font-bold ${colors.text}`}>Health Solutions</h3>
+              <p className={`${colors.textSecondary} text-sm`}>Telemedicine & Patient Care</p>
+            </div>
+            <FaArrowRight className="ml-auto group-hover:translate-x-1 transition-transform duration-300" />
+          </motion.a>
+        </motion.div>
+      </section>
+
+      {/* Business Solutions Section */}
+      <section id="business-solutions" className={`py-24 ${colors.background}`}>
         <div className="container mx-auto px-6">
           <motion.div 
-            className="text-center mb-20"
+            className="text-center mb-16"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <motion.div 
-              className={`${colors.cardBackground} rounded-3xl p-8 ${colors.shadow.raised} max-w-4xl mx-auto`}
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.3 }}
-            >
-              <h2 className={`text-4xl xl:text-5xl font-bold ${colors.text} mb-6`}>
-                HealthTech &{" "}
-                <span className="text-emerald-600">
-                  Telemedicine Projects
-                </span>
-              </h2>
-              <p className={`text-lg ${colors.textSecondary} max-w-2xl mx-auto`}>
-                Specialized healthcare solutions designed to improve patient care, streamline medical workflows, and enhance healthcare accessibility.
-              </p>
-            </motion.div>
+            <h2 className={`text-4xl xl:text-5xl font-bold ${colors.text} mb-6`}>
+              Business{" "}
+              <span className="text-blue-600">Solutions</span>
+            </h2>
+            <p className={`text-lg ${colors.textSecondary} max-w-3xl mx-auto leading-relaxed`}>
+              Empowering small and medium enterprises with cutting-edge administrative tools and fintech solutions that streamline operations and drive growth.
+            </p>
           </motion.div>
 
-          {/* Project Cards */}
-          <div className="space-y-32">
-            {/* Project 1 - Patient Appointment Booking App */}
-            <motion.div 
-              className="flex xl:flex-row flex-col justify-center items-center gap-16"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
+          {/* Business Solutions Grid */}
+          <div className="flex flex-wrap justify-center gap-8 mb-16">
+            {/* SME Management System */}
+            <Link to="/project/sme-management">
               <motion.div 
-                className="xl:w-[45%] w-full"
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                className={`${colors.cardBackground} rounded-3xl p-8 ${colors.shadow.medium} group cursor-pointer w-80 h-96 flex flex-col`}
+                whileHover={{ scale: 1.05, y: -10 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                <motion.div 
-                  className={`${colors.cardBackground} rounded-3xl p-6 ${colors.shadow.raised}`}
-                  whileHover={{ scale: 1.02, rotateY: 5 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <img
-                    className="w-full h-80 object-cover rounded-2xl"
-                    src={ImageProject001}
-                    alt="Patient Appointment Booking App"
-                    loading="lazy"
-                  />
-                </motion.div>
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="p-3 bg-purple-100 rounded-xl">
+                    <MdBusiness className="w-8 h-8 text-purple-600" />
+                  </div>
+                  <h3 className={`text-xl font-bold ${colors.text}`}>SME Management</h3>
+                </div>
+                <img
+                  src="/og2.png"
+                  alt="SME Management System"
+                  className="w-full h-48 object-cover rounded-2xl mb-4"
+                  loading="lazy"
+                />
+                <p className={`${colors.textSecondary} mb-4 text-sm leading-relaxed`}>
+                  Comprehensive business management platform for small and medium enterprises with inventory, CRM, and analytics.
+                </p>
+                <div className="flex items-center justify-between">
+                  <div className="flex gap-2">
+                    <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">React</span>
+                    <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Node.js</span>
+                  </div>
+                  <FaArrowRight className="text-purple-600 group-hover:translate-x-1 transition-transform duration-300" />
+                </div>
               </motion.div>
+            </Link>
 
+            {/* FinTech Dashboard */}
+            <Link to="/project/fintech-dashboard">
               <motion.div 
-                className="xl:w-[45%] w-full"
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
+                className={`${colors.cardBackground} rounded-3xl p-8 ${colors.shadow.medium} group cursor-pointer w-80 h-96 flex flex-col`}
+                whileHover={{ scale: 1.05, y: -10 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                <div className="space-y-6">
-                  <motion.div 
-                    className={`${colors.cardBackground} rounded-3xl p-8 ${colors.shadow.medium}`}
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <h3 className={`text-2xl xl:text-3xl font-bold ${colors.text} mb-4`}>
-                      Patient Appointment Booking App
-                    </h3>
-                    <p className={`${colors.textSecondary} leading-relaxed`}>
-                      A comprehensive appointment management system that streamlines the booking process for patients and healthcare providers. 
-                      Features real-time availability, automated reminders, and integrated patient records.
-                    </p>
-                  </motion.div>
-
-                  <motion.div 
-                    className={`${colors.cardBackground} rounded-2xl p-6 ${colors.shadow.small}`}
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-3 h-3 bg-emerald-500 rounded-full"></div>
-                      <span className={`${colors.text} font-semibold`}>Key Features</span>
-                    </div>
-                    <div className="space-y-2">
-                      <div className="flex items-center gap-3">
-                        <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                        <span className={`${colors.textSecondary} text-sm`}>Real-time appointment scheduling</span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                        <span className={`${colors.textSecondary} text-sm`}>Automated SMS/Email reminders</span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                        <span className={`${colors.textSecondary} text-sm`}>Patient health history integration</span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                        <span className={`${colors.textSecondary} text-sm`}>HIPAA-compliant data handling</span>
-                      </div>
-                    </div>
-                  </motion.div>
-
-                  <motion.div 
-                    className={`${colors.cardBackground} rounded-2xl p-6 ${colors.shadow.small}`}
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <h4 className="text-lg font-semibold text-emerald-700 mb-3">Case Study: Improving Patient Experience</h4>
-                    <p className={`${colors.textSecondary} text-sm leading-relaxed`}>
-                      Reduced appointment booking time by 70% and increased patient satisfaction scores by 45% through intuitive UI design 
-                      and automated reminder system. The clean, accessible interface ensures patients of all ages can easily schedule appointments.
-                    </p>
-                  </motion.div>
-
-                  <motion.div 
-                    className="flex flex-col sm:flex-row gap-4"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.6 }}
-                    viewport={{ once: true }}
-                  >
-                    <motion.a
-                      href="#"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`group flex items-center justify-center gap-3 ${colors.cardBackground} ${colors.accent} px-6 py-3 rounded-xl font-semibold ${colors.shadow.small} hover:${colors.shadow.inset} transition-all duration-300`}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <span>Live Demo</span>
-                      <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
-                    </motion.a>
-
-                    <motion.a
-                      href="#"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`group flex items-center justify-center gap-3 ${colors.cardBackground} ${colors.text} px-6 py-3 rounded-xl font-semibold ${colors.shadow.small} hover:${colors.shadow.inset} transition-all duration-300`}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <FaGithub className="w-5 h-5" />
-                      <span>View Code</span>
-                    </motion.a>
-                  </motion.div>
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="p-3 bg-purple-100 rounded-xl">
+                    <FaCreditCard className="w-8 h-8 text-purple-600" />
+                  </div>
+                  <h3 className={`text-xl font-bold ${colors.text}`}>FinTech Dashboard</h3>
+                </div>
+                <img
+                  src="/db1.png"
+                  alt="FinTech Dashboard"
+                  className="w-full h-48 object-cover rounded-2xl mb-4"
+                  loading="lazy"
+                />
+                <p className={`${colors.textSecondary} mb-4 text-sm leading-relaxed`}>
+                  Advanced financial dashboard with real-time analytics, transaction monitoring, and risk assessment tools.
+                </p>
+                <div className="flex items-center justify-between">
+                  <div className="flex gap-2">
+                    <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">TypeScript</span>
+                    <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Chart.js</span>
+                  </div>
+                  <FaArrowRight className="text-purple-600 group-hover:translate-x-1 transition-transform duration-300" />
                 </div>
               </motion.div>
-            </motion.div>
+            </Link>
 
-            {/* Project 2 - Telemedicine Video Consultation Platform */}
-            <div className="flex xl:flex-row flex-col justify-center items-center gap-16">
-              <div className="xl:w-[45%] w-full order-2 xl:order-1">
-                <div className="space-y-6">
-                  <div className="bg-gray-100 rounded-3xl p-8 shadow-[8px_8px_16px_#d1d5db,-8px_-8px_16px_#ffffff]">
-                    <h3 className="text-2xl xl:text-3xl font-bold text-gray-800 mb-4">
-                      Telemedicine Video Consultation Platform
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed">
-                      A secure, HIPAA-compliant video consultation platform connecting patients with healthcare providers remotely. 
-                      Features high-quality video calls, screen sharing, and integrated prescription management.
-                    </p>
+            {/* Analytics Platform */}
+            <Link to="/project/analytics-platform">
+              <motion.div 
+                className={`${colors.cardBackground} rounded-3xl p-8 ${colors.shadow.medium} group cursor-pointer w-80 h-96 flex flex-col`}
+                whileHover={{ scale: 1.05, y: -10 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+              >
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="p-3 bg-purple-100 rounded-xl">
+                    <FaChartLine className="w-8 h-8 text-purple-600" />
                   </div>
-
-                  <div className="bg-gray-100 rounded-2xl p-6 shadow-[6px_6px_12px_#d1d5db,-6px_-6px_12px_#ffffff]">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-3 h-3 bg-emerald-500 rounded-full"></div>
-                      <span className="text-gray-800 font-semibold">Key Features</span>
-                    </div>
-                    <div className="space-y-2">
-                      <div className="flex items-center gap-3">
-                        <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                        <span className="text-gray-700 text-sm">HD video consultation with screen sharing</span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                        <span className="text-gray-700 text-sm">Secure patient-doctor messaging</span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                        <span className="text-gray-700 text-sm">Digital prescription management</span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                        <span className="text-gray-700 text-sm">End-to-end encryption</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="bg-gray-100 rounded-2xl p-6 shadow-[6px_6px_12px_#d1d5db,-6px_-6px_12px_#ffffff]">
-                    <h4 className="text-lg font-semibold text-emerald-700 mb-3">Case Study: Remote Healthcare Access</h4>
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      Enabled 15,000+ remote consultations during COVID-19, reducing hospital visits by 60% while maintaining 
-                      quality of care. The platform's intuitive design reduced technical support calls by 80% among elderly patients.
-                    </p>
-                  </div>
-
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <a
-                      href="#"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group flex items-center justify-center gap-3 bg-gray-100 text-emerald-700 px-6 py-3 rounded-xl font-semibold shadow-[6px_6px_12px_#d1d5db,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#d1d5db,inset_-6px_-6px_12px_#ffffff] transition-all duration-300"
-                    >
-                      <span>Live Demo</span>
-                      <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
-                    </a>
-
-                    <a
-                      href="#"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group flex items-center justify-center gap-3 bg-gray-100 text-gray-700 px-6 py-3 rounded-xl font-semibold shadow-[6px_6px_12px_#d1d5db,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#d1d5db,inset_-6px_-6px_12px_#ffffff] transition-all duration-300"
-                    >
-                      <FaGithub className="w-5 h-5" />
-                      <span>View Code</span>
-                    </a>
-                  </div>
+                  <h3 className={`text-xl font-bold ${colors.text}`}>Analytics Platform</h3>
                 </div>
-              </div>
-
-              <div className="xl:w-[45%] w-full order-1 xl:order-2">
-                <div className="bg-gray-100 rounded-3xl p-6 shadow-[12px_12px_24px_#d1d5db,-12px_-12px_24px_#ffffff]">
-                  <img
-                    className="w-full h-64 object-cover rounded-2xl"
-                    src={Image004}
-                    alt="Telemedicine Platform"
-                    loading="lazy"
-                  />
+                <img
+                  src="/db2.png"
+                  alt="Analytics Platform"
+                  className="w-full h-48 object-cover rounded-2xl mb-4"
+                  loading="lazy"
+                />
+                <p className={`${colors.textSecondary} mb-4 text-sm leading-relaxed`}>
+                  Business intelligence platform with advanced data visualization and predictive analytics capabilities.
+                </p>
+                <div className="flex items-center justify-between">
+                  <div className="flex gap-2">
+                    <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">D3.js</span>
+                    <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Python</span>
+                  </div>
+                  <FaArrowRight className="text-purple-600 group-hover:translate-x-1 transition-transform duration-300" />
                 </div>
-              </div>
-            </div>
-
-            {/* Project 3 - Patient Health Record Portal */}
-            <div className="flex xl:flex-row flex-col justify-center items-center gap-16">
-              <div className="xl:w-[45%] w-full">
-                <div className="bg-gray-100 rounded-3xl p-6 shadow-[12px_12px_24px_#d1d5db,-12px_-12px_24px_#ffffff]">
-                  <img
-                    className="w-full h-64 object-cover rounded-2xl"
-                    src={Image005}
-                    alt="Patient Health Record Portal"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-
-              <div className="xl:w-[45%] w-full">
-                <div className="space-y-6">
-                  <div className="bg-gray-100 rounded-3xl p-8 shadow-[8px_8px_16px_#d1d5db,-8px_-8px_16px_#ffffff]">
-                    <h3 className="text-2xl xl:text-3xl font-bold text-gray-800 mb-4">
-                      Patient Health Record Portal
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed">
-                      A comprehensive digital health record management system that empowers patients to access, 
-                      manage, and share their medical information securely with healthcare providers.
-                    </p>
-                  </div>
-
-                  <div className="bg-gray-100 rounded-2xl p-6 shadow-[6px_6px_12px_#d1d5db,-6px_-6px_12px_#ffffff]">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-3 h-3 bg-emerald-500 rounded-full"></div>
-                      <span className="text-gray-800 font-semibold">Key Features</span>
-                    </div>
-                    <div className="space-y-2">
-                      <div className="flex items-center gap-3">
-                        <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                        <span className="text-gray-700 text-sm">Comprehensive medical history tracking</span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                        <span className="text-gray-700 text-sm">Lab results and imaging reports</span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                        <span className="text-gray-700 text-sm">Medication management and reminders</span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                        <span className="text-gray-700 text-sm">Secure provider sharing</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="bg-gray-100 rounded-2xl p-6 shadow-[6px_6px_12px_#d1d5db,-6px_-6px_12px_#ffffff]">
-                    <h4 className="text-lg font-semibold text-emerald-700 mb-3">Case Study: Patient Empowerment</h4>
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      Improved patient engagement by 65% and reduced administrative burden on healthcare staff by 40%. 
-                      Patients reported feeling more in control of their health with easy access to their medical data and treatment history.
-                    </p>
-                  </div>
-
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <a
-                      href="#"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group flex items-center justify-center gap-3 bg-gray-100 text-emerald-700 px-6 py-3 rounded-xl font-semibold shadow-[6px_6px_12px_#d1d5db,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#d1d5db,inset_-6px_-6px_12px_#ffffff] transition-all duration-300"
-                    >
-                      <span>Live Demo</span>
-                      <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
-                    </a>
-
-                    <a
-                      href="#"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group flex items-center justify-center gap-3 bg-gray-100 text-gray-700 px-6 py-3 rounded-xl font-semibold shadow-[6px_6px_12px_#d1d5db,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#d1d5db,inset_-6px_-6px_12px_#ffffff] transition-all duration-300"
-                    >
-                      <FaGithub className="w-5 h-5" />
-                      <span>View Code</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Project 4 - Mental Health / Therapy Session Booking App */}
-            <div className="flex xl:flex-row flex-col justify-center items-center gap-16">
-              <div className="xl:w-[45%] w-full order-2 xl:order-1">
-                <div className="space-y-8">
-                  <div>
-                    <h3 className="text-3xl xl:text-4xl font-bold text-gray-900 mb-4">
-                      Mental Health & Therapy Session Booking App
-                    </h3>
-                    <p className="text-lg text-gray-600 leading-relaxed">
-                      A compassionate mental health platform connecting patients with licensed therapists and counselors. 
-                      Features secure booking, mood tracking, and crisis support resources.
-                    </p>
-                  </div>
-
-                  <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-3 h-3 bg-[#10b981] rounded-full"></div>
-                      <span className="text-gray-900 font-semibold">Key Features</span>
-                    </div>
-                    <div className="space-y-3">
-                      <div className="flex items-center gap-3">
-                        <div className="w-2 h-2 bg-[#10b981] rounded-full"></div>
-                        <span className="text-gray-700">Therapist matching and booking</span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <div className="w-2 h-2 bg-[#10b981] rounded-full"></div>
-                        <span className="text-gray-700">Mood tracking and journaling</span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <div className="w-2 h-2 bg-[#10b981] rounded-full"></div>
-                        <span className="text-gray-700">Crisis intervention resources</span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <div className="w-2 h-2 bg-[#10b981] rounded-full"></div>
-                        <span className="text-gray-700">Anonymous support groups</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="bg-green-50 rounded-2xl p-6 border border-green-200">
-                    <h4 className="text-lg font-semibold text-green-800 mb-3">Case Study: Breaking Mental Health Barriers</h4>
-                    <p className="text-green-700 text-sm leading-relaxed">
-                      Increased therapy session bookings by 120% and reduced wait times from 3 weeks to 3 days. 
-                      The stigma-free design and anonymous features encouraged 40% more users to seek mental health support.
-                    </p>
-                  </div>
-
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <a
-                      href="#"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group flex items-center justify-center gap-3 bg-gradient-to-r from-[#10b981] to-[#059669] text-white px-6 py-3 rounded-xl font-semibold hover:shadow-xl hover:shadow-[#10b981]/25 transform hover:-translate-y-1 transition-all duration-300"
-                    >
-                      <span>Live Demo</span>
-                      <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
-                    </a>
-
-                    <a
-                      href="#"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group flex items-center justify-center gap-3 border-2 border-gray-300 text-gray-700 px-6 py-3 rounded-xl font-semibold hover:border-[#10b981] hover:text-[#10b981] transition-all duration-300"
-                    >
-                      <FaGithub className="w-5 h-5" />
-                      <span>View Code</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div className="xl:w-[45%] w-full order-1 xl:order-2">
-                <div className="group relative overflow-hidden rounded-3xl shadow-2xl transform hover:-translate-y-4 transition-all duration-700">
-                  <img
-                    className="w-full h-auto"
-                    src={ImageProject002}
-                    alt="Mental Health App"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center pb-8">
-                    <div className="text-white text-center">
-                      <h3 className="text-2xl font-bold mb-2">MindCare Connect</h3>
-                      <p className="text-sm opacity-90">React • Node.js • PostgreSQL</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
+              </motion.div>
+            </Link>
           </div>
+
+          {/* Business Features */}
+          <motion.div 
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            viewport={{ once: true }}
+          >
+            {[
+              { icon: FaUsers, title: "User Management", desc: "Role-based access control" },
+              { icon: FaDatabase, title: "Data Security", desc: "Enterprise-grade encryption" },
+              { icon: MdTrendingUp, title: "Growth Analytics", desc: "Real-time performance metrics" },
+              { icon: MdSecurity, title: "Compliance", desc: "Industry-standard security" }
+            ].map((feature, index) => (
+              <motion.div 
+                key={index}
+                className={`${colors.cardBackground} rounded-2xl p-6 ${colors.shadow.small} text-center`}
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="p-3 bg-purple-100 rounded-xl w-fit mx-auto mb-4">
+                  <feature.icon className="w-6 h-6 text-purple-600" />
+                </div>
+                <h4 className={`${colors.text} font-semibold mb-2`}>{feature.title}</h4>
+                <p className={`${colors.textSecondary} text-sm`}>{feature.desc}</p>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="py-24">
+      {/* Health Solutions Section */}
+      <section id="health-solutions" className={`py-24 ${colors.background}`}>
         <div className="container mx-auto px-6">
           <motion.div 
-            className="flex xl:flex-row flex-col justify-center items-center gap-16"
+            className="text-center mb-16"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <motion.div 
-              className="xl:w-1/2"
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <motion.div 
-                className={`${colors.cardBackground} rounded-3xl p-8 ${colors.shadow.raised}`}
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-              >
-                <h2 className={`text-4xl xl:text-5xl font-bold ${colors.text} mb-8`}>
-                  About{" "}
-                  <span className="text-emerald-600">
-                    Me
-                  </span>
-                </h2>
-              </motion.div>
-            </motion.div>
+            <h2 className={`text-4xl xl:text-5xl font-bold ${colors.text} mb-6`}>
+              Health{" "}
+              <span className="text-blue-600">Solutions</span>
+            </h2>
+            <p className={`text-lg ${colors.textSecondary} max-w-3xl mx-auto leading-relaxed`}>
+              Revolutionizing healthcare through innovative telemedicine platforms and patient management systems that improve outcomes and accessibility.
+            </p>
+          </motion.div>
 
-            <motion.div 
-              className="xl:w-1/2 space-y-6"
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: true }}
-            >
+          {/* Health Solutions Grid */}
+          <div className="flex flex-wrap justify-center gap-8 mb-16">
+            {/* PCOS Management */}
+            <Link to="/project/pcos-management">
               <motion.div 
-                className={`${colors.cardBackground} rounded-3xl p-8 ${colors.shadow.medium}`}
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-              >
-                <h3 className={`text-2xl xl:text-3xl font-bold ${colors.text} mb-4`}>
-                  HealthTech Frontend Engineer & Healthcare UX Specialist
-                </h3>
-                <p className={`${colors.textSecondary} leading-relaxed`}>
-                  I am a passionate frontend engineer specializing in healthcare technology solutions. With a unique architectural background, 
-                  I bring a human-centered design approach to creating accessible, secure, and intuitive digital health experiences. 
-                  My expertise lies in HIPAA-compliant applications, telemedicine platforms, and patient-centered healthcare interfaces.
-                </p>
-              </motion.div>
-
-              <motion.div 
-                className={`${colors.cardBackground} rounded-2xl p-6 ${colors.shadow.small}`}
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-              >
-                <h4 className="text-lg font-semibold text-emerald-700 mb-3">Healthcare Technology Expertise</h4>
-                <div className="grid grid-cols-2 gap-3 text-sm">
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                    <span className={colors.textSecondary}>HIPAA Compliance</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                    <span className={colors.textSecondary}>Telemedicine Platforms</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                    <span className={colors.textSecondary}>Patient Data Security</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                    <span className={colors.textSecondary}>Accessibility (WCAG 2.1)</span>
-                  </div>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                className={`${colors.cardBackground} rounded-3xl p-8 ${colors.shadow.medium} group cursor-pointer w-80 h-96 flex flex-col`}
+                whileHover={{ scale: 1.05, y: -10 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
+                transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                <Link
-                  to="/About"
-                  className={`inline-flex items-center gap-3 ${colors.cardBackground} ${colors.accent} hover:text-emerald-800 font-semibold text-lg transition-all duration-300 group px-6 py-3 rounded-xl ${colors.shadow.small} hover:${colors.shadow.inset}`}
-                >
-                  <span>Learn More About My HealthTech Journey</span>
-                  <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
-                </Link>
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="p-3 bg-purple-100 rounded-xl">
+                    <FaStethoscope className="w-8 h-8 text-purple-600" />
+                  </div>
+                  <h3 className={`text-xl font-bold ${colors.text}`}>PCOS Management</h3>
+                </div>
+                <img
+                  src="/md1.jpg"
+                  alt="PCOS Patient Management"
+                  className="w-full h-48 object-cover rounded-2xl mb-4"
+                  loading="lazy"
+                />
+                <p className={`${colors.textSecondary} mb-4 text-sm leading-relaxed`}>
+                  Comprehensive PCOS patient management platform with 3D visualization and AI-powered insights.
+                </p>
+                <div className="flex items-center justify-between">
+                  <div className="flex gap-2">
+                    <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">React</span>
+                    <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">WebRTC</span>
+                  </div>
+                  <FaArrowRight className="text-purple-600 group-hover:translate-x-1 transition-transform duration-300" />
+                </div>
               </motion.div>
-            </motion.div>
+            </Link>
+
+            {/* Telemedicine Platform */}
+            <Link to="/project/telemedicine">
+              <motion.div 
+                className={`${colors.cardBackground} rounded-3xl p-8 ${colors.shadow.medium} group cursor-pointer w-80 h-96 flex flex-col`}
+                whileHover={{ scale: 1.05, y: -10 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="p-3 bg-purple-100 rounded-xl">
+                    <FaUserMd className="w-8 h-8 text-purple-600" />
+                  </div>
+                  <h3 className={`text-xl font-bold ${colors.text}`}>Telemedicine</h3>
+                </div>
+                <img
+                  src="/md2.jpg"
+                  alt="Telemedicine Platform"
+                  className="w-full h-48 object-cover rounded-2xl mb-4"
+                  loading="lazy"
+                />
+                <p className={`${colors.textSecondary} mb-4 text-sm leading-relaxed`}>
+                  Secure video consultation platform with appointment scheduling and prescription management.
+                </p>
+                <div className="flex items-center justify-between">
+                  <div className="flex gap-2">
+                    <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">WebRTC</span>
+                    <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Firebase</span>
+                  </div>
+                  <FaArrowRight className="text-purple-600 group-hover:translate-x-1 transition-transform duration-300" />
+                </div>
+              </motion.div>
+            </Link>
+
+            {/* Health Records */}
+            <Link to="/project/health-records">
+              <motion.div 
+                className={`${colors.cardBackground} rounded-3xl p-8 ${colors.shadow.medium} group cursor-pointer w-80 h-96 flex flex-col`}
+                whileHover={{ scale: 1.05, y: -10 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+              >
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="p-3 bg-purple-100 rounded-xl">
+                    <FaFileMedical className="w-8 h-8 text-purple-600" />
+                  </div>
+                  <h3 className={`text-xl font-bold ${colors.text}`}>Health Records</h3>
+                </div>
+                <img
+                  src="/md3.jpg"
+                  alt="Health Records Portal"
+                  className="w-full h-48 object-cover rounded-2xl mb-4"
+                  loading="lazy"
+                />
+                <p className={`${colors.textSecondary} mb-4 text-sm leading-relaxed`}>
+                  HIPAA-compliant patient health record portal with secure data sharing and analytics.
+                </p>
+                <div className="flex items-center justify-between">
+                  <div className="flex gap-2">
+                    <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">PostgreSQL</span>
+                    <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">HIPAA</span>
+                  </div>
+                  <FaArrowRight className="text-purple-600 group-hover:translate-x-1 transition-transform duration-300" />
+                </div>
+              </motion.div>
+            </Link>
+          </div>
+
+          {/* Health Features */}
+          <motion.div 
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            viewport={{ once: true }}
+          >
+            {[
+              { icon: FaHeartbeat, title: "Patient Monitoring", desc: "Real-time health tracking" },
+              { icon: FaShieldAlt, title: "HIPAA Compliance", desc: "Secure data protection" },
+              { icon: FaMobileAlt, title: "Mobile Access", desc: "Cross-platform availability" },
+              { icon: FaUserMd, title: "Provider Tools", desc: "Advanced clinical features" }
+            ].map((feature, index) => (
+              <motion.div 
+                key={index}
+                className={`${colors.cardBackground} rounded-2xl p-6 ${colors.shadow.small} text-center`}
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="p-3 bg-purple-100 rounded-xl w-fit mx-auto mb-4">
+                  <feature.icon className="w-6 h-6 text-purple-600" />
+                </div>
+                <h4 className={`${colors.text} font-semibold mb-2`}>{feature.title}</h4>
+                <p className={`${colors.textSecondary} text-sm`}>{feature.desc}</p>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section className="py-24">
+      <section className={`py-24 ${colors.background}`}>
         <div className="container mx-auto px-6">
           <motion.div 
-            className="flex xl:flex-row flex-col justify-center items-start gap-16"
+            className="text-center mb-16"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
+            <h2 className={`text-4xl xl:text-5xl font-bold ${colors.text} mb-6`}>
+              Let's{" "}
+              <span className="text-blue-600">Connect</span>
+            </h2>
+            <p className={`text-lg ${colors.textSecondary} max-w-3xl mx-auto leading-relaxed`}>
+              Ready to transform your business or healthcare operations? Let's discuss how we can work together to create innovative solutions.
+            </p>
+          </motion.div>
+
+          <div className="grid xl:grid-cols-2 gap-16 items-center">
             <motion.div 
-              className="xl:w-1/2"
+              className="space-y-8"
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <motion.div 
-                className={`${colors.cardBackground} rounded-3xl p-8 ${colors.shadow.raised}`}
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-              >
-                <h2 className={`text-4xl xl:text-5xl font-bold ${colors.text} mb-8`}>
-                  Let's{" "}
-                  <span className="text-emerald-600">
-                    Connect
-                  </span>
-                </h2>
-                <p className={`${colors.textSecondary} mb-8 leading-relaxed`}>
-                  Ready to transform healthcare through technology? Let's discuss how we can work together 
-                  to create innovative health solutions that improve patient outcomes and healthcare accessibility.
-                </p>
-
-                <div className="flex items-center gap-4">
-                  <motion.a
-                    href="https://www.linkedin.com/in/ezekiel-oghojafor-268889196/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`group p-4 ${colors.cardBackground} rounded-2xl ${colors.shadow.small} hover:${colors.shadow.inset} transition-all duration-300`}
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    whileTap={{ scale: 0.9 }}
-                  >
-                    <FaLinkedin className="w-5 h-5 text-emerald-600 group-hover:scale-110 transition-transform duration-300" />
-                  </motion.a>
-                  <motion.a
-                    href="https://github.com/DevzekiFaith"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`group p-4 ${colors.cardBackground} rounded-2xl ${colors.shadow.small} hover:${colors.shadow.inset} transition-all duration-300`}
-                    whileHover={{ scale: 1.1, rotate: -5 }}
-                    whileTap={{ scale: 0.9 }}
-                  >
-                    <FaGithub className="w-5 h-5 text-emerald-600 group-hover:scale-110 transition-transform duration-300" />
-                  </motion.a>
-                </div>
-              </motion.div>
-            </motion.div>
-
-            <motion.div 
-              className="xl:w-1/2 w-full"
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
             >
               <motion.div 
@@ -761,65 +550,106 @@ const Home = () => {
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
-                <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-                  <div className="space-y-2">
-                    <label className={`${colors.text} font-semibold`}>Name</label>
-                    <input
-                      className={`w-full ${colors.cardBackground} rounded-xl px-4 py-3 ${colors.text} focus:outline-none ${colors.shadow.insetSmall} transition-all duration-300`}
-                      type="text"
-                      placeholder="Your name"
-                      {...register("Username", {
-                        required: "Name is required",
-                      })}
-                    />
-                    {errors.Username && (
-                      <span className="text-red-500 text-sm">
-                        {errors.Username.message}
-                      </span>
-                    )}
-                  </div>
-
-                  <div className="space-y-2">
-                    <label className={`${colors.text} font-semibold`}>Email</label>
-                    <input
-                      className={`w-full ${colors.cardBackground} rounded-xl px-4 py-3 ${colors.text} focus:outline-none ${colors.shadow.insetSmall} transition-all duration-300`}
-                      type="email"
-                      placeholder="your.email@example.com"
-                      {...register("Email", {
-                        required: "Email is required",
-                        pattern: {
-                          value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                          message: "Invalid email address",
-                        },
-                      })}
-                    />
-                    {errors.Email && (
-                      <span className="text-red-500 text-sm">
-                        {errors.Email.message}
-                      </span>
-                    )}
-                  </div>
-
-                  <div className="space-y-2">
-                    <label className={`${colors.text} font-semibold`}>Message</label>
-                    <textarea
-                      className={`w-full h-32 ${colors.cardBackground} rounded-xl px-4 py-3 ${colors.text} resize-none focus:outline-none ${colors.shadow.insetSmall} transition-all duration-300`}
-                      placeholder="Tell me about your project..."
-                    />
-                  </div>
-
-                  <motion.button
-                    type="submit"
-                    className={`w-full ${colors.cardBackground} ${colors.accent} font-semibold py-4 px-6 rounded-xl ${colors.shadow.small} hover:${colors.shadow.inset} transition-all duration-300 focus:outline-none`}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
+                <h3 className={`text-2xl font-bold ${colors.text} mb-4`}>Get in touch</h3>
+                <p className={`${colors.textSecondary} mb-6 leading-relaxed`}>
+                  I'm always open to discussing new opportunities and innovative projects. 
+                  Let's work together to create solutions that make a difference!
+                </p>
+                <p className={`${colors.textSecondary} mb-8`}>
+                  Say hello at{" "}
+                  <a
+                    href="mailto:ezekieloghojaforubor@gmail.com"
+                    className="text-emerald-600 hover:text-emerald-700 font-semibold underline transition-colors duration-300"
                   >
-                    Send Message
-                  </motion.button>
-                </form>
+                    ezekieloghojaforubor@gmail.com
+                  </a>
+                </p>
               </motion.div>
+
+              <div className="flex gap-4">
+                <motion.a
+                  href="https://www.linkedin.com/in/ezekiel-oghojafor-268889196/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`group p-4 ${colors.cardBackground} rounded-2xl ${colors.shadow.small} hover:${colors.shadow.inset} transition-all duration-300`}
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <FaLinkedin className="w-5 h-5 text-purple-600 group-hover:scale-110 transition-transform duration-300" />
+                </motion.a>
+                <motion.a
+                  href="https://github.com/DevzekiFaith"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`group p-4 ${colors.cardBackground} rounded-2xl ${colors.shadow.small} hover:${colors.shadow.inset} transition-all duration-300`}
+                  whileHover={{ scale: 1.1, rotate: -5 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <FaGithub className="w-5 h-5 text-purple-600 group-hover:scale-110 transition-transform duration-300" />
+                </motion.a>
+              </div>
             </motion.div>
-          </motion.div>
+
+            <motion.div 
+              className={`${colors.cardBackground} rounded-3xl p-8 ${colors.shadow.medium}`}
+              whileHover={{ scale: 1.02 }}
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                <div className="space-y-2">
+                  <label className={`${colors.text} font-semibold`}>Name</label>
+                  <input
+                    type="text"
+                    className={`w-full ${colors.cardBackground} rounded-xl px-4 py-3 ${colors.text} focus:outline-none ${colors.shadow.insetSmall} transition-all duration-300`}
+                    placeholder="Your name"
+                    {...register("Username", { required: "Name is required" })}
+                  />
+                  {errors.Username && (
+                    <p className="text-red-500 text-sm">{errors.Username.message}</p>
+                  )}
+                </div>
+
+                <div className="space-y-2">
+                  <label className={`${colors.text} font-semibold`}>Email</label>
+                  <input
+                    type="email"
+                    className={`w-full ${colors.cardBackground} rounded-xl px-4 py-3 ${colors.text} focus:outline-none ${colors.shadow.insetSmall} transition-all duration-300`}
+                    placeholder="your.email@example.com"
+                    {...register("Email", {
+                      required: "Email is required",
+                      pattern: {
+                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                        message: "Invalid email address",
+                      },
+                    })}
+                  />
+                  {errors.Email && (
+                    <p className="text-red-500 text-sm">{errors.Email.message}</p>
+                  )}
+                </div>
+
+                <div className="space-y-2">
+                  <label className={`${colors.text} font-semibold`}>Message</label>
+                  <textarea
+                    className={`w-full h-32 ${colors.cardBackground} rounded-xl px-4 py-3 ${colors.text} resize-none focus:outline-none ${colors.shadow.insetSmall} transition-all duration-300`}
+                    placeholder="Tell me about your project..."
+                  ></textarea>
+                </div>
+
+                <motion.button
+                  type="submit"
+                  className={`w-full ${colors.cardBackground} ${colors.accent} font-semibold py-4 px-6 rounded-xl ${colors.shadow.small} hover:${colors.shadow.inset} transition-all duration-300 focus:outline-none`}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  Send Message
+                </motion.button>
+              </form>
+            </motion.div>
+          </div>
         </div>
       </section>
     </div>

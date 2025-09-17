@@ -45,7 +45,7 @@ export const ThemeProvider = ({ children }) => {
         cardBackground: 'bg-gray-100',
         text: 'text-gray-800',
         textSecondary: 'text-gray-600',
-        accent: 'text-emerald-600',
+        accent: 'text-blue-600',
         border: 'border-gray-200',
         shadow: {
           raised: 'shadow-[12px_12px_24px_#d1d5db,-12px_-12px_24px_#ffffff]',
@@ -62,7 +62,7 @@ export const ThemeProvider = ({ children }) => {
         cardBackground: 'bg-gray-800',
         text: 'text-gray-100',
         textSecondary: 'text-gray-300',
-        accent: 'text-emerald-400',
+        accent: 'text-blue-400',
         border: 'border-gray-700',
         shadow: {
           raised: 'shadow-[12px_12px_24px_#1f2937,-12px_-12px_24px_#374151]',

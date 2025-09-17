@@ -501,7 +501,6 @@ const About = () => {
                   <motion.div 
                     className={`${colors.cardBackground} rounded-2xl p-6 ${colors.shadow.small} overflow-hidden`}
                     whileHover={{ scale: 1.02, rotateY: 5 }}
-                    transition={{ duration: 0.3 }}
                     initial={{ opacity: 0, x: 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, delay: 1.0 }}

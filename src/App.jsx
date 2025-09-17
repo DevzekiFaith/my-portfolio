@@ -7,6 +7,7 @@ import NotFoundPage from './Component/NotFoundPage/NotFoundPage'
 import Navbar from './Component/NavBar/Navbar'
 import Footer from './Component/Footer/Footer'
 import About from './Component/About Me/About'
+import ProjectDetail from './Component/ProjectDetail/ProjectDetail'
 import { ThemeProvider } from './contexts/ThemeContext'
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/About" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/project/:projectId" element={<ProjectDetail />} />
           {/* <Route path="/FeatureProject" element={<FeatureProject />} /> */}
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
