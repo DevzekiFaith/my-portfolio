@@ -25,12 +25,12 @@ const Contact = () => {
   };
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-gray-100 min-h-screen">
       {/* Toast Notification */}
       {toastVisible && (
-        <div className="fixed top-6 right-6 bg-gradient-to-r from-[#635bff] to-[#a084ee] text-white px-6 py-4 rounded-xl shadow-2xl transition-all duration-500 z-50">
+        <div className="fixed top-6 right-6 bg-gray-100 text-emerald-700 px-6 py-4 rounded-xl shadow-[8px_8px_16px_#d1d5db,-8px_-8px_16px_#ffffff] transition-all duration-500 z-50">
           <div className="flex items-center gap-3">
-            <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+            <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
             <span className="font-medium">Message sent successfully! Redirecting...</span>
           </div>
         </div>
@@ -39,44 +39,44 @@ const Contact = () => {
       {/* Hero Section */}
       <section className="container mx-auto px-6 py-20">
         <div className="text-center mb-16">
-          <h1 className="text-5xl xl:text-7xl font-bold text-gray-900 mb-6">
+          <h1 className="text-4xl xl:text-6xl font-bold text-gray-800 mb-6">
             Let's{" "}
-            <span className="bg-gradient-to-r from-[#635bff] to-[#a084ee] bg-clip-text text-transparent">
+            <span className="text-emerald-600">
               Connect
             </span>
           </h1>
-          <p className="text-xl xl:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Ready to bring your ideas to life? I'm always excited to discuss new opportunities 
-            and collaborate on amazing projects. Let's create something incredible together!
+          <p className="text-lg xl:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Ready to transform healthcare through technology? I'm always excited to discuss health technology opportunities 
+            and collaborate on innovative health solutions. Let's improve patient outcomes together!
           </p>
         </div>
 
         {/* Contact Info Cards */}
         <div className="grid md:grid-cols-2 gap-8 mb-16">
-          <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+          <div className="bg-gray-100 rounded-2xl p-8 shadow-[8px_8px_16px_#d1d5db,-8px_-8px_16px_#ffffff] transition-all duration-300">
             <div className="flex items-center gap-4 mb-4">
-              <div className="p-3 bg-gradient-to-r from-[#635bff] to-[#a084ee] rounded-xl">
-                <FaEnvelope className="w-6 h-6 text-white" />
+              <div className="p-3 bg-gray-100 rounded-xl shadow-[4px_4px_8px_#d1d5db,-4px_-4px_8px_#ffffff]">
+                <FaEnvelope className="w-6 h-6 text-emerald-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900">Email</h3>
+              <h3 className="text-xl font-bold text-gray-800">Email</h3>
             </div>
             <p className="text-gray-600 mb-4">
               Drop me a line and I'll get back to you as soon as possible.
             </p>
             <a
               href="mailto:zekipossible@gmail.com"
-              className="text-[#635bff] hover:text-[#a084ee] font-semibold transition-colors duration-300"
+              className="text-emerald-600 hover:text-emerald-700 font-semibold transition-colors duration-300"
             >
               zekipossible@gmail.com
             </a>
           </div>
 
-          <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+          <div className="bg-gray-100 rounded-2xl p-8 shadow-[8px_8px_16px_#d1d5db,-8px_-8px_16px_#ffffff] transition-all duration-300">
             <div className="flex items-center gap-4 mb-4">
-              <div className="p-3 bg-gradient-to-r from-[#635bff] to-[#a084ee] rounded-xl">
-                <FaFileAlt className="w-6 h-6 text-white" />
+              <div className="p-3 bg-gray-100 rounded-xl shadow-[4px_4px_8px_#d1d5db,-4px_-4px_8px_#ffffff]">
+                <FaFileAlt className="w-6 h-6 text-emerald-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900">Resume</h3>
+              <h3 className="text-xl font-bold text-gray-800">Resume</h3>
             </div>
             <p className="text-gray-600 mb-4">
               Want to know more about my experience and skills?
@@ -84,7 +84,7 @@ const Contact = () => {
             <a
               href="Ezekiel's Resume.pdf"
               download
-              className="inline-flex items-center gap-2 text-[#635bff] hover:text-[#a084ee] font-semibold transition-colors duration-300 group"
+              className="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-semibold transition-colors duration-300 group"
             >
               <span>Download Resume</span>
               <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
@@ -102,7 +102,7 @@ const Contact = () => {
                 <div className="space-y-2">
                   <label className="text-gray-900 font-semibold">Name</label>
                   <input
-                    className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:border-[#635bff] focus:ring-4 focus:ring-[#635bff]/10 transition-all duration-300"
+                    className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:border-[#10b981] focus:ring-4 focus:ring-[#10b981]/10 transition-all duration-300"
                     type="text"
                     placeholder="Your name"
                     {...register("name", { required: "Name is required" })}
@@ -115,7 +115,7 @@ const Contact = () => {
                 <div className="space-y-2">
                   <label className="text-gray-900 font-semibold">Email</label>
                   <input
-                    className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:border-[#635bff] focus:ring-4 focus:ring-[#635bff]/10 transition-all duration-300"
+                    className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:border-[#10b981] focus:ring-4 focus:ring-[#10b981]/10 transition-all duration-300"
                     type="email"
                     placeholder="your.email@example.com"
                     {...register("email", {
@@ -145,7 +145,7 @@ const Contact = () => {
 
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-[#635bff] to-[#a084ee] text-white font-semibold py-4 px-6 rounded-xl hover:shadow-xl hover:shadow-[#635bff]/25 transform hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-[#635bff]/20"
+                  className="w-full bg-gradient-to-r from-[#10b981] to-[#059669] text-white font-semibold py-4 px-6 rounded-xl hover:shadow-xl hover:shadow-[#10b981]/25 transform hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-[#10b981]/20"
                 >
                   Send Message
                 </button>
@@ -157,8 +157,8 @@ const Contact = () => {
               <div>
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">Get in Touch</h2>
                 <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                  I'm always open to discussing new opportunities, interesting projects, 
-                  or just having a chat about technology and design. Feel free to reach out!
+                  I'm always open to discussing healthcare technology opportunities, innovative health projects, 
+                  or just having a chat about health tech and patient-centered design. Feel free to reach out!
                 </p>
               </div>
 
@@ -170,7 +170,7 @@ const Contact = () => {
                     href="https://github.com/DevzekiFaith"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-3 p-4 bg-gray-50 rounded-xl hover:bg-[#635bff] hover:text-white transition-all duration-300 transform hover:-translate-y-1"
+                    className="group flex items-center gap-3 p-4 bg-gray-50 rounded-xl hover:bg-[#10b981] hover:text-white transition-all duration-300 transform hover:-translate-y-1"
                   >
                     <FaGithub className="w-6 h-6" />
                     <span className="font-medium">GitHub</span>
@@ -179,7 +179,7 @@ const Contact = () => {
                     href="https://www.linkedin.com/in/ezekiel-oghojafor-268889196/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-3 p-4 bg-gray-50 rounded-xl hover:bg-[#635bff] hover:text-white transition-all duration-300 transform hover:-translate-y-1"
+                    className="group flex items-center gap-3 p-4 bg-gray-50 rounded-xl hover:bg-[#10b981] hover:text-white transition-all duration-300 transform hover:-translate-y-1"
                   >
                     <FaLinkedin className="w-6 h-6" />
                     <span className="font-medium">LinkedIn</span>
@@ -188,7 +188,7 @@ const Contact = () => {
                     href="https://twitter.com/yourprofile"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-3 p-4 bg-gray-50 rounded-xl hover:bg-[#635bff] hover:text-white transition-all duration-300 transform hover:-translate-y-1"
+                    className="group flex items-center gap-3 p-4 bg-gray-50 rounded-xl hover:bg-[#10b981] hover:text-white transition-all duration-300 transform hover:-translate-y-1"
                   >
                     <FaTwitter className="w-6 h-6" />
                     <span className="font-medium">Twitter</span>
@@ -197,7 +197,7 @@ const Contact = () => {
                     href="https://instagram.com/yourprofile"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-3 p-4 bg-gray-50 rounded-xl hover:bg-[#635bff] hover:text-white transition-all duration-300 transform hover:-translate-y-1"
+                    className="group flex items-center gap-3 p-4 bg-gray-50 rounded-xl hover:bg-[#10b981] hover:text-white transition-all duration-300 transform hover:-translate-y-1"
                   >
                     <FaInstagram className="w-6 h-6" />
                     <span className="font-medium">Instagram</span>
@@ -206,20 +206,20 @@ const Contact = () => {
               </div>
 
               {/* Quick Info */}
-              <div className="bg-gradient-to-r from-[#635bff]/10 to-[#a084ee]/10 rounded-2xl p-6 border border-[#635bff]/20">
+              <div className="bg-gradient-to-r from-[#10b981]/10 to-[#059669]/10 rounded-2xl p-6 border border-[#10b981]/20">
                 <h3 className="text-lg font-bold text-gray-900 mb-3">Quick Facts</h3>
                 <div className="space-y-2 text-gray-600">
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-[#635bff] rounded-full"></div>
+                    <div className="w-2 h-2 bg-[#10b981] rounded-full"></div>
                     <span>Based in Nigeria</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-[#635bff] rounded-full"></div>
-                    <span>Available for freelance work</span>
+                    <div className="w-2 h-2 bg-[#10b981] rounded-full"></div>
+                    <span>Specializing in HealthTech solutions</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-[#635bff] rounded-full"></div>
-                    <span>Open to remote opportunities</span>
+                    <div className="w-2 h-2 bg-[#10b981] rounded-full"></div>
+                    <span>HIPAA-compliant development</span>
                   </div>
                 </div>
               </div>

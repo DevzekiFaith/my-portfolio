@@ -5,8 +5,8 @@ import { FaBars, FaTimes } from "react-icons/fa";
 
 // Constants for styling and configuration
 const STYLE_CONSTANTS = {
-  ACTIVE_LINK: "text-[#635bff] bg-gradient-to-r from-[#635bff]/10 to-[#a084ee]/10 px-4 py-2 rounded-xl font-semibold border border-[#635bff]/20",
-  NORMAL_LINK: "text-gray-600 hover:text-[#635bff] transition-all duration-300 font-medium",
+  ACTIVE_LINK: "text-emerald-700 bg-gray-100 px-4 py-2 rounded-xl font-semibold shadow-[6px_6px_12px_#d1d5db,-6px_-6px_12px_#ffffff]",
+  NORMAL_LINK: "text-gray-600 hover:text-emerald-700 transition-all duration-300 font-medium",
   NAVBAR_LINKS: [
     { path: "/", label: "Home" },
     { path: "/about", label: "About" },
@@ -85,7 +85,7 @@ const Navbar = () => {
     <nav 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-100' 
+          ? 'bg-gray-100 shadow-[0_8px_16px_#d1d5db]' 
           : 'bg-transparent'
       }`} 
       role="navigation" 
@@ -96,10 +96,10 @@ const Navbar = () => {
           {/* Logo/Brand */}
           <div className="flex items-center">
             <h1 className={`font-bold text-xl transition-colors duration-300 ${
-              isScrolled ? 'text-gray-900' : 'text-white'
+              isScrolled ? 'text-gray-800' : 'text-white'
             }`}>
               Faith{" "}
-              <span className="bg-gradient-to-r from-[#635bff] to-[#a084ee] bg-clip-text text-transparent">
+              <span className="text-emerald-600">
                 Oghojafor
               </span>
             </h1>
@@ -116,7 +116,7 @@ const Navbar = () => {
             {/* CTA Button */}
             <NavLink
               to="/contact"
-              className="group bg-gradient-to-r from-[#635bff] to-[#a084ee] text-white px-6 py-3 rounded-xl font-semibold hover:shadow-xl hover:shadow-[#635bff]/25 transform hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-[#635bff]/20"
+              className="group bg-gray-100 text-emerald-700 px-6 py-3 rounded-xl font-semibold shadow-[6px_6px_12px_#d1d5db,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#d1d5db,inset_-6px_-6px_12px_#ffffff] transition-all duration-300 focus:outline-none"
             >
               Get In Touch
               <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
@@ -126,10 +126,10 @@ const Navbar = () => {
           {/* Mobile Menu Toggle */}
           <div className="xl:hidden">
             <button
-              className={`p-3 rounded-xl transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-[#635bff]/20 ${
+              className={`p-3 rounded-xl transition-all duration-300 focus:outline-none ${
                 isScrolled 
-                  ? 'bg-gray-100 hover:bg-gray-200 text-gray-700' 
-                  : 'bg-white/10 hover:bg-white/20 text-white backdrop-blur-sm'
+                  ? 'bg-gray-100 shadow-[6px_6px_12px_#d1d5db,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#d1d5db,inset_-6px_-6px_12px_#ffffff] text-gray-700' 
+                  : 'bg-white/20 hover:bg-white/30 text-white backdrop-blur-xl border border-white/20'
               }`}
               onClick={toggleMenu}
               aria-label="Toggle menu"
@@ -156,7 +156,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="fixed top-0 right-0 w-80 h-full bg-white shadow-2xl navbar-menu z-50 xl:hidden transform transition-transform duration-300 ease-in-out">
+        <div className="fixed top-0 right-0 w-80 h-full bg-gray-100 shadow-[12px_0_24px_#d1d5db] navbar-menu z-50 xl:hidden transform transition-transform duration-300 ease-in-out">
           <div className="flex flex-col h-full">
             {/* Mobile Menu Header */}
             <div className="flex justify-between items-center p-6 border-b border-gray-100">
@@ -166,7 +166,7 @@ const Navbar = () => {
               <button
                 onClick={toggleMenu}
                 aria-label="Close menu"
-                className="p-2 rounded-xl bg-gray-100 hover:bg-gray-200 text-gray-700 transition-colors duration-300 focus:outline-none focus:ring-4 focus:ring-[#635bff]/20"
+                className="p-2 rounded-xl bg-gray-100 shadow-[6px_6px_12px_#d1d5db,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#d1d5db,inset_-6px_-6px_12px_#ffffff] text-gray-700 transition-all duration-300 focus:outline-none"
               >
                 <FaTimes className="w-5 h-5" />
               </button>
@@ -182,8 +182,8 @@ const Navbar = () => {
                     className={({ isActive }) => 
                       `block px-4 py-3 rounded-xl transition-all duration-300 font-medium ${
                         isActive 
-                          ? 'text-[#635bff] bg-gradient-to-r from-[#635bff]/10 to-[#a084ee]/10 border border-[#635bff]/20' 
-                          : 'text-gray-600 hover:text-[#635bff] hover:bg-gray-50'
+                          ? 'text-emerald-700 bg-gray-100 shadow-[6px_6px_12px_#d1d5db,-6px_-6px_12px_#ffffff]' 
+                          : 'text-gray-600 hover:text-emerald-700 hover:bg-gray-100'
                       }`
                     }
                     onClick={() => setIsMenuOpen(false)}
@@ -197,7 +197,7 @@ const Navbar = () => {
               <div className="mt-8 pt-6 border-t border-gray-100">
                 <NavLink
                   to="/contact"
-                  className="group flex items-center justify-center w-full bg-gradient-to-r from-[#635bff] to-[#a084ee] text-white px-6 py-4 rounded-xl font-semibold hover:shadow-xl hover:shadow-[#635bff]/25 transform hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-[#635bff]/20"
+                  className="group flex items-center justify-center w-full bg-gray-100 text-emerald-700 px-6 py-4 rounded-xl font-semibold shadow-[6px_6px_12px_#d1d5db,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#d1d5db,inset_-6px_-6px_12px_#ffffff] transition-all duration-300 focus:outline-none"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Get In Touch

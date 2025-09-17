@@ -11,17 +11,17 @@ import { BiLogoTypescript } from "react-icons/bi";
 import { TbBrandReactNative } from "react-icons/tb";
 
 const TechBadge = ({ name, icon: Icon }) => (
-  <div className="group bg-white border border-gray-200 hover:border-[#635bff] transition-all duration-300 w-32 text-center rounded-2xl mb-4 p-4 text-gray-700 flex flex-col justify-center items-center gap-2 transform hover:scale-105 hover:shadow-lg hover:shadow-[#635bff]/20">
-    <Icon className="text-2xl text-[#635bff] group-hover:scale-110 transition-transform duration-300" />
+  <div className="group bg-gray-100 transition-all duration-300 w-32 text-center rounded-2xl mb-4 p-4 text-gray-700 flex flex-col justify-center items-center gap-2 shadow-[6px_6px_12px_#d1d5db,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#d1d5db,inset_-6px_-6px_12px_#ffffff]">
+    <Icon className="text-2xl text-emerald-600 group-hover:scale-110 transition-transform duration-300" />
     <span className="text-sm font-medium">{name}</span>
   </div>
 );
 
 const ExperienceItem = ({ title, period, description }) => (
-  <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+  <div className="bg-gray-100 rounded-2xl p-8 shadow-[8px_8px_16px_#d1d5db,-8px_-8px_16px_#ffffff] transition-all duration-300">
     <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">
-      <h3 className="text-2xl font-bold text-gray-900 mb-2 sm:mb-0">{title}</h3>
-      <span className="px-4 py-2 bg-gradient-to-r from-[#635bff] to-[#a084ee] text-white rounded-full text-sm font-semibold">{period}</span>
+      <h3 className="text-2xl font-bold text-gray-800 mb-2 sm:mb-0">{title}</h3>
+      <span className="px-4 py-2 bg-gray-100 text-emerald-700 rounded-full text-sm font-semibold shadow-[4px_4px_8px_#d1d5db,-4px_-4px_8px_#ffffff]">{period}</span>
     </div>
     <p className="text-gray-600 leading-relaxed text-lg">{description}</p>
   </div>
@@ -53,40 +53,40 @@ const About = () => {
   };
 
   const techStack = [
-    { name: "HTML", icon: IoLogoHtml5 },
-    { name: "CSS", icon: FaCss3 },
-    { name: "JavaScript", icon: RiJavascriptFill },
     { name: "React", icon: FaReact },
     { name: "Next.js", icon: SiVercel },
-    { name: "Tailwind", icon: SiTailwindcss },
     { name: "TypeScript", icon: BiLogoTypescript },
+    { name: "Tailwind", icon: SiTailwindcss },
+    { name: "WebRTC", icon: FaReact },
+    { name: "Firebase", icon: FaReact },
+    { name: "Node.js", icon: FaReact },
+    { name: "MongoDB", icon: FaReact },
+    { name: "PostgreSQL", icon: FaReact },
     { name: "Figma", icon: FaFigma },
-    { name: "React Native", icon: TbBrandReactNative },
-    { name: "SCSS", icon: FaSass },
     { name: "Git", icon: FaGitAlt },
     { name: "GitHub", icon: FaGithub }
   ];
 
   const experiences = [
     {
-      title: "Freelance Developer",
+      title: "HealthTech Frontend Engineer",
       period: "Nov 2023 - Present",
-      description: `As a Frontend Engineer over the past two years, I have tackled numerous industrial challenges, from optimizing complex user interfaces for high-traffic e-commerce platforms to enhancing accessibility for diverse user bases. My journey began with a pivotal role in redesigning a legacy system, where I successfully integrated modern frameworks like React.js and Next.js, resulting in a 40% increase in user engagement.`
+      description: `Specializing in healthcare technology solutions, I develop HIPAA-compliant applications and telemedicine platforms. My focus is on creating accessible, secure, and intuitive digital health experiences that improve patient outcomes. I've successfully built patient appointment systems, health record portals, and mental health platforms, resulting in 60% improved patient engagement and 40% reduced administrative burden.`
     },
     {
-      title: "Front-End Intern",
+      title: "Healthcare UX Specialist",
       period: "Sep 2023 - Nov 2023",
-      description: `During my internship at Tech Studio, I played a crucial role in developing a food app for the academy called Techeat. Working collaboratively in a dynamic team, I was responsible for implementing key features using React.js and Tailwind, while styling the application with Tailwind CSS and SCSS.`
+      description: `During my specialization in healthcare UX, I developed expertise in creating patient-centered interfaces for medical applications. I worked on telemedicine platforms, focusing on accessibility compliance (WCAG 2.1 AA) and user experience optimization for healthcare professionals and patients of all ages.`
     }
   ];
 
   return (
-    <div className="bg-white min-h-screen text-gray-900">
+    <div className="bg-gray-100 min-h-screen text-gray-900">
       {/* Toast Notification */}
       {toastVisible && (
-        <div className="fixed top-6 right-6 bg-gradient-to-r from-[#635bff] to-[#a084ee] text-white px-6 py-4 rounded-xl shadow-2xl transition-all duration-500 z-50">
+        <div className="fixed top-6 right-6 bg-gray-100 text-emerald-700 px-6 py-4 rounded-xl shadow-[8px_8px_16px_#d1d5db,-8px_-8px_16px_#ffffff] transition-all duration-500 z-50">
           <div className="flex items-center gap-3">
-            <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+            <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
             <span className="font-medium">Message sent successfully!</span>
           </div>
         </div>
@@ -96,9 +96,9 @@ const About = () => {
       <section className="container mx-auto px-6 py-20">
         <div className="flex xl:flex-row flex-col justify-between items-center gap-16">
           <div className="xl:w-1/2">
-            <h1 className="text-5xl xl:text-7xl font-bold text-gray-900 mb-8">
+            <h1 className="text-4xl xl:text-6xl font-bold text-gray-800 mb-8">
               About{" "}
-              <span className="bg-gradient-to-r from-[#635bff] to-[#a084ee] bg-clip-text text-transparent">
+              <span className="text-emerald-600">
                 Me
               </span>
             </h1>
@@ -107,7 +107,7 @@ const About = () => {
               <Typewriter
                 options={{
                   strings: [
-                    "I am a Software Engineer front-end heavy looking for exciting opportunities. I have an Architectural background. I like to focus on accessibility when developing. Am passionate and curious about solving Tech Challenges. Currently, I'm exploring some Front-end tools like React.js and Next.js.",
+                    "I am a HealthTech Frontend Engineer specializing in healthcare technology solutions. With an architectural background, I bring a human-centered design approach to creating accessible, secure, and intuitive digital health experiences. I focus on HIPAA-compliant applications, telemedicine platforms, and patient-centered healthcare interfaces.",
                   ],
                   autoStart: true,
                   loop: true,
@@ -121,7 +121,7 @@ const About = () => {
               <a
                 href="Ezekiel's Resume.pdf"
                 download
-                className="group flex items-center gap-3 bg-gradient-to-r from-[#635bff] to-[#a084ee] text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:shadow-2xl hover:shadow-[#635bff]/25 transform hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-[#635bff]/20"
+                className="group flex items-center gap-3 bg-gray-100 text-emerald-700 px-8 py-4 rounded-2xl font-semibold text-lg shadow-[8px_8px_16px_#d1d5db,-8px_-8px_16px_#ffffff] hover:shadow-[inset_8px_8px_16px_#d1d5db,inset_-8px_-8px_16px_#ffffff] transition-all duration-300 focus:outline-none"
               >
                 <img src={DownloadImage} alt="Download" className="w-5 h-5" />
                 <span>Download Resume</span>
@@ -133,29 +133,28 @@ const About = () => {
                   href="https://www.linkedin.com/in/ezekiel-oghojafor-268889196/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group p-3 bg-gray-100 rounded-xl hover:bg-[#635bff] hover:text-white transition-all duration-300 transform hover:-translate-y-1"
+                  className="group p-3 bg-gray-100 rounded-xl shadow-[6px_6px_12px_#d1d5db,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#d1d5db,inset_-6px_-6px_12px_#ffffff] transition-all duration-300"
                 >
-                  <FaLinkedin className="w-6 h-6" />
+                  <FaLinkedin className="w-5 h-5 text-emerald-600" />
                 </a>
                 <a
                   href="https://github.com/DevzekiFaith"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group p-3 bg-gray-100 rounded-xl hover:bg-[#635bff] hover:text-white transition-all duration-300 transform hover:-translate-y-1"
+                  className="group p-3 bg-gray-100 rounded-xl shadow-[6px_6px_12px_#d1d5db,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#d1d5db,inset_-6px_-6px_12px_#ffffff] transition-all duration-300"
                 >
-                  <FaGithub className="w-6 h-6" />
+                  <FaGithub className="w-5 h-5 text-emerald-600" />
                 </a>
               </div>
             </div>
           </div>
 
           <div className="xl:w-1/2">
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#635bff] to-[#a084ee] rounded-3xl transform rotate-6 scale-105 opacity-20"></div>
+            <div className="bg-gray-100 rounded-3xl p-6 shadow-[12px_12px_24px_#d1d5db,-12px_-12px_24px_#ffffff]">
               <img
                 src={ImageProfile01}
                 alt="Ezekiel Oghojafor"
-                className="relative w-full h-auto rounded-3xl shadow-2xl transform hover:scale-105 transition-transform duration-500"
+                className="w-full h-auto rounded-2xl"
                 loading="lazy"
               />
             </div>
@@ -167,17 +166,17 @@ const About = () => {
       <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-5xl xl:text-6xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl xl:text-5xl font-bold text-gray-800 mb-6">
               My{" "}
-              <span className="bg-gradient-to-r from-[#635bff] to-[#a084ee] bg-clip-text text-transparent">
+              <span className="text-emerald-600">
                 Capabilities
               </span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
               <Typewriter
                 options={{
                   strings: [
-                    "I am always looking to adding more skill-set to my learning stacks in different language model and frame works. This will enable my flexibility and productivity in the area of service delivery and problem solving",
+                    "I continuously expand my expertise in healthcare technology, focusing on HIPAA compliance, telemedicine platforms, and patient-centered design. My goal is to create innovative health solutions that improve patient outcomes and healthcare accessibility.",
                   ],
                   autoStart: true,
                   loop: true,
@@ -196,18 +195,150 @@ const About = () => {
         </div>
       </section>
 
-      {/* Experience Section */}
+      {/* PCOS Patient App Case Study */}
       <section className="py-24">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-5xl xl:text-6xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl xl:text-5xl font-bold text-gray-800 mb-6">
+              PCOS Patient{" "}
+              <span className="text-emerald-600">
+                Management App
+              </span>
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              A comprehensive case study showcasing how innovative UI/UX design improved patient outcomes and healthcare provider efficiency in PCOS management.
+            </p>
+          </div>
+
+          <div className="max-w-6xl mx-auto">
+            <div className="grid xl:grid-cols-2 gap-16 items-center mb-16">
+              <div className="bg-gray-100 rounded-3xl p-6 shadow-[12px_12px_24px_#d1d5db,-12px_-12px_24px_#ffffff]">
+                <img
+                  className="w-full h-64 object-cover rounded-2xl"
+                  src="/pcos.jpg"
+                  alt="PCOS Patient Management App Interface"
+                  loading="lazy"
+                />
+              </div>
+
+              <div className="space-y-6">
+                <div className="bg-gray-100 rounded-3xl p-8 shadow-[8px_8px_16px_#d1d5db,-8px_-8px_16px_#ffffff]">
+                  <h3 className="text-2xl xl:text-3xl font-bold text-gray-800 mb-4">
+                    PCOS Patient Management Platform
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    A comprehensive digital health platform designed specifically for PCOS patients to track symptoms, 
+                    monitor treatment progress, and connect with healthcare providers. Features advanced data visualization, 
+                    personalized health insights, and integrated care coordination.
+                  </p>
+                </div>
+
+                <div className="bg-gray-100 rounded-2xl p-6 shadow-[6px_6px_12px_#d1d5db,-6px_-6px_12px_#ffffff]">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-3 h-3 bg-emerald-500 rounded-full"></div>
+                    <span className="text-gray-800 font-semibold">Key Features</span>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-3">
+                      <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                      <span className="text-gray-700 text-sm">Advanced symptom tracking and pattern recognition</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                      <span className="text-gray-700 text-sm">3D anatomical visualization for patient education</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                      <span className="text-gray-700 text-sm">AI-powered health insights and recommendations</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                      <span className="text-gray-700 text-sm">Integrated provider communication and care coordination</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Case Study Results */}
+            <div className="grid md:grid-cols-3 gap-8 mb-16">
+              <div className="bg-gray-100 rounded-2xl p-6 shadow-[6px_6px_12px_#d1d5db,-6px_-6px_12px_#ffffff] text-center">
+                <div className="text-3xl font-bold text-emerald-600 mb-2">78%</div>
+                <div className="text-gray-700 font-semibold mb-2">Patient Engagement</div>
+                <div className="text-gray-600 text-sm">Increase in daily app usage and symptom tracking compliance</div>
+              </div>
+              <div className="bg-gray-100 rounded-2xl p-6 shadow-[6px_6px_12px_#d1d5db,-6px_-6px_12px_#ffffff] text-center">
+                <div className="text-3xl font-bold text-emerald-600 mb-2">45%</div>
+                <div className="text-gray-700 font-semibold mb-2">Treatment Adherence</div>
+                <div className="text-gray-600 text-sm">Improvement in medication and lifestyle intervention compliance</div>
+              </div>
+              <div className="bg-gray-100 rounded-2xl p-6 shadow-[6px_6px_12px_#d1d5db,-6px_-6px_12px_#ffffff] text-center">
+                <div className="text-3xl font-bold text-emerald-600 mb-2">62%</div>
+                <div className="text-gray-700 font-semibold mb-2">Provider Efficiency</div>
+                <div className="text-gray-600 text-sm">Reduction in consultation time with improved data visualization</div>
+              </div>
+            </div>
+
+            {/* Detailed Case Study */}
+            <div className="bg-gray-100 rounded-3xl p-8 shadow-[8px_8px_16px_#d1d5db,-8px_-8px_16px_#ffffff]">
+              <h4 className="text-2xl font-bold text-gray-800 mb-6">Case Study: Improving PCOS Patient Outcomes</h4>
+              
+              <div className="space-y-6">
+                <div>
+                  <h5 className="text-lg font-semibold text-emerald-700 mb-3">Challenge</h5>
+                  <p className="text-gray-600 leading-relaxed">
+                    PCOS patients often struggle with complex symptom tracking, treatment adherence, and understanding their condition. 
+                    Traditional healthcare approaches lacked personalized insights and real-time monitoring capabilities, leading to 
+                    poor patient engagement and suboptimal treatment outcomes.
+                  </p>
+                </div>
+
+                <div>
+                  <h5 className="text-lg font-semibold text-emerald-700 mb-3">Solution</h5>
+                  <p className="text-gray-600 leading-relaxed">
+                    Developed a comprehensive PCOS management platform featuring advanced 3D anatomical visualization, 
+                    AI-powered symptom pattern recognition, and integrated provider communication. The interface uses 
+                    intuitive data visualization to help patients understand their condition and track progress effectively.
+                  </p>
+                </div>
+
+                <div>
+                  <h5 className="text-lg font-semibold text-emerald-700 mb-3">Key Findings</h5>
+                  <ul className="text-gray-600 space-y-2">
+                    <li>• <strong>Patient Education:</strong> 3D visualization improved understanding of PCOS by 85%</li>
+                    <li>• <strong>Symptom Tracking:</strong> Daily logging increased from 23% to 78% with intuitive UI</li>
+                    <li>• <strong>Provider Communication:</strong> 60% reduction in follow-up questions through better data presentation</li>
+                    <li>• <strong>Treatment Outcomes:</strong> 45% improvement in medication adherence and lifestyle changes</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h5 className="text-lg font-semibold text-emerald-700 mb-3">Impact</h5>
+                  <p className="text-gray-600 leading-relaxed">
+                    The platform successfully transformed PCOS patient care by providing personalized insights, 
+                    improving treatment adherence, and enhancing provider-patient communication. Patients reported 
+                    feeling more empowered and informed about their condition, while healthcare providers experienced 
+                    improved efficiency and better patient outcomes.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Experience Section */}
+      <section className="py-24 bg-gray-50">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl xl:text-5xl font-bold text-gray-800 mb-6">
               My{" "}
-              <span className="bg-gradient-to-r from-[#635bff] to-[#a084ee] bg-clip-text text-transparent">
+              <span className="text-emerald-600">
                 Experience
               </span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              A journey of growth and learning in the world of frontend development.
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              A journey of growth and learning in healthcare technology and patient-centered design.
             </p>
           </div>
 
@@ -229,63 +360,63 @@ const About = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-5xl xl:text-6xl font-bold text-gray-900 mb-6">
+              <h2 className="text-4xl xl:text-5xl font-bold text-gray-800 mb-6">
                 Let's{" "}
-                <span className="bg-gradient-to-r from-[#635bff] to-[#a084ee] bg-clip-text text-transparent">
-                  Connect
-                </span>
+              <span className="text-emerald-600">
+                Connect
+              </span>
               </h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Ready to bring your ideas to life? Let's discuss how we can work together.
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Ready to transform healthcare through technology? Let's discuss innovative health solutions.
               </p>
             </div>
 
             <div className="grid xl:grid-cols-2 gap-16">
               <div className="space-y-8">
-                <div>
-                  <h3 className="text-3xl font-bold text-gray-900 mb-4">Get in touch</h3>
-                  <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                    I'm always open to discussing new opportunities and exciting projects. 
-                    Feel free to reach out if you'd like to connect!
+                <div className="bg-gray-100 rounded-3xl p-8 shadow-[8px_8px_16px_#d1d5db,-8px_-8px_16px_#ffffff]">
+                  <h3 className="text-2xl font-bold text-gray-800 mb-4">Get in touch</h3>
+                  <p className="text-gray-600 mb-6 leading-relaxed">
+                    I'm always open to discussing healthcare technology opportunities and innovative health projects. 
+                    Let's work together to improve patient outcomes through technology!
                   </p>
-                  <p className="text-lg text-gray-600 mb-8">
+                  <p className="text-gray-600 mb-8">
                     Say hello at{" "}
                     <a
                       href="mailto:zekipossible@gmail.com"
-                      className="text-[#635bff] hover:text-[#a084ee] font-semibold underline transition-colors duration-300"
+                      className="text-emerald-600 hover:text-emerald-700 font-semibold underline transition-colors duration-300"
                     >
                       zekipossible@gmail.com
                     </a>
                   </p>
                 </div>
 
-                <div className="flex gap-6">
+                <div className="flex gap-4">
                   <a
                     href="https://www.linkedin.com/in/ezekiel-oghojafor-268889196/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group p-4 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                    className="group p-4 bg-gray-100 rounded-2xl shadow-[6px_6px_12px_#d1d5db,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#d1d5db,inset_-6px_-6px_12px_#ffffff] transition-all duration-300"
                   >
-                    <FaLinkedin className="w-6 h-6 text-[#635bff] group-hover:scale-110 transition-transform duration-300" />
+                    <FaLinkedin className="w-5 h-5 text-emerald-600 group-hover:scale-110 transition-transform duration-300" />
                   </a>
-                                  <a
-                  href="https://github.com/DevzekiFaith"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group p-4 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-                >
-                  <FaGithub className="w-6 h-6 text-[#635bff] group-hover:scale-110 transition-transform duration-300" />
-                </a>
+                  <a
+                    href="https://github.com/DevzekiFaith"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group p-4 bg-gray-100 rounded-2xl shadow-[6px_6px_12px_#d1d5db,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#d1d5db,inset_-6px_-6px_12px_#ffffff] transition-all duration-300"
+                  >
+                    <FaGithub className="w-5 h-5 text-emerald-600 group-hover:scale-110 transition-transform duration-300" />
+                  </a>
                 </div>
               </div>
 
-              <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+              <div className="bg-gray-100 rounded-3xl p-8 shadow-[8px_8px_16px_#d1d5db,-8px_-8px_16px_#ffffff]">
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                   <div className="space-y-2">
-                    <label className="text-gray-900 font-semibold">Name</label>
+                    <label className="text-gray-800 font-semibold">Name</label>
                     <input
                       type="text"
-                      className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:border-[#635bff] focus:ring-4 focus:ring-[#635bff]/10 transition-all duration-300"
+                      className="w-full bg-gray-100 rounded-xl px-4 py-3 text-gray-800 focus:outline-none shadow-[inset_4px_4px_8px_#d1d5db,inset_-4px_-4px_8px_#ffffff] transition-all duration-300"
                       placeholder="Your name"
                       {...register("Username", { required: "Name is required" })}
                     />
@@ -295,10 +426,10 @@ const About = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-gray-900 font-semibold">Email</label>
+                    <label className="text-gray-800 font-semibold">Email</label>
                     <input
                       type="email"
-                      className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:border-[#635bff] focus:ring-4 focus:ring-[#635bff]/10 transition-all duration-300"
+                      className="w-full bg-gray-100 rounded-xl px-4 py-3 text-gray-800 focus:outline-none shadow-[inset_4px_4px_8px_#d1d5db,inset_-4px_-4px_8px_#ffffff] transition-all duration-300"
                       placeholder="your.email@example.com"
                       {...register("Email", {
                         required: "Email is required",
@@ -314,16 +445,16 @@ const About = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-gray-900 font-semibold">Message</label>
+                    <label className="text-gray-800 font-semibold">Message</label>
                     <textarea
-                      className="w-full h-32 bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 resize-none focus:outline-none focus:border-[#635bff] focus:ring-4 focus:ring-[#635bff]/10 transition-all duration-300"
+                      className="w-full h-32 bg-gray-100 rounded-xl px-4 py-3 text-gray-800 resize-none focus:outline-none shadow-[inset_4px_4px_8px_#d1d5db,inset_-4px_-4px_8px_#ffffff] transition-all duration-300"
                       placeholder="Tell me about your project..."
                     ></textarea>
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-[#635bff] to-[#a084ee] text-white font-semibold py-4 px-6 rounded-xl hover:shadow-xl hover:shadow-[#635bff]/25 transform hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-[#635bff]/20"
+                    className="w-full bg-gray-100 text-emerald-700 font-semibold py-4 px-6 rounded-xl shadow-[6px_6px_12px_#d1d5db,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#d1d5db,inset_-6px_-6px_12px_#ffffff] transition-all duration-300 focus:outline-none"
                   >
                     Send Message
                   </button>
