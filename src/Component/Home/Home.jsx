@@ -19,6 +19,7 @@ import Typewriter from "typewriter-effect";
 import { FaGithub } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 import { MdMarkEmailRead } from "react-icons/md";
+import { useTheme } from "../../contexts/ThemeContext";
 
 const Home = () => {
   const {
@@ -29,6 +30,8 @@ const Home = () => {
   } = useForm();
   const [toastVisible, setToastVisible] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const theme = useTheme();
+  const colors = theme.colors[theme.isDark ? 'dark' : 'light'];
 
   const onSubmit = async (data) => {
     console.log(data);
@@ -46,15 +49,21 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 relative">
+    <div className={`min-h-screen ${colors.background} relative transition-colors duration-300`}>
       {/* Toast Notification */}
       {toastVisible && (
-        <div className="fixed top-6 right-6 bg-gray-100 text-emerald-700 px-6 py-4 rounded-2xl shadow-[8px_8px_16px_#d1d5db,-8px_-8px_16px_#ffffff] transition-all duration-500 z-50">
+        <motion.div 
+          className={`fixed top-6 right-6 ${colors.cardBackground} ${colors.accent} px-6 py-4 rounded-2xl ${colors.shadow.medium} transition-all duration-500 z-50`}
+          initial={{ opacity: 0, x: 100, scale: 0.8 }}
+          animate={{ opacity: 1, x: 0, scale: 1 }}
+          exit={{ opacity: 0, x: 100, scale: 0.8 }}
+          transition={{ duration: 0.3 }}
+        >
           <div className="flex items-center gap-3">
             <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
             <span className="font-medium">Message sent successfully!</span>
           </div>
-        </div>
+        </motion.div>
       )}
 
       {/* Hero Section */}
@@ -68,7 +77,7 @@ const Home = () => {
           >
             <div className="mb-8">
               <motion.h1 
-                className="text-4xl xl:text-6xl font-bold text-gray-800 mb-6 leading-tight"
+                className={`text-4xl xl:text-6xl font-bold ${colors.text} mb-6 leading-tight`}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
@@ -84,7 +93,7 @@ const Home = () => {
                 </motion.span>
               </motion.h1>
               <motion.div 
-                className="text-lg xl:text-xl text-gray-600 font-light leading-relaxed"
+                className={`text-lg xl:text-xl ${colors.textSecondary} font-light leading-relaxed`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
@@ -113,7 +122,7 @@ const Home = () => {
             >
               <Link to="/contact">
                 <motion.button 
-                  className="group bg-gray-100 text-emerald-700 px-8 py-4 rounded-2xl font-semibold text-lg shadow-[8px_8px_16px_#d1d5db,-8px_-8px_16px_#ffffff] hover:shadow-[inset_8px_8px_16px_#d1d5db,inset_-8px_-8px_16px_#ffffff] transition-all duration-300 focus:outline-none"
+                  className={`group ${colors.cardBackground} ${colors.accent} px-8 py-4 rounded-2xl font-semibold text-lg ${colors.shadow.medium} hover:${colors.shadow.inset} transition-all duration-300 focus:outline-none`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -125,7 +134,7 @@ const Home = () => {
               <div className="flex gap-4">
                 <motion.a
                   href="https://www.linkedin.com/in/ezekiel-oghojafor-268889196/"
-                  className="group p-3 bg-gray-100 rounded-xl shadow-[6px_6px_12px_#d1d5db,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#d1d5db,inset_-6px_-6px_12px_#ffffff] transition-all duration-300"
+                  className={`group p-3 ${colors.cardBackground} rounded-xl ${colors.shadow.small} hover:${colors.shadow.inset} transition-all duration-300`}
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, rotate: 5 }}
@@ -135,7 +144,7 @@ const Home = () => {
                 </motion.a>
                 <motion.a
                   href="https://github.com/DevzekiFaith"
-                  className="group p-3 bg-gray-100 rounded-xl shadow-[6px_6px_12px_#d1d5db,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#d1d5db,inset_-6px_-6px_12px_#ffffff] transition-all duration-300"
+                  className={`group p-3 ${colors.cardBackground} rounded-xl ${colors.shadow.small} hover:${colors.shadow.inset} transition-all duration-300`}
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, rotate: -5 }}
@@ -154,7 +163,7 @@ const Home = () => {
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           >
             <motion.div 
-              className="bg-gray-100 rounded-3xl p-6 shadow-[12px_12px_24px_#d1d5db,-12px_-12px_24px_#ffffff]"
+              className={`${colors.cardBackground} rounded-3xl p-6 ${colors.shadow.raised}`}
               whileHover={{ scale: 1.02, rotateY: 5 }}
               transition={{ duration: 0.3 }}
             >
@@ -180,17 +189,17 @@ const Home = () => {
             viewport={{ once: true }}
           >
             <motion.div 
-              className="bg-gray-100 rounded-3xl p-8 shadow-[12px_12px_24px_#d1d5db,-12px_-12px_24px_#ffffff] max-w-4xl mx-auto"
+              className={`${colors.cardBackground} rounded-3xl p-8 ${colors.shadow.raised} max-w-4xl mx-auto`}
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
-              <h2 className="text-4xl xl:text-5xl font-bold text-gray-800 mb-6">
+              <h2 className={`text-4xl xl:text-5xl font-bold ${colors.text} mb-6`}>
                 HealthTech &{" "}
                 <span className="text-emerald-600">
                   Telemedicine Projects
                 </span>
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className={`text-lg ${colors.textSecondary} max-w-2xl mx-auto`}>
                 Specialized healthcare solutions designed to improve patient care, streamline medical workflows, and enhance healthcare accessibility.
               </p>
             </motion.div>
@@ -214,12 +223,12 @@ const Home = () => {
                 viewport={{ once: true }}
               >
                 <motion.div 
-                  className="bg-gray-100 rounded-3xl p-6 shadow-[12px_12px_24px_#d1d5db,-12px_-12px_24px_#ffffff]"
+                  className={`${colors.cardBackground} rounded-3xl p-6 ${colors.shadow.raised}`}
                   whileHover={{ scale: 1.02, rotateY: 5 }}
                   transition={{ duration: 0.3 }}
                 >
                   <img
-                    className="w-full h-64 object-cover rounded-2xl"
+                    className="w-full h-80 object-cover rounded-2xl"
                     src={ImageProject001}
                     alt="Patient Appointment Booking App"
                     loading="lazy"
@@ -236,55 +245,55 @@ const Home = () => {
               >
                 <div className="space-y-6">
                   <motion.div 
-                    className="bg-gray-100 rounded-3xl p-8 shadow-[8px_8px_16px_#d1d5db,-8px_-8px_16px_#ffffff]"
+                    className={`${colors.cardBackground} rounded-3xl p-8 ${colors.shadow.medium}`}
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <h3 className="text-2xl xl:text-3xl font-bold text-gray-800 mb-4">
+                    <h3 className={`text-2xl xl:text-3xl font-bold ${colors.text} mb-4`}>
                       Patient Appointment Booking App
                     </h3>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className={`${colors.textSecondary} leading-relaxed`}>
                       A comprehensive appointment management system that streamlines the booking process for patients and healthcare providers. 
                       Features real-time availability, automated reminders, and integrated patient records.
                     </p>
                   </motion.div>
 
                   <motion.div 
-                    className="bg-gray-100 rounded-2xl p-6 shadow-[6px_6px_12px_#d1d5db,-6px_-6px_12px_#ffffff]"
+                    className={`${colors.cardBackground} rounded-2xl p-6 ${colors.shadow.small}`}
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
                   >
                     <div className="flex items-center gap-3 mb-4">
                       <div className="w-3 h-3 bg-emerald-500 rounded-full"></div>
-                      <span className="text-gray-800 font-semibold">Key Features</span>
+                      <span className={`${colors.text} font-semibold`}>Key Features</span>
                     </div>
                     <div className="space-y-2">
                       <div className="flex items-center gap-3">
                         <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                        <span className="text-gray-700 text-sm">Real-time appointment scheduling</span>
+                        <span className={`${colors.textSecondary} text-sm`}>Real-time appointment scheduling</span>
                       </div>
                       <div className="flex items-center gap-3">
                         <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                        <span className="text-gray-700 text-sm">Automated SMS/Email reminders</span>
+                        <span className={`${colors.textSecondary} text-sm`}>Automated SMS/Email reminders</span>
                       </div>
                       <div className="flex items-center gap-3">
                         <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                        <span className="text-gray-700 text-sm">Patient health history integration</span>
+                        <span className={`${colors.textSecondary} text-sm`}>Patient health history integration</span>
                       </div>
                       <div className="flex items-center gap-3">
                         <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                        <span className="text-gray-700 text-sm">HIPAA-compliant data handling</span>
+                        <span className={`${colors.textSecondary} text-sm`}>HIPAA-compliant data handling</span>
                       </div>
                     </div>
                   </motion.div>
 
                   <motion.div 
-                    className="bg-gray-100 rounded-2xl p-6 shadow-[6px_6px_12px_#d1d5db,-6px_-6px_12px_#ffffff]"
+                    className={`${colors.cardBackground} rounded-2xl p-6 ${colors.shadow.small}`}
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
                   >
                     <h4 className="text-lg font-semibold text-emerald-700 mb-3">Case Study: Improving Patient Experience</h4>
-                    <p className="text-gray-600 text-sm leading-relaxed">
+                    <p className={`${colors.textSecondary} text-sm leading-relaxed`}>
                       Reduced appointment booking time by 70% and increased patient satisfaction scores by 45% through intuitive UI design 
                       and automated reminder system. The clean, accessible interface ensures patients of all ages can easily schedule appointments.
                     </p>
@@ -301,7 +310,7 @@ const Home = () => {
                       href="#"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex items-center justify-center gap-3 bg-gray-100 text-emerald-700 px-6 py-3 rounded-xl font-semibold shadow-[6px_6px_12px_#d1d5db,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#d1d5db,inset_-6px_-6px_12px_#ffffff] transition-all duration-300"
+                      className={`group flex items-center justify-center gap-3 ${colors.cardBackground} ${colors.accent} px-6 py-3 rounded-xl font-semibold ${colors.shadow.small} hover:${colors.shadow.inset} transition-all duration-300`}
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
@@ -313,7 +322,7 @@ const Home = () => {
                       href="#"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex items-center justify-center gap-3 bg-gray-100 text-gray-700 px-6 py-3 rounded-xl font-semibold shadow-[6px_6px_12px_#d1d5db,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#d1d5db,inset_-6px_-6px_12px_#ffffff] transition-all duration-300"
+                      className={`group flex items-center justify-center gap-3 ${colors.cardBackground} ${colors.text} px-6 py-3 rounded-xl font-semibold ${colors.shadow.small} hover:${colors.shadow.inset} transition-all duration-300`}
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
@@ -602,11 +611,11 @@ const Home = () => {
               viewport={{ once: true }}
             >
               <motion.div 
-                className="bg-gray-100 rounded-3xl p-8 shadow-[12px_12px_24px_#d1d5db,-12px_-12px_24px_#ffffff]"
+                className={`${colors.cardBackground} rounded-3xl p-8 ${colors.shadow.raised}`}
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
-                <h2 className="text-4xl xl:text-5xl font-bold text-gray-800 mb-8">
+                <h2 className={`text-4xl xl:text-5xl font-bold ${colors.text} mb-8`}>
                   About{" "}
                   <span className="text-emerald-600">
                     Me
@@ -623,14 +632,14 @@ const Home = () => {
               viewport={{ once: true }}
             >
               <motion.div 
-                className="bg-gray-100 rounded-3xl p-8 shadow-[8px_8px_16px_#d1d5db,-8px_-8px_16px_#ffffff]"
+                className={`${colors.cardBackground} rounded-3xl p-8 ${colors.shadow.medium}`}
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
-                <h3 className="text-2xl xl:text-3xl font-bold text-gray-800 mb-4">
+                <h3 className={`text-2xl xl:text-3xl font-bold ${colors.text} mb-4`}>
                   HealthTech Frontend Engineer & Healthcare UX Specialist
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className={`${colors.textSecondary} leading-relaxed`}>
                   I am a passionate frontend engineer specializing in healthcare technology solutions. With a unique architectural background, 
                   I bring a human-centered design approach to creating accessible, secure, and intuitive digital health experiences. 
                   My expertise lies in HIPAA-compliant applications, telemedicine platforms, and patient-centered healthcare interfaces.
@@ -638,7 +647,7 @@ const Home = () => {
               </motion.div>
 
               <motion.div 
-                className="bg-gray-100 rounded-2xl p-6 shadow-[6px_6px_12px_#d1d5db,-6px_-6px_12px_#ffffff]"
+                className={`${colors.cardBackground} rounded-2xl p-6 ${colors.shadow.small}`}
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
@@ -646,19 +655,19 @@ const Home = () => {
                 <div className="grid grid-cols-2 gap-3 text-sm">
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                    <span className="text-gray-700">HIPAA Compliance</span>
+                    <span className={colors.textSecondary}>HIPAA Compliance</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                    <span className="text-gray-700">Telemedicine Platforms</span>
+                    <span className={colors.textSecondary}>Telemedicine Platforms</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                    <span className="text-gray-700">Patient Data Security</span>
+                    <span className={colors.textSecondary}>Patient Data Security</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                    <span className="text-gray-700">Accessibility (WCAG 2.1)</span>
+                    <span className={colors.textSecondary}>Accessibility (WCAG 2.1)</span>
                   </div>
                 </div>
               </motion.div>
@@ -671,7 +680,7 @@ const Home = () => {
               >
                 <Link
                   to="/About"
-                  className="inline-flex items-center gap-3 bg-gray-100 text-emerald-700 hover:text-emerald-800 font-semibold text-lg transition-all duration-300 group px-6 py-3 rounded-xl shadow-[6px_6px_12px_#d1d5db,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#d1d5db,inset_-6px_-6px_12px_#ffffff]"
+                  className={`inline-flex items-center gap-3 ${colors.cardBackground} ${colors.accent} hover:text-emerald-800 font-semibold text-lg transition-all duration-300 group px-6 py-3 rounded-xl ${colors.shadow.small} hover:${colors.shadow.inset}`}
                 >
                   <span>Learn More About My HealthTech Journey</span>
                   <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
@@ -700,17 +709,17 @@ const Home = () => {
               viewport={{ once: true }}
             >
               <motion.div 
-                className="bg-gray-100 rounded-3xl p-8 shadow-[12px_12px_24px_#d1d5db,-12px_-12px_24px_#ffffff]"
+                className={`${colors.cardBackground} rounded-3xl p-8 ${colors.shadow.raised}`}
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
-                <h2 className="text-4xl xl:text-5xl font-bold text-gray-800 mb-8">
+                <h2 className={`text-4xl xl:text-5xl font-bold ${colors.text} mb-8`}>
                   Let's{" "}
                   <span className="text-emerald-600">
                     Connect
                   </span>
                 </h2>
-                <p className="text-gray-600 mb-8 leading-relaxed">
+                <p className={`${colors.textSecondary} mb-8 leading-relaxed`}>
                   Ready to transform healthcare through technology? Let's discuss how we can work together 
                   to create innovative health solutions that improve patient outcomes and healthcare accessibility.
                 </p>
@@ -720,7 +729,7 @@ const Home = () => {
                     href="https://www.linkedin.com/in/ezekiel-oghojafor-268889196/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group p-4 bg-gray-100 rounded-2xl shadow-[6px_6px_12px_#d1d5db,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#d1d5db,inset_-6px_-6px_12px_#ffffff] transition-all duration-300"
+                    className={`group p-4 ${colors.cardBackground} rounded-2xl ${colors.shadow.small} hover:${colors.shadow.inset} transition-all duration-300`}
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     whileTap={{ scale: 0.9 }}
                   >
@@ -730,7 +739,7 @@ const Home = () => {
                     href="https://github.com/DevzekiFaith"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group p-4 bg-gray-100 rounded-2xl shadow-[6px_6px_12px_#d1d5db,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#d1d5db,inset_-6px_-6px_12px_#ffffff] transition-all duration-300"
+                    className={`group p-4 ${colors.cardBackground} rounded-2xl ${colors.shadow.small} hover:${colors.shadow.inset} transition-all duration-300`}
                     whileHover={{ scale: 1.1, rotate: -5 }}
                     whileTap={{ scale: 0.9 }}
                   >
@@ -748,15 +757,15 @@ const Home = () => {
               viewport={{ once: true }}
             >
               <motion.div 
-                className="bg-gray-100 rounded-3xl p-8 shadow-[8px_8px_16px_#d1d5db,-8px_-8px_16px_#ffffff]"
+                className={`${colors.cardBackground} rounded-3xl p-8 ${colors.shadow.medium}`}
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                   <div className="space-y-2">
-                    <label className="text-gray-800 font-semibold">Name</label>
+                    <label className={`${colors.text} font-semibold`}>Name</label>
                     <input
-                      className="w-full bg-gray-100 rounded-xl px-4 py-3 text-gray-800 focus:outline-none shadow-[inset_4px_4px_8px_#d1d5db,inset_-4px_-4px_8px_#ffffff] transition-all duration-300"
+                      className={`w-full ${colors.cardBackground} rounded-xl px-4 py-3 ${colors.text} focus:outline-none ${colors.shadow.insetSmall} transition-all duration-300`}
                       type="text"
                       placeholder="Your name"
                       {...register("Username", {
@@ -771,9 +780,9 @@ const Home = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-gray-800 font-semibold">Email</label>
+                    <label className={`${colors.text} font-semibold`}>Email</label>
                     <input
-                      className="w-full bg-gray-100 rounded-xl px-4 py-3 text-gray-800 focus:outline-none shadow-[inset_4px_4px_8px_#d1d5db,inset_-4px_-4px_8px_#ffffff] transition-all duration-300"
+                      className={`w-full ${colors.cardBackground} rounded-xl px-4 py-3 ${colors.text} focus:outline-none ${colors.shadow.insetSmall} transition-all duration-300`}
                       type="email"
                       placeholder="your.email@example.com"
                       {...register("Email", {
@@ -792,16 +801,16 @@ const Home = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-gray-800 font-semibold">Message</label>
+                    <label className={`${colors.text} font-semibold`}>Message</label>
                     <textarea
-                      className="w-full h-32 bg-gray-100 rounded-xl px-4 py-3 text-gray-800 resize-none focus:outline-none shadow-[inset_4px_4px_8px_#d1d5db,inset_-4px_-4px_8px_#ffffff] transition-all duration-300"
+                      className={`w-full h-32 ${colors.cardBackground} rounded-xl px-4 py-3 ${colors.text} resize-none focus:outline-none ${colors.shadow.insetSmall} transition-all duration-300`}
                       placeholder="Tell me about your project..."
                     />
                   </div>
 
                   <motion.button
                     type="submit"
-                    className="w-full bg-gray-100 text-emerald-700 font-semibold py-4 px-6 rounded-xl shadow-[6px_6px_12px_#d1d5db,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#d1d5db,inset_-6px_-6px_12px_#ffffff] transition-all duration-300 focus:outline-none"
+                    className={`w-full ${colors.cardBackground} ${colors.accent} font-semibold py-4 px-6 rounded-xl ${colors.shadow.small} hover:${colors.shadow.inset} transition-all duration-300 focus:outline-none`}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >

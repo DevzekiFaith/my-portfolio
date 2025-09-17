@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import ImageProfile01 from "/m-page2.jpg";
 import DownloadImage from "/download.svg";
 import Typewriter from "typewriter-effect";
@@ -9,22 +10,38 @@ import { IoLogoHtml5 } from "react-icons/io";
 import { SiVercel, SiTailwindcss } from "react-icons/si";
 import { BiLogoTypescript } from "react-icons/bi";
 import { TbBrandReactNative } from "react-icons/tb";
+import { useTheme } from "../../contexts/ThemeContext";
 
-const TechBadge = ({ name, icon: Icon }) => (
-  <div className="group bg-gray-100 transition-all duration-300 w-32 text-center rounded-2xl mb-4 p-4 text-gray-700 flex flex-col justify-center items-center gap-2 shadow-[6px_6px_12px_#d1d5db,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#d1d5db,inset_-6px_-6px_12px_#ffffff]">
+const TechBadge = ({ name, icon: Icon, colors }) => (
+  <motion.div 
+    className={`group ${colors.cardBackground} transition-all duration-300 w-32 text-center rounded-2xl mb-4 p-4 ${colors.textSecondary} flex flex-col justify-center items-center gap-2 ${colors.shadow.small} hover:${colors.shadow.inset}`}
+    whileHover={{ scale: 1.05, rotate: 2 }}
+    whileTap={{ scale: 0.95 }}
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6 }}
+    viewport={{ once: true }}
+  >
     <Icon className="text-2xl text-emerald-600 group-hover:scale-110 transition-transform duration-300" />
     <span className="text-sm font-medium">{name}</span>
-  </div>
+  </motion.div>
 );
 
-const ExperienceItem = ({ title, period, description }) => (
-  <div className="bg-gray-100 rounded-2xl p-8 shadow-[8px_8px_16px_#d1d5db,-8px_-8px_16px_#ffffff] transition-all duration-300">
+const ExperienceItem = ({ title, period, description, colors }) => (
+  <motion.div 
+    className={`${colors.cardBackground} rounded-2xl p-8 ${colors.shadow.medium} transition-all duration-300`}
+    whileHover={{ scale: 1.02 }}
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6 }}
+    viewport={{ once: true }}
+  >
     <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">
-      <h3 className="text-2xl font-bold text-gray-800 mb-2 sm:mb-0">{title}</h3>
-      <span className="px-4 py-2 bg-gray-100 text-emerald-700 rounded-full text-sm font-semibold shadow-[4px_4px_8px_#d1d5db,-4px_-4px_8px_#ffffff]">{period}</span>
+      <h3 className={`text-2xl font-bold ${colors.text} mb-2 sm:mb-0`}>{title}</h3>
+      <span className={`px-4 py-2 ${colors.cardBackground} ${colors.accent} rounded-full text-sm font-semibold ${colors.shadow.micro}`}>{period}</span>
     </div>
-    <p className="text-gray-600 leading-relaxed text-lg">{description}</p>
-  </div>
+    <p className={`${colors.textSecondary} leading-relaxed text-lg`}>{description}</p>
+  </motion.div>
 );
 
 const About = () => {
@@ -36,6 +53,8 @@ const About = () => {
   } = useForm();
   const [toastVisible, setToastVisible] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const theme = useTheme();
+  const colors = theme.colors[theme.isDark ? 'dark' : 'light'];
 
   const onSubmit = async (data) => {
     console.log(data);
@@ -81,29 +100,55 @@ const About = () => {
   ];
 
   return (
-    <div className="bg-gray-100 min-h-screen text-gray-900">
+    <div className={`${colors.background} min-h-screen ${colors.text} transition-colors duration-300`}>
       {/* Toast Notification */}
       {toastVisible && (
-        <div className="fixed top-6 right-6 bg-gray-100 text-emerald-700 px-6 py-4 rounded-xl shadow-[8px_8px_16px_#d1d5db,-8px_-8px_16px_#ffffff] transition-all duration-500 z-50">
+        <motion.div 
+          className={`fixed top-6 right-6 ${colors.cardBackground} ${colors.accent} px-6 py-4 rounded-xl ${colors.shadow.medium} transition-all duration-500 z-50`}
+          initial={{ opacity: 0, x: 100, scale: 0.8 }}
+          animate={{ opacity: 1, x: 0, scale: 1 }}
+          exit={{ opacity: 0, x: 100, scale: 0.8 }}
+          transition={{ duration: 0.3 }}
+        >
           <div className="flex items-center gap-3">
             <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
             <span className="font-medium">Message sent successfully!</span>
           </div>
-        </div>
+        </motion.div>
       )}
 
       {/* Hero Section */}
       <section className="container mx-auto px-6 py-20">
         <div className="flex xl:flex-row flex-col justify-between items-center gap-16">
-          <div className="xl:w-1/2">
-            <h1 className="text-4xl xl:text-6xl font-bold text-gray-800 mb-8">
+          <motion.div 
+            className="xl:w-1/2"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <motion.h1 
+              className={`text-4xl xl:text-6xl font-bold ${colors.text} mb-8`}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
               About{" "}
-              <span className="text-emerald-600">
+              <motion.span 
+                className="text-emerald-600"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
                 Me
-              </span>
-            </h1>
+              </motion.span>
+            </motion.h1>
             
-            <div className="text-xl text-gray-600 mb-8 leading-relaxed">
+            <motion.div 
+              className={`text-xl ${colors.textSecondary} mb-8 leading-relaxed`}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
               <Typewriter
                 options={{
                   strings: [
@@ -115,64 +160,90 @@ const About = () => {
                   delay: 50,
                 }}
               />
-            </div>
+            </motion.div>
 
-            <div className="flex flex-col sm:flex-row items-center gap-6">
-              <a
+            <motion.div 
+              className="flex flex-col sm:flex-row items-center gap-6"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+            >
+              <motion.a
                 href="Ezekiel's Resume.pdf"
                 download
-                className="group flex items-center gap-3 bg-gray-100 text-emerald-700 px-8 py-4 rounded-2xl font-semibold text-lg shadow-[8px_8px_16px_#d1d5db,-8px_-8px_16px_#ffffff] hover:shadow-[inset_8px_8px_16px_#d1d5db,inset_-8px_-8px_16px_#ffffff] transition-all duration-300 focus:outline-none"
+                className={`group flex items-center gap-3 ${colors.cardBackground} ${colors.accent} px-8 py-4 rounded-2xl font-semibold text-lg ${colors.shadow.medium} hover:${colors.shadow.inset} transition-all duration-300 focus:outline-none`}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 <img src={DownloadImage} alt="Download" className="w-5 h-5" />
                 <span>Download Resume</span>
                 <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
-              </a>
+              </motion.a>
 
               <div className="flex gap-4">
-                <a
+                <motion.a
                   href="https://www.linkedin.com/in/ezekiel-oghojafor-268889196/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group p-3 bg-gray-100 rounded-xl shadow-[6px_6px_12px_#d1d5db,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#d1d5db,inset_-6px_-6px_12px_#ffffff] transition-all duration-300"
+                  className={`group p-3 ${colors.cardBackground} rounded-xl ${colors.shadow.small} hover:${colors.shadow.inset} transition-all duration-300`}
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  whileTap={{ scale: 0.9 }}
                 >
                   <FaLinkedin className="w-5 h-5 text-emerald-600" />
-                </a>
-                <a
+                </motion.a>
+                <motion.a
                   href="https://github.com/DevzekiFaith"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group p-3 bg-gray-100 rounded-xl shadow-[6px_6px_12px_#d1d5db,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#d1d5db,inset_-6px_-6px_12px_#ffffff] transition-all duration-300"
+                  className={`group p-3 ${colors.cardBackground} rounded-xl ${colors.shadow.small} hover:${colors.shadow.inset} transition-all duration-300`}
+                  whileHover={{ scale: 1.1, rotate: -5 }}
+                  whileTap={{ scale: 0.9 }}
                 >
                   <FaGithub className="w-5 h-5 text-emerald-600" />
-                </a>
+                </motion.a>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          <div className="xl:w-1/2">
-            <div className="bg-gray-100 rounded-3xl p-6 shadow-[12px_12px_24px_#d1d5db,-12px_-12px_24px_#ffffff]">
+          <motion.div 
+            className="xl:w-1/2"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+          >
+            <motion.div 
+              className={`${colors.cardBackground} rounded-3xl p-6 ${colors.shadow.raised}`}
+              whileHover={{ scale: 1.02, rotateY: 5 }}
+              transition={{ duration: 0.3 }}
+            >
               <img
                 src={ImageProfile01}
                 alt="Ezekiel Oghojafor"
                 className="w-full h-auto rounded-2xl"
                 loading="lazy"
               />
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
       {/* Capabilities Section */}
-      <section className="py-24 bg-gray-50">
+      <section className={`py-24 ${colors.background}`}>
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl xl:text-5xl font-bold text-gray-800 mb-6">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className={`text-4xl xl:text-5xl font-bold ${colors.text} mb-6`}>
               My{" "}
               <span className="text-emerald-600">
                 Capabilities
               </span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <div className={`text-lg ${colors.textSecondary} max-w-3xl mx-auto leading-relaxed`}>
               <Typewriter
                 options={{
                   strings: [
@@ -184,239 +255,428 @@ const About = () => {
                   delay: 50,
                 }}
               />
-            </p>
-          </div>
+            </div>
+          </motion.div>
 
-          <div className="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto">
+          <motion.div 
+            className="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
             {techStack.map((tech, index) => (
-              <TechBadge key={index} name={tech.name} icon={tech.icon} />
+              <TechBadge key={index} name={tech.name} icon={tech.icon} colors={colors} />
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* PCOS Patient App Case Study */}
-      <section className="py-24">
+      <section className={`py-24 ${colors.background}`}>
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl xl:text-5xl font-bold text-gray-800 mb-6">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className={`text-4xl xl:text-5xl font-bold ${colors.text} mb-6`}>
               PCOS Patient{" "}
               <span className="text-emerald-600">
                 Management App
               </span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className={`text-lg ${colors.textSecondary} max-w-3xl mx-auto`}>
               A comprehensive case study showcasing how innovative UI/UX design improved patient outcomes and healthcare provider efficiency in PCOS management.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="max-w-6xl mx-auto">
-            <div className="grid xl:grid-cols-2 gap-16 items-center mb-16">
-              <div className="bg-gray-100 rounded-3xl p-6 shadow-[12px_12px_24px_#d1d5db,-12px_-12px_24px_#ffffff]">
-                <img
-                  className="w-full h-64 object-cover rounded-2xl"
-                  src="/pcos.jpg"
-                  alt="PCOS Patient Management App Interface"
-                  loading="lazy"
-                />
-              </div>
+          <motion.div 
+            className="max-w-6xl mx-auto"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            {/* Apple-style Case Study Layout */}
+            <div className="max-w-7xl mx-auto">
+              {/* Hero Section */}
+              <motion.div 
+                className="text-center mb-20"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                <h3 className={`text-5xl xl:text-6xl font-bold ${colors.text} mb-6 leading-tight`}>
+                  PCOS Patient Management Platform
+                </h3>
+                <p className={`text-xl ${colors.textSecondary} max-w-4xl mx-auto leading-relaxed`}>
+                  A comprehensive digital health platform designed specifically for PCOS patients to track symptoms, 
+                  monitor treatment progress, and connect with healthcare providers.
+                </p>
+              </motion.div>
 
-              <div className="space-y-6">
-                <div className="bg-gray-100 rounded-3xl p-8 shadow-[8px_8px_16px_#d1d5db,-8px_-8px_16px_#ffffff]">
-                  <h3 className="text-2xl xl:text-3xl font-bold text-gray-800 mb-4">
-                    PCOS Patient Management Platform
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    A comprehensive digital health platform designed specifically for PCOS patients to track symptoms, 
-                    monitor treatment progress, and connect with healthcare providers. Features advanced data visualization, 
-                    personalized health insights, and integrated care coordination.
-                  </p>
-                </div>
-
-                <div className="bg-gray-100 rounded-2xl p-6 shadow-[6px_6px_12px_#d1d5db,-6px_-6px_12px_#ffffff]">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-3 h-3 bg-emerald-500 rounded-full"></div>
-                    <span className="text-gray-800 font-semibold">Key Features</span>
+              {/* Main Content Grid */}
+              <div className="grid xl:grid-cols-2 gap-20 items-center mb-20">
+                {/* Image Section */}
+                <motion.div 
+                  className="relative"
+                  initial={{ opacity: 0, x: -50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  viewport={{ once: true }}
+                >
+                  <div className={`${colors.cardBackground} rounded-3xl p-8 ${colors.shadow.raised} overflow-hidden`}>
+                    <img
+                      className="w-full h-96 object-cover rounded-2xl"
+                      src="/pcos.jpg"
+                      alt="PCOS Patient Management App Interface"
+                      loading="lazy"
+                    />
                   </div>
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-3">
-                      <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                      <span className="text-gray-700 text-sm">Advanced symptom tracking and pattern recognition</span>
+                  {/* Floating elements for Apple-style effect */}
+                  <div className="absolute -top-4 -right-4 w-8 h-8 bg-emerald-500 rounded-full opacity-20"></div>
+                  <div className="absolute -bottom-6 -left-6 w-12 h-12 bg-emerald-300 rounded-full opacity-10"></div>
+                </motion.div>
+
+                {/* Content Section */}
+                <motion.div 
+                  className="space-y-8"
+                  initial={{ opacity: 0, x: 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: 0.6 }}
+                  viewport={{ once: true }}
+                >
+                  <div>
+                    <h4 className={`text-3xl font-bold ${colors.text} mb-4`}>Advanced Features</h4>
+                    <p className={`text-lg ${colors.textSecondary} leading-relaxed mb-6`}>
+                      Features advanced data visualization, personalized health insights, and integrated care coordination 
+                      to improve patient outcomes and healthcare provider efficiency.
+                    </p>
+                  </div>
+
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-4">
+                      <div className="w-6 h-6 bg-emerald-500 rounded-full flex-shrink-0 mt-1"></div>
+                      <div>
+                        <h5 className={`${colors.text} font-semibold mb-1`}>Advanced Symptom Tracking</h5>
+                        <p className={`${colors.textSecondary} text-sm`}>Pattern recognition and real-time monitoring</p>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                      <span className="text-gray-700 text-sm">3D anatomical visualization for patient education</span>
+                    <div className="flex items-start gap-4">
+                      <div className="w-6 h-6 bg-emerald-500 rounded-full flex-shrink-0 mt-1"></div>
+                      <div>
+                        <h5 className={`${colors.text} font-semibold mb-1`}>3D Anatomical Visualization</h5>
+                        <p className={`${colors.textSecondary} text-sm`}>Interactive patient education tools</p>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                      <span className="text-gray-700 text-sm">AI-powered health insights and recommendations</span>
+                    <div className="flex items-start gap-4">
+                      <div className="w-6 h-6 bg-emerald-500 rounded-full flex-shrink-0 mt-1"></div>
+                      <div>
+                        <h5 className={`${colors.text} font-semibold mb-1`}>AI-Powered Insights</h5>
+                        <p className={`${colors.textSecondary} text-sm`}>Personalized health recommendations</p>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                      <span className="text-gray-700 text-sm">Integrated provider communication and care coordination</span>
+                    <div className="flex items-start gap-4">
+                      <div className="w-6 h-6 bg-emerald-500 rounded-full flex-shrink-0 mt-1"></div>
+                      <div>
+                        <h5 className={`${colors.text} font-semibold mb-1`}>Provider Integration</h5>
+                        <p className={`${colors.textSecondary} text-sm`}>Seamless care coordination and communication</p>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               </div>
             </div>
 
             {/* Case Study Results */}
-            <div className="grid md:grid-cols-3 gap-8 mb-16">
-              <div className="bg-gray-100 rounded-2xl p-6 shadow-[6px_6px_12px_#d1d5db,-6px_-6px_12px_#ffffff] text-center">
+            <motion.div 
+              className="grid md:grid-cols-3 gap-8 mb-16"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <motion.div 
+                className={`${colors.cardBackground} rounded-2xl p-6 ${colors.shadow.small} text-center`}
+                whileHover={{ scale: 1.05, rotate: 2 }}
+                transition={{ duration: 0.3 }}
+              >
                 <div className="text-3xl font-bold text-emerald-600 mb-2">78%</div>
-                <div className="text-gray-700 font-semibold mb-2">Patient Engagement</div>
-                <div className="text-gray-600 text-sm">Increase in daily app usage and symptom tracking compliance</div>
-              </div>
-              <div className="bg-gray-100 rounded-2xl p-6 shadow-[6px_6px_12px_#d1d5db,-6px_-6px_12px_#ffffff] text-center">
+                <div className={`${colors.text} font-semibold mb-2`}>Patient Engagement</div>
+                <div className={`${colors.textSecondary} text-sm`}>Increase in daily app usage and symptom tracking compliance</div>
+              </motion.div>
+              <motion.div 
+                className={`${colors.cardBackground} rounded-2xl p-6 ${colors.shadow.small} text-center`}
+                whileHover={{ scale: 1.05, rotate: -2 }}
+                transition={{ duration: 0.3 }}
+              >
                 <div className="text-3xl font-bold text-emerald-600 mb-2">45%</div>
-                <div className="text-gray-700 font-semibold mb-2">Treatment Adherence</div>
-                <div className="text-gray-600 text-sm">Improvement in medication and lifestyle intervention compliance</div>
-              </div>
-              <div className="bg-gray-100 rounded-2xl p-6 shadow-[6px_6px_12px_#d1d5db,-6px_-6px_12px_#ffffff] text-center">
+                <div className={`${colors.text} font-semibold mb-2`}>Treatment Adherence</div>
+                <div className={`${colors.textSecondary} text-sm`}>Improvement in medication and lifestyle intervention compliance</div>
+              </motion.div>
+              <motion.div 
+                className={`${colors.cardBackground} rounded-2xl p-6 ${colors.shadow.small} text-center`}
+                whileHover={{ scale: 1.05, rotate: 2 }}
+                transition={{ duration: 0.3 }}
+              >
                 <div className="text-3xl font-bold text-emerald-600 mb-2">62%</div>
-                <div className="text-gray-700 font-semibold mb-2">Provider Efficiency</div>
-                <div className="text-gray-600 text-sm">Reduction in consultation time with improved data visualization</div>
+                <div className={`${colors.text} font-semibold mb-2`}>Provider Efficiency</div>
+                <div className={`${colors.textSecondary} text-sm`}>Reduction in consultation time with improved data visualization</div>
+              </motion.div>
+            </motion.div>
+
+            {/* Detailed Case Study - Single Div with Flex Layout */}
+            <motion.div 
+              className={`${colors.cardBackground} rounded-3xl p-8 ${colors.shadow.medium} overflow-hidden`}
+              whileHover={{ scale: 1.01 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex flex-col xl:flex-row gap-12 items-start">
+                {/* Case Study Content */}
+                <div className="flex-1 space-y-6">
+                  <h4 className={`text-3xl xl:text-4xl font-bold ${colors.text} mb-8`}>Case Study: Improving PCOS Patient Outcomes</h4>
+                  
+                  <div className="space-y-6">
+                    <div>
+                      <h5 className="text-xl font-semibold text-emerald-700 mb-4">Challenge</h5>
+                      <p className={`${colors.textSecondary} leading-relaxed text-lg`}>
+                        PCOS patients often struggle with complex symptom tracking, treatment adherence, and understanding their condition. 
+                        Traditional healthcare approaches lacked personalized insights and real-time monitoring capabilities, leading to 
+                        poor patient engagement and suboptimal treatment outcomes.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h5 className="text-xl font-semibold text-emerald-700 mb-4">Solution</h5>
+                      <p className={`${colors.textSecondary} leading-relaxed text-lg`}>
+                        Developed a comprehensive PCOS management platform featuring advanced 3D anatomical visualization, 
+                        AI-powered symptom pattern recognition, and integrated provider communication. The interface uses 
+                        intuitive data visualization to help patients understand their condition and track progress effectively.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h5 className="text-xl font-semibold text-emerald-700 mb-4">Key Findings</h5>
+                      <ul className={`${colors.textSecondary} space-y-3 text-lg`}>
+                        <li className="flex items-start gap-3">
+                          <div className="w-2 h-2 bg-emerald-500 rounded-full mt-3 flex-shrink-0"></div>
+                          <span><strong>Patient Education:</strong> 3D visualization improved understanding of PCOS by 85%</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <div className="w-2 h-2 bg-emerald-500 rounded-full mt-3 flex-shrink-0"></div>
+                          <span><strong>Symptom Tracking:</strong> Daily logging increased from 23% to 78% with intuitive UI</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <div className="w-2 h-2 bg-emerald-500 rounded-full mt-3 flex-shrink-0"></div>
+                          <span><strong>Provider Communication:</strong> 60% reduction in follow-up questions through better data presentation</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <div className="w-2 h-2 bg-emerald-500 rounded-full mt-3 flex-shrink-0"></div>
+                          <span><strong>Treatment Outcomes:</strong> 45% improvement in medication adherence and lifestyle changes</span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div>
+                      <h5 className="text-xl font-semibold text-emerald-700 mb-4">Impact</h5>
+                      <p className={`${colors.textSecondary} leading-relaxed text-lg`}>
+                        The platform successfully transformed PCOS patient care by providing personalized insights, 
+                        improving treatment adherence, and enhancing provider-patient communication. Patients reported 
+                        feeling more empowered and informed about their condition, while healthcare providers experienced 
+                        improved efficiency and better patient outcomes.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Additional Image Section */}
+                <div className="flex-1 xl:max-w-md">
+                  <motion.div 
+                    className={`${colors.cardBackground} rounded-2xl p-6 ${colors.shadow.small} overflow-hidden`}
+                    whileHover={{ scale: 1.02, rotateY: 5 }}
+                    transition={{ duration: 0.3 }}
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, delay: 1.0 }}
+                    viewport={{ once: true }}
+                  >
+                    <img
+                      className="w-full h-80 object-cover rounded-xl"
+                      src="/pcos.jpg"
+                      alt="PCOS Patient Management App - Detailed Interface"
+                      loading="lazy"
+                    />
+                    <div className="mt-4 text-center">
+                      <h6 className={`${colors.text} font-semibold mb-2`}>Patient Dashboard</h6>
+                      <p className={`${colors.textSecondary} text-sm`}>
+                        Real-time health monitoring and personalized insights
+                      </p>
+                    </div>
+                  </motion.div>
+                  
+                  {/* Additional visual element */}
+                  <motion.div 
+                    className="mt-6 text-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 1.2 }}
+                    viewport={{ once: true }}
+                  >
+                    <div className={`inline-flex items-center gap-3 ${colors.cardBackground} px-6 py-3 rounded-full ${colors.shadow.small}`}>
+                      <div className="w-3 h-3 bg-emerald-500 rounded-full animate-pulse"></div>
+                      <span className={`${colors.text} font-medium`}>Live Demo Available</span>
+                    </div>
+                  </motion.div>
+                </div>
               </div>
-            </div>
-
-            {/* Detailed Case Study */}
-            <div className="bg-gray-100 rounded-3xl p-8 shadow-[8px_8px_16px_#d1d5db,-8px_-8px_16px_#ffffff]">
-              <h4 className="text-2xl font-bold text-gray-800 mb-6">Case Study: Improving PCOS Patient Outcomes</h4>
-              
-              <div className="space-y-6">
-                <div>
-                  <h5 className="text-lg font-semibold text-emerald-700 mb-3">Challenge</h5>
-                  <p className="text-gray-600 leading-relaxed">
-                    PCOS patients often struggle with complex symptom tracking, treatment adherence, and understanding their condition. 
-                    Traditional healthcare approaches lacked personalized insights and real-time monitoring capabilities, leading to 
-                    poor patient engagement and suboptimal treatment outcomes.
-                  </p>
-                </div>
-
-                <div>
-                  <h5 className="text-lg font-semibold text-emerald-700 mb-3">Solution</h5>
-                  <p className="text-gray-600 leading-relaxed">
-                    Developed a comprehensive PCOS management platform featuring advanced 3D anatomical visualization, 
-                    AI-powered symptom pattern recognition, and integrated provider communication. The interface uses 
-                    intuitive data visualization to help patients understand their condition and track progress effectively.
-                  </p>
-                </div>
-
-                <div>
-                  <h5 className="text-lg font-semibold text-emerald-700 mb-3">Key Findings</h5>
-                  <ul className="text-gray-600 space-y-2">
-                    <li>• <strong>Patient Education:</strong> 3D visualization improved understanding of PCOS by 85%</li>
-                    <li>• <strong>Symptom Tracking:</strong> Daily logging increased from 23% to 78% with intuitive UI</li>
-                    <li>• <strong>Provider Communication:</strong> 60% reduction in follow-up questions through better data presentation</li>
-                    <li>• <strong>Treatment Outcomes:</strong> 45% improvement in medication adherence and lifestyle changes</li>
-                  </ul>
-                </div>
-
-                <div>
-                  <h5 className="text-lg font-semibold text-emerald-700 mb-3">Impact</h5>
-                  <p className="text-gray-600 leading-relaxed">
-                    The platform successfully transformed PCOS patient care by providing personalized insights, 
-                    improving treatment adherence, and enhancing provider-patient communication. Patients reported 
-                    feeling more empowered and informed about their condition, while healthcare providers experienced 
-                    improved efficiency and better patient outcomes.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
       {/* Experience Section */}
-      <section className="py-24 bg-gray-50">
+      <section className={`py-24 ${colors.background}`}>
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl xl:text-5xl font-bold text-gray-800 mb-6">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className={`text-4xl xl:text-5xl font-bold ${colors.text} mb-6`}>
               My{" "}
               <span className="text-emerald-600">
                 Experience
               </span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className={`text-lg ${colors.textSecondary} max-w-2xl mx-auto`}>
               A journey of growth and learning in healthcare technology and patient-centered design.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="max-w-4xl mx-auto space-y-8">
+          <motion.div 
+            className="max-w-4xl mx-auto space-y-8"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
             {experiences.map((exp, index) => (
               <ExperienceItem
                 key={index}
                 title={exp.title}
                 period={exp.period}
                 description={exp.description}
+                colors={colors}
               />
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section className="py-24 bg-gray-50">
+      <section className={`py-24 ${colors.background}`}>
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl xl:text-5xl font-bold text-gray-800 mb-6">
+            <motion.div 
+              className="text-center mb-16"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 className={`text-4xl xl:text-5xl font-bold ${colors.text} mb-6`}>
                 Let's{" "}
               <span className="text-emerald-600">
                 Connect
               </span>
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className={`text-lg ${colors.textSecondary} max-w-2xl mx-auto`}>
                 Ready to transform healthcare through technology? Let's discuss innovative health solutions.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="grid xl:grid-cols-2 gap-16">
-              <div className="space-y-8">
-                <div className="bg-gray-100 rounded-3xl p-8 shadow-[8px_8px_16px_#d1d5db,-8px_-8px_16px_#ffffff]">
-                  <h3 className="text-2xl font-bold text-gray-800 mb-4">Get in touch</h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">
+            <motion.div 
+              className="grid xl:grid-cols-2 gap-16"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <motion.div 
+                className="space-y-8"
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                viewport={{ once: true }}
+              >
+                <motion.div 
+                  className={`${colors.cardBackground} rounded-3xl p-8 ${colors.shadow.medium}`}
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <h3 className={`text-2xl font-bold ${colors.text} mb-4`}>Get in touch</h3>
+                  <p className={`${colors.textSecondary} mb-6 leading-relaxed`}>
                     I'm always open to discussing healthcare technology opportunities and innovative health projects. 
                     Let's work together to improve patient outcomes through technology!
                   </p>
-                  <p className="text-gray-600 mb-8">
+                  <p className={`${colors.textSecondary} mb-8`}>
                     Say hello at{" "}
                     <a
-                      href="mailto:zekipossible@gmail.com"
+                      href="mailto:ezekieloghojaforubor@gmail.com"
                       className="text-emerald-600 hover:text-emerald-700 font-semibold underline transition-colors duration-300"
                     >
-                      zekipossible@gmail.com
+                      ezekieloghojaforubor@gmail.com
                     </a>
                   </p>
-                </div>
+                </motion.div>
 
                 <div className="flex gap-4">
-                  <a
+                  <motion.a
                     href="https://www.linkedin.com/in/ezekiel-oghojafor-268889196/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group p-4 bg-gray-100 rounded-2xl shadow-[6px_6px_12px_#d1d5db,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#d1d5db,inset_-6px_-6px_12px_#ffffff] transition-all duration-300"
+                    className={`group p-4 ${colors.cardBackground} rounded-2xl ${colors.shadow.small} hover:${colors.shadow.inset} transition-all duration-300`}
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    whileTap={{ scale: 0.9 }}
                   >
                     <FaLinkedin className="w-5 h-5 text-emerald-600 group-hover:scale-110 transition-transform duration-300" />
-                  </a>
-                  <a
+                  </motion.a>
+                  <motion.a
                     href="https://github.com/DevzekiFaith"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group p-4 bg-gray-100 rounded-2xl shadow-[6px_6px_12px_#d1d5db,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#d1d5db,inset_-6px_-6px_12px_#ffffff] transition-all duration-300"
+                    className={`group p-4 ${colors.cardBackground} rounded-2xl ${colors.shadow.small} hover:${colors.shadow.inset} transition-all duration-300`}
+                    whileHover={{ scale: 1.1, rotate: -5 }}
+                    whileTap={{ scale: 0.9 }}
                   >
                     <FaGithub className="w-5 h-5 text-emerald-600 group-hover:scale-110 transition-transform duration-300" />
-                  </a>
+                  </motion.a>
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="bg-gray-100 rounded-3xl p-8 shadow-[8px_8px_16px_#d1d5db,-8px_-8px_16px_#ffffff]">
+              <motion.div 
+                className={`${colors.cardBackground} rounded-3xl p-8 ${colors.shadow.medium}`}
+                whileHover={{ scale: 1.02 }}
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                viewport={{ once: true }}
+              >
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                   <div className="space-y-2">
-                    <label className="text-gray-800 font-semibold">Name</label>
+                    <label className={`${colors.text} font-semibold`}>Name</label>
                     <input
                       type="text"
-                      className="w-full bg-gray-100 rounded-xl px-4 py-3 text-gray-800 focus:outline-none shadow-[inset_4px_4px_8px_#d1d5db,inset_-4px_-4px_8px_#ffffff] transition-all duration-300"
+                      className={`w-full ${colors.cardBackground} rounded-xl px-4 py-3 ${colors.text} focus:outline-none ${colors.shadow.insetSmall} transition-all duration-300`}
                       placeholder="Your name"
                       {...register("Username", { required: "Name is required" })}
                     />
@@ -426,10 +686,10 @@ const About = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-gray-800 font-semibold">Email</label>
+                    <label className={`${colors.text} font-semibold`}>Email</label>
                     <input
                       type="email"
-                      className="w-full bg-gray-100 rounded-xl px-4 py-3 text-gray-800 focus:outline-none shadow-[inset_4px_4px_8px_#d1d5db,inset_-4px_-4px_8px_#ffffff] transition-all duration-300"
+                      className={`w-full ${colors.cardBackground} rounded-xl px-4 py-3 ${colors.text} focus:outline-none ${colors.shadow.insetSmall} transition-all duration-300`}
                       placeholder="your.email@example.com"
                       {...register("Email", {
                         required: "Email is required",
@@ -445,29 +705,37 @@ const About = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-gray-800 font-semibold">Message</label>
+                    <label className={`${colors.text} font-semibold`}>Message</label>
                     <textarea
-                      className="w-full h-32 bg-gray-100 rounded-xl px-4 py-3 text-gray-800 resize-none focus:outline-none shadow-[inset_4px_4px_8px_#d1d5db,inset_-4px_-4px_8px_#ffffff] transition-all duration-300"
+                      className={`w-full h-32 ${colors.cardBackground} rounded-xl px-4 py-3 ${colors.text} resize-none focus:outline-none ${colors.shadow.insetSmall} transition-all duration-300`}
                       placeholder="Tell me about your project..."
                     ></textarea>
                   </div>
 
-                  <button
+                  <motion.button
                     type="submit"
-                    className="w-full bg-gray-100 text-emerald-700 font-semibold py-4 px-6 rounded-xl shadow-[6px_6px_12px_#d1d5db,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#d1d5db,inset_-6px_-6px_12px_#ffffff] transition-all duration-300 focus:outline-none"
+                    className={`w-full ${colors.cardBackground} ${colors.accent} font-semibold py-4 px-6 rounded-xl ${colors.shadow.small} hover:${colors.shadow.inset} transition-all duration-300 focus:outline-none`}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
                   >
                     Send Message
-                  </button>
+                  </motion.button>
                 </form>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
 
-          <div className="text-center mt-16 pt-8 border-t border-gray-200">
-            <p className="text-gray-500">
+          <motion.div 
+            className={`text-center mt-16 pt-8 border-t ${colors.border}`}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <p className={colors.textSecondary}>
               © EZEKIEL OGHOJAFOR UBOR {new Date().getFullYear()}
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
     </div>

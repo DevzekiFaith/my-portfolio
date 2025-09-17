@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { FaLinkedin, FaTwitter, FaInstagram, FaEnvelope, FaFileAlt } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
+import { useTheme } from '../../contexts/ThemeContext';
 
 const Contact = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const [toastVisible, setToastVisible] = useState(false);
   const navigate = useNavigate();
+  const theme = useTheme();
+  const colors = theme.colors[theme.isDark ? 'dark' : 'light'];
 
   const onSubmit = async (data) => {
     console.log(data);
@@ -25,60 +29,100 @@ const Contact = () => {
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen">
+    <div className={`${colors.background} min-h-screen transition-colors duration-300`}>
       {/* Toast Notification */}
       {toastVisible && (
-        <div className="fixed top-6 right-6 bg-gray-100 text-emerald-700 px-6 py-4 rounded-xl shadow-[8px_8px_16px_#d1d5db,-8px_-8px_16px_#ffffff] transition-all duration-500 z-50">
+        <motion.div 
+          className={`fixed top-6 right-6 ${colors.cardBackground} ${colors.accent} px-6 py-4 rounded-xl ${colors.shadow.medium} transition-all duration-500 z-50`}
+          initial={{ opacity: 0, x: 100, scale: 0.8 }}
+          animate={{ opacity: 1, x: 0, scale: 1 }}
+          exit={{ opacity: 0, x: 100, scale: 0.8 }}
+          transition={{ duration: 0.3 }}
+        >
           <div className="flex items-center gap-3">
             <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
             <span className="font-medium">Message sent successfully! Redirecting...</span>
           </div>
-        </div>
+        </motion.div>
       )}
 
       {/* Hero Section */}
       <section className="container mx-auto px-6 py-20">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl xl:text-6xl font-bold text-gray-800 mb-6">
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <motion.h1 
+            className={`text-4xl xl:text-6xl font-bold ${colors.text} mb-6`}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
             Let's{" "}
-            <span className="text-emerald-600">
+            <motion.span 
+              className="text-emerald-600"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
               Connect
-            </span>
-          </h1>
-          <p className="text-lg xl:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            </motion.span>
+          </motion.h1>
+          <motion.p 
+            className={`text-lg xl:text-xl ${colors.textSecondary} max-w-3xl mx-auto leading-relaxed`}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
             Ready to transform healthcare through technology? I'm always excited to discuss health technology opportunities 
             and collaborate on innovative health solutions. Let's improve patient outcomes together!
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         {/* Contact Info Cards */}
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
-          <div className="bg-gray-100 rounded-2xl p-8 shadow-[8px_8px_16px_#d1d5db,-8px_-8px_16px_#ffffff] transition-all duration-300">
+        <motion.div 
+          className="grid md:grid-cols-2 gap-8 mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <motion.div 
+            className={`${colors.cardBackground} rounded-2xl p-8 ${colors.shadow.medium} transition-all duration-300`}
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.3 }}
+          >
             <div className="flex items-center gap-4 mb-4">
-              <div className="p-3 bg-gray-100 rounded-xl shadow-[4px_4px_8px_#d1d5db,-4px_-4px_8px_#ffffff]">
+              <div className={`p-3 ${colors.cardBackground} rounded-xl ${colors.shadow.micro}`}>
                 <FaEnvelope className="w-6 h-6 text-emerald-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-800">Email</h3>
+              <h3 className={`text-xl font-bold ${colors.text}`}>Email</h3>
             </div>
-            <p className="text-gray-600 mb-4">
+            <p className={`${colors.textSecondary} mb-4`}>
               Drop me a line and I'll get back to you as soon as possible.
             </p>
             <a
-              href="mailto:zekipossible@gmail.com"
+              href="mailto:ezekieloghojaforubor@gmail.com"
               className="text-emerald-600 hover:text-emerald-700 font-semibold transition-colors duration-300"
             >
-              zekipossible@gmail.com
+              ezekieloghojaforubor@gmail.com
             </a>
-          </div>
+          </motion.div>
 
-          <div className="bg-gray-100 rounded-2xl p-8 shadow-[8px_8px_16px_#d1d5db,-8px_-8px_16px_#ffffff] transition-all duration-300">
+          <motion.div 
+            className={`${colors.cardBackground} rounded-2xl p-8 ${colors.shadow.medium} transition-all duration-300`}
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.3 }}
+          >
             <div className="flex items-center gap-4 mb-4">
-              <div className="p-3 bg-gray-100 rounded-xl shadow-[4px_4px_8px_#d1d5db,-4px_-4px_8px_#ffffff]">
+              <div className={`p-3 ${colors.cardBackground} rounded-xl ${colors.shadow.micro}`}>
                 <FaFileAlt className="w-6 h-6 text-emerald-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-800">Resume</h3>
+              <h3 className={`text-xl font-bold ${colors.text}`}>Resume</h3>
             </div>
-            <p className="text-gray-600 mb-4">
+            <p className={`${colors.textSecondary} mb-4`}>
               Want to know more about my experience and skills?
             </p>
             <a
@@ -89,20 +133,30 @@ const Contact = () => {
               <span>Download Resume</span>
               <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
             </a>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* Contact Form Section */}
-        <div className="max-w-4xl mx-auto">
+        <motion.div 
+          className="max-w-4xl mx-auto"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.0 }}
+          viewport={{ once: true }}
+        >
           <div className="grid xl:grid-cols-2 gap-16">
             {/* Contact Form */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Send a Message</h2>
+            <motion.div 
+              className={`${colors.cardBackground} rounded-2xl p-8 ${colors.shadow.medium} border ${colors.border}`}
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+            >
+              <h2 className={`text-3xl font-bold ${colors.text} mb-6`}>Send a Message</h2>
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 <div className="space-y-2">
-                  <label className="text-gray-900 font-semibold">Name</label>
+                  <label className={`${colors.text} font-semibold`}>Name</label>
                   <input
-                    className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:border-[#10b981] focus:ring-4 focus:ring-[#10b981]/10 transition-all duration-300"
+                    className={`w-full ${colors.cardBackground} border ${colors.border} rounded-xl px-4 py-3 ${colors.text} focus:outline-none focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 transition-all duration-300`}
                     type="text"
                     placeholder="Your name"
                     {...register("name", { required: "Name is required" })}
@@ -113,9 +167,9 @@ const Contact = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-gray-900 font-semibold">Email</label>
+                  <label className={`${colors.text} font-semibold`}>Email</label>
                   <input
-                    className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:border-[#10b981] focus:ring-4 focus:ring-[#10b981]/10 transition-all duration-300"
+                    className={`w-full ${colors.cardBackground} border ${colors.border} rounded-xl px-4 py-3 ${colors.text} focus:outline-none focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 transition-all duration-300`}
                     type="email"
                     placeholder="your.email@example.com"
                     {...register("email", {
@@ -132,9 +186,9 @@ const Contact = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-gray-900 font-semibold">Message</label>
+                  <label className={`${colors.text} font-semibold`}>Message</label>
                   <textarea
-                    className="w-full h-32 bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 resize-none focus:outline-none focus:border-[#635bff] focus:ring-4 focus:ring-[#635bff]/10 transition-all duration-300"
+                    className={`w-full h-32 ${colors.cardBackground} border ${colors.border} rounded-xl px-4 py-3 ${colors.text} resize-none focus:outline-none focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 transition-all duration-300`}
                     placeholder="Tell me about your project or how I can help..."
                     {...register("message", { required: "Message is required" })}
                   />
@@ -143,20 +197,28 @@ const Contact = () => {
                   )}
                 </div>
 
-                <button
+                <motion.button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-[#10b981] to-[#059669] text-white font-semibold py-4 px-6 rounded-xl hover:shadow-xl hover:shadow-[#10b981]/25 transform hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-[#10b981]/20"
+                  className={`w-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold py-4 px-6 rounded-xl hover:shadow-xl hover:shadow-emerald-500/25 transform hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-emerald-500/20`}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                 >
                   Send Message
-                </button>
+                </motion.button>
               </form>
-            </div>
+            </motion.div>
 
             {/* Contact Details */}
-            <div className="space-y-8">
+            <motion.div 
+              className="space-y-8"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 1.2 }}
+              viewport={{ once: true }}
+            >
               <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">Get in Touch</h2>
-                <p className="text-lg text-gray-600 leading-relaxed mb-8">
+                <h2 className={`text-3xl font-bold ${colors.text} mb-6`}>Get in Touch</h2>
+                <p className={`text-lg ${colors.textSecondary} leading-relaxed mb-8`}>
                   I'm always open to discussing healthcare technology opportunities, innovative health projects, 
                   or just having a chat about health tech and patient-centered design. Feel free to reach out!
                 </p>
@@ -164,78 +226,96 @@ const Contact = () => {
 
               {/* Social Links */}
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Connect with me</h3>
+                <h3 className={`text-xl font-bold ${colors.text} mb-4`}>Connect with me</h3>
                 <div className="grid grid-cols-2 gap-4">
-                  <a
+                  <motion.a
                     href="https://github.com/DevzekiFaith"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-3 p-4 bg-gray-50 rounded-xl hover:bg-[#10b981] hover:text-white transition-all duration-300 transform hover:-translate-y-1"
+                    className={`group flex items-center gap-3 p-4 ${colors.cardBackground} rounded-xl hover:bg-emerald-500 hover:text-white transition-all duration-300 transform hover:-translate-y-1 ${colors.shadow.small}`}
+                    whileHover={{ scale: 1.05, rotate: 2 }}
+                    whileTap={{ scale: 0.95 }}
                   >
                     <FaGithub className="w-6 h-6" />
                     <span className="font-medium">GitHub</span>
-                  </a>
-                  <a
+                  </motion.a>
+                  <motion.a
                     href="https://www.linkedin.com/in/ezekiel-oghojafor-268889196/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-3 p-4 bg-gray-50 rounded-xl hover:bg-[#10b981] hover:text-white transition-all duration-300 transform hover:-translate-y-1"
+                    className={`group flex items-center gap-3 p-4 ${colors.cardBackground} rounded-xl hover:bg-emerald-500 hover:text-white transition-all duration-300 transform hover:-translate-y-1 ${colors.shadow.small}`}
+                    whileHover={{ scale: 1.05, rotate: -2 }}
+                    whileTap={{ scale: 0.95 }}
                   >
                     <FaLinkedin className="w-6 h-6" />
                     <span className="font-medium">LinkedIn</span>
-                  </a>
-                  <a
+                  </motion.a>
+                  <motion.a
                     href="https://twitter.com/yourprofile"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-3 p-4 bg-gray-50 rounded-xl hover:bg-[#10b981] hover:text-white transition-all duration-300 transform hover:-translate-y-1"
+                    className={`group flex items-center gap-3 p-4 ${colors.cardBackground} rounded-xl hover:bg-emerald-500 hover:text-white transition-all duration-300 transform hover:-translate-y-1 ${colors.shadow.small}`}
+                    whileHover={{ scale: 1.05, rotate: 2 }}
+                    whileTap={{ scale: 0.95 }}
                   >
                     <FaTwitter className="w-6 h-6" />
                     <span className="font-medium">Twitter</span>
-                  </a>
-                  <a
+                  </motion.a>
+                  <motion.a
                     href="https://instagram.com/yourprofile"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-3 p-4 bg-gray-50 rounded-xl hover:bg-[#10b981] hover:text-white transition-all duration-300 transform hover:-translate-y-1"
+                    className={`group flex items-center gap-3 p-4 ${colors.cardBackground} rounded-xl hover:bg-emerald-500 hover:text-white transition-all duration-300 transform hover:-translate-y-1 ${colors.shadow.small}`}
+                    whileHover={{ scale: 1.05, rotate: -2 }}
+                    whileTap={{ scale: 0.95 }}
                   >
                     <FaInstagram className="w-6 h-6" />
                     <span className="font-medium">Instagram</span>
-                  </a>
+                  </motion.a>
                 </div>
               </div>
 
               {/* Quick Info */}
-              <div className="bg-gradient-to-r from-[#10b981]/10 to-[#059669]/10 rounded-2xl p-6 border border-[#10b981]/20">
-                <h3 className="text-lg font-bold text-gray-900 mb-3">Quick Facts</h3>
-                <div className="space-y-2 text-gray-600">
+              <motion.div 
+                className={`bg-gradient-to-r from-emerald-500/10 to-emerald-600/10 rounded-2xl p-6 border border-emerald-500/20`}
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+              >
+                <h3 className={`text-lg font-bold ${colors.text} mb-3`}>Quick Facts</h3>
+                <div className={`space-y-2 ${colors.textSecondary}`}>
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-[#10b981] rounded-full"></div>
-                    <span>Based in Nigeria</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-[#10b981] rounded-full"></div>
+                    <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
                     <span>Specializing in HealthTech solutions</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-[#10b981] rounded-full"></div>
+                    <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
                     <span>HIPAA-compliant development</span>
                   </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                    <span>Available for freelance projects</span>
+                  </div>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Footer */}
-      <section className="py-12 bg-gray-50">
+      <motion.section 
+        className={`py-12 ${colors.background}`}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
         <div className="container mx-auto px-6 text-center">
-          <p className="text-gray-600">
+          <p className={colors.textSecondary}>
             © {new Date().getFullYear()} Ezekiel Oghojafor Ubor. All rights reserved.
           </p>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };
