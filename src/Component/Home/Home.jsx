@@ -49,15 +49,15 @@ const Home = () => {
       )}
 
       {/* Hero Section */}
-      <section className="container mx-auto px-6 py-20">
-        <div className="flex xl:flex-row flex-col justify-between items-center gap-16 min-h-[80vh]">
+      <section className="container mx-auto px-6 py-24 md:py-32 lg:py-40">
+        <div className="flex xl:flex-row flex-col justify-between items-center gap-16 min-h-[85vh]">
           <motion.div 
-            className="flex-1 max-w-2xl text-center xl:text-left"
+            className="flex-1 max-w-2xl text-center xl:text-left px-4 md:px-6 lg:px-8"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <div className="mb-8">
+            <div className="mb-10 md:mb-12">
               <motion.h1 
                 className={`text-4xl xl:text-6xl font-bold ${colors.text} mb-6 leading-tight`}
                 initial={{ opacity: 0, y: 30 }}
@@ -138,13 +138,13 @@ const Home = () => {
           </motion.div>
 
           <motion.div 
-            className="flex-1 xl:max-w-lg"
+            className="flex-1 xl:max-w-lg px-4 md:px-6 lg:px-8"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           >
             <motion.div 
-              className={`${colors.cardBackground} rounded-3xl p-6 ${colors.shadow.raised}`}
+              className={`${colors.cardBackground} rounded-3xl p-8 md:p-10 ${colors.shadow.raised}`}
               whileHover={{ scale: 1.02, rotateY: 5 }}
               transition={{ duration: 0.3 }}
             >
@@ -226,105 +226,57 @@ const Home = () => {
             {/* SME Management System */}
             <Link to="/project/sme-management">
               <motion.div 
-                className={`${colors.cardBackground} rounded-3xl p-8 ${colors.shadow.medium} group cursor-pointer w-80 h-96 flex flex-col`}
+                className={`${colors.cardBackground} rounded-3xl p-4 ${colors.shadow.medium} group cursor-pointer w-80 h-80 flex items-center justify-center`}
                 whileHover={{ scale: 1.05, y: -10 }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="p-3 bg-purple-100 rounded-xl">
-                    <MdBusiness className="w-8 h-8 text-purple-600" />
-                  </div>
-                  <h3 className={`text-xl font-bold ${colors.text}`}>SME Management</h3>
-                </div>
                 <img
                   src="/og2.png"
                   alt="SME Management System"
-                  className="w-full h-48 object-cover rounded-2xl mb-4"
+                  className="w-full h-full object-cover rounded-2xl"
                   loading="lazy"
                 />
-                <p className={`${colors.textSecondary} mb-4 text-sm leading-relaxed`}>
-                  Comprehensive business management platform for small and medium enterprises with inventory, CRM, and analytics.
-                </p>
-                <div className="flex items-center justify-between">
-                  <div className="flex gap-2">
-                    <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">React</span>
-                    <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Node.js</span>
-                  </div>
-                  <FaArrowRight className="text-purple-600 group-hover:translate-x-1 transition-transform duration-300" />
-                </div>
               </motion.div>
             </Link>
 
             {/* FinTech Dashboard */}
             <Link to="/project/fintech-dashboard">
               <motion.div 
-                className={`${colors.cardBackground} rounded-3xl p-8 ${colors.shadow.medium} group cursor-pointer w-80 h-96 flex flex-col`}
+                className={`${colors.cardBackground} rounded-3xl p-4 ${colors.shadow.medium} group cursor-pointer w-80 h-80 flex items-center justify-center`}
                 whileHover={{ scale: 1.05, y: -10 }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="p-3 bg-purple-100 rounded-xl">
-                    <FaCreditCard className="w-8 h-8 text-purple-600" />
-                  </div>
-                  <h3 className={`text-xl font-bold ${colors.text}`}>FinTech Dashboard</h3>
-                </div>
                 <img
                   src="/db1.png"
                   alt="FinTech Dashboard"
-                  className="w-full h-48 object-cover rounded-2xl mb-4"
+                  className="w-full h-full object-cover rounded-2xl"
                   loading="lazy"
                 />
-                <p className={`${colors.textSecondary} mb-4 text-sm leading-relaxed`}>
-                  Advanced financial dashboard with real-time analytics, transaction monitoring, and risk assessment tools.
-                </p>
-                <div className="flex items-center justify-between">
-                  <div className="flex gap-2">
-                    <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">TypeScript</span>
-                    <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Chart.js</span>
-                  </div>
-                  <FaArrowRight className="text-purple-600 group-hover:translate-x-1 transition-transform duration-300" />
-                </div>
               </motion.div>
             </Link>
 
             {/* Analytics Platform */}
             <Link to="/project/analytics-platform">
               <motion.div 
-                className={`${colors.cardBackground} rounded-3xl p-8 ${colors.shadow.medium} group cursor-pointer w-80 h-96 flex flex-col`}
+                className={`${colors.cardBackground} rounded-3xl p-4 ${colors.shadow.medium} group cursor-pointer w-80 h-80 flex items-center justify-center`}
                 whileHover={{ scale: 1.05, y: -10 }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
                 viewport={{ once: true }}
               >
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="p-3 bg-purple-100 rounded-xl">
-                    <FaChartLine className="w-8 h-8 text-purple-600" />
-                  </div>
-                  <h3 className={`text-xl font-bold ${colors.text}`}>Analytics Platform</h3>
-                </div>
                 <img
                   src="/db2.png"
                   alt="Analytics Platform"
-                  className="w-full h-48 object-cover rounded-2xl mb-4"
+                  className="w-full h-full object-cover rounded-2xl"
                   loading="lazy"
                 />
-                <p className={`${colors.textSecondary} mb-4 text-sm leading-relaxed`}>
-                  Business intelligence platform with advanced data visualization and predictive analytics capabilities.
-                </p>
-                <div className="flex items-center justify-between">
-                  <div className="flex gap-2">
-                    <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">D3.js</span>
-                    <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Python</span>
-                  </div>
-                  <FaArrowRight className="text-purple-600 group-hover:translate-x-1 transition-transform duration-300" />
-                </div>
               </motion.div>
             </Link>
           </div>
@@ -384,105 +336,57 @@ const Home = () => {
             {/* PCOS Management */}
             <Link to="/project/pcos-management">
               <motion.div 
-                className={`${colors.cardBackground} rounded-3xl p-8 ${colors.shadow.medium} group cursor-pointer w-80 h-96 flex flex-col`}
+                className={`${colors.cardBackground} rounded-3xl p-4 ${colors.shadow.medium} group cursor-pointer w-80 h-80 flex items-center justify-center`}
                 whileHover={{ scale: 1.05, y: -10 }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="p-3 bg-purple-100 rounded-xl">
-                    <FaStethoscope className="w-8 h-8 text-purple-600" />
-                  </div>
-                  <h3 className={`text-xl font-bold ${colors.text}`}>PCOS Management</h3>
-                </div>
                 <img
                   src="/md1.jpg"
                   alt="PCOS Patient Management"
-                  className="w-full h-48 object-cover rounded-2xl mb-4"
+                  className="w-full h-full object-cover rounded-2xl"
                   loading="lazy"
                 />
-                <p className={`${colors.textSecondary} mb-4 text-sm leading-relaxed`}>
-                  Comprehensive PCOS patient management platform with 3D visualization and AI-powered insights.
-                </p>
-                <div className="flex items-center justify-between">
-                  <div className="flex gap-2">
-                    <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">React</span>
-                    <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">WebRTC</span>
-                  </div>
-                  <FaArrowRight className="text-purple-600 group-hover:translate-x-1 transition-transform duration-300" />
-                </div>
               </motion.div>
             </Link>
 
             {/* Telemedicine Platform */}
             <Link to="/project/telemedicine">
               <motion.div 
-                className={`${colors.cardBackground} rounded-3xl p-8 ${colors.shadow.medium} group cursor-pointer w-80 h-96 flex flex-col`}
+                className={`${colors.cardBackground} rounded-3xl p-4 ${colors.shadow.medium} group cursor-pointer w-80 h-80 flex items-center justify-center`}
                 whileHover={{ scale: 1.05, y: -10 }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="p-3 bg-purple-100 rounded-xl">
-                    <FaUserMd className="w-8 h-8 text-purple-600" />
-                  </div>
-                  <h3 className={`text-xl font-bold ${colors.text}`}>Telemedicine</h3>
-                </div>
                 <img
                   src="/md2.jpg"
                   alt="Telemedicine Platform"
-                  className="w-full h-48 object-cover rounded-2xl mb-4"
+                  className="w-full h-full object-cover rounded-2xl"
                   loading="lazy"
                 />
-                <p className={`${colors.textSecondary} mb-4 text-sm leading-relaxed`}>
-                  Secure video consultation platform with appointment scheduling and prescription management.
-                </p>
-                <div className="flex items-center justify-between">
-                  <div className="flex gap-2">
-                    <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">WebRTC</span>
-                    <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Firebase</span>
-                  </div>
-                  <FaArrowRight className="text-purple-600 group-hover:translate-x-1 transition-transform duration-300" />
-                </div>
               </motion.div>
             </Link>
 
             {/* Health Records */}
             <Link to="/project/health-records">
               <motion.div 
-                className={`${colors.cardBackground} rounded-3xl p-8 ${colors.shadow.medium} group cursor-pointer w-80 h-96 flex flex-col`}
+                className={`${colors.cardBackground} rounded-3xl p-4 ${colors.shadow.medium} group cursor-pointer w-80 h-80 flex items-center justify-center`}
                 whileHover={{ scale: 1.05, y: -10 }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
                 viewport={{ once: true }}
               >
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="p-3 bg-purple-100 rounded-xl">
-                    <FaFileMedical className="w-8 h-8 text-purple-600" />
-                  </div>
-                  <h3 className={`text-xl font-bold ${colors.text}`}>Health Records</h3>
-                </div>
                 <img
                   src="/md3.jpg"
                   alt="Health Records Portal"
-                  className="w-full h-48 object-cover rounded-2xl mb-4"
+                  className="w-full h-full object-cover rounded-2xl"
                   loading="lazy"
                 />
-                <p className={`${colors.textSecondary} mb-4 text-sm leading-relaxed`}>
-                  HIPAA-compliant patient health record portal with secure data sharing and analytics.
-                </p>
-                <div className="flex items-center justify-between">
-                  <div className="flex gap-2">
-                    <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">PostgreSQL</span>
-                    <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">HIPAA</span>
-                  </div>
-                  <FaArrowRight className="text-purple-600 group-hover:translate-x-1 transition-transform duration-300" />
-                </div>
               </motion.div>
             </Link>
           </div>

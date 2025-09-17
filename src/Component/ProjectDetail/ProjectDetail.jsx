@@ -15,7 +15,7 @@ const ProjectDetail = () => {
       title: 'SME Management System',
       category: 'Business Solutions',
       image: '/og2.png',
-      description: 'A comprehensive business management platform designed specifically for small and medium enterprises. This system streamlines operations, enhances productivity, and provides valuable insights for business growth.',
+      description: 'Comprehensive business management platform for small and medium enterprises with inventory, CRM, and analytics.',
       longDescription: 'The SME Management System is a full-stack application that revolutionizes how small and medium enterprises handle their daily operations. Built with modern web technologies, it provides a centralized platform for managing inventory, customer relationships, financial tracking, and business analytics.',
       features: [
         'Inventory Management with real-time tracking',
@@ -51,7 +51,7 @@ const ProjectDetail = () => {
       title: 'FinTech Dashboard',
       category: 'Business Solutions',
       image: '/db1.png',
-      description: 'An advanced financial dashboard with real-time analytics, transaction monitoring, and comprehensive risk assessment tools for financial institutions.',
+      description: 'Advanced financial dashboard with real-time analytics, transaction monitoring, and risk assessment tools.',
       longDescription: 'The FinTech Dashboard is a sophisticated financial management platform that provides real-time insights into financial data, transaction patterns, and risk metrics. Designed for financial institutions, it offers comprehensive tools for monitoring, analyzing, and managing financial operations.',
       features: [
         'Real-time financial data visualization',
@@ -87,7 +87,7 @@ const ProjectDetail = () => {
       title: 'Analytics Platform',
       category: 'Business Solutions',
       image: '/db2.png',
-      description: 'A powerful business intelligence platform with advanced data visualization, predictive analytics, and comprehensive reporting capabilities.',
+      description: 'Business intelligence platform with advanced data visualization and predictive analytics capabilities.',
       longDescription: 'The Analytics Platform is a comprehensive business intelligence solution that transforms raw data into actionable insights. It provides advanced visualization tools, predictive analytics, and automated reporting to help businesses make data-driven decisions.',
       features: [
         'Advanced data visualization with D3.js',
@@ -123,7 +123,7 @@ const ProjectDetail = () => {
       title: 'PCOS Patient Management Platform',
       category: 'Health Solutions',
       image: '/md1.jpg',
-      description: 'A comprehensive PCOS patient management platform featuring 3D anatomical visualization, AI-powered symptom tracking, and integrated provider communication.',
+      description: 'Comprehensive PCOS patient management platform with 3D visualization and AI-powered insights.',
       longDescription: 'The PCOS Patient Management Platform is a revolutionary healthcare application designed specifically for patients with Polycystic Ovary Syndrome. It combines advanced medical visualization, AI-powered insights, and seamless provider communication to improve patient outcomes and healthcare delivery.',
       features: [
         '3D anatomical visualization for patient education',
@@ -159,7 +159,7 @@ const ProjectDetail = () => {
       title: 'Telemedicine Platform',
       category: 'Health Solutions',
       image: '/md2.jpg',
-      description: 'A secure video consultation platform with appointment scheduling, prescription management, and integrated health records.',
+      description: 'Secure video consultation platform with appointment scheduling and prescription management.',
       longDescription: 'The Telemedicine Platform is a comprehensive healthcare solution that enables secure video consultations between patients and healthcare providers. It includes appointment scheduling, prescription management, and integrated health records for a complete telemedicine experience.',
       features: [
         'Secure video consultations with WebRTC',
@@ -195,7 +195,7 @@ const ProjectDetail = () => {
       title: 'Health Records Portal',
       category: 'Health Solutions',
       image: '/md3.jpg',
-      description: 'A HIPAA-compliant patient health record portal with secure data sharing, analytics, and provider collaboration tools.',
+      description: 'HIPAA-compliant patient health record portal with secure data sharing and analytics.',
       longDescription: 'The Health Records Portal is a secure, HIPAA-compliant platform that centralizes patient health information and enables seamless sharing between healthcare providers. It includes advanced analytics, secure messaging, and comprehensive audit trails.',
       features: [
         'HIPAA-compliant data storage and transmission',
