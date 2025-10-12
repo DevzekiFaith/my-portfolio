@@ -221,7 +221,7 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <motion.div 
-          className={`fixed top-0 right-0 w-80 h-full ${colors.glassBackground} backdrop-blur-2xl border-l ${colors.border} ${colors.shadow.glass} navbar-menu z-50 xl:hidden`}
+          className={`fixed top-0 right-0 w-full sm:w-80 h-full ${colors.glassBackground} backdrop-blur-2xl border-l ${colors.border} ${colors.shadow.glass} navbar-menu z-50 xl:hidden`}
           initial={{ x: 320 }}
           animate={{ x: 0 }}
           exit={{ x: 320 }}

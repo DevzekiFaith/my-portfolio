@@ -60,7 +60,7 @@ const Home = () => {
           >
             <div className="mb-10 md:mb-12">
               <motion.h1 
-                className={`text-4xl xl:text-6xl font-bold ${colors.text} mb-6 leading-tight`}
+                className={`text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold ${colors.text} mb-6 leading-tight`}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
@@ -168,7 +168,7 @@ const Home = () => {
       {/* Project Categories Showcase */}
       <section className="container mx-auto px-6 py-16">
         <motion.div 
-          className="flex flex-col lg:flex-row gap-8 justify-center items-stretch max-w-6xl mx-auto"
+          className="flex flex-col lg:flex-row gap-6 lg:gap-8 justify-center items-stretch max-w-6xl mx-auto px-4 sm:px-0"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -245,11 +245,11 @@ const Home = () => {
           </motion.div>
 
           {/* FinTech Solutions Grid */}
-          <div className="flex flex-wrap justify-center gap-8 mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16 px-4 sm:px-0">
             {/* Ajopay Digital Savings App */}
             <Link to="/project/ajopay">
               <motion.div 
-                className={`${colors.cardBackground} rounded-3xl p-4 ${colors.shadow.medium} group cursor-pointer w-80 h-80 flex items-center justify-center cyber-glow`}
+                className={`${colors.cardBackground} rounded-3xl p-4 ${colors.shadow.medium} group cursor-pointer w-full h-80 flex items-center justify-center cyber-glow`}
                 whileHover={{ scale: 1.05, y: -10 }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -276,7 +276,7 @@ const Home = () => {
             {/* Crypto Trading Platform */}
             <Link to="/project/crypto-trading">
               <motion.div 
-                className={`${colors.cardBackground} rounded-3xl p-4 ${colors.shadow.medium} group cursor-pointer w-80 h-80 flex items-center justify-center cyber-glow`}
+                className={`${colors.cardBackground} rounded-3xl p-4 ${colors.shadow.medium} group cursor-pointer w-full h-80 flex items-center justify-center cyber-glow`}
                 whileHover={{ scale: 1.05, y: -10 }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -303,7 +303,7 @@ const Home = () => {
             {/* Payment Gateway */}
             <Link to="/project/payment-gateway">
               <motion.div 
-                className={`${colors.cardBackground} rounded-3xl p-4 ${colors.shadow.medium} group cursor-pointer w-80 h-80 flex items-center justify-center cyber-glow`}
+                className={`${colors.cardBackground} rounded-3xl p-4 ${colors.shadow.medium} group cursor-pointer w-full h-80 flex items-center justify-center cyber-glow`}
                 whileHover={{ scale: 1.05, y: -10 }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -380,11 +380,11 @@ const Home = () => {
           </motion.div>
 
           {/* Digital Solutions Grid */}
-          <div className="flex flex-wrap justify-center gap-8 mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16 px-4 sm:px-0">
             {/* Church Website */}
             <Link to="/project/church-website">
               <motion.div 
-                className={`${colors.cardBackground} rounded-3xl p-4 ${colors.shadow.medium} group cursor-pointer w-80 h-80 flex items-center justify-center cyber-glow`}
+                className={`${colors.cardBackground} rounded-3xl p-4 ${colors.shadow.medium} group cursor-pointer w-full h-80 flex items-center justify-center cyber-glow`}
                 whileHover={{ scale: 1.05, y: -10 }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -411,7 +411,7 @@ const Home = () => {
             {/* Business Management System */}
             <Link to="/project/business-management">
               <motion.div 
-                className={`${colors.cardBackground} rounded-3xl p-4 ${colors.shadow.medium} group cursor-pointer w-80 h-80 flex items-center justify-center cyber-glow`}
+                className={`${colors.cardBackground} rounded-3xl p-4 ${colors.shadow.medium} group cursor-pointer w-full h-80 flex items-center justify-center cyber-glow`}
                 whileHover={{ scale: 1.05, y: -10 }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -438,7 +438,7 @@ const Home = () => {
             {/* Mobile App Development */}
             <Link to="/project/mobile-apps">
               <motion.div 
-                className={`${colors.cardBackground} rounded-3xl p-4 ${colors.shadow.medium} group cursor-pointer w-80 h-80 flex items-center justify-center cyber-glow`}
+                className={`${colors.cardBackground} rounded-3xl p-4 ${colors.shadow.medium} group cursor-pointer w-full h-80 flex items-center justify-center cyber-glow`}
                 whileHover={{ scale: 1.05, y: -10 }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -515,11 +515,11 @@ const Home = () => {
           </motion.div>
 
           {/* Web Applications Grid */}
-          <div className="flex flex-wrap justify-center gap-8 mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16 px-4 sm:px-0">
             {/* Food Delivery App */}
             <Link to="/project/food-delivery">
               <motion.div 
-                className={`${colors.cardBackground} rounded-3xl p-4 ${colors.shadow.medium} group cursor-pointer w-80 h-80 flex items-center justify-center cyber-glow`}
+                className={`${colors.cardBackground} rounded-3xl p-4 ${colors.shadow.medium} group cursor-pointer w-full h-80 flex items-center justify-center cyber-glow`}
                 whileHover={{ scale: 1.05, y: -10 }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -546,7 +546,7 @@ const Home = () => {
             {/* Movie Streaming Platform */}
             <Link to="/project/movie-streaming">
               <motion.div 
-                className={`${colors.cardBackground} rounded-3xl p-4 ${colors.shadow.medium} group cursor-pointer w-80 h-80 flex items-center justify-center cyber-glow`}
+                className={`${colors.cardBackground} rounded-3xl p-4 ${colors.shadow.medium} group cursor-pointer w-full h-80 flex items-center justify-center cyber-glow`}
                 whileHover={{ scale: 1.05, y: -10 }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -573,7 +573,7 @@ const Home = () => {
             {/* E-commerce Platform */}
             <Link to="/project/ecommerce">
               <motion.div 
-                className={`${colors.cardBackground} rounded-3xl p-4 ${colors.shadow.medium} group cursor-pointer w-80 h-80 flex items-center justify-center cyber-glow`}
+                className={`${colors.cardBackground} rounded-3xl p-4 ${colors.shadow.medium} group cursor-pointer w-full h-80 flex items-center justify-center cyber-glow`}
                 whileHover={{ scale: 1.05, y: -10 }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}

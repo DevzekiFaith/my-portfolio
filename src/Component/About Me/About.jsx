@@ -15,7 +15,7 @@ import { useTheme } from "../../contexts/ThemeContext";
 
 const TechBadge = ({ name, icon: Icon, colors }) => (
   <motion.div 
-    className={`group ${colors.cardBackground} transition-all duration-300 w-32 text-center rounded-2xl mb-4 p-4 ${colors.textSecondary} flex flex-col justify-center items-center gap-2 ${colors.shadow.small} hover:${colors.shadow.inset} cyber-glow`}
+    className={`group ${colors.cardBackground} transition-all duration-300 w-full text-center rounded-2xl mb-4 p-3 sm:p-4 ${colors.textSecondary} flex flex-col justify-center items-center gap-2 ${colors.shadow.small} hover:${colors.shadow.inset} cyber-glow`}
     whileHover={{ scale: 1.05, rotate: 2 }}
     whileTap={{ scale: 0.95 }}
     initial={{ opacity: 0, y: 20 }}
@@ -238,7 +238,7 @@ const About = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className={`text-4xl xl:text-5xl font-bold ${colors.text} mb-6`}>
+            <h2 className={`text-3xl sm:text-4xl xl:text-5xl font-bold ${colors.text} mb-6`}>
               My{" "}
               <span className="text-gradient">
                 Capabilities
@@ -260,7 +260,7 @@ const About = () => {
           </motion.div>
 
           <motion.div 
-            className="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto"
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6 max-w-6xl mx-auto px-4 sm:px-0"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -284,7 +284,7 @@ const About = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className={`text-4xl xl:text-5xl font-bold ${colors.text} mb-6`}>
+            <h2 className={`text-3xl sm:text-4xl xl:text-5xl font-bold ${colors.text} mb-6`}>
               Crypto Trading{" "}
               <span className="text-gradient">
                 Platform
@@ -312,7 +312,7 @@ const About = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                <h3 className={`text-5xl xl:text-6xl font-bold ${colors.text} mb-6 leading-tight`}>
+                <h3 className={`text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold ${colors.text} mb-6 leading-tight`}>
                   Advanced Crypto Trading Platform
                 </h3>
                 <p className={`text-xl ${colors.textSecondary} max-w-4xl mx-auto leading-relaxed`}>
@@ -546,7 +546,7 @@ const About = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className={`text-4xl xl:text-5xl font-bold ${colors.text} mb-6`}>
+            <h2 className={`text-3xl sm:text-4xl xl:text-5xl font-bold ${colors.text} mb-6`}>
               My{" "}
               <span className="text-gradient">
                 Experience
@@ -588,7 +588,7 @@ const About = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className={`text-4xl xl:text-5xl font-bold ${colors.text} mb-6`}>
+              <h2 className={`text-3xl sm:text-4xl xl:text-5xl font-bold ${colors.text} mb-6`}>
                 Let's{" "}
               <span className="text-gradient">
                 Connect

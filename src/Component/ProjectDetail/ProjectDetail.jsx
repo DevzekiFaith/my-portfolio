@@ -382,21 +382,21 @@ const ProjectDetail = () => {
             Back to Portfolio
           </Link>
           
-          <div className="flex flex-col lg:flex-row gap-12 items-start">
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
             <div className="flex-1">
               <div className="flex items-center gap-3 mb-4">
                 <span className={`px-3 py-1 ${colors.cardBackground} text-emerald-600 rounded-full text-sm font-medium ${colors.shadow.small}`}>
                   {project.category}
                 </span>
               </div>
-              <h1 className={`text-4xl lg:text-5xl font-bold ${colors.text} mb-6`}>
+              <h1 className={`text-3xl sm:text-4xl lg:text-5xl font-bold ${colors.text} mb-6`}>
                 {project.title}
               </h1>
               <p className={`text-lg ${colors.textSecondary} leading-relaxed mb-8`}>
                 {project.longDescription}
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <motion.a
                   href={project.github}
                   target="_blank"
@@ -422,7 +422,7 @@ const ProjectDetail = () => {
               </div>
             </div>
             
-            <div className="lg:w-1/2">
+            <div className="w-full lg:w-1/2">
               <motion.div 
                 className={`${colors.cardBackground} rounded-3xl p-6 ${colors.shadow.raised} overflow-hidden`}
                 whileHover={{ scale: 1.02 }}
@@ -443,7 +443,7 @@ const ProjectDetail = () => {
       {/* Project Details */}
       <section className={`py-16 ${colors.background}`}>
         <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Features */}
             <motion.div 
               className={`${colors.cardBackground} rounded-3xl p-8 ${colors.shadow.medium}`}
