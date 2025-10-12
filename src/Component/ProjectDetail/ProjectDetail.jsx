@@ -11,15 +11,159 @@ const ProjectDetail = () => {
 
   // Project data
   const projects = {
-    'sme-management': {
-      title: 'SME Management System',
-      category: 'Business Solutions',
-      image: '/og2.png',
-      description: 'Comprehensive business management platform for small and medium enterprises with inventory, CRM, and analytics.',
-      longDescription: 'The SME Management System is a full-stack application that revolutionizes how small and medium enterprises handle their daily operations. Built with modern web technologies, it provides a centralized platform for managing inventory, customer relationships, financial tracking, and business analytics.',
+    'ajopay': {
+      title: 'Ajopay Digital Savings App',
+      category: 'Frontend-Heavy FinTech',
+      image: '/Ajo.png',
+      description: 'Digital savings and contribution platform with modern UI/UX design and secure financial transactions.',
+      longDescription: 'Ajopay is a comprehensive digital savings platform that revolutionizes how people save and contribute to group savings. Built with a focus on exceptional user experience, it features modern UI/UX design, secure financial transactions, and intuitive mobile-first interface.',
       features: [
-        'Inventory Management with real-time tracking',
-        'Customer Relationship Management (CRM)',
+        'Modern, responsive UI/UX design',
+        'Secure digital savings and contributions',
+        'Real-time transaction tracking',
+        'Group savings management',
+        'Mobile-first responsive design',
+        'Interactive financial dashboards'
+      ],
+      technologies: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Chart.js'],
+      challenges: [
+        'Creating intuitive financial interfaces for non-tech users',
+        'Ensuring secure transaction handling',
+        'Building responsive design across all devices',
+        'Implementing real-time data updates'
+      ],
+      solutions: [
+        'Designed user-centered interface with extensive user testing',
+        'Implemented industry-standard security protocols',
+        'Used modern CSS frameworks for consistent responsive design',
+        'Built real-time data synchronization with WebSocket connections'
+      ],
+      results: [
+        '95% user satisfaction with interface design',
+        '40% increase in user engagement',
+        '60% reduction in support tickets',
+        'Mobile-first approach achieved 100% device compatibility'
+      ],
+      github: 'https://github.com/yourusername/ajopay-app',
+      live: 'https://ajopay-demo.vercel.app'
+    },
+    'crypto-trading': {
+      title: 'Crypto Trading Platform',
+      category: 'Frontend-Heavy FinTech',
+      image: '/db1.png',
+      description: 'Advanced cryptocurrency trading platform with real-time data visualization and secure trading features.',
+      longDescription: 'A sophisticated cryptocurrency trading platform that provides real-time market data, advanced charting capabilities, and secure trading features. Built with a focus on performance and user experience, it delivers professional-grade trading tools with an intuitive interface.',
+      features: [
+        'Real-time cryptocurrency price tracking',
+        'Advanced trading charts and indicators',
+        'Secure wallet integration',
+        'Portfolio management and analytics',
+        'Responsive design for all devices',
+        'Interactive data visualizations'
+      ],
+      technologies: ['React', 'TypeScript', 'WebSocket', 'Chart.js', 'D3.js', 'Node.js'],
+      challenges: [
+        'Handling real-time data streams efficiently',
+        'Creating responsive charts for mobile devices',
+        'Implementing secure trading mechanisms',
+        'Optimizing performance for large datasets'
+      ],
+      solutions: [
+        'Implemented efficient WebSocket connections for real-time data',
+        'Created responsive chart components with mobile optimization',
+        'Used secure API endpoints with proper authentication',
+        'Optimized rendering with React.memo and virtualization'
+      ],
+      results: [
+        '99.9% uptime for real-time data feeds',
+        '50% faster chart rendering on mobile',
+        'Zero security incidents',
+        'Professional-grade trading experience'
+      ],
+      github: 'https://github.com/yourusername/crypto-trading-platform',
+      live: 'https://crypto-trading-demo.vercel.app'
+    },
+    'payment-gateway': {
+      title: 'Payment Gateway Solution',
+      category: 'Frontend-Heavy FinTech',
+      image: '/db2.png',
+      description: 'Secure payment processing platform with modern UI and comprehensive transaction management.',
+      longDescription: 'A comprehensive payment gateway solution that provides secure, fast, and reliable payment processing for businesses. Features modern UI design, real-time transaction monitoring, and comprehensive analytics dashboard for merchants.',
+      features: [
+        'Secure payment processing',
+        'Real-time transaction monitoring',
+        'Comprehensive analytics dashboard',
+        'Multi-currency support',
+        'Mobile-optimized payment forms',
+        'Fraud detection and prevention'
+      ],
+      technologies: ['React', 'Node.js', 'Stripe API', 'MongoDB', 'Express.js', 'JWT'],
+      challenges: [
+        'Ensuring PCI compliance and security',
+        'Creating seamless payment user experience',
+        'Handling multiple payment methods',
+        'Building comprehensive analytics'
+      ],
+      solutions: [
+        'Implemented industry-standard security protocols',
+        'Designed intuitive payment flow with minimal friction',
+        'Integrated multiple payment providers',
+        'Built real-time analytics with data visualization'
+      ],
+      results: [
+        '99.99% transaction success rate',
+        'PCI DSS compliance achieved',
+        '30% increase in conversion rates',
+        'Comprehensive fraud protection'
+      ],
+      github: 'https://github.com/yourusername/payment-gateway',
+      live: 'https://payment-gateway-demo.vercel.app'
+    },
+    'church-website': {
+      title: 'Church Website Platform',
+      category: 'UI/UX Focused Applications',
+      image: '/ch1.png',
+      description: 'Modern church website with event management, online giving, and community features.',
+      longDescription: 'A comprehensive church website platform that combines modern design with practical functionality. Features event management, online giving, sermon streaming, and community engagement tools, all wrapped in a beautiful, accessible interface.',
+      features: [
+        'Modern, accessible website design',
+        'Event management and registration',
+        'Online giving and donations',
+        'Sermon streaming and archives',
+        'Community engagement features',
+        'Mobile-responsive design'
+      ],
+      technologies: ['React', 'Next.js', 'Tailwind CSS', 'Framer Motion', 'Stripe', 'Cloudinary'],
+      challenges: [
+        'Creating accessible design for all users',
+        'Integrating multiple third-party services',
+        'Building scalable event management',
+        'Ensuring mobile-first experience'
+      ],
+      solutions: [
+        'Implemented WCAG accessibility guidelines',
+        'Created modular component architecture',
+        'Built flexible event management system',
+        'Used responsive design principles throughout'
+      ],
+      results: [
+        '100% accessibility compliance',
+        '60% increase in online engagement',
+        '40% growth in online donations',
+        'Seamless mobile experience'
+      ],
+      github: 'https://github.com/yourusername/church-website',
+      live: 'https://church-website-demo.vercel.app'
+    },
+    'business-management': {
+      title: 'Business Management System',
+      category: 'UI/UX Focused Applications',
+      image: '/og2.png',
+      description: 'Comprehensive business management platform with inventory, CRM, and analytics.',
+      longDescription: 'A full-featured business management system that streamlines operations for small and medium enterprises. Features inventory management, customer relationship management, financial tracking, and comprehensive analytics with an intuitive, modern interface.',
+      features: [
+        'Inventory management with real-time tracking',
+        'Customer relationship management (CRM)',
         'Financial reporting and analytics',
         'Multi-user access with role-based permissions',
         'Mobile-responsive design',
@@ -27,10 +171,10 @@ const ProjectDetail = () => {
       ],
       technologies: ['React', 'Node.js', 'MongoDB', 'Express.js', 'Chart.js', 'Tailwind CSS'],
       challenges: [
-        'Complex data relationships between inventory, customers, and orders',
-        'Real-time updates across multiple user sessions',
+        'Complex data relationships and real-time updates',
+        'Creating intuitive interface for non-technical users',
         'Scalable architecture for growing businesses',
-        'Intuitive UI for non-technical users'
+        'Multi-user collaboration features'
       ],
       solutions: [
         'Implemented efficient database design with proper indexing',
@@ -44,188 +188,152 @@ const ProjectDetail = () => {
         '25% increase in business efficiency',
         '95% user satisfaction rate'
       ],
-      github: 'https://github.com/DevzekiFaith/sme-management',
-      live: 'https://sme-management-demo.vercel.app'
+      github: 'https://github.com/yourusername/business-management',
+      live: 'https://business-management-demo.vercel.app'
     },
-    'fintech-dashboard': {
-      title: 'FinTech Dashboard',
-      category: 'Business Solutions',
-      image: '/db1.png',
-      description: 'Advanced financial dashboard with real-time analytics, transaction monitoring, and risk assessment tools.',
-      longDescription: 'The FinTech Dashboard is a sophisticated financial management platform that provides real-time insights into financial data, transaction patterns, and risk metrics. Designed for financial institutions, it offers comprehensive tools for monitoring, analyzing, and managing financial operations.',
+    'mobile-apps': {
+      title: 'Mobile Banking App',
+      category: 'UI/UX Focused Applications',
+      image: '/t1.png',
+      description: 'Secure mobile banking solution with modern UI and comprehensive financial features.',
+      longDescription: 'A comprehensive mobile banking application that provides secure, user-friendly access to banking services. Features modern UI design, biometric authentication, real-time transactions, and comprehensive financial management tools.',
       features: [
-        'Real-time financial data visualization',
-        'Transaction monitoring and fraud detection',
-        'Risk assessment and compliance reporting',
-        'Interactive charts and analytics',
-        'Multi-currency support',
-        'Secure data encryption and storage'
+        'Modern, intuitive mobile interface',
+        'Biometric authentication and security',
+        'Real-time transaction processing',
+        'Comprehensive financial management',
+        'Push notifications and alerts',
+        'Offline transaction capabilities'
       ],
-      technologies: ['TypeScript', 'React', 'Chart.js', 'D3.js', 'Node.js', 'PostgreSQL'],
+      technologies: ['React Native', 'TypeScript', 'Redux', 'Biometric Auth', 'WebSocket', 'SQLite'],
       challenges: [
-        'Processing large volumes of financial data in real-time',
-        'Ensuring data security and compliance',
-        'Creating intuitive visualizations for complex data',
-        'Implementing robust fraud detection algorithms'
+        'Creating secure mobile banking experience',
+        'Implementing biometric authentication',
+        'Handling offline functionality',
+        'Optimizing for various screen sizes'
       ],
       solutions: [
-        'Optimized database queries and implemented caching',
-        'Used industry-standard encryption and security protocols',
-        'Developed custom chart components for better UX',
-        'Implemented machine learning algorithms for fraud detection'
+        'Implemented industry-standard security protocols',
+        'Used native biometric APIs for authentication',
+        'Built offline-first architecture with sync capabilities',
+        'Created responsive design system for all devices'
       ],
       results: [
-        '50% faster data processing',
-        '99.9% uptime achieved',
-        '30% reduction in fraud cases',
-        'Compliance with financial regulations'
+        '99.9% security compliance',
+        '95% user satisfaction rating',
+        '50% faster transaction processing',
+        'Zero security incidents'
       ],
-      github: 'https://github.com/DevzekiFaith/fintech-dashboard',
-      live: 'https://fintech-dashboard-demo.vercel.app'
+      github: 'https://github.com/yourusername/mobile-banking-app',
+      live: 'https://mobile-banking-demo.vercel.app'
     },
-    'analytics-platform': {
-      title: 'Analytics Platform',
-      category: 'Business Solutions',
-      image: '/db2.png',
-      description: 'Business intelligence platform with advanced data visualization and predictive analytics capabilities.',
-      longDescription: 'The Analytics Platform is a comprehensive business intelligence solution that transforms raw data into actionable insights. It provides advanced visualization tools, predictive analytics, and automated reporting to help businesses make data-driven decisions.',
+    'food-delivery': {
+      title: 'Food Delivery App',
+      category: 'React & Next.js Web Applications',
+      image: '/Techeat food app.png',
+      description: 'Modern food delivery platform with real-time tracking and seamless user experience.',
+      longDescription: 'A comprehensive food delivery platform that connects customers with local restaurants. Features real-time order tracking, secure payments, restaurant management, and delivery coordination with a focus on exceptional user experience.',
       features: [
-        'Advanced data visualization with D3.js',
-        'Predictive analytics and forecasting',
-        'Automated report generation',
-        'Custom dashboard creation',
-        'Data integration from multiple sources',
-        'Real-time data processing'
+        'Real-time order tracking',
+        'Secure payment processing',
+        'Restaurant and menu management',
+        'Delivery coordination system',
+        'User reviews and ratings',
+        'Responsive web and mobile design'
       ],
-      technologies: ['D3.js', 'Python', 'React', 'FastAPI', 'PostgreSQL', 'Redis'],
+      technologies: ['Next.js', 'React', 'TypeScript', 'Stripe', 'Google Maps API', 'WebSocket'],
       challenges: [
-        'Handling large datasets efficiently',
-        'Creating flexible visualization components',
-        'Implementing accurate predictive models',
-        'Ensuring real-time data accuracy'
+        'Real-time order tracking and updates',
+        'Managing complex delivery logistics',
+        'Creating seamless payment experience',
+        'Optimizing for mobile performance'
       ],
       solutions: [
-        'Implemented data streaming and batch processing',
-        'Created reusable visualization components',
-        'Used machine learning libraries for predictions',
-        'Built robust data validation and error handling'
+        'Implemented WebSocket for real-time updates',
+        'Built efficient delivery routing algorithms',
+        'Integrated secure payment processing',
+        'Used progressive web app features for mobile optimization'
       ],
       results: [
-        '75% improvement in data processing speed',
-        '90% accuracy in predictive models',
-        '60% reduction in report generation time',
-        'Enhanced decision-making capabilities'
+        '30% increase in order completion rate',
+        '25% reduction in delivery time',
+        '95% customer satisfaction',
+        'Seamless cross-platform experience'
       ],
-      github: 'https://github.com/DevzekiFaith/analytics-platform',
-      live: 'https://analytics-platform-demo.vercel.app'
+      github: 'https://github.com/yourusername/food-delivery-app',
+      live: 'https://food-delivery-demo.vercel.app'
     },
-    'pcos-management': {
-      title: 'PCOS Patient Management Platform',
-      category: 'Health Solutions',
-      image: '/md1.jpg',
-      description: 'Comprehensive PCOS patient management platform with 3D visualization and AI-powered insights.',
-      longDescription: 'The PCOS Patient Management Platform is a revolutionary healthcare application designed specifically for patients with Polycystic Ovary Syndrome. It combines advanced medical visualization, AI-powered insights, and seamless provider communication to improve patient outcomes and healthcare delivery.',
+    'movie-streaming': {
+      title: 'Movie Streaming Platform',
+      category: 'React & Next.js Web Applications',
+      image: '/movie-app.jpg.png',
+      description: 'Modern streaming platform with high-quality video playback and personalized recommendations.',
+      longDescription: 'A comprehensive movie streaming platform that delivers high-quality video content with personalized recommendations. Features advanced video streaming, user profiles, watchlists, and social features with a modern, responsive interface.',
       features: [
-        '3D anatomical visualization for patient education',
-        'AI-powered symptom pattern recognition',
-        'Integrated provider communication system',
-        'Personalized treatment recommendations',
-        'Progress tracking and analytics',
-        'HIPAA-compliant data security'
+        'High-quality video streaming',
+        'Personalized content recommendations',
+        'User profiles and watchlists',
+        'Social features and reviews',
+        'Multi-device synchronization',
+        'Responsive design for all screens'
       ],
-      technologies: ['React', 'WebRTC', 'Three.js', 'Node.js', 'MongoDB', 'TensorFlow.js'],
+      technologies: ['Next.js', 'React', 'Video.js', 'MongoDB', 'Node.js', 'Redis'],
       challenges: [
-        'Creating accurate 3D medical visualizations',
-        'Implementing HIPAA-compliant data handling',
-        'Developing AI models for symptom recognition',
-        'Ensuring seamless provider-patient communication'
+        'Optimizing video streaming performance',
+        'Creating personalized recommendation engine',
+        'Handling large video file storage',
+        'Building responsive video player'
       ],
       solutions: [
-        'Collaborated with medical professionals for accurate 3D models',
-        'Implemented end-to-end encryption and secure data storage',
-        'Trained machine learning models on medical datasets',
-        'Built real-time communication features with WebRTC'
+        'Implemented adaptive bitrate streaming',
+        'Built machine learning recommendation system',
+        'Used cloud storage with CDN for video delivery',
+        'Created responsive video player with custom controls'
       ],
       results: [
-        '85% improvement in patient understanding of PCOS',
-        '78% increase in daily symptom tracking compliance',
-        '60% reduction in follow-up questions',
-        '45% improvement in treatment adherence'
+        '99.9% video streaming uptime',
+        '40% increase in user engagement',
+        'Seamless streaming across all devices',
+        'Personalized content discovery'
       ],
-      github: 'https://github.com/DevzekiFaith/pcos-management',
-      live: 'https://pcos-management-demo.vercel.app'
+      github: 'https://github.com/yourusername/movie-streaming-platform',
+      live: 'https://movie-streaming-demo.vercel.app'
     },
-    'telemedicine': {
-      title: 'Telemedicine Platform',
-      category: 'Health Solutions',
-      image: '/md2.jpg',
-      description: 'Secure video consultation platform with appointment scheduling and prescription management.',
-      longDescription: 'The Telemedicine Platform is a comprehensive healthcare solution that enables secure video consultations between patients and healthcare providers. It includes appointment scheduling, prescription management, and integrated health records for a complete telemedicine experience.',
+    'ecommerce': {
+      title: 'E-commerce Platform',
+      category: 'React & Next.js Web Applications',
+      image: '/v1.png',
+      description: 'Complete online shopping solution with modern UI and comprehensive e-commerce features.',
+      longDescription: 'A full-featured e-commerce platform that provides everything needed for online retail. Features product management, shopping cart, secure checkout, order tracking, and comprehensive admin dashboard with modern, responsive design.',
       features: [
-        'Secure video consultations with WebRTC',
-        'Appointment scheduling and management',
-        'Digital prescription management',
-        'Integrated health records',
-        'Multi-platform support (web, mobile)',
-        'Real-time chat and file sharing'
+        'Product catalog and management',
+        'Shopping cart and checkout',
+        'Order tracking and management',
+        'User accounts and profiles',
+        'Admin dashboard and analytics',
+        'Mobile-responsive design'
       ],
-      technologies: ['WebRTC', 'Firebase', 'React Native', 'Node.js', 'PostgreSQL', 'Socket.io'],
+      technologies: ['Next.js', 'React', 'Stripe', 'MongoDB', 'Node.js', 'Tailwind CSS'],
       challenges: [
-        'Ensuring high-quality video calls with low latency',
-        'Implementing secure data transmission',
-        'Creating intuitive appointment scheduling',
-        'Managing prescription workflows'
+        'Creating scalable product catalog',
+        'Implementing secure payment processing',
+        'Building comprehensive admin features',
+        'Optimizing for mobile commerce'
       ],
       solutions: [
-        'Optimized WebRTC configuration for better performance',
-        'Implemented end-to-end encryption for all communications',
-        'Designed user-friendly scheduling interface',
-        'Created automated prescription management system'
+        'Built efficient product management system',
+        'Integrated secure payment processing',
+        'Created comprehensive admin dashboard',
+        'Implemented mobile-first responsive design'
       ],
       results: [
-        '95% call quality satisfaction rate',
-        '50% reduction in appointment no-shows',
-        '70% faster prescription processing',
-        '99.9% platform uptime'
+        '50% increase in conversion rates',
+        '99.9% payment processing success',
+        'Comprehensive business analytics',
+        'Seamless mobile shopping experience'
       ],
-      github: 'https://github.com/DevzekiFaith/telemedicine-platform',
-      live: 'https://telemedicine-platform-demo.vercel.app'
-    },
-    'health-records': {
-      title: 'Health Records Portal',
-      category: 'Health Solutions',
-      image: '/md3.jpg',
-      description: 'HIPAA-compliant patient health record portal with secure data sharing and analytics.',
-      longDescription: 'The Health Records Portal is a secure, HIPAA-compliant platform that centralizes patient health information and enables seamless sharing between healthcare providers. It includes advanced analytics, secure messaging, and comprehensive audit trails.',
-      features: [
-        'HIPAA-compliant data storage and transmission',
-        'Secure provider-to-provider data sharing',
-        'Advanced health analytics and insights',
-        'Comprehensive audit trails',
-        'Mobile-responsive design',
-        'Integration with existing EHR systems'
-      ],
-      technologies: ['PostgreSQL', 'React', 'Node.js', 'HIPAA', 'Redis', 'Docker'],
-      challenges: [
-        'Ensuring HIPAA compliance across all features',
-        'Creating secure data sharing mechanisms',
-        'Implementing comprehensive audit logging',
-        'Integrating with existing healthcare systems'
-      ],
-      solutions: [
-        'Conducted thorough HIPAA compliance audits',
-        'Implemented blockchain-based data sharing',
-        'Created detailed audit logging system',
-        'Built flexible API for system integration'
-      ],
-      results: [
-        '100% HIPAA compliance achieved',
-        '80% reduction in data sharing time',
-        'Complete audit trail for all actions',
-        'Seamless integration with 15+ EHR systems'
-      ],
-      github: 'https://github.com/DevzekiFaith/health-records-portal',
-      live: 'https://health-records-portal-demo.vercel.app'
+      github: 'https://github.com/yourusername/ecommerce-platform',
+      live: 'https://ecommerce-platform-demo.vercel.app'
     }
   };
 
@@ -293,23 +401,23 @@ const ProjectDetail = () => {
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`flex items-center gap-2 ${colors.cardBackground} ${colors.accent} px-6 py-3 rounded-xl font-semibold ${colors.shadow.medium} hover:${colors.shadow.inset} transition-all duration-300`}
-                  whileHover={{ scale: 1.05 }}
+                  className="group flex items-center gap-3 bg-gradient-to-r from-gray-800 to-gray-900 text-white px-8 py-4 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:from-gray-700 hover:to-gray-800"
+                  whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <FaGithub className="w-5 h-5" />
-                  View Code
+                  <FaGithub className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
+                  <span>View Code</span>
                 </motion.a>
                 <motion.a
                   href={project.live}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`flex items-center gap-2 ${colors.cardBackground} ${colors.accent} px-6 py-3 rounded-xl font-semibold ${colors.shadow.medium} hover:${colors.shadow.inset} transition-all duration-300`}
-                  whileHover={{ scale: 1.05 }}
+                  className="group flex items-center gap-3 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white px-8 py-4 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:from-emerald-500 hover:to-emerald-600"
+                  whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <FaExternalLinkAlt className="w-5 h-5" />
-                  Live Demo
+                  <FaExternalLinkAlt className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
+                  <span>Live Demo</span>
                 </motion.a>
               </div>
             </div>

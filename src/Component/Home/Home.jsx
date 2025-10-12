@@ -4,8 +4,9 @@ import { motion } from "framer-motion";
 import ProfileImage from "/p.image.jpg";
 import { useForm } from "react-hook-form";
 import Typewriter from "typewriter-effect";
-import { FaGithub, FaLinkedin, FaArrowRight, FaCode, FaHeartbeat, FaChartLine, FaShieldAlt, FaMobileAlt, FaDatabase, FaUsers, FaCreditCard, FaStethoscope, FaUserMd, FaFileMedical } from "react-icons/fa";
-import { MdMarkEmailRead, MdBusiness, MdAccountBalance, MdHealthAndSafety, MdTrendingUp, MdSecurity } from "react-icons/md";
+import { FaGithub, FaLinkedin, FaArrowRight, FaCode, FaChartLine, FaShieldAlt, FaMobileAlt, FaDatabase, FaUsers, FaCreditCard, FaBitcoin, FaEthereum, FaPaypal, FaWallet, FaChartBar, FaRobot, FaCloud, FaLock } from "react-icons/fa";
+import { MdMarkEmailRead, MdBusiness, MdAccountBalance, MdTrendingUp, MdSecurity, MdPayment, MdAnalytics, MdSpeed, MdAccountBalanceWallet } from "react-icons/md";
+import { SiBitcoin, SiEthereum, SiStripe, SiPaypal } from "react-icons/si";
 import { useTheme } from "../../contexts/ThemeContext";
 
 const Home = () => {
@@ -83,9 +84,9 @@ const Home = () => {
                 <Typewriter
                   options={{
                     strings: [
-                      "Full-Stack Developer specializing in Business Solutions & HealthTech.",
-                      "Building innovative applications for SMEs, FinTech, and Healthcare sectors.",
-                      "Creating digital solutions that drive business growth and improve lives."
+                      "Full-Stack Developer with heavy Frontend Engineering expertise in React, Next.js & Modern Web Technologies.",
+                      "Building stunning user interfaces and seamless user experiences for fintech, digital solutions, and web applications.",
+                      "Creating pixel-perfect, responsive applications with cutting-edge frontend technologies and robust backend integration."
                     ],
                     autoStart: true,
                     loop: true,
@@ -144,67 +145,89 @@ const Home = () => {
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           >
             <motion.div 
-              className={`${colors.cardBackground} rounded-3xl p-8 md:p-10 ${colors.shadow.raised}`}
+            className={`${colors.cardBackground} rounded-3xl p-8 md:p-10 ${colors.shadow.raised} relative overflow-hidden`}
               whileHover={{ scale: 1.02, rotateY: 5 }}
               transition={{ duration: 0.3 }}
             >
+            <div className="absolute inset-0 tech-grid opacity-20"></div>
+            <div className="relative z-10">
               <img
                 src={ProfileImage}
                 alt="Faith Oghojafor"
-                className="w-full h-auto rounded-2xl"
+                className="w-full h-auto rounded-2xl floating-animation"
                 loading="lazy"
               />
+            </div>
+            <div className="absolute -top-4 -right-4 w-8 h-8 bg-cyan-500 rounded-full opacity-30 pulse-glow"></div>
+            <div className="absolute -bottom-6 -left-6 w-12 h-12 bg-blue-500 rounded-full opacity-20 floating-animation" style={{animationDelay: '1s'}}></div>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* Section Navigation */}
+      {/* Project Categories Showcase */}
       <section className="container mx-auto px-6 py-16">
         <motion.div 
-          className="flex flex-col lg:flex-row gap-8 justify-center items-stretch max-w-4xl mx-auto"
+          className="flex flex-col lg:flex-row gap-8 justify-center items-stretch max-w-6xl mx-auto"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
           <motion.a
-            href="#business-solutions"
-            className={`group flex items-center gap-4 ${colors.cardBackground} px-8 py-6 rounded-2xl ${colors.shadow.medium} hover:${colors.shadow.inset} transition-all duration-300 flex-1`}
+            href="#fintech-solutions"
+            className={`group flex items-center gap-4 ${colors.cardBackground} px-8 py-6 rounded-2xl ${colors.shadow.medium} hover:${colors.shadow.inset} transition-all duration-300 flex-1 cyber-glow`}
             whileHover={{ scale: 1.02, y: -5 }}
             whileTap={{ scale: 0.98 }}
           >
-            <div className="p-3 bg-purple-100 rounded-xl">
-              <MdBusiness className="w-8 h-8 text-purple-600" />
+            <div className="p-3 bg-gradient-to-r from-cyan-100 to-blue-100 rounded-xl">
+              <FaBitcoin className="w-8 h-8 text-cyan-600" />
             </div>
             <div className="text-left">
-              <h3 className={`text-xl font-bold ${colors.text}`}>Business Solutions</h3>
-              <p className={`${colors.textSecondary} text-sm`}>SMEs & FinTech Applications</p>
+              <h3 className={`text-xl font-bold ${colors.text}`}>Frontend-First FinTech</h3>
+              <p className={`${colors.textSecondary} text-sm`}>React-based financial interfaces</p>
             </div>
             <FaArrowRight className="ml-auto group-hover:translate-x-1 transition-transform duration-300" />
           </motion.a>
 
           <motion.a
-            href="#health-solutions"
-            className={`group flex items-center gap-4 ${colors.cardBackground} px-8 py-6 rounded-2xl ${colors.shadow.medium} hover:${colors.shadow.inset} transition-all duration-300 flex-1`}
+            href="#digital-solutions"
+            className={`group flex items-center gap-4 ${colors.cardBackground} px-8 py-6 rounded-2xl ${colors.shadow.medium} hover:${colors.shadow.inset} transition-all duration-300 flex-1 cyber-glow`}
             whileHover={{ scale: 1.02, y: -5 }}
             whileTap={{ scale: 0.98 }}
           >
-            <div className="p-3 bg-purple-100 rounded-xl">
-              <MdHealthAndSafety className="w-8 h-8 text-purple-600" />
+            <div className="p-3 bg-gradient-to-r from-green-100 to-emerald-100 rounded-xl">
+              <FaWallet className="w-8 h-8 text-green-600" />
             </div>
             <div className="text-left">
-              <h3 className={`text-xl font-bold ${colors.text}`}>Health Solutions</h3>
-              <p className={`${colors.textSecondary} text-sm`}>Telemedicine & Patient Care</p>
+              <h3 className={`text-xl font-bold ${colors.text}`}>UI/UX Focused Apps</h3>
+              <p className={`${colors.textSecondary} text-sm`}>User-centered design & interactions</p>
+            </div>
+            <FaArrowRight className="ml-auto group-hover:translate-x-1 transition-transform duration-300" />
+          </motion.a>
+
+          <motion.a
+            href="#web-applications"
+            className={`group flex items-center gap-4 ${colors.cardBackground} px-8 py-6 rounded-2xl ${colors.shadow.medium} hover:${colors.shadow.inset} transition-all duration-300 flex-1 cyber-glow`}
+            whileHover={{ scale: 1.02, y: -5 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            <div className="p-3 bg-gradient-to-r from-purple-100 to-pink-100 rounded-xl">
+              <FaUsers className="w-8 h-8 text-purple-600" />
+            </div>
+            <div className="text-left">
+              <h3 className={`text-xl font-bold ${colors.text}`}>Modern Web Apps</h3>
+              <p className={`${colors.textSecondary} text-sm`}>React, Next.js & responsive design</p>
             </div>
             <FaArrowRight className="ml-auto group-hover:translate-x-1 transition-transform duration-300" />
           </motion.a>
         </motion.div>
       </section>
 
-      {/* Business Solutions Section */}
-      <section id="business-solutions" className={`py-24 ${colors.background}`}>
-        <div className="container mx-auto px-6">
+      {/* FinTech Solutions Section */}
+      <section id="fintech-solutions" className={`py-24 ${colors.background} relative overflow-hidden`}>
+        <div className="absolute inset-0 tech-grid opacity-10"></div>
+        <div className="container mx-auto px-6 relative z-10">
           <motion.div 
             className="text-center mb-16"
             initial={{ opacity: 0, y: 50 }}
@@ -213,75 +236,99 @@ const Home = () => {
             viewport={{ once: true }}
           >
             <h2 className={`text-4xl xl:text-5xl font-bold ${colors.text} mb-6`}>
-              Business{" "}
-              <span className="text-blue-600">Solutions</span>
+              <span className="text-gradient">Frontend-Heavy</span>{" "}
+              <span className="text-cyan-600">FinTech Solutions</span>
             </h2>
             <p className={`text-lg ${colors.textSecondary} max-w-3xl mx-auto leading-relaxed`}>
-              Empowering small and medium enterprises with cutting-edge administrative tools and fintech solutions that streamline operations and drive growth.
+              Crafting exceptional user interfaces for financial applications with React, Next.js, and modern frontend technologies that deliver seamless user experiences.
             </p>
           </motion.div>
 
-          {/* Business Solutions Grid */}
+          {/* FinTech Solutions Grid */}
           <div className="flex flex-wrap justify-center gap-8 mb-16">
-            {/* SME Management System */}
-            <Link to="/project/sme-management">
+            {/* Ajopay Digital Savings App */}
+            <Link to="/project/ajopay">
               <motion.div 
-                className={`${colors.cardBackground} rounded-3xl p-4 ${colors.shadow.medium} group cursor-pointer w-80 h-80 flex items-center justify-center`}
+                className={`${colors.cardBackground} rounded-3xl p-4 ${colors.shadow.medium} group cursor-pointer w-80 h-80 flex items-center justify-center cyber-glow`}
                 whileHover={{ scale: 1.05, y: -10 }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                <img
-                  src="/og2.png"
-                  alt="SME Management System"
-                  className="w-full h-full object-cover rounded-2xl"
+                <div className="relative w-full h-full rounded-2xl overflow-hidden">
+                  <img
+                    src="/Ajo.png"
+                    alt="Ajopay Digital Savings App"
+                    className="w-full h-full object-cover"
                   loading="lazy"
                 />
+                  <div className="absolute inset-0 bg-gradient-to-t from-green-900/80 to-transparent flex items-end p-6">
+                    <div>
+                      <h3 className="text-white font-bold text-xl mb-2">Ajopay Savings App</h3>
+                      <p className="text-green-200 text-sm">Digital savings & contribution platform</p>
+                    </div>
+                  </div>
+                </div>
               </motion.div>
             </Link>
 
-            {/* FinTech Dashboard */}
-            <Link to="/project/fintech-dashboard">
+            {/* Crypto Trading Platform */}
+            <Link to="/project/crypto-trading">
               <motion.div 
-                className={`${colors.cardBackground} rounded-3xl p-4 ${colors.shadow.medium} group cursor-pointer w-80 h-80 flex items-center justify-center`}
+                className={`${colors.cardBackground} rounded-3xl p-4 ${colors.shadow.medium} group cursor-pointer w-80 h-80 flex items-center justify-center cyber-glow`}
                 whileHover={{ scale: 1.05, y: -10 }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
               >
+                <div className="relative w-full h-full rounded-2xl overflow-hidden">
                 <img
                   src="/db1.png"
-                  alt="FinTech Dashboard"
-                  className="w-full h-full object-cover rounded-2xl"
+                    alt="Crypto Trading Platform"
+                    className="w-full h-full object-cover"
                   loading="lazy"
                 />
+                  <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/80 to-transparent flex items-end p-6">
+                    <div>
+                      <h3 className="text-white font-bold text-xl mb-2">Crypto Trading Platform</h3>
+                      <p className="text-cyan-200 text-sm">Real-time trading with advanced analytics</p>
+                    </div>
+                  </div>
+                </div>
               </motion.div>
             </Link>
 
-            {/* Analytics Platform */}
-            <Link to="/project/analytics-platform">
+            {/* Payment Gateway */}
+            <Link to="/project/payment-gateway">
               <motion.div 
-                className={`${colors.cardBackground} rounded-3xl p-4 ${colors.shadow.medium} group cursor-pointer w-80 h-80 flex items-center justify-center`}
+                className={`${colors.cardBackground} rounded-3xl p-4 ${colors.shadow.medium} group cursor-pointer w-80 h-80 flex items-center justify-center cyber-glow`}
                 whileHover={{ scale: 1.05, y: -10 }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
                 viewport={{ once: true }}
               >
+                <div className="relative w-full h-full rounded-2xl overflow-hidden">
                 <img
                   src="/db2.png"
-                  alt="Analytics Platform"
-                  className="w-full h-full object-cover rounded-2xl"
-                  loading="lazy"
-                />
+                    alt="Payment Gateway System"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent flex items-end p-6">
+                    <div>
+                      <h3 className="text-white font-bold text-xl mb-2">Payment Gateway</h3>
+                      <p className="text-blue-200 text-sm">Secure multi-currency payment processing</p>
+                    </div>
+                  </div>
+                </div>
               </motion.div>
             </Link>
           </div>
 
-          {/* Business Features */}
+          {/* FinTech Features */}
           <motion.div 
             className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
             initial={{ opacity: 0, y: 30 }}
@@ -290,19 +337,19 @@ const Home = () => {
             viewport={{ once: true }}
           >
             {[
-              { icon: FaUsers, title: "User Management", desc: "Role-based access control" },
-              { icon: FaDatabase, title: "Data Security", desc: "Enterprise-grade encryption" },
-              { icon: MdTrendingUp, title: "Growth Analytics", desc: "Real-time performance metrics" },
-              { icon: MdSecurity, title: "Compliance", desc: "Industry-standard security" }
+              { icon: FaCode, title: "React Development", desc: "Modern component-based architecture" },
+              { icon: FaShieldAlt, title: "Secure Frontend", desc: "Client-side security & validation" },
+              { icon: MdAnalytics, title: "Interactive Dashboards", desc: "Real-time data visualization" },
+              { icon: FaBitcoin, title: "Payment UIs", desc: "Intuitive payment interfaces" }
             ].map((feature, index) => (
               <motion.div 
                 key={index}
-                className={`${colors.cardBackground} rounded-2xl p-6 ${colors.shadow.small} text-center`}
-                whileHover={{ scale: 1.05 }}
+                className={`${colors.cardBackground} rounded-2xl p-6 ${colors.shadow.small} text-center cyber-glow`}
+                whileHover={{ scale: 1.05, rotateY: 5 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="p-3 bg-purple-100 rounded-xl w-fit mx-auto mb-4">
-                  <feature.icon className="w-6 h-6 text-purple-600" />
+                <div className="p-3 bg-gradient-to-r from-cyan-100 to-blue-100 rounded-xl w-fit mx-auto mb-4">
+                  <feature.icon className="w-6 h-6 text-cyan-600" />
                 </div>
                 <h4 className={`${colors.text} font-semibold mb-2`}>{feature.title}</h4>
                 <p className={`${colors.textSecondary} text-sm`}>{feature.desc}</p>
@@ -312,9 +359,10 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Health Solutions Section */}
-      <section id="health-solutions" className={`py-24 ${colors.background}`}>
-        <div className="container mx-auto px-6">
+      {/* Digital Solutions Section */}
+      <section id="digital-solutions" className={`py-24 ${colors.background} relative overflow-hidden`}>
+        <div className="absolute inset-0 tech-grid opacity-10"></div>
+        <div className="container mx-auto px-6 relative z-10">
           <motion.div 
             className="text-center mb-16"
             initial={{ opacity: 0, y: 50 }}
@@ -323,75 +371,99 @@ const Home = () => {
             viewport={{ once: true }}
           >
             <h2 className={`text-4xl xl:text-5xl font-bold ${colors.text} mb-6`}>
-              Health{" "}
-              <span className="text-blue-600">Solutions</span>
+              <span className="text-gradient">UI/UX</span>{" "}
+              <span className="text-cyan-600">Focused Applications</span>
             </h2>
             <p className={`text-lg ${colors.textSecondary} max-w-3xl mx-auto leading-relaxed`}>
-              Revolutionizing healthcare through innovative telemedicine platforms and patient management systems that improve outcomes and accessibility.
+              Designing and developing user-centered applications with pixel-perfect interfaces, smooth animations, and intuitive user experiences.
             </p>
           </motion.div>
 
-          {/* Health Solutions Grid */}
+          {/* Digital Solutions Grid */}
           <div className="flex flex-wrap justify-center gap-8 mb-16">
-            {/* PCOS Management */}
-            <Link to="/project/pcos-management">
+            {/* Church Website */}
+            <Link to="/project/church-website">
               <motion.div 
-                className={`${colors.cardBackground} rounded-3xl p-4 ${colors.shadow.medium} group cursor-pointer w-80 h-80 flex items-center justify-center`}
+                className={`${colors.cardBackground} rounded-3xl p-4 ${colors.shadow.medium} group cursor-pointer w-80 h-80 flex items-center justify-center cyber-glow`}
                 whileHover={{ scale: 1.05, y: -10 }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                <img
-                  src="/md1.jpg"
-                  alt="PCOS Patient Management"
-                  className="w-full h-full object-cover rounded-2xl"
-                  loading="lazy"
-                />
+                <div className="relative w-full h-full rounded-2xl overflow-hidden">
+                  <img
+                    src="/ch1.png"
+                    alt="Church Website"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent flex items-end p-6">
+                    <div>
+                      <h3 className="text-white font-bold text-xl mb-2">Church Website</h3>
+                      <p className="text-blue-200 text-sm">Community engagement & event management</p>
+                    </div>
+                  </div>
+                </div>
               </motion.div>
             </Link>
 
-            {/* Telemedicine Platform */}
-            <Link to="/project/telemedicine">
+            {/* Business Management System */}
+            <Link to="/project/business-management">
               <motion.div 
-                className={`${colors.cardBackground} rounded-3xl p-4 ${colors.shadow.medium} group cursor-pointer w-80 h-80 flex items-center justify-center`}
+                className={`${colors.cardBackground} rounded-3xl p-4 ${colors.shadow.medium} group cursor-pointer w-80 h-80 flex items-center justify-center cyber-glow`}
                 whileHover={{ scale: 1.05, y: -10 }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                <img
-                  src="/md2.jpg"
-                  alt="Telemedicine Platform"
-                  className="w-full h-full object-cover rounded-2xl"
-                  loading="lazy"
-                />
+                <div className="relative w-full h-full rounded-2xl overflow-hidden">
+                  <img
+                    src="/og2.png"
+                    alt="Business Management System"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-purple-900/80 to-transparent flex items-end p-6">
+                    <div>
+                      <h3 className="text-white font-bold text-xl mb-2">Business Management</h3>
+                      <p className="text-purple-200 text-sm">Complete business operations platform</p>
+                    </div>
+                  </div>
+                </div>
               </motion.div>
             </Link>
 
-            {/* Health Records */}
-            <Link to="/project/health-records">
+            {/* Mobile App Development */}
+            <Link to="/project/mobile-apps">
               <motion.div 
-                className={`${colors.cardBackground} rounded-3xl p-4 ${colors.shadow.medium} group cursor-pointer w-80 h-80 flex items-center justify-center`}
+                className={`${colors.cardBackground} rounded-3xl p-4 ${colors.shadow.medium} group cursor-pointer w-80 h-80 flex items-center justify-center cyber-glow`}
                 whileHover={{ scale: 1.05, y: -10 }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
                 viewport={{ once: true }}
               >
-                <img
-                  src="/md3.jpg"
-                  alt="Health Records Portal"
-                  className="w-full h-full object-cover rounded-2xl"
-                  loading="lazy"
-                />
+                <div className="relative w-full h-full rounded-2xl overflow-hidden">
+                  <img
+                    src="/t1.png"
+                    alt="Mobile Banking App"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-green-900/80 to-transparent flex items-end p-6">
+                    <div>
+                      <h3 className="text-white font-bold text-xl mb-2">Mobile Banking App</h3>
+                      <p className="text-green-200 text-sm">Secure mobile banking solution</p>
+                    </div>
+                  </div>
+                </div>
               </motion.div>
             </Link>
           </div>
 
-          {/* Health Features */}
+          {/* Digital Solutions Features */}
           <motion.div 
             className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
             initial={{ opacity: 0, y: 30 }}
@@ -400,18 +472,153 @@ const Home = () => {
             viewport={{ once: true }}
           >
             {[
-              { icon: FaHeartbeat, title: "Patient Monitoring", desc: "Real-time health tracking" },
-              { icon: FaShieldAlt, title: "HIPAA Compliance", desc: "Secure data protection" },
-              { icon: FaMobileAlt, title: "Mobile Access", desc: "Cross-platform availability" },
-              { icon: FaUserMd, title: "Provider Tools", desc: "Advanced clinical features" }
+              { icon: FaUsers, title: "User Experience", desc: "Intuitive & engaging interfaces" },
+              { icon: FaMobileAlt, title: "Responsive Design", desc: "Mobile-first approach" },
+              { icon: FaCode, title: "Component Architecture", desc: "Reusable UI components" },
+              { icon: MdSpeed, title: "Performance", desc: "Optimized frontend performance" }
             ].map((feature, index) => (
               <motion.div 
                 key={index}
-                className={`${colors.cardBackground} rounded-2xl p-6 ${colors.shadow.small} text-center`}
-                whileHover={{ scale: 1.05 }}
+                className={`${colors.cardBackground} rounded-2xl p-6 ${colors.shadow.small} text-center cyber-glow`}
+                whileHover={{ scale: 1.05, rotateY: 5 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="p-3 bg-purple-100 rounded-xl w-fit mx-auto mb-4">
+                <div className="p-3 bg-gradient-to-r from-blue-100 to-purple-100 rounded-xl w-fit mx-auto mb-4">
+                  <feature.icon className="w-6 h-6 text-blue-600" />
+                </div>
+                <h4 className={`${colors.text} font-semibold mb-2`}>{feature.title}</h4>
+                <p className={`${colors.textSecondary} text-sm`}>{feature.desc}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Web Applications Section */}
+      <section id="web-applications" className={`py-24 ${colors.background} relative overflow-hidden`}>
+        <div className="absolute inset-0 tech-grid opacity-10"></div>
+        <div className="container mx-auto px-6 relative z-10">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className={`text-4xl xl:text-5xl font-bold ${colors.text} mb-6`}>
+              <span className="text-gradient">React & Next.js</span>{" "}
+              <span className="text-cyan-600">Web Applications</span>
+            </h2>
+            <p className={`text-lg ${colors.textSecondary} max-w-3xl mx-auto leading-relaxed`}>
+              Building modern, responsive web applications with React, Next.js, and cutting-edge frontend technologies that deliver exceptional user experiences.
+            </p>
+          </motion.div>
+
+          {/* Web Applications Grid */}
+          <div className="flex flex-wrap justify-center gap-8 mb-16">
+            {/* Food Delivery App */}
+            <Link to="/project/food-delivery">
+              <motion.div 
+                className={`${colors.cardBackground} rounded-3xl p-4 ${colors.shadow.medium} group cursor-pointer w-80 h-80 flex items-center justify-center cyber-glow`}
+                whileHover={{ scale: 1.05, y: -10 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <div className="relative w-full h-full rounded-2xl overflow-hidden">
+                  <img
+                    src="/Techeat food app.png"
+                    alt="Food Delivery App"
+                    className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+                  <div className="absolute inset-0 bg-gradient-to-t from-orange-900/80 to-transparent flex items-end p-6">
+                    <div>
+                      <h3 className="text-white font-bold text-xl mb-2">Food Delivery App</h3>
+                      <p className="text-orange-200 text-sm">Restaurant ordering & delivery platform</p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </Link>
+
+            {/* Movie Streaming Platform */}
+            <Link to="/project/movie-streaming">
+              <motion.div 
+                className={`${colors.cardBackground} rounded-3xl p-4 ${colors.shadow.medium} group cursor-pointer w-80 h-80 flex items-center justify-center cyber-glow`}
+                whileHover={{ scale: 1.05, y: -10 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                <div className="relative w-full h-full rounded-2xl overflow-hidden">
+                  <img
+                    src="/movie-app.jpg.png"
+                    alt="Movie Streaming Platform"
+                    className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+                  <div className="absolute inset-0 bg-gradient-to-t from-red-900/80 to-transparent flex items-end p-6">
+                    <div>
+                      <h3 className="text-white font-bold text-xl mb-2">Movie Streaming</h3>
+                      <p className="text-red-200 text-sm">Netflix-style streaming platform</p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </Link>
+
+            {/* E-commerce Platform */}
+            <Link to="/project/ecommerce">
+              <motion.div 
+                className={`${colors.cardBackground} rounded-3xl p-4 ${colors.shadow.medium} group cursor-pointer w-80 h-80 flex items-center justify-center cyber-glow`}
+                whileHover={{ scale: 1.05, y: -10 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+              >
+                <div className="relative w-full h-full rounded-2xl overflow-hidden">
+                  <img
+                    src="/v1.png"
+                    alt="E-commerce Platform"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-indigo-900/80 to-transparent flex items-end p-6">
+                    <div>
+                      <h3 className="text-white font-bold text-xl mb-2">E-commerce Platform</h3>
+                      <p className="text-indigo-200 text-sm">Complete online shopping solution</p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </Link>
+          </div>
+
+          {/* Web Applications Features */}
+          <motion.div 
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            viewport={{ once: true }}
+          >
+            {[
+              { icon: FaMobileAlt, title: "Responsive Design", desc: "Mobile-first React components" },
+              { icon: FaShieldAlt, title: "Frontend Security", desc: "Secure client-side architecture" },
+              { icon: MdAnalytics, title: "Performance Optimized", desc: "Fast loading & smooth UX" },
+              { icon: FaUsers, title: "Modern UI/UX", desc: "Cutting-edge interface design" }
+            ].map((feature, index) => (
+              <motion.div 
+                key={index}
+                className={`${colors.cardBackground} rounded-2xl p-6 ${colors.shadow.small} text-center cyber-glow`}
+                whileHover={{ scale: 1.05, rotateY: 5 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="p-3 bg-gradient-to-r from-purple-100 to-pink-100 rounded-xl w-fit mx-auto mb-4">
                   <feature.icon className="w-6 h-6 text-purple-600" />
                 </div>
                 <h4 className={`${colors.text} font-semibold mb-2`}>{feature.title}</h4>
@@ -434,10 +641,10 @@ const Home = () => {
           >
             <h2 className={`text-4xl xl:text-5xl font-bold ${colors.text} mb-6`}>
               Let's{" "}
-              <span className="text-blue-600">Connect</span>
+              <span className="text-gradient">Connect</span>
             </h2>
             <p className={`text-lg ${colors.textSecondary} max-w-3xl mx-auto leading-relaxed`}>
-              Ready to transform your business or healthcare operations? Let's discuss how we can work together to create innovative solutions.
+              Ready to build stunning user interfaces and exceptional user experiences? Let's discuss how we can create cutting-edge frontend applications with React, Next.js, and modern web technologies.
             </p>
           </motion.div>
 
@@ -456,8 +663,8 @@ const Home = () => {
               >
                 <h3 className={`text-2xl font-bold ${colors.text} mb-4`}>Get in touch</h3>
                 <p className={`${colors.textSecondary} mb-6 leading-relaxed`}>
-                  I'm always open to discussing new opportunities and innovative projects. 
-                  Let's work together to create solutions that make a difference!
+                    I'm always excited to discuss frontend development projects, React applications, and creating exceptional user experiences. 
+                    Let's build stunning interfaces together!
                 </p>
                 <p className={`${colors.textSecondary} mb-8`}>
                   Say hello at{" "}

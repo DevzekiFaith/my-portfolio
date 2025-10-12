@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { FaLinkedin, FaTwitter, FaInstagram, FaEnvelope, FaFileAlt } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa";
 import { useTheme } from '../../contexts/ThemeContext';
 
 const Contact = () => {

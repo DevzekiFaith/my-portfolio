@@ -8,6 +8,7 @@ import Navbar from './Component/NavBar/Navbar'
 import Footer from './Component/Footer/Footer'
 import About from './Component/About Me/About'
 import ProjectDetail from './Component/ProjectDetail/ProjectDetail'
+import ScrollToTop from './Component/ScrollToTop/ScrollToTop'
 import { ThemeProvider } from './contexts/ThemeContext'
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
         <Footer />
+        <ScrollToTop />
       </div>
     </ThemeProvider>
   )

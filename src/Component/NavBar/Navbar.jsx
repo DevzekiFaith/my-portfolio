@@ -22,8 +22,8 @@ const NavBarLink = ({ to, children }) => {
     <NavLink
       className={({ isActive }) => 
         isActive 
-          ? `text-emerald-600 bg-white/30 backdrop-blur-sm px-4 py-2 rounded-xl font-semibold shadow-lg border border-white/20` 
-          : `text-gray-700 hover:text-emerald-600 transition-all duration-300 font-medium hover:bg-white/20 hover:backdrop-blur-sm hover:px-4 hover:py-2 hover:rounded-xl`
+          ? `text-cyan-600 ${colors.glassBackground} backdrop-blur-sm px-4 py-2 rounded-xl font-semibold ${colors.shadow.glass} border ${colors.border} cyber-glow` 
+          : `${colors.textSecondary} hover:text-cyan-600 transition-all duration-300 font-medium hover:${colors.glassBackground} hover:backdrop-blur-sm hover:px-4 hover:py-2 hover:rounded-xl`
       }
       to={to}
     >
@@ -94,8 +94,8 @@ const Navbar = () => {
     <motion.nav 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? `backdrop-blur-xl bg-white/20 border-b border-white/20 ${colors.shadow.medium}` 
-          : 'backdrop-blur-md bg-white/10 border-b border-white/10'
+          ? `backdrop-blur-2xl ${colors.glassBackground} border-b ${colors.border} ${colors.shadow.glass}` 
+          : `backdrop-blur-xl ${colors.glassBackground} border-b ${colors.border}`
       }`} 
       role="navigation" 
       aria-label="Main navigation"
@@ -112,10 +112,10 @@ const Navbar = () => {
             transition={{ duration: 0.2 }}
           >
             <h1 className={`font-bold text-xl transition-colors duration-300 ${
-              isScrolled ? 'text-gray-800 drop-shadow-lg' : 'text-white drop-shadow-lg'
+              isScrolled ? `${colors.text} drop-shadow-lg` : 'text-white drop-shadow-lg'
             }`}>
               Faith{" "}
-              <span className="text-emerald-500 drop-shadow-lg">
+              <span className="text-gradient drop-shadow-lg">
                 Oghojafor
               </span>
             </h1>
@@ -139,17 +139,17 @@ const Navbar = () => {
             {/* Theme Toggle */}
             <motion.button
               onClick={theme.toggleTheme}
-              className="p-3 bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-all duration-300 rounded-xl focus:outline-none border border-white/20 shadow-lg hover:shadow-xl"
-              whileHover={{ scale: 1.1 }}
+              className={`p-3 ${colors.glassBackground} backdrop-blur-sm hover:${colors.cardBackground} transition-all duration-300 rounded-xl focus:outline-none border ${colors.border} ${colors.shadow.glass} hover:${colors.shadow.glow} cyber-glow`}
+              whileHover={{ scale: 1.1, rotate: 5 }}
               whileTap={{ scale: 0.9 }}
               initial={{ opacity: 0, rotate: -180 }}
               animate={{ opacity: 1, rotate: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               {theme.isDark ? (
-                <FaSun className="w-5 h-5 text-emerald-500" />
+                <FaSun className="w-5 h-5 text-cyan-400" />
               ) : (
-                <FaMoon className="w-5 h-5 text-emerald-500" />
+                <FaMoon className="w-5 h-5 text-cyan-600" />
               )}
             </motion.button>
             
@@ -161,7 +161,7 @@ const Navbar = () => {
             >
               <NavLink
                 to="/contact"
-                className="group bg-white/20 backdrop-blur-sm hover:bg-white/30 text-emerald-600 px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl border border-white/20 transition-all duration-300 focus:outline-none"
+                className={`group ${colors.glassBackground} backdrop-blur-sm hover:${colors.cardBackground} text-cyan-600 px-6 py-3 rounded-xl font-semibold ${colors.shadow.glass} hover:${colors.shadow.glow} border ${colors.border} transition-all duration-300 focus:outline-none cyber-glow`}
               >
                 Get In Touch
                 <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
@@ -174,22 +174,22 @@ const Navbar = () => {
             {/* Mobile Theme Toggle */}
             <motion.button
               onClick={theme.toggleTheme}
-              className="p-3 bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-all duration-300 rounded-xl focus:outline-none border border-white/20 shadow-lg hover:shadow-xl"
-              whileHover={{ scale: 1.1 }}
+              className={`p-3 ${colors.glassBackground} backdrop-blur-sm hover:${colors.cardBackground} transition-all duration-300 rounded-xl focus:outline-none border ${colors.border} ${colors.shadow.glass} hover:${colors.shadow.glow} cyber-glow`}
+              whileHover={{ scale: 1.1, rotate: 5 }}
               whileTap={{ scale: 0.9 }}
               initial={{ opacity: 0, rotate: -180 }}
               animate={{ opacity: 1, rotate: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               {theme.isDark ? (
-                <FaSun className="w-4 h-4 text-emerald-500" />
+                <FaSun className="w-4 h-4 text-cyan-400" />
               ) : (
-                <FaMoon className="w-4 h-4 text-emerald-500" />
+                <FaMoon className="w-4 h-4 text-cyan-600" />
               )}
             </motion.button>
             
             <motion.button
-              className="p-3 rounded-xl transition-all duration-300 focus:outline-none bg-white/20 hover:bg-white/30 text-gray-700 backdrop-blur-sm border border-white/20 shadow-lg hover:shadow-xl"
+              className={`p-3 rounded-xl transition-all duration-300 focus:outline-none ${colors.glassBackground} hover:${colors.cardBackground} ${colors.text} backdrop-blur-sm border ${colors.border} ${colors.shadow.glass} hover:${colors.shadow.glow} cyber-glow`}
               onClick={toggleMenu}
               aria-label="Toggle menu"
               aria-expanded={isMenuOpen}
@@ -212,7 +212,7 @@ const Navbar = () => {
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
         <div 
-          className="fixed inset-0 bg-black/30 backdrop-blur-md z-40 xl:hidden"
+          className="fixed inset-0 bg-black/50 backdrop-blur-md z-40 xl:hidden"
           aria-hidden="true"
           onClick={toggleMenu}
         />
@@ -221,7 +221,7 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <motion.div 
-          className="fixed top-0 right-0 w-80 h-full bg-white/20 backdrop-blur-xl border-l border-white/20 shadow-2xl navbar-menu z-50 xl:hidden"
+          className={`fixed top-0 right-0 w-80 h-full ${colors.glassBackground} backdrop-blur-2xl border-l ${colors.border} ${colors.shadow.glass} navbar-menu z-50 xl:hidden`}
           initial={{ x: 320 }}
           animate={{ x: 0 }}
           exit={{ x: 320 }}
@@ -230,13 +230,13 @@ const Navbar = () => {
           <div className="flex flex-col h-full">
             {/* Mobile Menu Header */}
             <div className="flex justify-between items-center p-6 border-b border-white/20">
-              <h2 className="text-xl font-bold text-gray-800 drop-shadow-lg">
+              <h2 className={`text-xl font-bold ${colors.text} drop-shadow-lg`}>
                 Menu
               </h2>
               <motion.button
                 onClick={toggleMenu}
                 aria-label="Close menu"
-                className="p-2 rounded-xl bg-white/20 backdrop-blur-sm hover:bg-white/30 text-gray-700 transition-all duration-300 focus:outline-none border border-white/20 shadow-lg hover:shadow-xl"
+                className={`p-2 rounded-xl ${colors.glassBackground} backdrop-blur-sm hover:${colors.cardBackground} ${colors.text} transition-all duration-300 focus:outline-none border ${colors.border} ${colors.shadow.glass} hover:${colors.shadow.glow} cyber-glow`}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
@@ -259,8 +259,8 @@ const Navbar = () => {
                       className={({ isActive }) => 
                         `block px-4 py-3 rounded-xl transition-all duration-300 font-medium ${
                           isActive 
-                            ? `text-emerald-600 bg-white/30 backdrop-blur-sm shadow-lg border border-white/20` 
-                            : `text-gray-700 hover:text-emerald-600 hover:bg-white/20 hover:backdrop-blur-sm`
+                            ? `text-cyan-600 ${colors.glassBackground} backdrop-blur-sm ${colors.shadow.glass} border ${colors.border} cyber-glow` 
+                            : `${colors.textSecondary} hover:text-cyan-600 hover:${colors.glassBackground} hover:backdrop-blur-sm`
                         }`
                       }
                       onClick={() => setIsMenuOpen(false)}
@@ -280,7 +280,7 @@ const Navbar = () => {
               >
                 <NavLink
                   to="/contact"
-                  className="group flex items-center justify-center w-full bg-white/20 backdrop-blur-sm hover:bg-white/30 text-emerald-600 px-6 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl border border-white/20 transition-all duration-300 focus:outline-none"
+                  className={`group flex items-center justify-center w-full ${colors.glassBackground} backdrop-blur-sm hover:${colors.cardBackground} text-cyan-600 px-6 py-4 rounded-xl font-semibold ${colors.shadow.glass} hover:${colors.shadow.glow} border ${colors.border} transition-all duration-300 focus:outline-none cyber-glow`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Get In Touch
@@ -291,7 +291,7 @@ const Navbar = () => {
 
             {/* Mobile Menu Footer */}
             <div className="p-6 border-t border-white/20">
-              <p className="text-sm text-gray-600 text-center drop-shadow-lg">
+              <p className={`text-sm ${colors.textSecondary} text-center drop-shadow-lg`}>
                 © {new Date().getFullYear()} Ezekiel Oghojafor
               </p>
             </div>

@@ -4,17 +4,18 @@ import ImageProfile01 from "/m-page2.jpg";
 import DownloadImage from "/download.svg";
 import Typewriter from "typewriter-effect";
 import { useForm } from "react-hook-form";
-import { FaLinkedin, FaReact, FaCss3, FaFigma, FaSass, FaGitAlt, FaGithub } from "react-icons/fa6";
+import { FaLinkedin, FaReact, FaCss3, FaFigma, FaSass, FaGitAlt, FaGithub, FaBitcoin, FaEthereum, FaPaypal, FaWallet, FaChartBar, FaRobot, FaCloud, FaLock, FaDatabase, FaCode } from "react-icons/fa";
 import { RiJavascriptFill } from "react-icons/ri";
 import { IoLogoHtml5 } from "react-icons/io";
-import { SiVercel, SiTailwindcss } from "react-icons/si";
+import { SiVercel, SiTailwindcss, SiBitcoin, SiEthereum, SiStripe, SiPaypal } from "react-icons/si";
 import { BiLogoTypescript } from "react-icons/bi";
 import { TbBrandReactNative } from "react-icons/tb";
+import { MdAnalytics, MdSecurity, MdSpeed, MdAccountBalanceWallet } from "react-icons/md";
 import { useTheme } from "../../contexts/ThemeContext";
 
 const TechBadge = ({ name, icon: Icon, colors }) => (
   <motion.div 
-    className={`group ${colors.cardBackground} transition-all duration-300 w-32 text-center rounded-2xl mb-4 p-4 ${colors.textSecondary} flex flex-col justify-center items-center gap-2 ${colors.shadow.small} hover:${colors.shadow.inset}`}
+    className={`group ${colors.cardBackground} transition-all duration-300 w-32 text-center rounded-2xl mb-4 p-4 ${colors.textSecondary} flex flex-col justify-center items-center gap-2 ${colors.shadow.small} hover:${colors.shadow.inset} cyber-glow`}
     whileHover={{ scale: 1.05, rotate: 2 }}
     whileTap={{ scale: 0.95 }}
     initial={{ opacity: 0, y: 20 }}
@@ -22,7 +23,7 @@ const TechBadge = ({ name, icon: Icon, colors }) => (
     transition={{ duration: 0.6 }}
     viewport={{ once: true }}
   >
-    <Icon className="text-2xl text-emerald-600 group-hover:scale-110 transition-transform duration-300" />
+    <Icon className="text-2xl text-cyan-600 group-hover:scale-110 transition-transform duration-300" />
     <span className="text-sm font-medium">{name}</span>
   </motion.div>
 );
@@ -75,27 +76,27 @@ const About = () => {
     { name: "React", icon: FaReact },
     { name: "Next.js", icon: SiVercel },
     { name: "TypeScript", icon: BiLogoTypescript },
-    { name: "Tailwind", icon: SiTailwindcss },
-    { name: "WebRTC", icon: FaReact },
-    { name: "Firebase", icon: FaReact },
+    { name: "Solidity", icon: FaCode },
+    { name: "Web3.js", icon: FaCode },
+    { name: "Ethereum", icon: SiEthereum },
+    { name: "Bitcoin", icon: SiBitcoin },
     { name: "Node.js", icon: FaReact },
-    { name: "MongoDB", icon: FaReact },
-    { name: "PostgreSQL", icon: FaReact },
-    { name: "Figma", icon: FaFigma },
-    { name: "Git", icon: FaGitAlt },
-    { name: "GitHub", icon: FaGithub }
+    { name: "MongoDB", icon: FaDatabase },
+    { name: "PostgreSQL", icon: FaDatabase },
+    { name: "Stripe", icon: SiStripe },
+    { name: "PayPal", icon: SiPaypal }
   ];
 
   const experiences = [
     {
-      title: "HealthTech Frontend Engineer",
+      title: "Frontend-Heavy Full-Stack Developer",
       period: "Nov 2023 - Present",
-      description: `Specializing in healthcare technology solutions, I develop HIPAA-compliant applications and telemedicine platforms. My focus is on creating accessible, secure, and intuitive digital health experiences that improve patient outcomes. I've successfully built patient appointment systems, health record portals, and mental health platforms, resulting in 60% improved patient engagement and 40% reduced administrative burden.`
+      description: `Specializing in frontend development with React, Next.js, and modern web technologies, I create exceptional user interfaces and seamless user experiences. My focus is on building responsive, performant applications with beautiful designs. I've successfully developed fintech applications, digital solutions, and web platforms, resulting in 95% user satisfaction and 40% improved user engagement.`
     },
     {
-      title: "Healthcare UX Specialist",
+      title: "React & UI/UX Developer",
       period: "Sep 2023 - Nov 2023",
-      description: `During my specialization in healthcare UX, I developed expertise in creating patient-centered interfaces for medical applications. I worked on telemedicine platforms, focusing on accessibility compliance (WCAG 2.1 AA) and user experience optimization for healthcare professionals and patients of all ages.`
+      description: `During my specialization in frontend development, I developed expertise in React ecosystem, component architecture, and user experience design. I worked on various projects focusing on responsive design, performance optimization, and creating intuitive user interfaces that enhance user engagement.`
     }
   ];
 
@@ -152,7 +153,7 @@ const About = () => {
               <Typewriter
                 options={{
                   strings: [
-                    "I am a HealthTech Frontend Engineer specializing in healthcare technology solutions. With an architectural background, I bring a human-centered design approach to creating accessible, secure, and intuitive digital health experiences. I focus on HIPAA-compliant applications, telemedicine platforms, and patient-centered healthcare interfaces.",
+                    "I am a Full-Stack Developer with heavy Frontend Engineering expertise, specializing in React, Next.js, and modern web technologies. With a passion for creating exceptional user experiences, I build cutting-edge applications that combine beautiful interfaces with robust functionality across fintech, digital solutions, and web applications.",
                   ],
                   autoStart: true,
                   loop: true,
@@ -239,7 +240,7 @@ const About = () => {
           >
             <h2 className={`text-4xl xl:text-5xl font-bold ${colors.text} mb-6`}>
               My{" "}
-              <span className="text-emerald-600">
+              <span className="text-gradient">
                 Capabilities
               </span>
             </h2>
@@ -247,7 +248,7 @@ const About = () => {
               <Typewriter
                 options={{
                   strings: [
-                    "I continuously expand my expertise in healthcare technology, focusing on HIPAA compliance, telemedicine platforms, and patient-centered design. My goal is to create innovative health solutions that improve patient outcomes and healthcare accessibility.",
+                    "I continuously expand my expertise in frontend development, focusing on React, Next.js, modern CSS frameworks, and user experience design. My goal is to create innovative, user-centered applications that deliver exceptional interfaces and seamless user experiences.",
                   ],
                   autoStart: true,
                   loop: true,
@@ -272,9 +273,10 @@ const About = () => {
         </div>
       </section>
 
-      {/* PCOS Patient App Case Study */}
-      <section className={`py-24 ${colors.background}`}>
-        <div className="container mx-auto px-6">
+      {/* Crypto Trading Platform Case Study */}
+      <section className={`py-24 ${colors.background} relative overflow-hidden`}>
+        <div className="absolute inset-0 tech-grid opacity-10"></div>
+        <div className="container mx-auto px-6 relative z-10">
           <motion.div 
             className="text-center mb-16"
             initial={{ opacity: 0, y: 50 }}
@@ -283,13 +285,13 @@ const About = () => {
             viewport={{ once: true }}
           >
             <h2 className={`text-4xl xl:text-5xl font-bold ${colors.text} mb-6`}>
-              PCOS Patient{" "}
-              <span className="text-emerald-600">
-                Management App
+              Crypto Trading{" "}
+              <span className="text-gradient">
+                Platform
               </span>
             </h2>
             <p className={`text-lg ${colors.textSecondary} max-w-3xl mx-auto`}>
-              A comprehensive case study showcasing how innovative UI/UX design improved patient outcomes and healthcare provider efficiency in PCOS management.
+              A comprehensive case study showcasing how cutting-edge fintech design and blockchain integration revolutionized cryptocurrency trading and user experience.
             </p>
           </motion.div>
 
@@ -311,11 +313,11 @@ const About = () => {
                 viewport={{ once: true }}
               >
                 <h3 className={`text-5xl xl:text-6xl font-bold ${colors.text} mb-6 leading-tight`}>
-                  PCOS Patient Management Platform
+                  Advanced Crypto Trading Platform
                 </h3>
                 <p className={`text-xl ${colors.textSecondary} max-w-4xl mx-auto leading-relaxed`}>
-                  A comprehensive digital health platform designed specifically for PCOS patients to track symptoms, 
-                  monitor treatment progress, and connect with healthcare providers.
+                  A comprehensive cryptocurrency trading platform designed for professional traders with advanced analytics, 
+                  real-time market data, and AI-powered trading insights.
                 </p>
               </motion.div>
 
@@ -330,16 +332,13 @@ const About = () => {
                   viewport={{ once: true }}
                 >
                   <div className={`${colors.cardBackground} rounded-3xl p-8 ${colors.shadow.raised} overflow-hidden`}>
-                    <img
-                      className="w-full h-96 object-cover rounded-2xl"
-                      src="/pcos.jpg"
-                      alt="PCOS Patient Management App Interface"
-                      loading="lazy"
-                    />
+                    <div className="w-full h-96 bg-gradient-to-br from-cyan-600 to-blue-600 rounded-2xl flex items-center justify-center">
+                      <FaBitcoin className="w-32 h-32 text-white opacity-80" />
+                    </div>
                   </div>
-                  {/* Floating elements for Apple-style effect */}
-                  <div className="absolute -top-4 -right-4 w-8 h-8 bg-emerald-500 rounded-full opacity-20"></div>
-                  <div className="absolute -bottom-6 -left-6 w-12 h-12 bg-emerald-300 rounded-full opacity-10"></div>
+                  {/* Floating elements for tech effect */}
+                  <div className="absolute -top-4 -right-4 w-8 h-8 bg-cyan-500 rounded-full opacity-30 pulse-glow"></div>
+                  <div className="absolute -bottom-6 -left-6 w-12 h-12 bg-blue-500 rounded-full opacity-20 floating-animation" style={{animationDelay: '1s'}}></div>
                 </motion.div>
 
                 {/* Content Section */}
@@ -353,38 +352,38 @@ const About = () => {
                   <div>
                     <h4 className={`text-3xl font-bold ${colors.text} mb-4`}>Advanced Features</h4>
                     <p className={`text-lg ${colors.textSecondary} leading-relaxed mb-6`}>
-                      Features advanced data visualization, personalized health insights, and integrated care coordination 
-                      to improve patient outcomes and healthcare provider efficiency.
+                      Features real-time market data, AI-powered trading algorithms, and advanced portfolio analytics 
+                      to maximize trading performance and minimize risk exposure.
                     </p>
                   </div>
 
                   <div className="space-y-4">
                     <div className="flex items-start gap-4">
-                      <div className="w-6 h-6 bg-emerald-500 rounded-full flex-shrink-0 mt-1"></div>
+                      <div className="w-6 h-6 bg-cyan-500 rounded-full flex-shrink-0 mt-1"></div>
                       <div>
-                        <h5 className={`${colors.text} font-semibold mb-1`}>Advanced Symptom Tracking</h5>
-                        <p className={`${colors.textSecondary} text-sm`}>Pattern recognition and real-time monitoring</p>
+                        <h5 className={`${colors.text} font-semibold mb-1`}>Real-time Market Data</h5>
+                        <p className={`${colors.textSecondary} text-sm`}>Live price feeds and market analysis</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-4">
-                      <div className="w-6 h-6 bg-emerald-500 rounded-full flex-shrink-0 mt-1"></div>
+                      <div className="w-6 h-6 bg-cyan-500 rounded-full flex-shrink-0 mt-1"></div>
                       <div>
-                        <h5 className={`${colors.text} font-semibold mb-1`}>3D Anatomical Visualization</h5>
-                        <p className={`${colors.textSecondary} text-sm`}>Interactive patient education tools</p>
+                        <h5 className={`${colors.text} font-semibold mb-1`}>AI Trading Bots</h5>
+                        <p className={`${colors.textSecondary} text-sm`}>Machine learning algorithms for automated trading</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-4">
-                      <div className="w-6 h-6 bg-emerald-500 rounded-full flex-shrink-0 mt-1"></div>
+                      <div className="w-6 h-6 bg-cyan-500 rounded-full flex-shrink-0 mt-1"></div>
                       <div>
-                        <h5 className={`${colors.text} font-semibold mb-1`}>AI-Powered Insights</h5>
-                        <p className={`${colors.textSecondary} text-sm`}>Personalized health recommendations</p>
+                        <h5 className={`${colors.text} font-semibold mb-1`}>Portfolio Analytics</h5>
+                        <p className={`${colors.textSecondary} text-sm`}>Advanced risk management and performance tracking</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-4">
-                      <div className="w-6 h-6 bg-emerald-500 rounded-full flex-shrink-0 mt-1"></div>
+                      <div className="w-6 h-6 bg-cyan-500 rounded-full flex-shrink-0 mt-1"></div>
                       <div>
-                        <h5 className={`${colors.text} font-semibold mb-1`}>Provider Integration</h5>
-                        <p className={`${colors.textSecondary} text-sm`}>Seamless care coordination and communication</p>
+                        <h5 className={`${colors.text} font-semibold mb-1`}>Multi-Exchange Integration</h5>
+                        <p className={`${colors.textSecondary} text-sm`}>Seamless trading across multiple cryptocurrency exchanges</p>
                       </div>
                     </div>
                   </div>
@@ -401,31 +400,31 @@ const About = () => {
               viewport={{ once: true }}
             >
               <motion.div 
-                className={`${colors.cardBackground} rounded-2xl p-6 ${colors.shadow.small} text-center`}
+                className={`${colors.cardBackground} rounded-2xl p-6 ${colors.shadow.small} text-center cyber-glow`}
                 whileHover={{ scale: 1.05, rotate: 2 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="text-3xl font-bold text-emerald-600 mb-2">78%</div>
-                <div className={`${colors.text} font-semibold mb-2`}>Patient Engagement</div>
-                <div className={`${colors.textSecondary} text-sm`}>Increase in daily app usage and symptom tracking compliance</div>
+                <div className="text-3xl font-bold text-cyan-600 mb-2">95%</div>
+                <div className={`${colors.text} font-semibold mb-2`}>Trading Accuracy</div>
+                <div className={`${colors.textSecondary} text-sm`}>AI algorithm success rate in profitable trades</div>
               </motion.div>
               <motion.div 
-                className={`${colors.cardBackground} rounded-2xl p-6 ${colors.shadow.small} text-center`}
+                className={`${colors.cardBackground} rounded-2xl p-6 ${colors.shadow.small} text-center cyber-glow`}
                 whileHover={{ scale: 1.05, rotate: -2 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="text-3xl font-bold text-emerald-600 mb-2">45%</div>
-                <div className={`${colors.text} font-semibold mb-2`}>Treatment Adherence</div>
-                <div className={`${colors.textSecondary} text-sm`}>Improvement in medication and lifestyle intervention compliance</div>
+                <div className="text-3xl font-bold text-cyan-600 mb-2">0.1s</div>
+                <div className={`${colors.text} font-semibold mb-2`}>Order Execution</div>
+                <div className={`${colors.textSecondary} text-sm`}>Average latency for trade execution</div>
               </motion.div>
               <motion.div 
-                className={`${colors.cardBackground} rounded-2xl p-6 ${colors.shadow.small} text-center`}
+                className={`${colors.cardBackground} rounded-2xl p-6 ${colors.shadow.small} text-center cyber-glow`}
                 whileHover={{ scale: 1.05, rotate: 2 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="text-3xl font-bold text-emerald-600 mb-2">62%</div>
-                <div className={`${colors.text} font-semibold mb-2`}>Provider Efficiency</div>
-                <div className={`${colors.textSecondary} text-sm`}>Reduction in consultation time with improved data visualization</div>
+                <div className="text-3xl font-bold text-cyan-600 mb-2">99.9%</div>
+                <div className={`${colors.text} font-semibold mb-2`}>Uptime</div>
+                <div className={`${colors.textSecondary} text-sm`}>Platform reliability and availability</div>
               </motion.div>
             </motion.div>
 
@@ -441,56 +440,56 @@ const About = () => {
               <div className="flex flex-col xl:flex-row gap-12 items-start">
                 {/* Case Study Content */}
                 <div className="flex-1 space-y-6">
-                  <h4 className={`text-3xl xl:text-4xl font-bold ${colors.text} mb-8`}>Case Study: Improving PCOS Patient Outcomes</h4>
+                  <h4 className={`text-3xl xl:text-4xl font-bold ${colors.text} mb-8`}>Case Study: Revolutionizing Crypto Trading</h4>
                   
                   <div className="space-y-6">
                     <div>
-                      <h5 className="text-xl font-semibold text-emerald-700 mb-4">Challenge</h5>
+                      <h5 className="text-xl font-semibold text-cyan-700 mb-4">Challenge</h5>
                       <p className={`${colors.textSecondary} leading-relaxed text-lg`}>
-                        PCOS patients often struggle with complex symptom tracking, treatment adherence, and understanding their condition. 
-                        Traditional healthcare approaches lacked personalized insights and real-time monitoring capabilities, leading to 
-                        poor patient engagement and suboptimal treatment outcomes.
+                        Cryptocurrency traders faced fragmented platforms with slow execution speeds, limited analytics, and poor user experience. 
+                        Traditional trading platforms lacked real-time market insights and AI-powered trading capabilities, leading to 
+                        missed opportunities and increased risk exposure.
                       </p>
                     </div>
 
                     <div>
-                      <h5 className="text-xl font-semibold text-emerald-700 mb-4">Solution</h5>
+                      <h5 className="text-xl font-semibold text-cyan-700 mb-4">Solution</h5>
                       <p className={`${colors.textSecondary} leading-relaxed text-lg`}>
-                        Developed a comprehensive PCOS management platform featuring advanced 3D anatomical visualization, 
-                        AI-powered symptom pattern recognition, and integrated provider communication. The interface uses 
-                        intuitive data visualization to help patients understand their condition and track progress effectively.
+                        Developed a comprehensive cryptocurrency trading platform featuring real-time market data integration, 
+                        AI-powered trading algorithms, and advanced portfolio analytics. The interface uses 
+                        cutting-edge data visualization to help traders make informed decisions and maximize profits.
                       </p>
                     </div>
 
                     <div>
-                      <h5 className="text-xl font-semibold text-emerald-700 mb-4">Key Findings</h5>
+                      <h5 className="text-xl font-semibold text-cyan-700 mb-4">Key Findings</h5>
                       <ul className={`${colors.textSecondary} space-y-3 text-lg`}>
                         <li className="flex items-start gap-3">
-                          <div className="w-2 h-2 bg-emerald-500 rounded-full mt-3 flex-shrink-0"></div>
-                          <span><strong>Patient Education:</strong> 3D visualization improved understanding of PCOS by 85%</span>
+                          <div className="w-2 h-2 bg-cyan-500 rounded-full mt-3 flex-shrink-0"></div>
+                          <span><strong>Trading Performance:</strong> AI algorithms achieved 95% accuracy in profitable trades</span>
                         </li>
                         <li className="flex items-start gap-3">
-                          <div className="w-2 h-2 bg-emerald-500 rounded-full mt-3 flex-shrink-0"></div>
-                          <span><strong>Symptom Tracking:</strong> Daily logging increased from 23% to 78% with intuitive UI</span>
+                          <div className="w-2 h-2 bg-cyan-500 rounded-full mt-3 flex-shrink-0"></div>
+                          <span><strong>Execution Speed:</strong> Reduced order latency from 2.5s to 0.1s with optimized infrastructure</span>
                         </li>
                         <li className="flex items-start gap-3">
-                          <div className="w-2 h-2 bg-emerald-500 rounded-full mt-3 flex-shrink-0"></div>
-                          <span><strong>Provider Communication:</strong> 60% reduction in follow-up questions through better data presentation</span>
+                          <div className="w-2 h-2 bg-cyan-500 rounded-full mt-3 flex-shrink-0"></div>
+                          <span><strong>User Engagement:</strong> 300% increase in daily active traders with improved UX</span>
                         </li>
                         <li className="flex items-start gap-3">
-                          <div className="w-2 h-2 bg-emerald-500 rounded-full mt-3 flex-shrink-0"></div>
-                          <span><strong>Treatment Outcomes:</strong> 45% improvement in medication adherence and lifestyle changes</span>
+                          <div className="w-2 h-2 bg-cyan-500 rounded-full mt-3 flex-shrink-0"></div>
+                          <span><strong>Risk Management:</strong> 70% reduction in portfolio losses through advanced analytics</span>
                         </li>
                       </ul>
                     </div>
 
                     <div>
-                      <h5 className="text-xl font-semibold text-emerald-700 mb-4">Impact</h5>
+                      <h5 className="text-xl font-semibold text-cyan-700 mb-4">Impact</h5>
                       <p className={`${colors.textSecondary} leading-relaxed text-lg`}>
-                        The platform successfully transformed PCOS patient care by providing personalized insights, 
-                        improving treatment adherence, and enhancing provider-patient communication. Patients reported 
-                        feeling more empowered and informed about their condition, while healthcare providers experienced 
-                        improved efficiency and better patient outcomes.
+                        The platform successfully revolutionized cryptocurrency trading by providing real-time market insights, 
+                        improving trading accuracy, and enhancing user experience. Traders reported 
+                        feeling more confident and profitable in their trading decisions, while the platform achieved 
+                        industry-leading performance metrics and user satisfaction.
                       </p>
                     </div>
                   </div>
@@ -506,16 +505,13 @@ const About = () => {
                     transition={{ duration: 0.8, delay: 1.0 }}
                     viewport={{ once: true }}
                   >
-                    <img
-                      className="w-full h-80 object-cover rounded-xl"
-                      src="/pcos.jpg"
-                      alt="PCOS Patient Management App - Detailed Interface"
-                      loading="lazy"
-                    />
+                    <div className="w-full h-80 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
+                      <FaEthereum className="w-24 h-24 text-white opacity-80" />
+                    </div>
                     <div className="mt-4 text-center">
-                      <h6 className={`${colors.text} font-semibold mb-2`}>Patient Dashboard</h6>
+                      <h6 className={`${colors.text} font-semibold mb-2`}>Trading Dashboard</h6>
                       <p className={`${colors.textSecondary} text-sm`}>
-                        Real-time health monitoring and personalized insights
+                        Real-time market data and AI-powered trading insights
                       </p>
                     </div>
                   </motion.div>
@@ -528,9 +524,9 @@ const About = () => {
                     transition={{ duration: 0.6, delay: 1.2 }}
                     viewport={{ once: true }}
                   >
-                    <div className={`inline-flex items-center gap-3 ${colors.cardBackground} px-6 py-3 rounded-full ${colors.shadow.small}`}>
-                      <div className="w-3 h-3 bg-emerald-500 rounded-full animate-pulse"></div>
-                      <span className={`${colors.text} font-medium`}>Live Demo Available</span>
+                    <div className={`inline-flex items-center gap-3 ${colors.cardBackground} px-6 py-3 rounded-full ${colors.shadow.small} cyber-glow`}>
+                      <div className="w-3 h-3 bg-cyan-500 rounded-full animate-pulse"></div>
+                      <span className={`${colors.text} font-medium`}>Live Trading Demo Available</span>
                     </div>
                   </motion.div>
                 </div>
@@ -552,12 +548,12 @@ const About = () => {
           >
             <h2 className={`text-4xl xl:text-5xl font-bold ${colors.text} mb-6`}>
               My{" "}
-              <span className="text-emerald-600">
+              <span className="text-gradient">
                 Experience
               </span>
             </h2>
             <p className={`text-lg ${colors.textSecondary} max-w-2xl mx-auto`}>
-              A journey of growth and learning in healthcare technology and patient-centered design.
+              A journey of growth and learning in frontend development, React ecosystem, and user experience design.
             </p>
           </motion.div>
 
@@ -594,12 +590,12 @@ const About = () => {
             >
               <h2 className={`text-4xl xl:text-5xl font-bold ${colors.text} mb-6`}>
                 Let's{" "}
-              <span className="text-emerald-600">
+              <span className="text-gradient">
                 Connect
               </span>
               </h2>
               <p className={`text-lg ${colors.textSecondary} max-w-2xl mx-auto`}>
-                Ready to transform healthcare through technology? Let's discuss innovative health solutions.
+                Ready to build exceptional user interfaces? Let's discuss cutting-edge frontend development projects.
               </p>
             </motion.div>
 
@@ -624,14 +620,14 @@ const About = () => {
                 >
                   <h3 className={`text-2xl font-bold ${colors.text} mb-4`}>Get in touch</h3>
                   <p className={`${colors.textSecondary} mb-6 leading-relaxed`}>
-                    I'm always open to discussing healthcare technology opportunities and innovative health projects. 
-                    Let's work together to improve patient outcomes through technology!
+                    I'm always excited to discuss frontend development opportunities and innovative React projects. 
+                    Let's work together to create stunning user interfaces and exceptional user experiences!
                   </p>
                   <p className={`${colors.textSecondary} mb-8`}>
                     Say hello at{" "}
                     <a
                       href="mailto:ezekieloghojaforubor@gmail.com"
-                      className="text-emerald-600 hover:text-emerald-700 font-semibold underline transition-colors duration-300"
+                      className="text-cyan-600 hover:text-cyan-700 font-semibold underline transition-colors duration-300"
                     >
                       ezekieloghojaforubor@gmail.com
                     </a>
@@ -647,7 +643,7 @@ const About = () => {
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     whileTap={{ scale: 0.9 }}
                   >
-                    <FaLinkedin className="w-5 h-5 text-emerald-600 group-hover:scale-110 transition-transform duration-300" />
+                    <FaLinkedin className="w-5 h-5 text-cyan-600 group-hover:scale-110 transition-transform duration-300" />
                   </motion.a>
                   <motion.a
                     href="https://github.com/DevzekiFaith"
@@ -657,7 +653,7 @@ const About = () => {
                     whileHover={{ scale: 1.1, rotate: -5 }}
                     whileTap={{ scale: 0.9 }}
                   >
-                    <FaGithub className="w-5 h-5 text-emerald-600 group-hover:scale-110 transition-transform duration-300" />
+                    <FaGithub className="w-5 h-5 text-cyan-600 group-hover:scale-110 transition-transform duration-300" />
                   </motion.a>
                 </div>
               </motion.div>
