@@ -100,13 +100,13 @@ const Contact = () => {
             </p>
 
             <div className="space-y-6 mb-8">
-              <div className="flex items-center gap-4">
-                <FaEnvelope className={`w-6 h-6 ${colors.accent}`} />
-                <div>
-                  <h3 className={`font-semibold ${colors.text}`}>Email</h3>
+              <div className="flex items-start gap-4 max-w-md">
+                <FaEnvelope className={`w-6 h-6 ${colors.accent} mt-1 flex-shrink-0`} />
+                <div className="min-w-0 flex-1">
+                  <h3 className={`font-semibold ${colors.text} mb-1`}>Email</h3>
                   <a
                     href="mailto:ezekieloghojaforubor@gmail.com"
-                    className="text-purple-600 hover:text-purple-700 font-semibold transition-colors duration-300"
+                    className="text-purple-600 hover:text-purple-700 font-semibold transition-colors duration-300 break-all sm:break-normal text-sm sm:text-base"
                   >
                     ezekieloghojaforubor@gmail.com
                   </a>
