@@ -115,46 +115,46 @@ const Contact = () => {
             </div>
 
             <h3 className={`text-2xl font-bold ${colors.text} mb-4`}>Connect with Me</h3>
-            <div className="flex gap-4">
+            <div className="flex flex-wrap gap-3 sm:gap-4">
               <motion.a
                 href="https://www.linkedin.com/in/ezekiel-oghojafor-ubor-a75a7a21b/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`group p-3 ${colors.cardBackground} rounded-xl ${colors.shadow.small} hover:${colors.shadow.inset} transition-all duration-300`}
+                className={`group p-2 sm:p-3 ${colors.cardBackground} rounded-xl ${colors.shadow.small} hover:${colors.shadow.inset} transition-all duration-300`}
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 whileTap={{ scale: 0.9 }}
               >
-                <FaLinkedin className="w-6 h-6 text-purple-600" />
+                <FaLinkedin className="w-5 h-5 sm:w-6 sm:h-6 text-purple-600" />
               </motion.a>
               <motion.a
                 href="https://github.com/DevzekiFaith"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`group p-3 ${colors.cardBackground} rounded-xl ${colors.shadow.small} hover:${colors.shadow.inset} transition-all duration-300`}
+                className={`group p-2 sm:p-3 ${colors.cardBackground} rounded-xl ${colors.shadow.small} hover:${colors.shadow.inset} transition-all duration-300`}
                 whileHover={{ scale: 1.1, rotate: -5 }}
                 whileTap={{ scale: 0.9 }}
               >
-                <FaGithub className="w-6 h-6 text-purple-600" />
+                <FaGithub className="w-5 h-5 sm:w-6 sm:h-6 text-purple-600" />
               </motion.a>
               <motion.a
                 href="https://twitter.com/DevzekiFaith"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`group p-3 ${colors.cardBackground} rounded-xl ${colors.shadow.small} hover:${colors.shadow.inset} transition-all duration-300`}
+                className={`group p-2 sm:p-3 ${colors.cardBackground} rounded-xl ${colors.shadow.small} hover:${colors.shadow.inset} transition-all duration-300`}
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 whileTap={{ scale: 0.9 }}
               >
-                <FaTwitter className="w-6 h-6 text-purple-600" />
+                <FaTwitter className="w-5 h-5 sm:w-6 sm:h-6 text-purple-600" />
               </motion.a>
               <motion.a
                 href="https://instagram.com/devzekifaith"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`group p-3 ${colors.cardBackground} rounded-xl ${colors.shadow.small} hover:${colors.shadow.inset} transition-all duration-300`}
+                className={`group p-2 sm:p-3 ${colors.cardBackground} rounded-xl ${colors.shadow.small} hover:${colors.shadow.inset} transition-all duration-300`}
                 whileHover={{ scale: 1.1, rotate: -5 }}
                 whileTap={{ scale: 0.9 }}
               >
-                <FaInstagram className="w-6 h-6 text-purple-600" />
+                <FaInstagram className="w-5 h-5 sm:w-6 sm:h-6 text-purple-600" />
               </motion.a>
             </div>
           </motion.div>
