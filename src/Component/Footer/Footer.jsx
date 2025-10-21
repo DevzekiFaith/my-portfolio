@@ -78,8 +78,8 @@ const Footer = () => {
                 Ezekiel <span className="text-emerald-600">Oghojafor</span>
               </h3>
               <p className={`${colors.textSecondary} leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base`}>
-                HealthTech Frontend Engineer specializing in telemedicine and patient care solutions. 
-                Building digital health platforms that improve patient outcomes and healthcare accessibility.
+                Specialized in frontend engineering with expertise in React, Next.js, and modern web technologies. 
+                Building exceptional user interfaces and seamless user experiences across various industries.
               </p>
               <motion.div 
                 className="flex items-center gap-2 text-emerald-600"
