@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Design Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f0f0f0;
+        }
+        .test-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .breakpoint {
+            background: #e3f2fd;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 4px solid #2196f3;
+        }
+        .mobile { border-left-color: #4caf50; }
+        .tablet { border-left-color: #ff9800; }
+        .desktop { border-left-color: #9c27b0; }
+        .large { border-left-color: #f44336; }
+        
+        @media (max-width: 640px) {
+            .mobile { display: block; }
+            .tablet, .desktop, .large { display: none; }
+        }
+        
+        @media (min-width: 641px) and (max-width: 1024px) {
+            .tablet { display: block; }
+            .mobile, .desktop, .large { display: none; }
+        }
+        
+        @media (min-width: 1025px) and (max-width: 1536px) {
+            .desktop { display: block; }
+            .mobile, .tablet, .large { display: none; }
+        }
+        
+        @media (min-width: 1537px) {
+            .large { display: block; }
+            .mobile, .tablet, .desktop { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>Portfolio Responsive Design Test</h1>
+        <p>This page helps test the responsive design of your portfolio. Resize your browser window to see different breakpoints.</p>
+        
+        <div class="breakpoint mobile">
+            <h3>📱 Mobile View (≤640px)</h3>
+            <p>Your portfolio should be optimized for mobile devices with:</p>
+            <ul>
+                <li>Single column layout</li>
+                <li>Touch-friendly buttons (44px minimum)</li>
+                <li>Readable text sizes</li>
+                <li>Hamburger menu navigation</li>
+                <li>Optimized images and spacing</li>
+            </ul>
+        </div>
+        
+        <div class="breakpoint tablet">
+            <h3>📱 Tablet View (641px - 1024px)</h3>
+            <p>Your portfolio should adapt for tablets with:</p>
+            <ul>
+                <li>Two-column layouts where appropriate</li>
+                <li>Medium-sized text and buttons</li>
+                <li>Balanced spacing</li>
+                <li>Touch-optimized interactions</li>
+            </ul>
+        </div>
+        
+        <div class="breakpoint desktop">
+            <h3>💻 Desktop View (1025px - 1536px)</h3>
+            <p>Your portfolio should display optimally on desktop with:</p>
+            <ul>
+                <li>Multi-column layouts</li>
+                <li>Full navigation menu</li>
+                <li>Hover effects and animations</li>
+                <li>Optimal spacing and typography</li>
+            </ul>
+        </div>
+        
+        <div class="breakpoint large">
+            <h3>🖥️ Large Screen View (≥1537px)</h3>
+            <p>Your portfolio should scale beautifully on large screens with:</p>
+            <ul>
+                <li>Maximum content width constraints</li>
+                <li>Enhanced spacing and typography</li>
+                <li>Full feature set available</li>
+                <li>Optimal visual hierarchy</li>
+            </ul>
+        </div>
+        
+        <div style="margin-top: 30px; padding: 20px; background: #f5f5f5; border-radius: 5px;">
+            <h3>Test Checklist:</h3>
+            <ul>
+                <li>✅ Navigation menu collapses on mobile</li>
+                <li>✅ Text remains readable at all sizes</li>
+                <li>✅ Buttons are touch-friendly (44px minimum)</li>
+                <li>✅ Images scale appropriately</li>
+                <li>✅ No horizontal scrolling</li>
+                <li>✅ Forms are mobile-friendly</li>
+                <li>✅ Cards and layouts stack properly</li>
+                <li>✅ Animations work smoothly</li>
+            </ul>
+        </div>
+        
+        <div style="margin-top: 20px; text-align: center;">
+            <a href="http://localhost:5173" style="display: inline-block; background: #2196f3; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; font-weight: bold;">
+                🚀 Open Portfolio
+            </a>
+        </div>
+    </div>
+</body>
+</html>

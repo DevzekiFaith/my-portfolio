@@ -14,16 +14,18 @@ import { ThemeProvider } from './contexts/ThemeContext'
 function App() {
   return (
     <ThemeProvider>
-      <div className="min-h-screen w-full transition-colors duration-300">
+      <div className="min-h-screen w-full transition-colors duration-300 overflow-x-hidden">
         <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/About" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/project/:projectId" element={<ProjectDetail />} />
-          {/* <Route path="/FeatureProject" element={<FeatureProject />} /> */}
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
+        <main className="relative">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/About" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/project/:projectId" element={<ProjectDetail />} />
+            {/* <Route path="/FeatureProject" element={<FeatureProject />} /> */}
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </main>
         <Footer />
         <ScrollToTop />
       </div>

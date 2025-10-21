@@ -103,15 +103,15 @@ const Navbar = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      <div className="container mx-auto px-6">
-        <div className="flex justify-between items-center py-4">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="flex justify-between items-center py-3 sm:py-4">
           {/* Logo/Brand */}
           <motion.div 
             className="flex items-center"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.2 }}
           >
-            <h1 className={`font-bold text-xl transition-colors duration-300 ${
+            <h1 className={`font-bold text-lg sm:text-xl transition-colors duration-300 ${
               isScrolled ? `${colors.text} drop-shadow-lg` : 'text-white drop-shadow-lg'
             }`}>
               Faith{" "}
@@ -170,11 +170,11 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Toggle */}
-          <div className="xl:hidden flex items-center gap-3">
+          <div className="xl:hidden flex items-center gap-2 sm:gap-3">
             {/* Mobile Theme Toggle */}
             <motion.button
               onClick={theme.toggleTheme}
-              className={`p-3 ${colors.glassBackground} backdrop-blur-sm hover:${colors.cardBackground} transition-all duration-300 rounded-xl focus:outline-none border ${colors.border} ${colors.shadow.glass} hover:${colors.shadow.glow} cyber-glow`}
+              className={`p-2 sm:p-3 ${colors.glassBackground} backdrop-blur-sm hover:${colors.cardBackground} transition-all duration-300 rounded-xl focus:outline-none border ${colors.border} ${colors.shadow.glass} hover:${colors.shadow.glow} cyber-glow`}
               whileHover={{ scale: 1.1, rotate: 5 }}
               whileTap={{ scale: 0.9 }}
               initial={{ opacity: 0, rotate: -180 }}
@@ -189,7 +189,7 @@ const Navbar = () => {
             </motion.button>
             
             <motion.button
-              className={`p-3 rounded-xl transition-all duration-300 focus:outline-none ${colors.glassBackground} hover:${colors.cardBackground} ${colors.text} backdrop-blur-sm border ${colors.border} ${colors.shadow.glass} hover:${colors.shadow.glow} cyber-glow`}
+              className={`p-2 sm:p-3 rounded-xl transition-all duration-300 focus:outline-none ${colors.glassBackground} hover:${colors.cardBackground} ${colors.text} backdrop-blur-sm border ${colors.border} ${colors.shadow.glass} hover:${colors.shadow.glow} cyber-glow`}
               onClick={toggleMenu}
               aria-label="Toggle menu"
               aria-expanded={isMenuOpen}
@@ -200,9 +200,9 @@ const Navbar = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               {isMenuOpen ? (
-                <FaTimes className="w-5 h-5" />
+                <FaTimes className="w-4 h-4 sm:w-5 sm:h-5" />
               ) : (
-                <FaBars className="w-5 h-5" />
+                <FaBars className="w-4 h-4 sm:w-5 sm:h-5" />
               )}
             </motion.button>
           </div>
@@ -221,7 +221,7 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <motion.div 
-          className={`fixed top-0 right-0 w-full sm:w-80 h-full ${colors.glassBackground} backdrop-blur-2xl border-l ${colors.border} ${colors.shadow.glass} navbar-menu z-50 xl:hidden`}
+          className={`fixed top-0 right-0 w-full max-w-sm h-full ${colors.glassBackground} backdrop-blur-2xl border-l ${colors.border} ${colors.shadow.glass} navbar-menu z-50 xl:hidden`}
           initial={{ x: 320 }}
           animate={{ x: 0 }}
           exit={{ x: 320 }}
@@ -229,8 +229,8 @@ const Navbar = () => {
         >
           <div className="flex flex-col h-full">
             {/* Mobile Menu Header */}
-            <div className="flex justify-between items-center p-6 border-b border-white/20">
-              <h2 className={`text-xl font-bold ${colors.text} drop-shadow-lg`}>
+            <div className="flex justify-between items-center p-4 sm:p-6 border-b border-white/20">
+              <h2 className={`text-lg sm:text-xl font-bold ${colors.text} drop-shadow-lg`}>
                 Menu
               </h2>
               <motion.button
@@ -245,7 +245,7 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Menu Navigation */}
-            <nav className="flex-1 p-6">
+            <nav className="flex-1 p-4 sm:p-6">
               <div className="space-y-4">
                 {STYLE_CONSTANTS.NAVBAR_LINKS.map(({ path, label }, index) => (
                   <motion.div
@@ -290,8 +290,8 @@ const Navbar = () => {
             </nav>
 
             {/* Mobile Menu Footer */}
-            <div className="p-6 border-t border-white/20">
-              <p className={`text-sm ${colors.textSecondary} text-center drop-shadow-lg`}>
+            <div className="p-4 sm:p-6 border-t border-white/20">
+              <p className={`text-xs sm:text-sm ${colors.textSecondary} text-center drop-shadow-lg`}>
                 © {new Date().getFullYear()} Ezekiel Oghojafor
               </p>
             </div>

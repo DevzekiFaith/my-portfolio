@@ -48,27 +48,27 @@ const Contact = () => {
 
       {/* Hero Section */}
       <section 
-        className="relative h-[60vh] flex items-center justify-center text-center overflow-hidden"
+        className="relative h-[50vh] sm:h-[60vh] flex items-center justify-center text-center overflow-hidden"
         style={{ backgroundImage: `url(/hero-bg.jpg)`, backgroundSize: 'cover', backgroundPosition: 'center' }}
       >
         <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
         
         {/* Hero Content */}
         <motion.div 
-          className="relative z-10 text-white px-6"
+          className="relative z-10 text-white px-4 sm:px-6"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.0, ease: "easeOut" }}
         >
-          <h1 className="text-5xl md:text-7xl font-extrabold mb-4 leading-tight">
+          <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-3 sm:mb-4 leading-tight">
             Let's <span className="text-blue-400">Connect</span>
           </h1>
-          <p className="text-lg md:text-xl max-w-3xl mx-auto mb-8">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl max-w-3xl mx-auto mb-6 sm:mb-8 px-4 sm:px-0">
             Ready to collaborate on innovative projects? Reach out and let's build something amazing together.
           </p>
           <motion.a
             href="#contact-form"
-            className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-lg"
+            className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 sm:py-3 px-6 sm:px-8 rounded-full transition-all duration-300 shadow-lg text-sm sm:text-base"
             whileHover={{ scale: 1.05, boxShadow: "0 10px 20px rgba(0,0,0,0.2)" }}
             whileTap={{ scale: 0.95 }}
           >
@@ -78,9 +78,9 @@ const Contact = () => {
       </section>
 
       {/* Contact Content */}
-      <section id="contact-form" className="container mx-auto px-6 py-16">
+      <section id="contact-form" className="container mx-auto px-4 sm:px-6 py-10 sm:py-12 md:py-16">
         <motion.div 
-          className="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 px-4 sm:px-0"
+          className="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 px-2 sm:px-4 md:px-0"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -88,25 +88,25 @@ const Contact = () => {
         >
           {/* Contact Information */}
           <motion.div 
-            className={`${colors.cardBackground} rounded-3xl p-8 ${colors.shadow.medium}`}
+            className={`${colors.cardBackground} rounded-2xl sm:rounded-3xl p-6 sm:p-8 ${colors.shadow.medium}`}
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <h2 className={`text-3xl font-bold ${colors.text} mb-6`}>Get in Touch</h2>
-            <p className={`${colors.textSecondary} mb-8 leading-relaxed`}>
+            <h2 className={`text-2xl sm:text-3xl font-bold ${colors.text} mb-4 sm:mb-6`}>Get in Touch</h2>
+            <p className={`${colors.textSecondary} mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base`}>
               Have a question or want to work together? Feel free to reach out through any of these channels.
             </p>
 
-            <div className="space-y-6 mb-8">
-              <div className="flex items-start gap-4 max-w-md">
-                <FaEnvelope className={`w-6 h-6 ${colors.accent} mt-1 flex-shrink-0`} />
+            <div className="space-y-4 sm:space-y-6 mb-6 sm:mb-8">
+              <div className="flex items-start gap-3 sm:gap-4 max-w-md">
+                <FaEnvelope className={`w-5 h-5 sm:w-6 sm:h-6 ${colors.accent} mt-1 flex-shrink-0`} />
                 <div className="min-w-0 flex-1">
-                  <h3 className={`font-semibold ${colors.text} mb-1`}>Email</h3>
+                  <h3 className={`font-semibold ${colors.text} mb-1 text-sm sm:text-base`}>Email</h3>
                   <a
                     href="mailto:ezekieloghojaforubor@gmail.com"
-                    className="text-purple-600 hover:text-purple-700 font-semibold transition-colors duration-300 break-all sm:break-normal text-sm sm:text-base"
+                    className="text-purple-600 hover:text-purple-700 font-semibold transition-colors duration-300 break-all sm:break-normal text-xs sm:text-sm md:text-base"
                   >
                     ezekieloghojaforubor@gmail.com
                   </a>
@@ -114,8 +114,8 @@ const Contact = () => {
               </div>
             </div>
 
-            <h3 className={`text-2xl font-bold ${colors.text} mb-4`}>Connect with Me</h3>
-            <div className="flex flex-wrap gap-3 sm:gap-4">
+            <h3 className={`text-xl sm:text-2xl font-bold ${colors.text} mb-3 sm:mb-4`}>Connect with Me</h3>
+            <div className="flex flex-wrap gap-2 sm:gap-3 md:gap-4">
               <motion.a
                 href="https://www.linkedin.com/in/ezekiel-oghojafor-ubor-a75a7a21b/"
                 target="_blank"

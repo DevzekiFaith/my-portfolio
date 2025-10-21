@@ -367,7 +367,7 @@ const ProjectDetail = () => {
   return (
     <div className={`${colors.background} min-h-screen ${colors.text} transition-colors duration-300`}>
       {/* Header */}
-      <section className="container mx-auto px-6 pt-24 pb-12">
+      <section className="container mx-auto px-4 sm:px-6 pt-20 sm:pt-24 pb-8 sm:pb-12">
         <motion.div 
           className="mb-8"
           initial={{ opacity: 0, y: 30 }}
@@ -442,11 +442,11 @@ const ProjectDetail = () => {
 
       {/* Project Details */}
       <section className={`py-16 ${colors.background}`}>
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Features */}
             <motion.div 
-              className={`${colors.cardBackground} rounded-3xl p-8 ${colors.shadow.medium}`}
+              className={`${colors.cardBackground} rounded-3xl p-4 sm:p-6 lg:p-8 ${colors.shadow.medium}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -468,7 +468,7 @@ const ProjectDetail = () => {
 
             {/* Technologies */}
             <motion.div 
-              className={`${colors.cardBackground} rounded-3xl p-8 ${colors.shadow.medium}`}
+              className={`${colors.cardBackground} rounded-3xl p-4 sm:p-6 lg:p-8 ${colors.shadow.medium}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -492,7 +492,7 @@ const ProjectDetail = () => {
 
             {/* Challenges & Solutions */}
             <motion.div 
-              className={`${colors.cardBackground} rounded-3xl p-8 ${colors.shadow.medium}`}
+              className={`${colors.cardBackground} rounded-3xl p-4 sm:p-6 lg:p-8 ${colors.shadow.medium}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -530,7 +530,7 @@ const ProjectDetail = () => {
 
             {/* Results */}
             <motion.div 
-              className={`${colors.cardBackground} rounded-3xl p-8 ${colors.shadow.medium}`}
+              className={`${colors.cardBackground} rounded-3xl p-4 sm:p-6 lg:p-8 ${colors.shadow.medium}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}

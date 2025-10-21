@@ -50,17 +50,17 @@ const Home = () => {
       )}
 
       {/* Hero Section */}
-      <section className="container mx-auto px-6 py-24 md:py-32 lg:py-40">
-        <div className="flex xl:flex-row flex-col justify-between items-center gap-16 min-h-[85vh]">
+      <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32">
+        <div className="flex xl:flex-row flex-col justify-between items-center gap-6 sm:gap-8 lg:gap-12 xl:gap-16 min-h-[60vh] sm:min-h-[70vh] md:min-h-[75vh] lg:min-h-[80vh] xl:min-h-[85vh]">
           <motion.div 
-            className="flex-1 max-w-2xl text-center xl:text-left px-4 md:px-6 lg:px-8"
+            className="flex-1 max-w-2xl text-center xl:text-left px-2 sm:px-4 md:px-6 lg:px-8"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <div className="mb-10 md:mb-12">
+            <div className="mb-8 sm:mb-10 md:mb-12">
               <motion.h1 
-                className={`text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold ${colors.text} mb-6 leading-tight`}
+                className={`text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold ${colors.text} mb-4 sm:mb-6 leading-tight`}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
@@ -76,7 +76,7 @@ const Home = () => {
                 </motion.span>
               </motion.h1>
               <motion.div 
-                className={`text-lg xl:text-xl ${colors.textSecondary} font-light leading-relaxed`}
+                className={`text-sm sm:text-base md:text-lg xl:text-xl ${colors.textSecondary} font-light leading-relaxed`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
@@ -98,14 +98,14 @@ const Home = () => {
             </div>
 
             <motion.div 
-              className="flex flex-col sm:flex-row items-center gap-6"
+              className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
               <motion.a
                 href="#projects"
-                className={`group flex items-center gap-3 ${colors.cardBackground} ${colors.accent} px-8 py-4 rounded-2xl font-semibold text-lg ${colors.shadow.medium} hover:${colors.shadow.inset} transition-all duration-300 focus:outline-none`}
+                className={`group flex items-center gap-3 ${colors.cardBackground} ${colors.accent} px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-semibold text-base sm:text-lg ${colors.shadow.medium} hover:${colors.shadow.inset} transition-all duration-300 focus:outline-none`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -113,39 +113,39 @@ const Home = () => {
                 <FaArrowRight className="group-hover:translate-x-1 transition-transform duration-300" />
               </motion.a>
 
-              <div className="flex gap-4">
+              <div className="flex gap-3 sm:gap-4">
                 <motion.a
                   href="https://www.linkedin.com/in/ezekiel-oghojafor-268889196/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`group p-3 ${colors.cardBackground} rounded-xl ${colors.shadow.small} hover:${colors.shadow.inset} transition-all duration-300`}
+                  className={`group p-2 sm:p-3 ${colors.cardBackground} rounded-xl ${colors.shadow.small} hover:${colors.shadow.inset} transition-all duration-300`}
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  <FaLinkedin className="w-5 h-5 text-purple-600" />
+                  <FaLinkedin className="w-4 h-4 sm:w-5 sm:h-5 text-purple-600" />
                 </motion.a>
                 <motion.a
                   href="https://github.com/DevzekiFaith"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`group p-3 ${colors.cardBackground} rounded-xl ${colors.shadow.small} hover:${colors.shadow.inset} transition-all duration-300`}
+                  className={`group p-2 sm:p-3 ${colors.cardBackground} rounded-xl ${colors.shadow.small} hover:${colors.shadow.inset} transition-all duration-300`}
                   whileHover={{ scale: 1.1, rotate: -5 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  <FaGithub className="w-5 h-5 text-purple-600" />
+                  <FaGithub className="w-4 h-4 sm:w-5 sm:h-5 text-purple-600" />
                 </motion.a>
               </div>
             </motion.div>
           </motion.div>
 
           <motion.div 
-            className="flex-1 xl:max-w-lg px-4 md:px-6 lg:px-8"
+            className="flex-1 xl:max-w-lg px-2 sm:px-4 md:px-6 lg:px-8"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           >
             <motion.div 
-            className={`${colors.cardBackground} rounded-3xl p-8 md:p-10 ${colors.shadow.raised} relative overflow-hidden`}
+            className={`${colors.cardBackground} rounded-2xl sm:rounded-3xl p-3 sm:p-4 md:p-6 lg:p-8 xl:p-10 ${colors.shadow.raised} relative overflow-hidden`}
               whileHover={{ scale: 1.02, rotateY: 5 }}
               transition={{ duration: 0.3 }}
             >
@@ -166,9 +166,9 @@ const Home = () => {
       </section>
 
       {/* Project Categories Showcase */}
-      <section className="container mx-auto px-6 py-16">
+      <section className="container mx-auto px-4 sm:px-6 py-10 sm:py-12 md:py-16">
         <motion.div 
-          className="flex flex-col lg:flex-row gap-6 lg:gap-8 justify-center items-stretch max-w-6xl mx-auto px-4 sm:px-0"
+          className="flex flex-col sm:flex-row lg:flex-row gap-4 sm:gap-6 lg:gap-8 justify-center items-stretch max-w-6xl mx-auto px-2 sm:px-4 md:px-0"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -176,80 +176,80 @@ const Home = () => {
         >
           <motion.a
             href="#fintech-solutions"
-            className={`group flex items-center gap-4 ${colors.cardBackground} px-8 py-6 rounded-2xl ${colors.shadow.medium} hover:${colors.shadow.inset} transition-all duration-300 flex-1 cyber-glow`}
+            className={`group flex items-center gap-3 sm:gap-4 ${colors.cardBackground} px-4 sm:px-6 md:px-8 py-4 sm:py-6 rounded-2xl ${colors.shadow.medium} hover:${colors.shadow.inset} transition-all duration-300 flex-1 cyber-glow`}
             whileHover={{ scale: 1.02, y: -5 }}
             whileTap={{ scale: 0.98 }}
           >
-            <div className="p-3 bg-gradient-to-r from-cyan-100 to-blue-100 rounded-xl">
-              <FaBitcoin className="w-8 h-8 text-cyan-600" />
+            <div className="p-2 sm:p-3 bg-gradient-to-r from-cyan-100 to-blue-100 rounded-xl">
+              <FaBitcoin className="w-6 h-6 sm:w-8 sm:h-8 text-cyan-600" />
             </div>
-            <div className="text-left">
-              <h3 className={`text-xl font-bold ${colors.text}`}>Frontend-First FinTech</h3>
-              <p className={`${colors.textSecondary} text-sm`}>React-based financial interfaces</p>
+            <div className="text-left flex-1">
+              <h3 className={`text-base sm:text-lg md:text-xl font-bold ${colors.text}`}>Frontend-First FinTech</h3>
+              <p className={`${colors.textSecondary} text-xs sm:text-sm`}>React-based financial interfaces</p>
             </div>
-            <FaArrowRight className="ml-auto group-hover:translate-x-1 transition-transform duration-300" />
+            <FaArrowRight className="ml-auto group-hover:translate-x-1 transition-transform duration-300 w-4 h-4 sm:w-5 sm:h-5" />
           </motion.a>
 
           <motion.a
             href="#digital-solutions"
-            className={`group flex items-center gap-4 ${colors.cardBackground} px-8 py-6 rounded-2xl ${colors.shadow.medium} hover:${colors.shadow.inset} transition-all duration-300 flex-1 cyber-glow`}
+            className={`group flex items-center gap-3 sm:gap-4 ${colors.cardBackground} px-4 sm:px-6 md:px-8 py-4 sm:py-6 rounded-2xl ${colors.shadow.medium} hover:${colors.shadow.inset} transition-all duration-300 flex-1 cyber-glow`}
             whileHover={{ scale: 1.02, y: -5 }}
             whileTap={{ scale: 0.98 }}
           >
-            <div className="p-3 bg-gradient-to-r from-green-100 to-emerald-100 rounded-xl">
-              <FaWallet className="w-8 h-8 text-green-600" />
+            <div className="p-2 sm:p-3 bg-gradient-to-r from-green-100 to-emerald-100 rounded-xl">
+              <FaWallet className="w-6 h-6 sm:w-8 sm:h-8 text-green-600" />
             </div>
-            <div className="text-left">
-              <h3 className={`text-xl font-bold ${colors.text}`}>UI/UX Focused Apps</h3>
-              <p className={`${colors.textSecondary} text-sm`}>User-centered design & interactions</p>
+            <div className="text-left flex-1">
+              <h3 className={`text-base sm:text-lg md:text-xl font-bold ${colors.text}`}>UI/UX Focused Apps</h3>
+              <p className={`${colors.textSecondary} text-xs sm:text-sm`}>User-centered design & interactions</p>
             </div>
-            <FaArrowRight className="ml-auto group-hover:translate-x-1 transition-transform duration-300" />
+            <FaArrowRight className="ml-auto group-hover:translate-x-1 transition-transform duration-300 w-4 h-4 sm:w-5 sm:h-5" />
           </motion.a>
 
           <motion.a
             href="#web-applications"
-            className={`group flex items-center gap-4 ${colors.cardBackground} px-8 py-6 rounded-2xl ${colors.shadow.medium} hover:${colors.shadow.inset} transition-all duration-300 flex-1 cyber-glow`}
+            className={`group flex items-center gap-3 sm:gap-4 ${colors.cardBackground} px-4 sm:px-6 md:px-8 py-4 sm:py-6 rounded-2xl ${colors.shadow.medium} hover:${colors.shadow.inset} transition-all duration-300 flex-1 cyber-glow`}
             whileHover={{ scale: 1.02, y: -5 }}
             whileTap={{ scale: 0.98 }}
           >
-            <div className="p-3 bg-gradient-to-r from-purple-100 to-pink-100 rounded-xl">
-              <FaUsers className="w-8 h-8 text-purple-600" />
+            <div className="p-2 sm:p-3 bg-gradient-to-r from-purple-100 to-pink-100 rounded-xl">
+              <FaUsers className="w-6 h-6 sm:w-8 sm:h-8 text-purple-600" />
             </div>
-            <div className="text-left">
-              <h3 className={`text-xl font-bold ${colors.text}`}>Modern Web Apps</h3>
-              <p className={`${colors.textSecondary} text-sm`}>React, Next.js & responsive design</p>
+            <div className="text-left flex-1">
+              <h3 className={`text-base sm:text-lg md:text-xl font-bold ${colors.text}`}>Modern Web Apps</h3>
+              <p className={`${colors.textSecondary} text-xs sm:text-sm`}>React, Next.js & responsive design</p>
             </div>
-            <FaArrowRight className="ml-auto group-hover:translate-x-1 transition-transform duration-300" />
+            <FaArrowRight className="ml-auto group-hover:translate-x-1 transition-transform duration-300 w-4 h-4 sm:w-5 sm:h-5" />
           </motion.a>
         </motion.div>
       </section>
 
       {/* FinTech Solutions Section */}
-      <section id="fintech-solutions" className={`py-24 ${colors.background} relative overflow-hidden`}>
+      <section id="fintech-solutions" className={`py-16 sm:py-20 md:py-24 ${colors.background} relative overflow-hidden`}>
         <div className="absolute inset-0 tech-grid opacity-10"></div>
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <motion.div 
-            className="text-center mb-16"
+            className="text-center mb-12 sm:mb-16"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className={`text-4xl xl:text-5xl font-bold ${colors.text} mb-6`}>
+            <h2 className={`text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold ${colors.text} mb-4 sm:mb-6`}>
               <span className="text-gradient">Frontend-Heavy</span>{" "}
               <span className="text-cyan-600">FinTech Solutions</span>
             </h2>
-            <p className={`text-lg ${colors.textSecondary} max-w-3xl mx-auto leading-relaxed`}>
+            <p className={`text-sm sm:text-base md:text-lg ${colors.textSecondary} max-w-3xl mx-auto leading-relaxed px-4 sm:px-0`}>
               Crafting exceptional user interfaces for financial applications with React, Next.js, and modern frontend technologies that deliver seamless user experiences.
             </p>
           </motion.div>
 
           {/* FinTech Solutions Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16 px-4 sm:px-0">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-12 sm:mb-16 px-2 sm:px-4 md:px-0">
             {/* Ajopay Digital Savings App */}
             <Link to="/project/ajopay">
               <motion.div 
-                className={`${colors.cardBackground} rounded-3xl p-4 ${colors.shadow.medium} group cursor-pointer w-full h-80 flex items-center justify-center cyber-glow`}
+                className={`${colors.cardBackground} rounded-2xl sm:rounded-3xl p-3 sm:p-4 ${colors.shadow.medium} group cursor-pointer w-full h-64 sm:h-72 md:h-80 flex items-center justify-center cyber-glow`}
                 whileHover={{ scale: 1.05, y: -10 }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -263,10 +263,10 @@ const Home = () => {
                     className="w-full h-full object-cover"
                   loading="lazy"
                 />
-                  <div className="absolute inset-0 bg-gradient-to-t from-green-900/80 to-transparent flex items-end p-6">
+                  <div className="absolute inset-0 bg-gradient-to-t from-green-900/80 to-transparent flex items-end p-4 sm:p-6">
                     <div>
-                      <h3 className="text-white font-bold text-xl mb-2">Ajopay Savings App</h3>
-                      <p className="text-green-200 text-sm">Digital savings & contribution platform</p>
+                      <h3 className="text-white font-bold text-lg sm:text-xl mb-1 sm:mb-2">Ajopay Savings App</h3>
+                      <p className="text-green-200 text-xs sm:text-sm">Digital savings & contribution platform</p>
                     </div>
                   </div>
                 </div>
@@ -276,7 +276,7 @@ const Home = () => {
             {/* Crypto Trading Platform */}
             <Link to="/project/crypto-trading">
               <motion.div 
-                className={`${colors.cardBackground} rounded-3xl p-4 ${colors.shadow.medium} group cursor-pointer w-full h-80 flex items-center justify-center cyber-glow`}
+                className={`${colors.cardBackground} rounded-2xl sm:rounded-3xl p-3 sm:p-4 ${colors.shadow.medium} group cursor-pointer w-full h-64 sm:h-72 md:h-80 flex items-center justify-center cyber-glow`}
                 whileHover={{ scale: 1.05, y: -10 }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -362,7 +362,7 @@ const Home = () => {
       {/* Digital Solutions Section */}
       <section id="digital-solutions" className={`py-24 ${colors.background} relative overflow-hidden`}>
         <div className="absolute inset-0 tech-grid opacity-10"></div>
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <motion.div 
             className="text-center mb-16"
             initial={{ opacity: 0, y: 50 }}
@@ -370,7 +370,7 @@ const Home = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className={`text-4xl xl:text-5xl font-bold ${colors.text} mb-6`}>
+            <h2 className={`text-3xl sm:text-4xl xl:text-5xl font-bold ${colors.text} mb-6`}>
               <span className="text-gradient">UI/UX</span>{" "}
               <span className="text-cyan-600">Focused Applications</span>
             </h2>
@@ -497,7 +497,7 @@ const Home = () => {
       {/* Web Applications Section */}
       <section id="web-applications" className={`py-24 ${colors.background} relative overflow-hidden`}>
         <div className="absolute inset-0 tech-grid opacity-10"></div>
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <motion.div 
             className="text-center mb-16"
             initial={{ opacity: 0, y: 50 }}
@@ -505,7 +505,7 @@ const Home = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className={`text-4xl xl:text-5xl font-bold ${colors.text} mb-6`}>
+            <h2 className={`text-3xl sm:text-4xl xl:text-5xl font-bold ${colors.text} mb-6`}>
               <span className="text-gradient">React & Next.js</span>{" "}
               <span className="text-cyan-600">Web Applications</span>
             </h2>
@@ -631,7 +631,7 @@ const Home = () => {
 
       {/* Contact Section */}
       <section className={`py-24 ${colors.background}`}>
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <motion.div 
             className="text-center mb-16"
             initial={{ opacity: 0, y: 50 }}
@@ -639,7 +639,7 @@ const Home = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className={`text-4xl xl:text-5xl font-bold ${colors.text} mb-6`}>
+            <h2 className={`text-3xl sm:text-4xl xl:text-5xl font-bold ${colors.text} mb-6`}>
               Let's{" "}
               <span className="text-gradient">Connect</span>
             </h2>

@@ -119,8 +119,8 @@ const About = () => {
       )}
 
       {/* Hero Section */}
-      <section className="container mx-auto px-6 py-20">
-        <div className="flex xl:flex-row flex-col justify-between items-center gap-16">
+      <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20">
+        <div className="flex xl:flex-row flex-col justify-between items-center gap-6 sm:gap-8 lg:gap-12 xl:gap-16">
           <motion.div 
             className="xl:w-1/2"
             initial={{ opacity: 0, x: -50 }}
@@ -128,7 +128,7 @@ const About = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <motion.h1 
-              className={`text-4xl xl:text-6xl font-bold ${colors.text} mb-8`}
+              className={`text-2xl xs:text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold ${colors.text} mb-6 sm:mb-8`}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -145,7 +145,7 @@ const About = () => {
             </motion.h1>
             
             <motion.div 
-              className={`text-xl ${colors.textSecondary} mb-8 leading-relaxed`}
+              className={`text-sm sm:text-base md:text-lg xl:text-xl ${colors.textSecondary} mb-6 sm:mb-8 leading-relaxed`}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -164,7 +164,7 @@ const About = () => {
             </motion.div>
 
             <motion.div 
-              className="flex flex-col sm:flex-row items-center gap-6"
+              className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
@@ -172,35 +172,35 @@ const About = () => {
               <motion.a
                 href="Ezekiel's Resume.pdf"
                 download
-                className={`group flex items-center gap-3 ${colors.cardBackground} ${colors.accent} px-8 py-4 rounded-2xl font-semibold text-lg ${colors.shadow.medium} hover:${colors.shadow.inset} transition-all duration-300 focus:outline-none`}
+                className={`group flex items-center gap-3 ${colors.cardBackground} ${colors.accent} px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-semibold text-base sm:text-lg ${colors.shadow.medium} hover:${colors.shadow.inset} transition-all duration-300 focus:outline-none`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <img src={DownloadImage} alt="Download" className="w-5 h-5" />
+                <img src={DownloadImage} alt="Download" className="w-4 h-4 sm:w-5 sm:h-5" />
                 <span>Download Resume</span>
                 <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
               </motion.a>
 
-              <div className="flex gap-4">
+              <div className="flex gap-3 sm:gap-4">
                 <motion.a
                   href="https://www.linkedin.com/in/ezekiel-oghojafor-268889196/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`group p-3 ${colors.cardBackground} rounded-xl ${colors.shadow.small} hover:${colors.shadow.inset} transition-all duration-300`}
+                  className={`group p-2 sm:p-3 ${colors.cardBackground} rounded-xl ${colors.shadow.small} hover:${colors.shadow.inset} transition-all duration-300`}
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  <FaLinkedin className="w-5 h-5 text-emerald-600" />
+                  <FaLinkedin className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600" />
                 </motion.a>
                 <motion.a
                   href="https://github.com/DevzekiFaith"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`group p-3 ${colors.cardBackground} rounded-xl ${colors.shadow.small} hover:${colors.shadow.inset} transition-all duration-300`}
+                  className={`group p-2 sm:p-3 ${colors.cardBackground} rounded-xl ${colors.shadow.small} hover:${colors.shadow.inset} transition-all duration-300`}
                   whileHover={{ scale: 1.1, rotate: -5 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  <FaGithub className="w-5 h-5 text-emerald-600" />
+                  <FaGithub className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600" />
                 </motion.a>
               </div>
             </motion.div>
@@ -213,7 +213,7 @@ const About = () => {
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           >
             <motion.div 
-              className={`${colors.cardBackground} rounded-3xl p-6 ${colors.shadow.raised}`}
+              className={`${colors.cardBackground} rounded-2xl sm:rounded-3xl p-4 sm:p-6 ${colors.shadow.raised}`}
               whileHover={{ scale: 1.02, rotateY: 5 }}
               transition={{ duration: 0.3 }}
             >
@@ -230,7 +230,7 @@ const About = () => {
 
       {/* Capabilities Section */}
       <section className={`py-24 ${colors.background}`}>
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <motion.div 
             className="text-center mb-16"
             initial={{ opacity: 0, y: 50 }}
@@ -276,7 +276,7 @@ const About = () => {
       {/* Crypto Trading Platform Case Study */}
       <section className={`py-24 ${colors.background} relative overflow-hidden`}>
         <div className="absolute inset-0 tech-grid opacity-10"></div>
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <motion.div 
             className="text-center mb-16"
             initial={{ opacity: 0, y: 50 }}
@@ -538,7 +538,7 @@ const About = () => {
 
       {/* Experience Section */}
       <section className={`py-24 ${colors.background}`}>
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <motion.div 
             className="text-center mb-16"
             initial={{ opacity: 0, y: 50 }}
@@ -579,7 +579,7 @@ const About = () => {
 
       {/* Contact Section */}
       <section className={`py-24 ${colors.background}`}>
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
             <motion.div 
               className="text-center mb-16"

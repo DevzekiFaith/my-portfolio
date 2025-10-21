@@ -229,3 +229,49 @@ p {
 ::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(135deg, #0891b2, #2563eb);
 }
+
+/* Mobile-specific improvements */
+@media (max-width: 640px) {
+    /* Improve touch targets */
+    button, a, input, textarea, select {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Better text readability on mobile */
+    body {
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+    }
+    
+    /* Prevent horizontal scroll */
+    html, body {
+        overflow-x: hidden;
+    }
+    
+    /* Improve form inputs on mobile */
+    input, textarea, select {
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+    
+    /* Better spacing for mobile */
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+/* Tablet improvements */
+@media (min-width: 641px) and (max-width: 1024px) {
+    .container {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+/* Large screen optimizations */
+@media (min-width: 1920px) {
+    .container {
+        max-width: 1400px;
+    }
+}
